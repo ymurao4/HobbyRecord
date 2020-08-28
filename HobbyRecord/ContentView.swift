@@ -18,7 +18,7 @@ struct ContentView: View {
         maximumDate: Date().addingTimeInterval(60*60*24*365*2))
 
     var body: some View {
-        VStack(spacing: 15) {
+        VStack() {
             CLViewController(isPresented: self.$isSheetPresented, clManager: self.clManager)
         }
     }
@@ -46,7 +46,7 @@ struct CLCell: View {
         Text(clDate.getText())
             .fontWeight(clDate.getFontWeight())
             .foregroundColor(clDate.getColor())
-            .frame(width: cellWidth, height: cellWidth)
+            .frame(width: cellWidth, height: cellWidth * 2)
             .font(.system(size: 20))
             .cornerRadius(cellWidth / 2)
             .border(Color.yellow)
@@ -130,7 +130,7 @@ struct CLViewController: View {
         }
     }
 
-    func appendMonthsArray() -> [CLMonth] {
+    private func appendMonthsArray() -> [CLMonth] {
         var monthsArray: [CLMonth] = []
         for i in 0..<numberOfMonth() {
             monthsArray.append(CLMonth(isPresented: self.$isPresented, clManager: self.clManager, monthOffset: i))
@@ -190,17 +190,15 @@ struct CLMonth: View {
     var monthsArray: [[Date]] {
         monthArray()
     }
-    let cellWidth: CGFloat = CGFloat(32)
+    let cellWidth: CGFloat = CGFloat(52)
 
     var body: some View {
-        VStack(alignment: .center, spacing: 10) {
-            Text(getMonthHeader())
-            VStack(alignment: .leading, spacing: 5) {
+        NavigationView {
+            VStack(alignment: .leading, spacing: 0) {
                 ForEach(monthsArray, id: \.self) { row in
-                    HStack {
+                    HStack(spacing: 0) {
                         ForEach(row, id: \.self) { column in
                             HStack {
-                                Spacer()
                                 if self.isThisMonth(date: column) {
                                     CLCell(clDate: CLDate(
                                         date: column,
@@ -214,13 +212,21 @@ struct CLMonth: View {
                                     Text("")
                                         .frame(width: self.cellWidth, height: self.cellWidth)
                                 }
-                                Spacer()
                             }
                         }
                     }
                 }
             }
+            .navigationBarTitle(Text(getMonthHeader()), displayMode: .inline)
         }
+    }
+
+    private func calculateCellWidth() -> CGFloat {
+        let bounds = UIScreen.main.bounds.width
+        let size = (bounds) / 7
+        print(size)
+        print(self.cellWidth)
+        return size
     }
 
     func isThisMonth(date: Date) -> Bool {
