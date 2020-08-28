@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State var isSheetPresented: Bool = false
+    @State var isSheetPresented: Bool = true
     // カレンダーの範囲
     var clManager = CLManager(
         calendar: Calendar.current,
@@ -19,20 +19,11 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 15) {
-            Button(action: {
-                self.isSheetPresented.toggle()
-            }) {
-                Text("Check calendar")
-                    .font(.largeTitle)
-            }
-            .sheet(isPresented: self.$isSheetPresented) {
-                    CLViewController(isPresented: self.$isSheetPresented, clManager: self.clManager)
-            }
-            Text(self.getTextFromDate(date: self.clManager.selectedDate))
-                .font(.largeTitle)
+            CLViewController(isPresented: self.$isSheetPresented, clManager: self.clManager)
         }
     }
 
+    // not used
     private func getTextFromDate(date: Date!) -> String {
         let formatter = DateFormatter()
         formatter.locale = .current
@@ -58,6 +49,7 @@ struct CLCell: View {
             .frame(width: cellWidth, height: cellWidth)
             .font(.system(size: 20))
             .cornerRadius(cellWidth / 2)
+            .border(Color.yellow)
     }
 }
 
@@ -128,18 +120,22 @@ struct CLDate {
 
 struct CLViewController: View {
 
+    @State private var currentPage = 0
     @Binding var isPresented: Bool
     @ObservedObject var clManager: CLManager
 
     var body: some View {
-        Group {
-            List {
-                ForEach(0..<numberOfMonth()) { index in
-                    CLMonth(isPresented: self.$isPresented, clManager: self.clManager, monthOffset: index)
-                }
-                Divider()
-            }
+        VStack {
+            PageView(appendMonthsArray(), currentPage: $currentPage)
         }
+    }
+
+    func appendMonthsArray() -> [CLMonth] {
+        var monthsArray: [CLMonth] = []
+        for i in 0..<numberOfMonth() {
+            monthsArray.append(CLMonth(isPresented: self.$isPresented, clManager: self.clManager, monthOffset: i))
+        }
+        return monthsArray
     }
 
     func numberOfMonth() -> Int {
@@ -323,3 +319,19 @@ struct CLMonth: View {
 
 }
 
+
+struct PageView<Page: View>: View {
+    var viewControllers: [UIHostingController<Page>]
+    @Binding var currentPage: Int
+
+    init(_ views: [Page], currentPage: Binding<Int>) {
+        self.viewControllers = views.map { UIHostingController(rootView: $0) }
+        self._currentPage = currentPage
+    }
+
+    var body: some View {
+        VStack {
+            PageViewController(controllers: viewControllers, currentPage: $currentPage)
+        }
+    }
+}
