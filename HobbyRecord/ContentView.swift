@@ -11,15 +11,26 @@ import SwiftUI
 struct ContentView: View {
 
     @State var isSheetPresented: Bool = true
+    @State var navbarTitle: String = ""
     // カレンダーの範囲
     var clManager = CLManager(
         calendar: Calendar.current,
         minmumDate: Date(),
         maximumDate: Date().addingTimeInterval(60*60*24*365*2))
 
+    let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+
     var body: some View {
-        VStack() {
-            CLViewController(isPresented: self.$isSheetPresented, clManager: self.clManager)
+        NavigationView {
+            VStack {
+                HStack {
+                    ForEach(dayOfTheWeek, id: \.self) { val in
+                        Text(val.uppercased())
+                    }
+                }
+                CLViewController(isPresented: $isSheetPresented, navbarTitle: $navbarTitle, clManager: clManager)
+            }
+            .navigationBarTitle(Text(navbarTitle), displayMode: .inline)
         }
     }
 
@@ -49,13 +60,11 @@ struct CLCell: View {
             .frame(width: cellWidth, height: cellWidth * 2)
             .font(.system(size: 20))
             .cornerRadius(cellWidth / 2)
-            .border(Color.yellow)
     }
 }
 
 
 struct CLDate {
-
     var date: Date
     let clManager: CLManager
     var isToday: Bool = false
@@ -122,6 +131,7 @@ struct CLViewController: View {
 
     @State private var currentPage = 0
     @Binding var isPresented: Bool
+    @Binding var navbarTitle: String
     @ObservedObject var clManager: CLManager
 
     var body: some View {
@@ -133,7 +143,7 @@ struct CLViewController: View {
     private func appendMonthsArray() -> [CLMonth] {
         var monthsArray: [CLMonth] = []
         for i in 0..<numberOfMonth() {
-            monthsArray.append(CLMonth(isPresented: self.$isPresented, clManager: self.clManager, monthOffset: i))
+            monthsArray.append(CLMonth(isPresented: self.$isPresented, navbarTitle: $navbarTitle, clManager: self.clManager, monthOffset: i))
         }
         return monthsArray
     }
@@ -182,6 +192,7 @@ class CLManager: ObservableObject {
 struct CLMonth: View {
 
     @Binding var isPresented: Bool
+    @Binding var navbarTitle: String
     @ObservedObject var clManager: CLManager
 
     let monthOffset: Int
@@ -193,41 +204,34 @@ struct CLMonth: View {
     let cellWidth: CGFloat = CGFloat(52)
 
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading, spacing: 0) {
-                ForEach(monthsArray, id: \.self) { row in
-                    HStack(spacing: 0) {
-                        ForEach(row, id: \.self) { column in
-                            HStack {
-                                if self.isThisMonth(date: column) {
-                                    CLCell(clDate: CLDate(
-                                        date: column,
-                                        clManager: self.clManager,
-                                        isToday: self.isToday(date: column),
-                                        isSelected: self.isSelectedDate(date: column)
-                                        ),
-                                           cellWidth: self.cellWidth)
-                                        .onTapGesture { self.dateTapped(date: column) }
-                                } else {
-                                    Text("")
-                                        .frame(width: self.cellWidth, height: self.cellWidth)
-                                }
+        VStack(alignment: .leading, spacing: 0) {
+            ForEach(monthsArray, id: \.self) { row in
+                HStack(spacing: 0) {
+                    ForEach(row, id: \.self) { column in
+                        HStack {
+                            if self.isThisMonth(date: column) {
+                                CLCell(clDate: CLDate(
+                                    date: column,
+                                    clManager: self.clManager,
+                                    isToday: self.isToday(date: column),
+                                    isSelected: self.isSelectedDate(date: column)
+                                    ),
+                                       cellWidth: self.cellWidth)
+                                //.onTapGesture { self.dateTapped(date: column) }
+                            } else {
+                                Text("")
+                                    .frame(width: self.cellWidth, height: self.cellWidth)
                             }
                         }
                     }
                 }
             }
-            .navigationBarTitle(Text(getMonthHeader()), displayMode: .inline)
+        }.onAppear {
+            // バグ？スワイプできなくなる
+//            self.navbarTitle = self.getMonthHeader()
         }
     }
 
-    private func calculateCellWidth() -> CGFloat {
-        let bounds = UIScreen.main.bounds.width
-        let size = (bounds) / 7
-        print(size)
-        print(self.cellWidth)
-        return size
-    }
 
     func isThisMonth(date: Date) -> Bool {
         return self.clManager.calendar.isDate(date, equalTo: firstOfMonthForOffset(), toGranularity: .month)
