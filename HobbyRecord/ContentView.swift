@@ -26,21 +26,8 @@ struct ContentView: View {
             .navigationBarTitle(Text(navbarTitle), displayMode: .inline)
         }
     }
-
-    // not used
-    private func getTextFromDate(date: Date!) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = .current
-        formatter.dateFormat = "M-d-yyyy"
-        return date == nil ? "" : formatter.string(from: date)
-    }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
 
 struct CLCell: View {
     var clDate: CLDate
@@ -191,7 +178,6 @@ struct CLMonth: View {
     var monthsArray: [[Date]] {
         monthArray()
     }
-    let cellWidth: CGFloat = CGFloat(52)
     private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
 
     var body: some View {
@@ -199,7 +185,7 @@ struct CLMonth: View {
             HStack(spacing: 0) {
                 ForEach(dayOfTheWeek, id: \.self) { val in
                     Text(val.uppercased())
-                        .frame(width: self.cellWidth, height: self.cellWidth)
+                        .frame(width: self.cellWidth(), height: self.cellWidth())
                 }
             }
             ForEach(monthsArray, id: \.self) { row in
@@ -214,14 +200,14 @@ struct CLMonth: View {
                                     isSelected: self.isSelectedDate(date: column)
                                     )
                                 ).padding(.top, 5)
+                                .onTapGesture { self.dateTapped(date: column) }
                                 Spacer()
-                                //.onTapGesture { self.dateTapped(date: column) }
                             } else {
                                 Text("")
-                                    .frame(width: self.cellWidth, height: self.cellWidth)
                             }
                         }
-                        .frame(width: self.cellWidth, height: self.cellWidth * 2)
+                        .frame(width: self.cellWidth(), height: self.cellWidth() * 2)
+                        .background(self.isSpecialDate(date: column) ? Color.gray : Color.white)
                     }
                 }
             }
@@ -232,6 +218,10 @@ struct CLMonth: View {
         }
     }
 
+    func cellWidth() -> CGFloat {
+        let bounds = UIScreen.main.bounds.width
+        return bounds / 7
+    }
 
     func isThisMonth(date: Date) -> Bool {
         return self.clManager.calendar.isDate(date, equalTo: firstOfMonthForOffset(), toGranularity: .month)
