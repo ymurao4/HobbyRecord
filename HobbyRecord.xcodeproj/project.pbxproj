@@ -24,7 +24,6 @@
 		0498FE3B24F88C7500489C12 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE3A24F88C7500489C12 /* NotificationView.swift */; };
 		0498FE3D24F88C7500489C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE3C24F88C7500489C12 /* Assets.xcassets */; };
 		0498FE4024F88C7500489C12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE3F24F88C7500489C12 /* Preview Assets.xcassets */; };
-		04C5DEA224F8DA4700BDA8B1 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C5DEA124F8DA4700BDA8B1 /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +91,6 @@
 		0498FE3F24F88C7500489C12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0498FE4124F88C7500489C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0498FE4224F88C7500489C12 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		04C5DEA124F8DA4700BDA8B1 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 				0498FE0D24F88C7400489C12 /* AppDelegate.swift */,
 				0498FE0F24F88C7400489C12 /* SceneDelegate.swift */,
 				0498FE1124F88C7400489C12 /* ContentView.swift */,
-				04C5DEA124F8DA4700BDA8B1 /* PageViewController.swift */,
 				0498FE1324F88C7400489C12 /* Assets.xcassets */,
 				0498FE1824F88C7400489C12 /* LaunchScreen.storyboard */,
 				0498FE1B24F88C7400489C12 /* Info.plist */,
@@ -326,7 +323,6 @@
 				0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */,
 				0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */,
 				0498FE1224F88C7400489C12 /* ContentView.swift in Sources */,
-				04C5DEA224F8DA4700BDA8B1 /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State var isSheetPresented: Bool = true
-    @State var navbarTitle: String = ""
     // カレンダーの範囲
     var clManager = CLManager(
         calendar: Calendar.current,
@@ -19,13 +17,11 @@ struct ContentView: View {
         maximumDate: Date().addingTimeInterval(60*60*24*365*2))
 
     var body: some View {
-        NavigationView {
-            VStack {
-                CLViewController(isPresented: $isSheetPresented, navbarTitle: $navbarTitle, clManager: clManager)
-            }
-            .navigationBarTitle(Text(navbarTitle), displayMode: .inline)
+        VStack {
+            CLViewController(clManager: self.clManager)
         }
     }
+
 }
 
 
@@ -42,6 +38,7 @@ struct CLCell: View {
 
 
 struct CLDate {
+
     var date: Date
     let clManager: CLManager
     var isToday: Bool = false
@@ -106,23 +103,16 @@ struct CLDate {
 
 struct CLViewController: View {
 
-    @State private var currentPage = 0
-    @Binding var isPresented: Bool
-    @Binding var navbarTitle: String
     @ObservedObject var clManager: CLManager
 
     var body: some View {
-        VStack {
-            PageView(appendMonthsArray(), currentPage: $currentPage)
+        Group {
+            List {
+                ForEach(0..<numberOfMonth()) { index in
+                    CLMonth(clManager: self.clManager, monthOffset: index)
+                }
+            }
         }
-    }
-
-    private func appendMonthsArray() -> [CLMonth] {
-        var monthsArray: [CLMonth] = []
-        for i in 0..<numberOfMonth() {
-            monthsArray.append(CLMonth(isPresented: self.$isPresented, navbarTitle: $navbarTitle, clManager: self.clManager, monthOffset: i))
-        }
-        return monthsArray
     }
 
     func numberOfMonth() -> Int {
@@ -168,8 +158,6 @@ class CLManager: ObservableObject {
 
 struct CLMonth: View {
 
-    @Binding var isPresented: Bool
-    @Binding var navbarTitle: String
     @ObservedObject var clManager: CLManager
 
     let monthOffset: Int
@@ -178,49 +166,40 @@ struct CLMonth: View {
     var monthsArray: [[Date]] {
         monthArray()
     }
-    private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            HStack(spacing: 0) {
-                ForEach(dayOfTheWeek, id: \.self) { val in
-                    Text(val.uppercased())
-                        .frame(width: self.cellWidth(), height: self.cellWidth())
-                }
-            }
-            ForEach(monthsArray, id: \.self) { row in
-                HStack(spacing: 0) {
-                    ForEach(row, id: \.self) { column in
-                        VStack {
-                            if self.isThisMonth(date: column) {
-                                CLCell(clDate: CLDate(
-                                    date: column,
-                                    clManager: self.clManager,
-                                    isToday: self.isToday(date: column),
-                                    isSelected: self.isSelectedDate(date: column)
-                                    )
-                                ).padding(.top, 5)
-                                .onTapGesture { self.dateTapped(date: column) }
-                                Spacer()
-                            } else {
-                                Text("")
+        VStack(alignment: .center, spacing: 30) {
+            Text(getMonthHeader())
+            VStack(spacing: 0) {
+                ForEach(monthsArray, id: \.self) { row in
+                    HStack(spacing: 0) {
+                        ForEach(row, id: \.self) { column in
+                            VStack {
+                                if self.isThisMonth(date: column) {
+                                    CLCell(clDate: CLDate(
+                                        date: column,
+                                        clManager: self.clManager,
+                                        isToday: self.isToday(date: column),
+                                        isSelected: self.isSelectedDate(date: column)
+                                    ))
+                                    //                                        .onTapGesture { self.dateTapped(date: column) }
+                                    Spacer()
+                                } else {
+                                    Text("")
+                                }
                             }
+                            .frame(width: self.cellWidth(), height: self.cellWidth() * 1.5)
+                            .border(Color.orange)
                         }
-                        .frame(width: self.cellWidth(), height: self.cellWidth() * 2)
-                        .background(self.isSpecialDate(date: column) ? Color.gray : Color.white)
                     }
                 }
             }
-            Spacer()
-        }.onAppear {
-            // バグ？スワイプできなくなる
-//            self.navbarTitle = self.getMonthHeader()
         }
     }
 
-    func cellWidth() -> CGFloat {
-        let bounds = UIScreen.main.bounds.width
-        return bounds / 7
+    private func cellWidth() -> CGFloat {
+        let width = UIScreen.main.bounds.width
+        return width / 7
     }
 
     func isThisMonth(date: Date) -> Bool {
@@ -233,7 +212,6 @@ struct CLMonth: View {
                } else {
                    self.clManager.selectedDate = date
                }
-               self.isPresented = false
     }
 
     private func monthArray() -> [[Date]] {
@@ -317,21 +295,4 @@ struct CLMonth: View {
         return CLFormatAndCompareDate(date: date, referenceDate: clManager.selectedDate)
     }
 
-}
-
-
-struct PageView<Page: View>: View {
-    @Binding var currentPage: Int
-    var viewControllers: [UIHostingController<Page>]
-
-    init(_ views: [Page], currentPage: Binding<Int>) {
-        self.viewControllers = views.map { UIHostingController(rootView: $0) }
-        self._currentPage = currentPage
-    }
-
-    var body: some View {
-        VStack {
-            PageViewController(controllers: viewControllers, currentPage: $currentPage)
-        }
-    }
 }
