@@ -17,6 +17,9 @@ struct ContentView: View {
         maximumDate: Date().addingTimeInterval(60*60*24*365*2))
 
     private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+    private var cellWidth: CGFloat {
+        calculateCellWidth()
+    }
 
     var body: some View {
         VStack {
@@ -25,14 +28,14 @@ struct ContentView: View {
                     Text(row.uppercased())
                         .fontWeight(.semibold)
                         .foregroundColor(self.dayOfTheWeekColor(row: row))
-                        .frame(width: self.cellWidth(), height: 20)
+                        .frame(width: self.cellWidth, height: 20)
                 }
             }
             CLViewController(clManager: self.clManager)
         }
     }
 
-    private func cellWidth() -> CGFloat {
+    private func calculateCellWidth() -> CGFloat {
         let width = UIScreen.main.bounds.width
         return width / 7
     }
@@ -103,6 +106,9 @@ struct CLMonth: View {
     var monthsArray: [[Date]] {
         monthArray()
     }
+    private var cellWidth: CGFloat {
+        calculateCellWidth()
+    }
 
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
@@ -126,7 +132,7 @@ struct CLMonth: View {
                                     Text("")
                                 }
                             }
-                            .frame(width: self.cellWidth(), height: self.cellWidth() * 1.5)
+                            .frame(width: self.cellWidth, height: self.cellWidth * 1.5)
                             .cornerRadius(10)
                             .background(self.isSelectedDate(date: column) && self.isThisMonth(date: column) ? Color(UIColor.systemGray5) : Color.defaultColor(colorScheme: self.colorScheme))
                         }
@@ -136,7 +142,7 @@ struct CLMonth: View {
         }
     }
 
-    private func cellWidth() -> CGFloat {
+    private func calculateCellWidth() -> CGFloat {
         let width = UIScreen.main.bounds.width
         return width / 7
     }
@@ -157,12 +163,15 @@ struct CLMonth: View {
     }
 
     private func dateTapped(date: Date) {
-//        if self.clManager.selectedDate != nil && self.clManager.calendar.isDate(self.clManager.selectedDate, inSameDayAs: date) {
-//            self.clManager.selectedDate = nil
-//        } else {
-//            self.clManager.selectedDate = date
-//        }
         self.clManager.selectedDate = date
+    }
+
+    // 日付が1日分ずれているが、これにより直る
+    private func getTextFromDate(date: Date!) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = .current
+        formatter.dateFormat = "M-d-yyyy"
+        return date == nil ? "" : formatter.string(from: date)
     }
 
     private func monthArray() -> [[Date]] {
