@@ -16,9 +16,35 @@ struct ContentView: View {
         minmumDate: Date(),
         maximumDate: Date().addingTimeInterval(60*60*24*365*2))
 
+    private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+
     var body: some View {
         VStack {
+            HStack(spacing: 0) {
+                ForEach(dayOfTheWeek, id: \.self) { row in
+                    Text(row.uppercased())
+                        .fontWeight(.semibold)
+                        .foregroundColor(self.dayOfTheWeekColor(row: row))
+                        .frame(width: self.cellWidth(), height: 20)
+                }
+            }
             CLViewController(clManager: self.clManager)
+        }
+    }
+
+    private func cellWidth() -> CGFloat {
+        let width = UIScreen.main.bounds.width
+        return width / 7
+    }
+
+    private func dayOfTheWeekColor(row: String) -> Color {
+        switch row {
+        case "sun":
+            return Color.red
+        case "sat":
+            return Color.blue
+        default:
+            return Color.primary
         }
     }
 
@@ -66,8 +92,9 @@ struct CLDate {
     }
 
     func getColor() -> Color {
-        var color = Color.black
+        var color = Color(UIColor.label)
 
+        /*
         if isSelected {
             color = .red
         } else if isToday {
@@ -77,6 +104,7 @@ struct CLDate {
         } else if date > Date() {
             color = .yellow
         }
+         */
         return color
     }
 
@@ -158,6 +186,7 @@ class CLManager: ObservableObject {
 
 struct CLMonth: View {
 
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @ObservedObject var clManager: CLManager
 
     let monthOffset: Int
@@ -168,7 +197,7 @@ struct CLMonth: View {
     }
 
     var body: some View {
-        VStack(alignment: .center, spacing: 30) {
+        VStack(alignment: .center, spacing: 10) {
             Text(getMonthHeader())
             VStack(spacing: 0) {
                 ForEach(monthsArray, id: \.self) { row in
@@ -190,7 +219,7 @@ struct CLMonth: View {
                                 }
                             }
                             .frame(width: self.cellWidth(), height: self.cellWidth() * 1.5)
-                            .background(self.isSelectedDate(date: column) && self.isThisMonth(date: column) ? Color.gray : Color.white)
+                            .background(self.isSelectedDate(date: column) && self.isThisMonth(date: column) ? Color(UIColor.systemGray5) : Color.defaultColor(colorScheme: self.colorScheme))
                         }
                     }
                 }
@@ -294,6 +323,18 @@ struct CLMonth: View {
             return false
         }
         return CLFormatAndCompareDate(date: date, referenceDate: clManager.selectedDate)
+    }
+
+}
+
+extension Color {
+
+    static func defaultColor(colorScheme: ColorScheme) -> Color {
+        if colorScheme == .dark {
+            return Color.black
+        } else {
+            return Color.white
+        }
     }
 
 }
