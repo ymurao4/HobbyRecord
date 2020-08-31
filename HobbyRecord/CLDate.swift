@@ -28,19 +28,19 @@ struct CLDate {
         return day
     }
 
-    func formatDate(date: Date, calendar: Calendar) -> String {
+    private func formatDate(date: Date, calendar: Calendar) -> String {
         let formatter = dateFormatter()
         return stringFrom(date: date, formatter: formatter, calendar: calendar)
     }
 
-    func dateFormatter() -> DateFormatter {
+    private func dateFormatter() -> DateFormatter {
         let formatter = DateFormatter()
         formatter.locale = .current
         formatter.dateFormat = "d"
         return formatter
     }
 
-    func stringFrom(date: Date, formatter: DateFormatter, calendar: Calendar) -> String {
+    private func stringFrom(date: Date, formatter: DateFormatter, calendar: Calendar) -> String {
         if formatter.calendar != calendar {
             formatter.calendar = calendar
         }

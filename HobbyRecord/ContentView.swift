@@ -13,7 +13,7 @@ struct ContentView: View {
     // カレンダーの範囲
     var clManager = CLManager(
         calendar: Calendar.current,
-        minmumDate: Date(),
+        minmumDate: Date().addingTimeInterval(-60*60*24*365*1),
         maximumDate: Date().addingTimeInterval(60*60*24*365*2))
 
     private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
@@ -77,11 +77,11 @@ struct CLViewController: View {
         }
     }
 
-    func numberOfMonth() -> Int {
+    private func numberOfMonth() -> Int {
         return clManager.calendar.dateComponents([.month], from: clManager.minimumDate, to: CLMaximumDateMonthLastDay()).month! + 1
     }
 
-    func CLMaximumDateMonthLastDay() -> Date {
+    private func CLMaximumDateMonthLastDay() -> Date {
         var components = clManager.calendar.dateComponents([.year, .month, .day], from: clManager.maximunDate)
         components.month! += 1
         components.day = 0
@@ -152,16 +152,17 @@ struct CLMonth: View {
         }
     }
 
-    func isThisMonth(date: Date) -> Bool {
+    private func isThisMonth(date: Date) -> Bool {
         return self.clManager.calendar.isDate(date, equalTo: firstOfMonthForOffset(), toGranularity: .month)
     }
 
     private func dateTapped(date: Date) {
-        if self.clManager.selectedDate != nil && self.clManager.calendar.isDate(self.clManager.selectedDate, inSameDayAs: date) {
-            self.clManager.selectedDate = nil
-        } else {
-            self.clManager.selectedDate = date
-        }
+//        if self.clManager.selectedDate != nil && self.clManager.calendar.isDate(self.clManager.selectedDate, inSameDayAs: date) {
+//            self.clManager.selectedDate = nil
+//        } else {
+//            self.clManager.selectedDate = date
+//        }
+        self.clManager.selectedDate = date
     }
 
     private func monthArray() -> [[Date]] {
@@ -177,7 +178,7 @@ struct CLMonth: View {
         return rowArray
     }
 
-    func getMonthHeader() -> String {
+    private func getMonthHeader() -> String {
         let headerDateFormatter = DateFormatter()
         headerDateFormatter.calendar = clManager.calendar
         headerDateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy LLLL", options: 0, locale: clManager.calendar.locale)
@@ -185,7 +186,7 @@ struct CLMonth: View {
         return headerDateFormatter.string(from: firstOfMonthForOffset()).uppercased()
     }
 
-    func getDateAtIndex(index: Int) -> Date {
+    private func getDateAtIndex(index: Int) -> Date {
         let firstOfMonth = firstOfMonthForOffset()
         let weekDay = clManager.calendar.component(.weekday, from: firstOfMonth)
         var startOffset = weekDay - clManager.calendar.firstWeekday
@@ -196,45 +197,45 @@ struct CLMonth: View {
         return clManager.calendar.date(byAdding: dateComponents, to: firstOfMonth)!
     }
 
-    func numberOfDays(offset: Int) -> Int {
+    private func numberOfDays(offset: Int) -> Int {
         let firstOfMonth = firstOfMonthForOffset()
         let rangeOfWeeks = clManager.calendar.range(of: .weekOfMonth, in: .month, for: firstOfMonth)
 
         return (rangeOfWeeks?.count)! * daysPerWeek
     }
 
-    func firstOfMonthForOffset() -> Date {
+    private func firstOfMonthForOffset() -> Date {
         var offset = DateComponents()
         offset.month = monthOffset
 
         return clManager.calendar.date(byAdding: offset, to: CLFirstDateMonth())!
     }
 
-    func CLFormatDate(date: Date) -> Date {
+    private func CLFormatDate(date: Date) -> Date {
         let components = clManager.calendar.dateComponents(calendarUnitYMD, from: date)
 
         return clManager.calendar.date(from: components)!
     }
 
-    func CLFormatAndCompareDate(date: Date, referenceDate: Date) -> Bool {
+    private func CLFormatAndCompareDate(date: Date, referenceDate: Date) -> Bool {
         let refDate = CLFormatDate(date: referenceDate)
         let clampedDate = CLFormatDate(date: date)
 
         return refDate == clampedDate
     }
 
-    func CLFirstDateMonth() -> Date {
+    private func CLFirstDateMonth() -> Date {
         var components = clManager.calendar.dateComponents(calendarUnitYMD, from: clManager.minimumDate)
         components.day = 1
 
         return clManager.calendar.date(from: components)!
     }
 
-    func isToday(date: Date) -> Bool {
+    private func isToday(date: Date) -> Bool {
         return CLFormatAndCompareDate(date: date, referenceDate: Date())
     }
 
-    func isSpecialDate(date: Date) -> Bool {
+    private func isSpecialDate(date: Date) -> Bool {
         return isSelectedDate(date: date)
     }
 
