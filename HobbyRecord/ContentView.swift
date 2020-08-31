@@ -13,7 +13,7 @@ struct ContentView: View {
     // カレンダーの範囲
     var clManager = CLManager(
         calendar: Calendar.current,
-        minmumDate: Date().addingTimeInterval(-60*60*24*365*1),
+        minmumDate: Date().addingTimeInterval(-60*60*24*365*2),
         maximumDate: Date().addingTimeInterval(60*60*24*365*2))
 
     private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
