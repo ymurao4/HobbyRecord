@@ -106,8 +106,8 @@ struct CLViewController: View {
     @ObservedObject var clManager: CLManager
 
     var body: some View {
-        Group {
-            List {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
                 ForEach(0..<numberOfMonth()) { index in
                     CLMonth(clManager: self.clManager, monthOffset: index)
                 }
@@ -182,14 +182,15 @@ struct CLMonth: View {
                                         isToday: self.isToday(date: column),
                                         isSelected: self.isSelectedDate(date: column)
                                     ))
-                                    //                                        .onTapGesture { self.dateTapped(date: column) }
+                                        .onTapGesture { self.dateTapped(date: column) }
+                                        .padding(.top, 10)
                                     Spacer()
                                 } else {
                                     Text("")
                                 }
                             }
                             .frame(width: self.cellWidth(), height: self.cellWidth() * 1.5)
-                            .border(Color.orange)
+                            .background(self.isSelectedDate(date: column) && self.isThisMonth(date: column) ? Color.gray : Color.white)
                         }
                     }
                 }
@@ -208,10 +209,10 @@ struct CLMonth: View {
 
     private func dateTapped(date: Date) {
         if self.clManager.selectedDate != nil && self.clManager.calendar.isDate(self.clManager.selectedDate, inSameDayAs: date) {
-                   self.clManager.selectedDate = nil
-               } else {
-                   self.clManager.selectedDate = date
-               }
+            self.clManager.selectedDate = nil
+        } else {
+            self.clManager.selectedDate = date
+        }
     }
 
     private func monthArray() -> [[Date]] {
