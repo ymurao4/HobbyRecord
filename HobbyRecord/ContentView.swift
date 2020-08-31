@@ -56,78 +56,11 @@ struct CLCell: View {
 
     var body: some View {
         Text(clDate.getText())
-            .fontWeight(clDate.getFontWeight())
             .foregroundColor(clDate.getColor())
             .font(.system(size: 20))
     }
 }
 
-
-struct CLDate {
-
-    var date: Date
-    let clManager: CLManager
-    var isToday: Bool = false
-    var isSelected: Bool = false
-
-    init(date: Date, clManager: CLManager, isToday: Bool, isSelected: Bool) {
-        self.date = date
-        self.clManager = clManager
-        self.isToday = isToday
-        self.isSelected = isSelected
-    }
-
-    func getText() -> String {
-        let day = formatDate(date: date, calendar: self.clManager.calendar)
-        return day
-    }
-
-    func getFontWeight() -> Font.Weight {
-        var fontWeight = Font.Weight.medium
-
-        if isSelected, isToday {
-            fontWeight = Font.Weight.heavy
-        }
-        return fontWeight
-    }
-
-    func getColor() -> Color {
-        var color = Color(UIColor.label)
-
-        /*
-        if isSelected {
-            color = .red
-        } else if isToday {
-            color = .black
-        } else if date < Date() {
-            color = .blue
-        } else if date > Date() {
-            color = .yellow
-        }
-         */
-        return color
-    }
-
-    func formatDate(date: Date, calendar: Calendar) -> String {
-        let formatter = dateFormatter()
-        return stringFrom(date: date, formatter: formatter, calendar: calendar)
-    }
-
-    func dateFormatter() -> DateFormatter {
-        let formatter = DateFormatter()
-        formatter.locale = .current
-        formatter.dateFormat = "d"
-        return formatter
-    }
-
-    func stringFrom(date: Date, formatter: DateFormatter, calendar: Calendar) -> String {
-        if formatter.calendar != calendar {
-            formatter.calendar = calendar
-        }
-        return formatter.string(from: date)
-    }
-
-}
 
 struct CLViewController: View {
 
@@ -156,33 +89,7 @@ struct CLViewController: View {
 
 }
 
-class CLManager: ObservableObject {
 
-    @Published var calendar: Calendar = Calendar.current
-    @Published var minimumDate: Date = Date()
-    @Published var maximunDate: Date = Date()
-    @Published var selectedDates: [Date] = []
-    @Published var selectedDate: Date! = nil
-
-    init(calendar: Calendar, minmumDate: Date, maximumDate: Date, selectedDates: [Date] = []) {
-        self.calendar = calendar
-        self.minimumDate = minmumDate
-        self.maximunDate = maximumDate
-        self.selectedDates = selectedDates
-    }
-
-    func selectedDatesContains(date: Date) -> Bool {
-        if let _ = self.selectedDates.first(where: { calendar.isDate($0, inSameDayAs: date) }) {
-            return true
-        }
-        return false
-    }
-
-    func selectedDatesFindIndex(date: Date) -> Int? {
-        return self.selectedDates.firstIndex(where: { calendar.isDate($0, inSameDayAs: date) })
-    }
-
-}
 
 struct CLMonth: View {
 
@@ -212,13 +119,14 @@ struct CLMonth: View {
                                         isSelected: self.isSelectedDate(date: column)
                                     ))
                                         .onTapGesture { self.dateTapped(date: column) }
-                                        .padding(.top, 10)
+                                        .padding(.top, 7)
                                     Spacer()
                                 } else {
                                     Text("")
                                 }
                             }
                             .frame(width: self.cellWidth(), height: self.cellWidth() * 1.5)
+                            .cornerRadius(10)
                             .background(self.isSelectedDate(date: column) && self.isThisMonth(date: column) ? Color(UIColor.systemGray5) : Color.defaultColor(colorScheme: self.colorScheme))
                         }
                     }
@@ -327,14 +235,3 @@ struct CLMonth: View {
 
 }
 
-extension Color {
-
-    static func defaultColor(colorScheme: ColorScheme) -> Color {
-        if colorScheme == .dark {
-            return Color.black
-        } else {
-            return Color.white
-        }
-    }
-
-}
