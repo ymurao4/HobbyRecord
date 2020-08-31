@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0470133124FC83B500D5BA94 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133024FC83B500D5BA94 /* Color.swift */; };
+		0470133324FC83D800D5BA94 /* CLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133224FC83D800D5BA94 /* CLManager.swift */; };
+		0470133524FC843100D5BA94 /* CLDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133424FC843100D5BA94 /* CLDate.swift */; };
 		0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0D24F88C7400489C12 /* AppDelegate.swift */; };
 		0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0F24F88C7400489C12 /* SceneDelegate.swift */; };
 		0498FE1224F88C7400489C12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE1124F88C7400489C12 /* ContentView.swift */; };
@@ -69,6 +72,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0470133024FC83B500D5BA94 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0470133224FC83D800D5BA94 /* CLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLManager.swift; sourceTree = "<group>"; };
+		0470133424FC843100D5BA94 /* CLDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLDate.swift; sourceTree = "<group>"; };
 		0498FE0A24F88C7400489C12 /* HobbyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HobbyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0498FE0D24F88C7400489C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0498FE0F24F88C7400489C12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0470132F24FC83A500D5BA94 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				0470133024FC83B500D5BA94 /* Color.swift */,
+			);
+			name = Extentions;
+			sourceTree = "<group>";
+		};
 		0498FE0124F88C7300489C12 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +151,9 @@
 				0498FE0D24F88C7400489C12 /* AppDelegate.swift */,
 				0498FE0F24F88C7400489C12 /* SceneDelegate.swift */,
 				0498FE1124F88C7400489C12 /* ContentView.swift */,
+				0470133424FC843100D5BA94 /* CLDate.swift */,
+				0470133224FC83D800D5BA94 /* CLManager.swift */,
+				0470132F24FC83A500D5BA94 /* Extentions */,
 				0498FE1324F88C7400489C12 /* Assets.xcassets */,
 				0498FE1824F88C7400489C12 /* LaunchScreen.storyboard */,
 				0498FE1B24F88C7400489C12 /* Info.plist */,
@@ -320,9 +337,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0470133524FC843100D5BA94 /* CLDate.swift in Sources */,
 				0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */,
+				0470133124FC83B500D5BA94 /* Color.swift in Sources */,
 				0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */,
 				0498FE1224F88C7400489C12 /* ContentView.swift in Sources */,
+				0470133324FC83D800D5BA94 /* CLManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
