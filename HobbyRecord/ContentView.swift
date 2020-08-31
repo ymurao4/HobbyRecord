@@ -53,10 +53,11 @@ struct ContentView: View {
 
 struct CLCell: View {
     var clDate: CLDate
+    var color: Color
 
     var body: some View {
         Text(clDate.getText())
-            .foregroundColor(clDate.getColor())
+            .foregroundColor(color)
             .font(.system(size: 20))
     }
 }
@@ -117,7 +118,7 @@ struct CLMonth: View {
                                         clManager: self.clManager,
                                         isToday: self.isToday(date: column),
                                         isSelected: self.isSelectedDate(date: column)
-                                    ))
+                                    ), color: self.getColor(row, column))
                                         .onTapGesture { self.dateTapped(date: column) }
                                         .padding(.top, 7)
                                     Spacer()
@@ -138,6 +139,17 @@ struct CLMonth: View {
     private func cellWidth() -> CGFloat {
         let width = UIScreen.main.bounds.width
         return width / 7
+    }
+
+    private func getColor(_ row: [Date], _ column: Date) -> Color {
+        switch column {
+        case row.first:
+            return .red
+        case row.last:
+            return .blue
+        default:
+            return .primary
+        }
     }
 
     func isThisMonth(date: Date) -> Bool {

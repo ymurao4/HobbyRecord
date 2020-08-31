@@ -28,23 +28,6 @@ struct CLDate {
         return day
     }
 
-    func getColor() -> Color {
-        let color = Color(UIColor.label)
-
-        /*
-        if isSelected {
-            color = .red
-        } else if isToday {
-            color = .black
-        } else if date < Date() {
-            color = .blue
-        } else if date > Date() {
-            color = .yellow
-        }
-         */
-        return color
-    }
-
     func formatDate(date: Date, calendar: Calendar) -> String {
         let formatter = dateFormatter()
         return stringFrom(date: date, formatter: formatter, calendar: calendar)
