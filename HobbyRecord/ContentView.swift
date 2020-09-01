@@ -13,7 +13,7 @@ struct ContentView: View {
     // カレンダーの範囲
     var clManager = CLManager(
         calendar: Calendar.current,
-        minmumDate: Date().addingTimeInterval(-60*60*24*365*2),
+        minmumDate: Date(),
         maximumDate: Date().addingTimeInterval(60*60*24*365*2))
 
     private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
@@ -21,6 +21,7 @@ struct ContentView: View {
         calculateCellWidth()
     }
 
+    //現在地を初期画面に表示するのは、scrollViewReader待ち
     var body: some View {
         VStack {
             HStack(spacing: 0) {
@@ -125,8 +126,10 @@ struct CLMonth: View {
                                         isToday: self.isToday(date: column),
                                         isSelected: self.isSelectedDate(date: column)
                                     ), color: self.getColor(row, column))
-                                        .onTapGesture { self.dateTapped(date: column) }
                                         .padding(.top, 7)
+                                    Image("barbell")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                     Spacer()
                                 } else {
                                     Text("")
@@ -135,6 +138,7 @@ struct CLMonth: View {
                             .frame(width: self.cellWidth, height: self.cellWidth * 1.5)
                             .cornerRadius(10)
                             .background(self.isSelectedDate(date: column) && self.isThisMonth(date: column) ? Color(UIColor.systemGray5) : Color.defaultColor(colorScheme: self.colorScheme))
+                            .onTapGesture { self.dateTapped(date: column) }
                         }
                     }
                 }
@@ -147,6 +151,7 @@ struct CLMonth: View {
         return width / 7
     }
 
+    // sunday -> red, saturday -> blue, the others -> .primary
     private func getColor(_ row: [Date], _ column: Date) -> Color {
         switch column {
         case row.first:
