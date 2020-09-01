@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E790324FE0CAB008F910F /* HobbyViewModel.swift */; };
+		040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E790624FE1E67008F910F /* HobbyCellViewModel.swift */; };
 		0470133124FC83B500D5BA94 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133024FC83B500D5BA94 /* Color.swift */; };
 		0470133324FC83D800D5BA94 /* CLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133224FC83D800D5BA94 /* CLManager.swift */; };
 		0470133524FC843100D5BA94 /* CLDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133424FC843100D5BA94 /* CLDate.swift */; };
@@ -73,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		040E790324FE0CAB008F910F /* HobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewModel.swift; sourceTree = "<group>"; };
+		040E790624FE1E67008F910F /* HobbyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCellViewModel.swift; sourceTree = "<group>"; };
 		0470133024FC83B500D5BA94 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0470133224FC83D800D5BA94 /* CLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLManager.swift; sourceTree = "<group>"; };
 		0470133424FC843100D5BA94 /* CLDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLDate.swift; sourceTree = "<group>"; };
@@ -119,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040E790524FE0CAE008F910F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				040E790324FE0CAB008F910F /* HobbyViewModel.swift */,
+				040E790624FE1E67008F910F /* HobbyCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		0470132F24FC83A500D5BA94 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +192,7 @@
 				0498FE0F24F88C7400489C12 /* SceneDelegate.swift */,
 				048BE2E624FDE6FE005159F5 /* Models */,
 				048BE2E524FDE6F7005159F5 /* Views */,
+				040E790524FE0CAE008F910F /* ViewModels */,
 				048BE2E224FDE6DA005159F5 /* Calendars */,
 				0470132F24FC83A500D5BA94 /* Extentions */,
 				0498FE1324F88C7400489C12 /* Assets.xcassets */,
@@ -371,6 +385,8 @@
 				0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */,
 				0498FE1224F88C7400489C12 /* ContentView.swift in Sources */,
 				0470133324FC83D800D5BA94 /* CLManager.swift in Sources */,
+				040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */,
+				040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

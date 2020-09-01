@@ -6,4 +6,19 @@
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
-import Foundation
+import Combine
+
+class HobbyViewModel :ObservableObject {
+
+    @Published var hobbyCellViewModels = [HobbyCellViewModel]()
+
+    private var cancellables = Set<AnyCancellable>()
+
+    init() {
+        self.hobbyCellViewModels = testDatas.map { hobby in
+            HobbyCellViewModel(hobby: hobby)
+        }
+    }
+
+
+}

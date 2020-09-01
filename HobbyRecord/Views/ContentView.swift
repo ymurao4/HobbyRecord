@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
 
+    @ObservedObject var hobbyVM = HobbyViewModel()
+
     // カレンダーの範囲
     var clManager = CLManager(
         calendar: Calendar.current,
