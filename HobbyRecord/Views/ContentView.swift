@@ -21,7 +21,7 @@ struct ContentView: View {
         calculateCellWidth()
     }
 
-    //現在地を初期画面に表示するのは、scrollViewReader待ち
+    //今日を初期画面に表示するのは、scrollViewReader待ち
     var body: some View {
         VStack {
             HStack(spacing: 0) {
@@ -62,7 +62,8 @@ struct CLCell: View {
     var body: some View {
         Text(clDate.getText())
             .foregroundColor(color)
-            .font(.system(size: 20))
+            .font(.system(size: 18))
+            .minimumScaleFactor(0.9)
     }
 }
 
@@ -118,7 +119,7 @@ struct CLMonth: View {
                 ForEach(monthsArray, id: \.self) { row in
                     HStack(spacing: 0) {
                         ForEach(row, id: \.self) { column in
-                            VStack {
+                            VStack(alignment: .center, spacing: 7 ) {
                                 if self.isThisMonth(date: column) {
                                     CLCell(clDate: CLDate(
                                         date: column,
@@ -126,7 +127,7 @@ struct CLMonth: View {
                                         isToday: self.isToday(date: column),
                                         isSelected: self.isSelectedDate(date: column)
                                     ), color: self.getColor(row, column))
-                                        .padding(.top, 7)
+                                        .padding(.top, 5)
                                     Image("barbell")
                                         .resizable()
                                         .frame(width: 20, height: 20)

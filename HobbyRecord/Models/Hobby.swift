@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Hobby: Identifiable {
+    var id: String = UUID().uuidString
+    var date: Date
+    
+}
