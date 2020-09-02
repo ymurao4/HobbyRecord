@@ -131,8 +131,10 @@ struct CLMonth: View {
                                     ), color: self.getColor(row, column))
                                         .padding(.top, 5)
                                     Image("barbell")
+                                        .renderingMode(.template)
                                         .resizable()
                                         .frame(width: 20, height: 20)
+                                        .foregroundColor(Color.primary)
                                     Spacer()
                                 } else {
                                     Text("")
