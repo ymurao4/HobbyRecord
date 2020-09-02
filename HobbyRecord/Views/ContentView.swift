@@ -10,8 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @ObservedObject var hobbyVM = HobbyViewModel()
-
     // カレンダーの範囲
     var clManager = CLManager(
         calendar: Calendar.current,
@@ -58,14 +56,52 @@ struct ContentView: View {
 
 
 struct CLCell: View {
+
+    @ObservedObject var hobbyVM = HobbyViewModel()
+
     var clDate: CLDate
     var color: Color
 
+    @State private var isImage: Bool = false
+    @State private var imageName: String = ""
+
     var body: some View {
-        Text(clDate.getText())
-            .foregroundColor(color)
-            .font(.system(size: 18))
-            .minimumScaleFactor(0.9)
+        VStack {
+            Text(clDate.getText())
+                .foregroundColor(color)
+                .font(.system(size: 18))
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+            if isImage {
+                Image(imageName)
+                    .renderingMode(.template)
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(Color.primary)
+            }
+            Spacer()
+        }
+        .padding(.top, 5)
+        .onAppear {
+            self.showImage()
+        }
+    }
+
+    private func showImage() {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .none
+        formatter.locale = .current
+        formatter.dateFormat = "M-d-yyyy"
+
+        for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
+            let date = hobbyCellVM.hobby.date
+            let imageName = hobbyCellVM.hobby.title
+            if formatter.date(from: date) == clDate.date {
+                self.isImage = true
+                self.imageName = imageName
+            }
+        }
     }
 }
 
@@ -129,11 +165,6 @@ struct CLMonth: View {
                                         isToday: self.isToday(date: column),
                                         isSelected: self.isSelectedDate(date: column)
                                     ), color: self.getColor(row, column))
-                                        .padding(.top, 5)
-                                    Image("barbell")
-                                        .resizable()
-                                        .frame(width: 20, height: 20)
-                                    Spacer()
                                 } else {
                                     Text("")
                                 }
