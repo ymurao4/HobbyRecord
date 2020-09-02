@@ -70,9 +70,10 @@ struct CLCell: View {
             Text(clDate.getText())
                 .foregroundColor(color)
                 .font(.system(size: 18))
-                .minimumScaleFactor(0.9)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
             if isImage {
-                Image("barbell")
+                Image(imageName)
                     .renderingMode(.template)
                     .resizable()
                     .frame(width: 20, height: 20)
@@ -95,10 +96,10 @@ struct CLCell: View {
 
         for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
             let date = hobbyCellVM.hobby.date
+            let imageName = hobbyCellVM.hobby.title
             if formatter.date(from: date) == clDate.date {
                 self.isImage = true
-            } else {
-                
+                self.imageName = imageName
             }
         }
     }
