@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,6 +34,7 @@
 		04C607472500BFC800479749 /* CLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C607462500BFC800479749 /* CLCell.swift */; };
 		04C6074B2500C00B00479749 /* ClViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074A2500C00B00479749 /* ClViewController.swift */; };
 		04C6074D2500C02700479749 /* CLMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074C2500C02700479749 /* CLMonth.swift */; };
+		04CCFFAB2500D25200E2781B /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 04CCFFAA2500D25200E2781B /* QGrid */; };
 		28F53B79F1DC60FADD8275D9 /* Pods_HobbyRecord_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9593D2B4CF10B65DB59130E2 /* Pods_HobbyRecord_WatchKit_Extension.framework */; };
 		C4AB58F9670779A94B762988 /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D1F08BE333D70F519D5B63 /* Pods_HobbyRecord.framework */; };
 		EBB2F234A40DBF165D0A0737 /* Pods_HobbyRecord_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD5A0B1F0CD55FD9B37FF65 /* Pods_HobbyRecord_WatchKit_App.framework */; };
@@ -130,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CCFFAB2500D25200E2781B /* QGrid in Frameworks */,
 				C4AB58F9670779A94B762988 /* Pods_HobbyRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +293,6 @@
 				E4590BE69D86128A658DCAF1 /* Pods-HobbyRecord WatchKit Extension.debug.xcconfig */,
 				BBF068820EDB2B2F277D64C0 /* Pods-HobbyRecord WatchKit Extension.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -325,6 +326,9 @@
 				0498FE2124F88C7400489C12 /* PBXTargetDependency */,
 			);
 			name = HobbyRecord;
+			packageProductDependencies = (
+				04CCFFAA2500D25200E2781B /* QGrid */,
+			);
 			productName = HobbyRecord;
 			productReference = 0498FE0A24F88C7400489C12 /* HobbyRecord.app */;
 			productType = "com.apple.product-type.application";
@@ -396,6 +400,9 @@
 				Base,
 			);
 			mainGroup = 0498FE0124F88C7300489C12;
+			packageReferences = (
+				04CCFFA92500D25200E2781B /* XCRemoteSwiftPackageReference "QGrid" */,
+			);
 			productRefGroup = 0498FE0B24F88C7400489C12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -878,6 +885,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04CCFFA92500D25200E2781B /* XCRemoteSwiftPackageReference "QGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Q-Mobile/QGrid";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04CCFFAA2500D25200E2781B /* QGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04CCFFA92500D25200E2781B /* XCRemoteSwiftPackageReference "QGrid" */;
+			productName = QGrid;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0498FE0224F88C7300489C12 /* Project object */;
 }

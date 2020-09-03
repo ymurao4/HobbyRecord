@@ -7,12 +7,16 @@
 //
 
 import SwiftUI
+import WaterfallGrid
+import QGrid
 
 struct AddHobbyView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @State var title: String = ""
     @State var contents: String = ""
+
+    private let iconNames: [String] = ["badminton", "barbell", "baseball", "basketball", "bicycle", "bike", "canvas", "football", "game", "hiking", "jogging", "karaoke", "listening", "photo", "piano", "rugbyball", "swimmer", "tramp", "volleyball", "walking", "yoga"]
 
     var body: some View {
         NavigationView {
@@ -25,15 +29,21 @@ struct AddHobbyView: View {
                             .padding(5)
                     }
                     Section(header: Text("Icon")) {
-                        Button(action: {
+                        WaterfallGrid(0..<self.iconNames.count, id: \.self) { index in
+                            Button(action: {
 
-                        }) {
-                            Image("swimmer")
-                                .renderingMode(.template)
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                                .foregroundColor(Color.primary.opacity(0.9))
+                            }) {
+                                Image(self.iconNames[index])
+                                    .renderingMode(.template)
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.primary.opacity(0.9))
+                            }
                         }
+                        .gridStyle(columns: 6, spacing: 15)
+                        .scrollOptions(direction: .vertical, showsIndicators: false)
+                        .frame(width: UIScreen.main.bounds.width, height: 300)
+                        .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
                     }
                 }
                 Button(action: {
