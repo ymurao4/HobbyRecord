@@ -1,0 +1,20 @@
+PODS:
+  - IQKeyboardManagerSwift (6.5.6)
+  - WaterfallGrid (0.4.0)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - WaterfallGrid
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - WaterfallGrid
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  WaterfallGrid: 568881d69470c0ffe635732dfafd859db1365989
+
+PODFILE CHECKSUM: 92c0867a922319f3cd9d20aa17d7a0b0045a04e6
+
+COCOAPODS: 1.9.3
