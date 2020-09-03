@@ -36,22 +36,17 @@ struct AddHobbyView: View {
                         }
                     }
                 }
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "checkmark")
+                        Text("Add")
+                    }
+                    .padding(.top, 5)
+                }
             }
             .navigationBarTitle(Text("Add Hobby Record"), displayMode: .inline)
-            .navigationBarItems(
-                leading:
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Cancel")
-                },
-                trailing:
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Done")
-                }
-            )
         }
     }
 

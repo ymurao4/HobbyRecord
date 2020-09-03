@@ -7,6 +7,7 @@ target 'HobbyRecord' do
 
   # Pods for HobbyRecord
   pod 'IQKeyboardManagerSwift'
+  pod 'WaterfallGrid'
 end
 
 target 'HobbyRecord WatchKit App' do
