@@ -65,7 +65,7 @@ struct CustomNavbar: View {
         case "sat":
             return Color.blue
         default:
-            return Color.primary
+            return Color.primary.opacity(0.9)
         }
     }
 }
@@ -92,7 +92,7 @@ struct CLCell: View {
                     .renderingMode(.template)
                     .resizable()
                     .frame(width: 20, height: 20)
-                    .foregroundColor(Color.primary)
+                    .foregroundColor(Color.primary.opacity(0.9))
             }
             Spacer()
         }
@@ -169,6 +169,7 @@ struct CLMonth: View {
         VStack(alignment: .center, spacing: 10) {
             Text(getMonthHeader())
                 .padding(.top, 5)
+                .foregroundColor(Color.primary.opacity(0.9))
             VStack(spacing: 0) {
                 ForEach(monthsArray, id: \.self) { row in
                     HStack(spacing: 0) {
@@ -205,11 +206,11 @@ struct CLMonth: View {
     private func getColor(_ row: [Date], _ column: Date) -> Color {
         switch column {
         case row.first:
-            return .red
+            return Color.red
         case row.last:
-            return .blue
+            return Color.blue
         default:
-            return .primary
+            return Color.primary.opacity(0.9)
         }
     }
 
