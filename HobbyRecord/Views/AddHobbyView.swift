@@ -25,7 +25,15 @@ struct AddHobbyView: View {
                             .padding(5)
                     }
                     Section(header: Text("Icon")) {
-                        Image("swimmer")
+                        Button(action: {
+
+                        }) {
+                            Image("swimmer")
+                                .renderingMode(.template)
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(Color.primary.opacity(0.9))
+                        }
                     }
                 }
             }
@@ -39,7 +47,7 @@ struct AddHobbyView: View {
                 },
                 trailing:
                 Button(action: {
-                    print("done")
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Done")
                 }
