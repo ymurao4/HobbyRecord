@@ -16,14 +16,34 @@ struct ContentView: View {
         minmumDate: Date(),
         maximumDate: Date().addingTimeInterval(60*60*24*365*2))
 
-    private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
     private var cellWidth: CGFloat {
         calculateCellWidth()
     }
 
     //今日を初期画面に表示するのは、scrollViewReader待ち
     var body: some View {
+        VStack(spacing: 0) {
+            CustomNavbar(cellWidth: cellWidth)
+            CLViewController(clManager: self.clManager)
+        }
+        .edgesIgnoringSafeArea(.top)
+    }
+
+    private func calculateCellWidth() -> CGFloat {
+        let width = UIScreen.main.bounds.width
+        return width / 7
+    }
+
+}
+
+struct CustomNavbar: View {
+
+    private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+    var cellWidth: CGFloat
+
+    var body: some View {
         VStack {
+            Spacer()
             HStack(spacing: 0) {
                 ForEach(dayOfTheWeek, id: \.self) { row in
                     Text(row.uppercased())
@@ -32,13 +52,10 @@ struct ContentView: View {
                         .frame(width: self.cellWidth, height: 20)
                 }
             }
-            CLViewController(clManager: self.clManager)
+            .padding(.bottom, 10)
         }
-    }
-
-    private func calculateCellWidth() -> CGFloat {
-        let width = UIScreen.main.bounds.width
-        return width / 7
+        .frame(width: UIScreen.main.bounds.width, height: 100)
+        .background(Color(UIColor.systemGray6).opacity(0.9))
     }
 
     private func dayOfTheWeekColor(row: String) -> Color {
@@ -51,9 +68,7 @@ struct ContentView: View {
             return Color.primary
         }
     }
-
 }
-
 
 struct CLCell: View {
 
@@ -153,6 +168,7 @@ struct CLMonth: View {
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             Text(getMonthHeader())
+                .padding(.top, 5)
             VStack(spacing: 0) {
                 ForEach(monthsArray, id: \.self) { row in
                     HStack(spacing: 0) {
