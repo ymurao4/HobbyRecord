@@ -13,41 +13,37 @@ import QGrid
 struct AddHobbyView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var hobbyVM = HobbyViewModel()
     @State var title: String = ""
-    @State var contents: String = ""
+    @State var detail: String = ""
+    @State var icon: String?
+    @State var date: Date = Date()
 
-    private let iconNames: [String] = ["badminton", "barbell", "baseball", "basketball", "bicycle", "bike", "canvas", "football", "game", "hiking", "jogging", "karaoke", "listening", "photo", "piano", "rugbyball", "swimmer", "tramp", "volleyball", "walking", "yoga"]
 
     var body: some View {
         NavigationView {
             VStack {
                 Form {
-                    Section(header: Text("Title")) {
+                    Section(header: Text("What?")) {
                         TextField("Title", text: $title)
                             .padding(5)
-                        TextField("Contents", text: $contents)
+                        TextField("Detail", text: $detail)
                             .padding(5)
                     }
-                    Section(header: Text("Icon")) {
-                        WaterfallGrid(0..<self.iconNames.count, id: \.self) { index in
-                            Button(action: {
-
-                            }) {
-                                Image(self.iconNames[index])
-                                    .renderingMode(.template)
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(Color.primary.opacity(0.9))
-                            }
+                    Section(header: Text("When?")) {
+                        // ios14のDatepickerに変更予定
+                        DatePicker(selection: $date, displayedComponents: .date) {
+                            Text("Select Date")
                         }
-                        .gridStyle(columns: 6, spacing: 15)
-                        .scrollOptions(direction: .vertical, showsIndicators: false)
-                        .frame(width: UIScreen.main.bounds.width, height: 300)
-                        .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+                    }
+                    Section(header: Text("Icon")) {
+                        IconSetting(icon: $icon, kind: K.sports)
+                        IconSetting(icon: $icon, kind: K.music)
+                        IconSetting(icon: $icon, kind: K.others)
                     }
                 }
                 Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
+                    self.addRecord()
                 }) {
                     HStack {
                         Image(systemName: "checkmark")
@@ -57,7 +53,26 @@ struct AddHobbyView: View {
                 }
             }
             .navigationBarTitle(Text("Add Hobby Record"), displayMode: .inline)
+            .navigationBarItems(leading:
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Cancel")
+                }
+            )
         }
+    }
+
+    private func addRecord() {
+
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.locale = .current
+        formatter.dateFormat = "M-d-yyyy"
+
+        self.presentationMode.wrappedValue.dismiss()
+        self.hobbyVM.addRecord(hobby: Hobby(date: formatter.string(from: self.date), title: self.title, detail: self.detail, icon: self.icon))
     }
 
 }
@@ -66,4 +81,40 @@ struct AddHobbyView_Previews: PreviewProvider {
     static var previews: some View {
         AddHobbyView()
     }
+}
+
+struct IconSetting: View {
+
+    @Binding var icon: String?
+    var kind: [String]
+
+    var cellHeight: CGFloat {
+        calCellHeight()
+    }
+
+
+    var body: some View {
+        WaterfallGrid(0..<kind.count, id: \.self) { index in
+            Button(action: {
+                self.icon = self.kind[index]
+            }) {
+                Image(self.kind[index])
+                    .renderingMode(.template)
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(Color.primary.opacity(0.9))
+            }
+        }
+        .gridStyle(columns: 6, spacing: 15)
+        .scrollOptions(direction: .vertical, showsIndicators: false)
+        .frame(width: UIScreen.main.bounds.width, height: cellHeight)
+        .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+    }
+
+    private func calCellHeight() -> CGFloat {
+        let count = self.kind.count
+        let row = count / 6 + 1
+        return CGFloat(row * 45)
+    }
+
 }

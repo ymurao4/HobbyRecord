@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
 
     @State private var isAddHobbyView: Bool = false
+    @State private var isDetailView: Bool = false
 
     // カレンダーの範囲
     var clManager = CLManager(
@@ -24,12 +25,17 @@ struct ContentView: View {
 
     //今日を初期画面に表示するのは、scrollViewReader待ち
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            VStack(spacing: 0) {
-                CustomNavbar(cellWidth: cellWidth)
-                CLViewController(clManager: self.clManager)
+        ZStack(alignment: .bottom) {
+            ZStack(alignment: .bottomTrailing) {
+                VStack(spacing: 0) {
+                    CustomNavbar(isDetailView: self.$isDetailView, cellWidth: cellWidth)
+                    CLViewController(clManager: self.clManager, isDetailView: self.$isDetailView)
+                }
+                AddButton()
             }
-            AddButton()
+            if isDetailView {
+                DetailView(date: self.clManager.selectedDate)
+            }
         }
         .edgesIgnoringSafeArea(.top)
     }
@@ -51,7 +57,7 @@ struct ContentView: View {
                 .background(Color.orange)
                 .clipShape(Circle())
         }
-        .padding()
+        .padding(.horizontal)
         .sheet(isPresented: $isAddHobbyView) { AddHobbyView() }
     }
 
@@ -59,6 +65,7 @@ struct ContentView: View {
 
 struct CustomNavbar: View {
 
+    @Binding var isDetailView: Bool
     private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
     var cellWidth: CGFloat
 
@@ -78,6 +85,9 @@ struct CustomNavbar: View {
         }
         .frame(width: UIScreen.main.bounds.width, height: 88)
         .background(Color(UIColor.systemGray6).opacity(0.9))
+        .onTapGesture {
+            self.isDetailView = false
+        }
     }
 
     private func dayOfTheWeekColor(row: String) -> Color {
@@ -91,3 +101,5 @@ struct CustomNavbar: View {
         }
     }
 }
+
+

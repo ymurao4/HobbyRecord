@@ -12,6 +12,7 @@ struct CLMonth: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @ObservedObject var clManager: CLManager
+    @Binding var isDetailView: Bool
 
     let monthOffset: Int
     let calendarUnitYMD = Set<Calendar.Component>([.year, .month, .day])
@@ -52,6 +53,8 @@ struct CLMonth: View {
                     }
                 }
             }
+        }.onTapGesture {
+            self.isDetailView = false
         }
     }
 
@@ -78,6 +81,7 @@ struct CLMonth: View {
 
     private func dateTapped(date: Date) {
         self.clManager.selectedDate = date
+        self.isDetailView.toggle()
     }
 
     // 日付が1日分ずれているが、これにより直る
