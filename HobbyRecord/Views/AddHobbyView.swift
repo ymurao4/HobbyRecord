@@ -15,6 +15,7 @@ struct AddHobbyView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var title: String = ""
     @State var contents: String = ""
+    @State var date: Date = Date()
 
     private let iconNames: [String] = ["badminton", "barbell", "baseball", "basketball", "bicycle", "bike", "canvas", "football", "game", "hiking", "jogging", "karaoke", "listening", "photo", "piano", "rugbyball", "swimmer", "tramp", "volleyball", "walking", "yoga"]
 
@@ -27,6 +28,11 @@ struct AddHobbyView: View {
                             .padding(5)
                         TextField("Contents", text: $contents)
                             .padding(5)
+                    }
+                    Section(header: Text("Date")) {
+                        DatePicker(selection: $date, displayedComponents: .date) {
+                            Text("Select Date")
+                        }
                     }
                     Section(header: Text("Icon")) {
                         WaterfallGrid(0..<self.iconNames.count, id: \.self) { index in
@@ -57,6 +63,13 @@ struct AddHobbyView: View {
                 }
             }
             .navigationBarTitle(Text("Add Hobby Record"), displayMode: .inline)
+            .navigationBarItems(leading:
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Cancel")
+                }
+            )
         }
     }
 
