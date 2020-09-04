@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
 
+    @Environment(\.colorScheme) var colorScheme
     @State private var isAddHobbyView: Bool = false
     @State private var isDetailView: Bool = false
 
