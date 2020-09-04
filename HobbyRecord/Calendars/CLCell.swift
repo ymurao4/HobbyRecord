@@ -16,7 +16,7 @@ struct CLCell: View {
     var color: Color
 
     @State private var isImage: Bool = false
-    @State private var imageName: String = ""
+    @State private var imageName: String?
 
     var body: some View {
         VStack {
@@ -26,7 +26,7 @@ struct CLCell: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
             if isImage {
-                Image(imageName)
+                Image(imageName!)
                     .renderingMode(.template)
                     .resizable()
                     .frame(width: 20, height: 20)
@@ -42,17 +42,19 @@ struct CLCell: View {
 
     private func showImage() {
         let formatter = DateFormatter()
-        formatter.timeStyle = .medium
-        formatter.dateStyle = .none
+        formatter.timeStyle = .none
+        formatter.dateStyle = .medium
         formatter.locale = .current
         formatter.dateFormat = "M-d-yyyy"
 
         for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
             let date = hobbyCellVM.hobby.date
-            let imageName = hobbyCellVM.hobby.title
+            let imageName = hobbyCellVM.hobby.icon
             if formatter.date(from: date) == clDate.date {
-                self.isImage = true
-                self.imageName = imageName
+                if let imageName = imageName {
+                    self.isImage = true
+                    self.imageName = imageName
+                }
             }
         }
     }

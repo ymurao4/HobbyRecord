@@ -51,7 +51,7 @@ struct ContentView: View {
                 .background(Color.orange)
                 .clipShape(Circle())
         }
-        .padding()
+        .padding(.horizontal)
         .sheet(isPresented: $isAddHobbyView) { AddHobbyView() }
     }
 
