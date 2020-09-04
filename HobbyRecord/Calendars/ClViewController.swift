@@ -11,12 +11,13 @@ import SwiftUI
 struct CLViewController: View {
 
     @ObservedObject var clManager: CLManager
+    @Binding var isDetailView: Bool
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 ForEach(0..<numberOfMonth()) { index in
-                    CLMonth(clManager: self.clManager, monthOffset: index)
+                    CLMonth(clManager: self.clManager, isDetailView: self.$isDetailView, monthOffset: index)
                 }
             }
         }

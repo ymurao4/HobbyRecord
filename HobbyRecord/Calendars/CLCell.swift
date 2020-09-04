@@ -26,11 +26,16 @@ struct CLCell: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
             if isImage {
-                Image(imageName!)
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(Color.primary.opacity(0.9))
+                if imageName != nil {
+                    Image(imageName!)
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color.primary.opacity(0.9))
+                } else {
+                    Image(systemName: "questionmark.circle")
+                        .foregroundColor(Color.primary.opacity(0.9))
+                }
             }
             Spacer()
         }
@@ -49,10 +54,9 @@ struct CLCell: View {
 
         for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
             let date = hobbyCellVM.hobby.date
-            let imageName = hobbyCellVM.hobby.icon
             if formatter.date(from: date) == clDate.date {
-                if let imageName = imageName {
-                    self.isImage = true
+                self.isImage = true
+                if let imageName = hobbyCellVM.hobby.icon {
                     self.imageName = imageName
                 }
             }
