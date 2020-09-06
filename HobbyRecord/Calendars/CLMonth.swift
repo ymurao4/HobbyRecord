@@ -58,6 +58,7 @@ struct CLMonth: View {
         }
     }
 
+
     private func calculateCellWidth() -> CGFloat {
         let width = UIScreen.main.bounds.width
         return width / 7

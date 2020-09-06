@@ -21,6 +21,9 @@ struct DetailView: View {
             .background(Color.defaultColor(colorScheme: colorScheme))
             .cornerRadius(15)
             .shadow(color: Color.init(red: 0.4, green: 0.4, blue: 0.4), radius: 100, x: 0, y: 0)
+            .onDisappear {
+                self.clManager.selectedDate = nil
+            }
     }
 
 }
