@@ -12,7 +12,7 @@ struct CLMonth: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @ObservedObject var clManager: CLManager
-    @ObservedObject var hobbyVM = HobbyViewModel()
+    @ObservedObject var hobbyVM: HobbyViewModel
     @Binding var isDetailView: Bool
 
     let monthOffset: Int

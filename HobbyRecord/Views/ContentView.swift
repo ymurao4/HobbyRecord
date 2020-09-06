@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
 
     @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var hobbyVM = HobbyViewModel()
     @State private var isAddHobbyView: Bool = false
     @State private var isDetailView: Bool = false
 
@@ -30,12 +31,12 @@ struct ContentView: View {
             ZStack(alignment: .bottomTrailing) {
                 VStack(spacing: 0) {
                     CustomNavbar(isDetailView: self.$isDetailView, cellWidth: cellWidth)
-                    CLViewController(clManager: self.clManager, isDetailView: self.$isDetailView)
+                    CLViewController(clManager: self.clManager, hobbyVM: self.hobbyVM, isDetailView: self.$isDetailView)
                 }
                 AddButton()
             }
             if isDetailView {
-                DetailView(date: self.clManager.selectedDate, clManager: self.clManager)
+                DetailView(clManager: self.clManager, hobbyVM: self.hobbyVM)
             }
         }
         .edgesIgnoringSafeArea(.top)
