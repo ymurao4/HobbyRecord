@@ -84,14 +84,6 @@ struct CLMonth: View {
         self.isDetailView.toggle()
     }
 
-    // 日付が1日分ずれているが、これにより直る
-    private func getTextFromDate(date: Date!) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = .current
-        formatter.dateFormat = "M-d-yyyy"
-        return date == nil ? "" : formatter.string(from: date)
-    }
-
     private func monthArray() -> [[Date]] {
         var rowArray: [[Date]] = [[]]
         for row in 0 ..< (numberOfDays(offset: monthOffset) / 7) {

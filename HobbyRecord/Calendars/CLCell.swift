@@ -46,15 +46,10 @@ struct CLCell: View {
     }
 
     private func showImage() {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .none
-        formatter.dateStyle = .medium
-        formatter.locale = .current
-        formatter.dateFormat = "M-d-yyyy"
 
         for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
             let date = hobbyCellVM.hobby.date
-            if formatter.date(from: date) == clDate.date {
+            if D.formatter().date(from: date) == clDate.date {
                 self.isImage = true
                 if let imageName = hobbyCellVM.hobby.icon {
                     self.imageName = imageName

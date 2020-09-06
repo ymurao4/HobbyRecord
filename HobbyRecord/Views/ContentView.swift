@@ -35,7 +35,7 @@ struct ContentView: View {
                 AddButton()
             }
             if isDetailView {
-                DetailView(date: self.clManager.selectedDate)
+                DetailView(date: self.clManager.selectedDate, clManager: self.clManager)
             }
         }
         .edgesIgnoringSafeArea(.top)

@@ -11,11 +11,11 @@ import SwiftUI
 struct DetailView: View {
 
     @Environment(\.colorScheme) var colorScheme
-    
     var date: Date
+    var clManager: CLManager
 
     var body: some View {
-        Text("Hello world!")
+        Text(D.getTextFromDate(date: clManager.selectedDate))
             .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height - 140)
             .clipped()
             .background(Color.defaultColor(colorScheme: colorScheme))
@@ -23,10 +23,4 @@ struct DetailView: View {
             .shadow(color: Color.init(red: 0.4, green: 0.4, blue: 0.4), radius: 100, x: 0, y: 0)
     }
 
-}
-
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView(date: Date())
-    }
 }
