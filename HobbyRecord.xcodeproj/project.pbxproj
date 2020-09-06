@@ -32,7 +32,6 @@
 		0498FE4024F88C7500489C12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE3F24F88C7500489C12 /* Preview Assets.xcassets */; };
 		04A713092501C9B500339779 /* KindOfIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A713082501C9B500339779 /* KindOfIcon.swift */; };
 		04A7130B25020B3A00339779 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7130A25020B3A00339779 /* DetailView.swift */; };
-		04BD31432504682C00AA3745 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD31422504682C00AA3745 /* PageViewController.swift */; };
 		04BD314525046B9C00AA3745 /* D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD314425046B9C00AA3745 /* D.swift */; };
 		04C607432500AF7800479749 /* AddHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C607422500AF7800479749 /* AddHobbyView.swift */; };
 		04C607472500BFC800479749 /* CLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C607462500BFC800479749 /* CLCell.swift */; };
@@ -117,7 +116,6 @@
 		0498FE4224F88C7500489C12 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		04A713082501C9B500339779 /* KindOfIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindOfIcon.swift; sourceTree = "<group>"; };
 		04A7130A25020B3A00339779 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		04BD31422504682C00AA3745 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		04BD314425046B9C00AA3745 /* D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D.swift; sourceTree = "<group>"; };
 		04C607422500AF7800479749 /* AddHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHobbyView.swift; sourceTree = "<group>"; };
 		04C607462500BFC800479749 /* CLCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLCell.swift; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 				0498FE1124F88C7400489C12 /* ContentView.swift */,
 				04A7130A25020B3A00339779 /* DetailView.swift */,
 				04C607422500AF7800479749 /* AddHobbyView.swift */,
-				04BD31422504682C00AA3745 /* PageViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -564,7 +561,6 @@
 				040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */,
 				04A7130B25020B3A00339779 /* DetailView.swift in Sources */,
 				040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */,
-				04BD31432504682C00AA3745 /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -66,7 +66,7 @@ struct AddHobbyView: View {
     private func addRecord() {
 
         self.presentationMode.wrappedValue.dismiss()
-        self.hobbyVM.addRecord(hobby: Hobby(date: D.formatter().string(from: self.date), title: self.title, detail: self.detail, icon: self.icon))
+//        self.hobbyVM.addRecord(hobby: Hobby(date: D.formatter().string(from: self.date), title: self.title, detail: self.detail, icon: self.icon))
     }
 
 }
