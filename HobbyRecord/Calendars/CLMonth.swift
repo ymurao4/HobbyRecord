@@ -12,6 +12,7 @@ struct CLMonth: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @ObservedObject var clManager: CLManager
+    @ObservedObject var hobbyVM = HobbyViewModel()
     @Binding var isDetailView: Bool
 
     let monthOffset: Int
@@ -36,6 +37,7 @@ struct CLMonth: View {
                             VStack(alignment: .center, spacing: 7 ) {
                                 if self.isThisMonth(date: column) {
                                     CLCell(clDate: CLDate(
+                                        hobbyVM: self.hobbyVM,
                                         date: column,
                                         clManager: self.clManager,
                                         isToday: self.isToday(date: column),
