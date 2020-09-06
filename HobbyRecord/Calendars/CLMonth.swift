@@ -55,8 +55,6 @@ struct CLMonth: View {
                     }
                 }
             }
-        }.onTapGesture {
-            self.isDetailView = false
         }
     }
 
@@ -83,7 +81,9 @@ struct CLMonth: View {
 
     private func dateTapped(date: Date) {
         self.clManager.selectedDate = date
-        self.isDetailView.toggle()
+        withAnimation {
+            self.isDetailView.toggle()
+        }
     }
 
     private func monthArray() -> [[Date]] {

@@ -46,7 +46,6 @@ struct ContentView: View {
         return width / 7
     }
 
-    // 戻り値はButtonではない
     private func AddButton() -> some View {
         Button(action: {
             self.isAddHobbyView.toggle()
@@ -87,7 +86,9 @@ struct CustomNavbar: View {
         .frame(width: UIScreen.main.bounds.width, height: 88)
         .background(Color(UIColor.systemGray6).opacity(0.9))
         .onTapGesture {
-            self.isDetailView = false
+            withAnimation {
+                self.isDetailView = false
+            }
         }
     }
 
