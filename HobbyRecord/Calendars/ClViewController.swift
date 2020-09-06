@@ -18,6 +18,7 @@ struct CLViewController: View {
             VStack {
                 ForEach(0..<numberOfMonth()) { index in
                     CLMonth(clManager: self.clManager, isDetailView: self.$isDetailView, monthOffset: index)
+                        .allowsHitTesting(self.isDetailView ? false : true)
                 }
             }
         }
