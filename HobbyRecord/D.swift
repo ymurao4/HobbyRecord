@@ -15,7 +15,7 @@ struct D {
         formatter.timeStyle = .none
         formatter.dateStyle = .medium
         formatter.locale = .current
-        formatter.dateFormat = "M-d-yyyy"
+        formatter.dateFormat = "M/d/yyyy"
         return formatter
     }
 

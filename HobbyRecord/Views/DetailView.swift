@@ -24,6 +24,8 @@ struct DetailView: View {
     var body: some View {
         VStack {
             Text(D.getTextFromDate(date: self.clManager.selectedDate))
+                .font(.system(size: 40))
+                .padding(.top, 10)
             if self.detailVM.imageName != "" {
                 Image(self.detailVM.imageName)
                     .renderingMode(.template)
@@ -31,6 +33,7 @@ struct DetailView: View {
                     .frame(width: 20, height: 20)
                     .foregroundColor(Color.primary.opacity(0.9))
             }
+            Spacer()
     }
         .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height - 140)
         .clipped()
