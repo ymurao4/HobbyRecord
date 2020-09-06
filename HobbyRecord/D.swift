@@ -10,14 +10,7 @@ import Foundation
 
 struct D {
 
-    static func getTextFromDate(date: Date!) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = .current
-        formatter.dateFormat = "M-d-yyyy"
-        return date == nil ? "" : formatter.string(from: date)
-    }
-
-    static func formatter() -> DateFormatter {
+    static var formatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.timeStyle = .none
         formatter.dateStyle = .medium
@@ -25,5 +18,10 @@ struct D {
         formatter.dateFormat = "M-d-yyyy"
         return formatter
     }
+
+    static func getTextFromDate(date: Date!) -> String {
+        return date == nil ? "" : formatter.string(from: date)
+    }
+
 
 }

@@ -59,7 +59,7 @@ struct CLDate {
         var iconName: String = ""
         for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
             let stringDate = hobbyCellVM.hobby.date
-            if  stringDate == D.formatter().string(from: date) {
+            if  stringDate == D.formatter.string(from: date) {
                 if let imageName = hobbyCellVM.hobby.icon {
                     iconName = imageName
                 }
