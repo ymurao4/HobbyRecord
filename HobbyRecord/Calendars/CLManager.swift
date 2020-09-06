@@ -7,31 +7,19 @@
 //
 
 import Foundation
+import Combine
 
 class CLManager: ObservableObject {
 
     @Published var calendar: Calendar = Calendar.current
     @Published var minimumDate: Date = Date()
     @Published var maximunDate: Date = Date()
-    @Published var selectedDates: [Date] = []
     @Published var selectedDate: Date! = nil
 
-    init(calendar: Calendar, minmumDate: Date, maximumDate: Date, selectedDates: [Date] = []) {
+    init(calendar: Calendar, minmumDate: Date, maximumDate: Date) {
         self.calendar = calendar
         self.minimumDate = minmumDate
         self.maximunDate = maximumDate
-        self.selectedDates = selectedDates
-    }
-
-    func selectedDatesContains(date: Date) -> Bool {
-        if let _ = self.selectedDates.first(where: { calendar.isDate($0, inSameDayAs: date) }) {
-            return true
-        }
-        return false
-    }
-
-    func selectedDatesFindIndex(date: Date) -> Int? {
-        return self.selectedDates.firstIndex(where: { calendar.isDate($0, inSameDayAs: date) })
     }
 
 }

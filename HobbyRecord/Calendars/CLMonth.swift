@@ -12,6 +12,7 @@ struct CLMonth: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @ObservedObject var clManager: CLManager
+    @ObservedObject var hobbyVM: HobbyViewModel
     @Binding var isDetailView: Bool
 
     let monthOffset: Int
@@ -36,6 +37,7 @@ struct CLMonth: View {
                             VStack(alignment: .center, spacing: 7 ) {
                                 if self.isThisMonth(date: column) {
                                     CLCell(clDate: CLDate(
+                                        hobbyVM: self.hobbyVM,
                                         date: column,
                                         clManager: self.clManager,
                                         isToday: self.isToday(date: column),
@@ -53,10 +55,9 @@ struct CLMonth: View {
                     }
                 }
             }
-        }.onTapGesture {
-            self.isDetailView = false
         }
     }
+
 
     private func calculateCellWidth() -> CGFloat {
         let width = UIScreen.main.bounds.width
@@ -81,15 +82,9 @@ struct CLMonth: View {
 
     private func dateTapped(date: Date) {
         self.clManager.selectedDate = date
-        self.isDetailView.toggle()
-    }
-
-    // 日付が1日分ずれているが、これにより直る
-    private func getTextFromDate(date: Date!) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = .current
-        formatter.dateFormat = "M-d-yyyy"
-        return date == nil ? "" : formatter.string(from: date)
+        withAnimation {
+            self.isDetailView.toggle()
+        }
     }
 
     private func monthArray() -> [[Date]] {

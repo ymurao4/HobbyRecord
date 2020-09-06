@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
 
     @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var hobbyVM = HobbyViewModel()
     @State private var isAddHobbyView: Bool = false
     @State private var isDetailView: Bool = false
 
@@ -29,13 +30,13 @@ struct ContentView: View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .bottomTrailing) {
                 VStack(spacing: 0) {
-                    CustomNavbar(isDetailView: self.$isDetailView, cellWidth: cellWidth)
-                    CLViewController(clManager: self.clManager, isDetailView: self.$isDetailView)
+                    CustomNavbar(isDetailView: self.$isDetailView, clManager: self.clManager, cellWidth: cellWidth)
+                    CLViewController(clManager: self.clManager, hobbyVM: self.hobbyVM, isDetailView: self.$isDetailView)
                 }
                 AddButton()
             }
             if isDetailView {
-                DetailView(date: self.clManager.selectedDate)
+                DetailView(clManager: self.clManager, hobbyVM: self.hobbyVM)
             }
         }
         .edgesIgnoringSafeArea(.top)
@@ -46,7 +47,6 @@ struct ContentView: View {
         return width / 7
     }
 
-    // 戻り値はButtonではない
     private func AddButton() -> some View {
         Button(action: {
             self.isAddHobbyView.toggle()
@@ -67,6 +67,7 @@ struct ContentView: View {
 struct CustomNavbar: View {
 
     @Binding var isDetailView: Bool
+    var clManager: CLManager
     private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
     var cellWidth: CGFloat
 
@@ -87,7 +88,10 @@ struct CustomNavbar: View {
         .frame(width: UIScreen.main.bounds.width, height: 88)
         .background(Color(UIColor.systemGray6).opacity(0.9))
         .onTapGesture {
-            self.isDetailView = false
+            withAnimation {
+                self.clManager.selectedDate = nil
+                self.isDetailView = false
+            }
         }
     }
 

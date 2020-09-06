@@ -11,12 +11,19 @@ import SwiftUI
 
 struct CLDate {
 
+    @ObservedObject var hobbyVM: HobbyViewModel
+    @State var isImage: Bool = false
+    var imageName: String {
+        getImageName()
+    }
+
     var date: Date
     let clManager: CLManager
     var isToday: Bool = false
     var isSelected: Bool = false
 
-    init(date: Date, clManager: CLManager, isToday: Bool, isSelected: Bool) {
+    init(hobbyVM: HobbyViewModel, date: Date, clManager: CLManager, isToday: Bool, isSelected: Bool) {
+        self.hobbyVM = hobbyVM
         self.date = date
         self.clManager = clManager
         self.isToday = isToday
@@ -45,6 +52,20 @@ struct CLDate {
             formatter.calendar = calendar
         }
         return formatter.string(from: date)
+    }
+
+    // set image informatino to own cell
+    private func getImageName() -> String {
+        var iconName: String = ""
+        for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
+            let stringDate = hobbyCellVM.hobby.date
+            if  stringDate == D.formatter.string(from: date) {
+                if let imageName = hobbyCellVM.hobby.icon {
+                    iconName = imageName
+                }
+            }
+        }
+        return iconName
     }
 
 }

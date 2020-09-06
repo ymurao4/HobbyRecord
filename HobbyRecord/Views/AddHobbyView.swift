@@ -65,14 +65,8 @@ struct AddHobbyView: View {
 
     private func addRecord() {
 
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        formatter.locale = .current
-        formatter.dateFormat = "M-d-yyyy"
-
         self.presentationMode.wrappedValue.dismiss()
-        self.hobbyVM.addRecord(hobby: Hobby(date: formatter.string(from: self.date), title: self.title, detail: self.detail, icon: self.icon))
+//        self.hobbyVM.addRecord(hobby: Hobby(date: D.formatter().string(from: self.date), title: self.title, detail: self.detail, icon: self.icon))
     }
 
 }
