@@ -50,7 +50,7 @@ struct HobbyCell: View {
     var hobby: Hobby
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack(spacing: 10) {
                 if hobby.icon != "" {
                     Image(hobby.icon)
@@ -69,9 +69,11 @@ struct HobbyCell: View {
                     .foregroundColor(Color.primary.opacity(0.9))
             }
             .padding(.bottom, 10)
-            Text(hobby.detail)
-                .font(.system(size: 25))
-                .foregroundColor(Color.primary.opacity(0.9))
+            ForEach(hobby.details, id: \.self) { detail in
+                Text("・" + detail)
+                    .font(.system(size: 25))
+                    .foregroundColor(Color.primary.opacity(0.9))
+            }
 
             Divider()
         }
