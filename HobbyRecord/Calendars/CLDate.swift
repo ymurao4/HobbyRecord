@@ -12,9 +12,9 @@ import SwiftUI
 struct CLDate {
 
     @ObservedObject var hobbyVM: HobbyViewModel
-    @State var isImage: Bool = false
-    var imageName: String {
-        getImageName()
+
+    var hobbyies: [Hobby] {
+        getHobbies()
     }
 
     var date: Date
@@ -54,18 +54,16 @@ struct CLDate {
         return formatter.string(from: date)
     }
 
-    // set image informatino to own cell
-    private func getImageName() -> String {
-        var iconName: String = ""
+    
+    private func getHobbies() -> [Hobby] {
+        var hobbies: [Hobby] = []
         for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
             let stringDate = hobbyCellVM.hobby.date
             if  stringDate == D.formatter.string(from: date) {
-                if let imageName = hobbyCellVM.hobby.icon {
-                    iconName = imageName
-                }
+                hobbies.append(hobbyCellVM.hobby)
             }
         }
-        return iconName
+        return hobbies
     }
 
 }

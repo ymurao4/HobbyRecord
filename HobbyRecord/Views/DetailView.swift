@@ -25,13 +25,14 @@ struct DetailView: View {
         VStack {
             Text(D.getTextFromDate(date: self.clManager.selectedDate))
                 .font(.system(size: 40))
+                .foregroundColor(Color.primary.opacity(0.9))
                 .padding(.top, 10)
-            if self.detailVM.imageName != "" {
-                Image(self.detailVM.imageName)
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(Color.primary.opacity(0.9))
+            if self.detailVM.hobbies.count != 0 {
+                ForEach(self.detailVM.hobbies, id: \.self) { hobby in
+                    HobbyCell(hobby: hobby)
+                }
+            } else {
+                Text("No Event")
             }
             Spacer()
     }
@@ -42,4 +43,45 @@ struct DetailView: View {
         .shadow(color: Color.init(red: 0.4, green: 0.4, blue: 0.4), radius: 100, x: 0, y: 0)
     }
 
+}
+
+struct HobbyCell: View {
+    
+    var hobby: Hobby
+    
+    var body: some View {
+        VStack {
+            HStack(spacing: 10) {
+                if hobby.icon != "" {
+                    Image(hobby.icon)
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.primary.opacity(0.9))
+                } else {
+                    Image(systemName: "questionmark.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.primary.opacity(0.9))
+                }
+                Text(hobby.title)
+                    .font(.largeTitle)
+                    .foregroundColor(Color.primary.opacity(0.9))
+            }
+            .padding(.bottom, 10)
+            Text(hobby.detail)
+                .font(.system(size: 25))
+                .foregroundColor(Color.primary.opacity(0.9))
+
+            Divider()
+        }
+        .padding()
+    }
+
+}
+
+struct HobbyCell_Previews: PreviewProvider {
+    static var previews: some View {
+        HobbyCell(hobby: testDatas[0])
+    }
 }
