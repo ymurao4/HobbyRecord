@@ -13,11 +13,8 @@ struct CLDate {
 
     @ObservedObject var hobbyVM: HobbyViewModel
 
-    var isImage: Bool {
-        getImage().isImage
-    }
-    var imageName: String {
-        getImage().imageName
+    var hobbyies: [Hobby] {
+        getHobbies()
     }
 
     var date: Date
@@ -58,18 +55,15 @@ struct CLDate {
     }
 
     
-    private func getImage() -> (imageName: String, isImage: Bool) {
-        var iconName: String = ""
-        var isImage: Bool = false
+    private func getHobbies() -> [Hobby] {
+        var hobbies: [Hobby] = []
         for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
             let stringDate = hobbyCellVM.hobby.date
             if  stringDate == D.formatter.string(from: date) {
-                let imageName = hobbyCellVM.hobby.icon
-                isImage = true
-                iconName = imageName
+                hobbies.append(hobbyCellVM.hobby)
             }
         }
-        return (iconName, isImage)
+        return hobbies
     }
 
 }

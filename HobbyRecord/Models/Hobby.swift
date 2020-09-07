@@ -61,6 +61,7 @@ let testDatas: [Hobby] = [
     Hobby(date: "12/12/2020", title: "swimmer", detail: "ハノン1番", icon: "python"),
     Hobby(date: "12/11/2020", title: "yoga", detail: "ハノン1番", icon: "twitter"),
     Hobby(date: "12/15/2020", title: "tramp", detail: "ハノン1番", icon: "webprogramming"),
-    Hobby(date: "9/1/2020", title: "instagram", detail: "インスタに投稿したよ", icon: "instagram")
+    Hobby(date: "9/1/2020", title: "instagram", detail: "インスタに投稿したよ", icon: "instagram"),
+    Hobby(date: "9/2/2020", title: "instagram", detail: "インスタに投稿したよ", icon: "instagram")
 ]
 #endif
