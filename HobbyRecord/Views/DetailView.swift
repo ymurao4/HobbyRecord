@@ -63,7 +63,7 @@ struct HobbyCell: View {
                 } else {
                     Image(systemName: "questionmark.circle")
                         .resizable()
-                        .frame(width: 30, height: 30)
+                        .frame(width: 20, height: 20)
                         .foregroundColor(Color.primary.opacity(0.9))
                 }
                 Text(hobby.title)
