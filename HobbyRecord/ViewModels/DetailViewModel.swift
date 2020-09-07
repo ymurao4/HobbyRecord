@@ -7,31 +7,36 @@
 //
 
 import Foundation
+import Combine
 
 class DetailViewModel: ObservableObject {
 
-    @Published var date: Date = Date()
+    @Published var hobbies: [Hobby] = []
+    var date: Date = Date()
     var hobbyVM: HobbyViewModel
-    var imageName: String {
-        getImageName()
-    }
+
+    private var cancellable = Set<AnyCancellable>()
 
     init(date: Date, hobbyVM: HobbyViewModel) {
         self.date = date
         self.hobbyVM = hobbyVM
+        self.filterHobby()
     }
 
-    private func getImageName() -> String {
-        var iconName: String = ""
-        for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
-            let stringDate = hobbyCellVM.hobby.date
-            if  stringDate == D.formatter.string(from: date) {
-                if let imageName = hobbyCellVM.hobby.icon {
-                    iconName = imageName
+    private func filterHobby() {
+
+        self.hobbyVM.$hobbyCellViewModels.sink { hobbyCellViewModel in
+            let _ = hobbyCellViewModel.filter { (hobbyCell) -> Bool in
+                if hobbyCell.hobby.date == D.formatter.string(from: self.date) {
+                    self.hobbies.append(hobbyCell.hobby)
+                    return true
+                } else {
+                    return false
                 }
             }
         }
-        return iconName
+        .store(in: &cancellable)
+
     }
 
 }

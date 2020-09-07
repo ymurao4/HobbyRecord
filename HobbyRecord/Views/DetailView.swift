@@ -26,12 +26,12 @@ struct DetailView: View {
             Text(D.getTextFromDate(date: self.clManager.selectedDate))
                 .font(.system(size: 40))
                 .padding(.top, 10)
-            if self.detailVM.imageName != "" {
-                Image(self.detailVM.imageName)
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(Color.primary.opacity(0.9))
+            if self.detailVM.hobbies.count != 0 {
+                ForEach(self.detailVM.hobbies, id: \.self) { hobby in
+                    HobbyCell(hobby: hobby)
+                }
+            } else {
+                Text("No Event")
             }
             Spacer()
     }
@@ -40,6 +40,25 @@ struct DetailView: View {
         .background(Color.defaultColor(colorScheme: colorScheme))
         .cornerRadius(15)
         .shadow(color: Color.init(red: 0.4, green: 0.4, blue: 0.4), radius: 100, x: 0, y: 0)
+    }
+
+}
+
+struct HobbyCell: View {
+
+    var hobby: Hobby
+
+    var body: some View {
+        VStack {
+            Text(hobby.title)
+            Text(hobby.detail)
+            // ios14より if let
+            Image(hobby.icon!)
+                .renderingMode(.template)
+                .resizable()
+                .frame(width: 20, height: 20)
+                .foregroundColor(Color.primary.opacity(0.9))
+        }
     }
 
 }
