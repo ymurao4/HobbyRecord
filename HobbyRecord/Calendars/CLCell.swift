@@ -20,12 +20,19 @@ struct CLCell: View {
                 .font(.system(size: 18))
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
-            if self.clDate.imageName != "" {
-                Image(self.clDate.imageName)
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(Color.primary.opacity(0.9))
+            if clDate.isImage {
+                if self.clDate.imageName != "" {
+                    Image(self.clDate.imageName)
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color.primary.opacity(0.9))
+                } else {
+                    Image(systemName: "questionmark.circle")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color.primary.opacity(0.9))
+                }
             }
             Spacer()
         }

@@ -46,18 +46,24 @@ struct DetailView: View {
 }
 
 struct HobbyCell: View {
-
+    
     var hobby: Hobby
-
+    
     var body: some View {
         VStack {
             HStack(spacing: 10) {
-                // ios14より if let
-                Image(hobby.icon!)
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(Color.primary.opacity(0.9))
+                if hobby.icon != "" {
+                    Image(hobby.icon)
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.primary.opacity(0.9))
+                } else {
+                    Image(systemName: "questionmark.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.primary.opacity(0.9))
+                }
                 Text(hobby.title)
                     .font(.largeTitle)
                     .foregroundColor(Color.primary.opacity(0.9))
