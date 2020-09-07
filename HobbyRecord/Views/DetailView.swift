@@ -24,15 +24,17 @@ struct DetailView: View {
     var body: some View {
         VStack {
             Text(D.getTextFromDate(date: self.clManager.selectedDate))
-                .font(.system(size: 40))
+                .font(.system(size: 30))
                 .foregroundColor(Color.primary.opacity(0.9))
                 .padding(.top, 10)
-            if self.detailVM.hobbies.count != 0 {
-                ForEach(self.detailVM.hobbies, id: \.self) { hobby in
-                    HobbyCell(hobby: hobby)
+            ScrollView(.vertical, showsIndicators: false) {
+                if self.detailVM.hobbies.count != 0 {
+                    ForEach(self.detailVM.hobbies, id: \.self) { hobby in
+                        HobbyCell(hobby: hobby)
+                    }
+                } else {
+                    Text("No Event")
                 }
-            } else {
-                Text("No Event")
             }
             Spacer()
     }
@@ -56,7 +58,7 @@ struct HobbyCell: View {
                     Image(hobby.icon)
                         .renderingMode(.template)
                         .resizable()
-                        .frame(width: 30, height: 30)
+                        .frame(width: 20, height: 20)
                         .foregroundColor(Color.primary.opacity(0.9))
                 } else {
                     Image(systemName: "questionmark.circle")
@@ -65,16 +67,15 @@ struct HobbyCell: View {
                         .foregroundColor(Color.primary.opacity(0.9))
                 }
                 Text(hobby.title)
-                    .font(.largeTitle)
+                    .font(.headline)
                     .foregroundColor(Color.primary.opacity(0.9))
             }
             .padding(.bottom, 10)
             ForEach(hobby.details, id: \.self) { detail in
                 Text("・" + detail)
-                    .font(.system(size: 25))
+                    .font(.subheadline)
                     .foregroundColor(Color.primary.opacity(0.9))
             }
-
             Divider()
         }
         .padding()
