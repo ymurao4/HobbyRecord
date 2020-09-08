@@ -29,7 +29,7 @@ struct CLCell: View {
                                     .renderingMode(.template)
                                     .resizable()
                                     .frame(width: 15, height: 15)
-                                    .foregroundColor(Color.primary.opacity(0.9))
+                                    .foregroundColor(Color.primary.opacity(0.8))
                             } else {
                                 Image(systemName: "questionmark.circle")
                                     .resizable()

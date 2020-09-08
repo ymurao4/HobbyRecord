@@ -15,8 +15,9 @@ struct AddHobbyView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var hobbyVM = HobbyViewModel()
     @State var title: String = ""
+    @State var details: [String] = []
     @State var detail: String = ""
-    @State var icon: String?
+    @State var icon: String = ""
     @State var date: Date = Date()
 
 
@@ -40,7 +41,6 @@ struct AddHobbyView: View {
                         IconSetting(icon: $icon, kind: K.sports)
                         IconSetting(icon: $icon, kind: K.developments)
                         IconSetting(icon: $icon, kind: K.music)
-                        IconSetting(icon: $icon, kind: K.sns)
                         IconSetting(icon: $icon, kind: K.others)
                     }
                 }
@@ -66,7 +66,6 @@ struct AddHobbyView: View {
     }
 
     private func addRecord() {
-
         self.presentationMode.wrappedValue.dismiss()
 //        self.hobbyVM.addRecord(hobby: Hobby(date: D.formatter().string(from: self.date), title: self.title, detail: self.detail, icon: self.icon))
     }
@@ -81,7 +80,7 @@ struct AddHobbyView_Previews: PreviewProvider {
 
 struct IconSetting: View {
 
-    @Binding var icon: String?
+    @Binding var icon: String
     var kind: [String]
 
     var cellHeight: CGFloat {

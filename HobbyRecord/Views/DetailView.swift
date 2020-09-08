@@ -38,7 +38,7 @@ struct DetailView: View {
             }
             Spacer()
     }
-        .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height - 140)
+        .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height - 130)
         .clipped()
         .background(Color.defaultColor(colorScheme: colorScheme))
         .cornerRadius(15)
