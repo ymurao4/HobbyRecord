@@ -8,7 +8,6 @@
 
 import SwiftUI
 import WaterfallGrid
-import QGrid
 
 struct AddHobbyView: View {
 
@@ -22,46 +21,38 @@ struct AddHobbyView: View {
 
 
     var body: some View {
-        NavigationView {
-            VStack {
-                Form {
-                    Section(header: Text("What?")) {
-                        TextField("Title", text: $title)
-                            .padding(5)
-                        TextField("Detail", text: $detail)
-                            .padding(5)
-                    }
-                    Section(header: Text("When?")) {
-                        // ios14のDatepickerに変更予定
-                        DatePicker(selection: $date, displayedComponents: .date) {
-                            Text("Select Date")
-                        }
-                    }
-                    Section(header: Text("Icon")) {
-                        IconSetting(icon: $icon, kind: K.sports)
-                        IconSetting(icon: $icon, kind: K.developments)
-                        IconSetting(icon: $icon, kind: K.music)
-                        IconSetting(icon: $icon, kind: K.others)
+         
+        VStack {
+
+            Form {
+                Section(header: Text("What?")) {
+                    TextField("Title", text: $title)
+                        .padding(5)
+                    TextField("Detail", text: $detail)
+                        .padding(5)
+                }
+                Section(header: Text("When?")) {
+                    // ios14のDatepickerに変更予定
+                    DatePicker(selection: $date, displayedComponents: .date) {
+                        Text("Select Date")
                     }
                 }
-                Button(action: {
-                    self.addRecord()
-                }) {
-                    HStack {
-                        Image(systemName: "checkmark")
-                        Text("Add")
-                    }
-                    .padding(.top, 5)
+                Section(header: Text("Icon")) {
+                    IconSetting(icon: $icon, kind: K.sports)
+                    IconSetting(icon: $icon, kind: K.developments)
+                    IconSetting(icon: $icon, kind: K.music)
+                    IconSetting(icon: $icon, kind: K.others)
                 }
             }
-            .navigationBarTitle(Text("Add Hobby Record"), displayMode: .inline)
-            .navigationBarItems(leading:
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Cancel")
+            Button(action: {
+                self.addRecord()
+            }) {
+                HStack {
+                    Image(systemName: "checkmark")
+                    Text("Add")
                 }
-            )
+                .padding(.top, 5)
+            }
         }
     }
 
