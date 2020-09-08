@@ -10,7 +10,6 @@ import SwiftUI
 
 struct CalendarView: View {
 
-    @Binding var x: CGFloat
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var hobbyVM = HobbyViewModel()
     @State private var isAddHobbyView: Bool = false
@@ -29,21 +28,18 @@ struct CalendarView: View {
     //今日を初期画面に表示するのは、scrollViewReader待ち
     var body: some View {
         ZStack(alignment: .bottom) {
-            ZStack(alignment: .bottomTrailing) {
-                VStack(spacing: 0) {
-                    CustomNavbar(x: $x, isDetailView: self.$isDetailView, clManager: self.clManager, cellWidth: cellWidth)
-                    CLViewController(clManager: self.clManager, hobbyVM: self.hobbyVM, isDetailView: self.$isDetailView)
-                }
-//                AddButton()
+            VStack(spacing: 0) {
+                CustomNavbar(isDetailView: self.$isDetailView, clManager: self.clManager, cellWidth: cellWidth)
+                CLViewController(clManager: self.clManager, hobbyVM: self.hobbyVM, isDetailView: self.$isDetailView)
             }
             if isDetailView {
                 DetailView(clManager: self.clManager, hobbyVM: self.hobbyVM)
-                    .padding(.bottom, 30)
+                    .padding(.bottom, 5)
             }
         }
-        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-//        .edgesIgnoringSafeArea(.top)
-        .accentColor(Color.orange)
+        .edgesIgnoringSafeArea(.top)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 
     private func calculateCellWidth() -> CGFloat {
@@ -51,49 +47,29 @@ struct CalendarView: View {
         return width / 7
     }
 
-    private func AddButton() -> some View {
-        Button(action: {
-            self.isAddHobbyView.toggle()
-        }) {
-            Image(systemName: "plus")
-                .font(.headline)
-                .foregroundColor(Color.black)
-                .frame(width: 60, height: 60)
-                .background(Color.orange)
-                .clipShape(Circle())
-        }
-        .padding(.bottom, 30)
-        .padding(.trailing, 20)
-        .sheet(isPresented: $isAddHobbyView) { AddHobbyView() }
-    }
-
 }
 
 struct CustomNavbar: View {
 
-    @Binding var x: CGFloat
     @Binding var isDetailView: Bool
     var clManager: CLManager
     private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
     var cellWidth: CGFloat
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .trailing) {
             Spacer()
 
-            Button(action: {
-                withAnimation {
-                    self.x = 0
-                }
-            }) {
-
+            NavigationLink(
+                destination: AddHobbyView()
+            .navigationBarTitle(Text("Add Hobby Record"), displayMode: .inline)
+            .navigationBarHidden(false)) {
                 Image("open-menu")
                     .renderingMode(.template)
                     .resizable()
                     .frame(width: 24, height: 24)
+                    .padding(.trailing, 18)
             }
-            .padding(.leading, 18)
-
             HStack(spacing: 0) {
                 ForEach(dayOfTheWeek, id: \.self) { row in
                     Text(row.uppercased())
