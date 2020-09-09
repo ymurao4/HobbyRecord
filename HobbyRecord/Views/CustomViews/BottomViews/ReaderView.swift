@@ -18,7 +18,7 @@ struct ReaderView: View {
         VStack {
 
             BottomSheet()
-                .offset(y: reader.frame(in: .global).height)
+                .offset(y: reader.frame(in: .global).height + 10)
                 .offset(y: self.offset)
                 .gesture(DragGesture()
                     .onChanged({ (value) in
@@ -28,7 +28,7 @@ struct ReaderView: View {
                             // checking the direction of scroll
                             if value.startLocation.y > self.reader.frame(in: .global).midX {
 
-                                if value.translation.height < 0 && self.offset > (-self.reader.frame(in: .global).height + 150) {
+                                if value.translation.height < 0 && self.offset > (-self.reader.frame(in: .global).height + 100) {
 
                                     self.offset = value.translation.height
                                 }
@@ -40,7 +40,7 @@ struct ReaderView: View {
 
                                     if value.translation.height > 0 && self.offset < 0 {
 
-                                        self.offset = (-self.reader.frame(in: .global).height + 150) + value.translation.height
+                                        self.offset = (-self.reader.frame(in: .global).height + 100) + value.translation.height
                                     }
                                 }
                             }
