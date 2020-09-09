@@ -10,7 +10,9 @@ import SwiftUI
 
 struct CustomActionSheet: View {
 
-    private let buttons: [[String]] = [["star", "Add to Favorites"], ["gear", "Setting"]]
+    @Binding var isActionSheet: Bool
+    @State var isSheet: Bool = false
+    private let buttons: [[String]] = [["star", "Record your hobby"], ["gear", "Setting"]]
 
     var body: some View {
 
@@ -18,7 +20,7 @@ struct CustomActionSheet: View {
 
             ForEach(buttons, id: \.self) { button in
 
-                ChoicesButton(imageName: button[0], text: button[1])
+                ChoicesButton(isActionSheet: self.$isActionSheet, isSheet: self.$isSheet, button: button)
             }
         }
         .frame(width: UIScreen.main.bounds.width)
@@ -27,13 +29,17 @@ struct CustomActionSheet: View {
         .padding(.bottom, (UIApplication.shared.windows.last?.safeAreaInsets.bottom)! + 10)
         .background(BlurView(style: .systemMaterial))
         .cornerRadius(25)
+        .sheet(isPresented: $isSheet) {
+            AddHobbyView() // desired full screen
+        }
     }
 }
 
 struct ChoicesButton: View {
 
-    var imageName: String
-    var text: String
+    @Binding var isActionSheet: Bool
+    @Binding var isSheet: Bool
+    var button: [String]
 
     var body: some View {
 
@@ -41,18 +47,32 @@ struct ChoicesButton: View {
 
             Button(action: {
 
+                self.switchFunction(button: self.button)
             }) {
 
                 HStack {
 
-                    Image(systemName: imageName)
-                    Text(text)
+                    Image(systemName: button[0])
+                    Text(button[1])
                     Spacer()
                 }
                 .padding(.vertical, 3)
                 .padding(.horizontal)
             }
             Divider()
+        }
+    }
+
+    private func switchFunction(button: [String]) {
+
+        switch button[0] {
+        case "star":
+            self.isSheet.toggle()
+            self.isActionSheet.toggle()
+        case "gear":
+            self.isActionSheet.toggle()
+        default:
+            return
         }
     }
 }

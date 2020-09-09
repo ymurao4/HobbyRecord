@@ -28,7 +28,7 @@ struct BottomSheet: View {
                 Capsule()
                     .fill(Color.gray.opacity(0.5))
                     .frame(width: 50, height: 5)
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 5)
                     .padding(.horizontal)
                     .cornerRadius(15)
                     .padding()
@@ -36,6 +36,7 @@ struct BottomSheet: View {
                 Text("Favorites")
                     .font(.title)
                     .foregroundColor(Color.primary.opacity(0.9))
+                    .padding(.top, 20)
 
                 // お気に入りのHobbyを追加するやつ
                 ScrollView(.vertical, showsIndicators: false) {

@@ -21,45 +21,54 @@ struct AddHobbyView: View {
 
 
     var body: some View {
-         
-        VStack {
 
-            Form {
+        NavigationView {
 
-                Section(header: Text("What?")) {
+            VStack {
 
-                    TextField("Title", text: $title)
-                        .padding(5)
-                    TextField("Detail", text: $detail)
-                        .padding(5)
-                }
+                Form {
 
-                Section(header: Text("When?")) {
-                    // ios14のDatepickerに変更予定
-                    DatePicker(selection: $date, displayedComponents: .date) {
-                        Text("Select Date")
+                    Section(header: Text("What?")) {
+
+                        TextField("Title", text: $title)
+                            .padding(5)
+                        TextField("Detail", text: $detail)
+                            .padding(5)
+                    }
+
+                    Section(header: Text("When?")) {
+                        // ios14のDatepickerに変更予定
+                        DatePicker(selection: $date, displayedComponents: .date) {
+                            Text("Select Date")
+                        }
+                    }
+
+                    Section(header: Text("Icon")) {
+                        IconSetting(icon: $icon, kind: K.sports)
+                        IconSetting(icon: $icon, kind: K.developments)
+                        IconSetting(icon: $icon, kind: K.music)
+                        IconSetting(icon: $icon, kind: K.others)
                     }
                 }
 
-                Section(header: Text("Icon")) {
-                    IconSetting(icon: $icon, kind: K.sports)
-                    IconSetting(icon: $icon, kind: K.developments)
-                    IconSetting(icon: $icon, kind: K.music)
-                    IconSetting(icon: $icon, kind: K.others)
+                Button(action: {
+                    self.addRecord()
+                }) {
+                    HStack {
+                        Image(systemName: "checkmark")
+                        Text("Add")
+                    }
+                    .padding(.top, 5)
                 }
             }
-
-            Button(action: {
-                self.addRecord()
-            }) {
-                HStack {
-                    Image(systemName: "checkmark")
-                    Text("Add")
+            .navigationBarTitle(Text("Record your hobby"), displayMode: .inline)
+            .navigationBarItems(
+                leading:
+                Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+                    Text("Cancel")
                 }
-                .padding(.top, 5)
-            }
+            )
         }
-        .navigationBarHidden(false)
     }
 
     private func addRecord() {

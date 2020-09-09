@@ -26,6 +26,7 @@ struct ContentView: View {
 
     var body: some View {
 
+
         ZStack(alignment: .bottom) {
 
             VStack {
@@ -45,7 +46,7 @@ struct ContentView: View {
 
                 Spacer()
 
-                CustomActionSheet()
+                CustomActionSheet(isActionSheet: $isActionSheet)
                     .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
             }
             .background((isActionSheet ? Color.black.opacity(0.3) : Color.clear)

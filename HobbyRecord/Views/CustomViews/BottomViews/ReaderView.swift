@@ -18,7 +18,7 @@ struct ReaderView: View {
         VStack {
 
             BottomSheet()
-                .offset(y: reader.frame(in: .global).height + 10)
+                .offset(y: reader.frame(in: .global).height)
                 .offset(y: self.offset)
                 .gesture(DragGesture()
                     .onChanged({ (value) in
