@@ -51,14 +51,6 @@ struct CLMonth: View {
                             .cornerRadius(10)
                             .background(self.isSelectedDate(date: column) && self.isThisMonth(date: column) ? Color(UIColor.systemGray5) : Color.defaultColor(colorScheme: self.colorScheme))
                             .onTapGesture { self.dateTapped(date: column) }
-                            .gesture(DragGesture(minimumDistance: 0)
-                                .onChanged({ _ in
-                                    self.clManager.selectedDate = column
-                                })
-                                .onEnded({ _ in
-                                    self.clManager.selectedDate = nil
-                                })
-                            )
                         }
                     }
                 }
@@ -90,9 +82,7 @@ struct CLMonth: View {
 
     private func dateTapped(date: Date) {
         self.clManager.selectedDate = date
-        withAnimation {
-            self.isDetailView.toggle()
-        }
+        self.isDetailView.toggle()
     }
 
     private func monthArray() -> [[Date]] {

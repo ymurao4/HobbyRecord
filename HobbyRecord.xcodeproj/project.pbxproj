@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E790324FE0CAB008F910F /* HobbyViewModel.swift */; };
 		040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E790624FE1E67008F910F /* HobbyCellViewModel.swift */; };
+		04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F882508704400AEB196 /* CustomActionSheet.swift */; };
+		04294F8B2508705F00AEB196 /* CustomNabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F8A2508705F00AEB196 /* CustomNabbar.swift */; };
 		042C0A1125075A44001AB6CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C0A1025075A44001AB6CD /* ContentView.swift */; };
 		0470133124FC83B500D5BA94 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133024FC83B500D5BA94 /* Color.swift */; };
 		0470133324FC83D800D5BA94 /* CLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133224FC83D800D5BA94 /* CLManager.swift */; };
@@ -39,6 +41,9 @@
 		04C607472500BFC800479749 /* CLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C607462500BFC800479749 /* CLCell.swift */; };
 		04C6074B2500C00B00479749 /* ClViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074A2500C00B00479749 /* ClViewController.swift */; };
 		04C6074D2500C02700479749 /* CLMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074C2500C02700479749 /* CLMonth.swift */; };
+		04FA720525085AA80094F336 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720425085AA80094F336 /* BottomSheet.swift */; };
+		04FA720725085AC10094F336 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720625085AC10094F336 /* BlurView.swift */; };
+		04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720925085E5C0094F336 /* ReaderView.swift */; };
 		28F53B79F1DC60FADD8275D9 /* Pods_HobbyRecord_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9593D2B4CF10B65DB59130E2 /* Pods_HobbyRecord_WatchKit_Extension.framework */; };
 		C4AB58F9670779A94B762988 /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D1F08BE333D70F519D5B63 /* Pods_HobbyRecord.framework */; };
 		EBB2F234A40DBF165D0A0737 /* Pods_HobbyRecord_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD5A0B1F0CD55FD9B37FF65 /* Pods_HobbyRecord_WatchKit_App.framework */; };
@@ -89,6 +94,8 @@
 /* Begin PBXFileReference section */
 		040E790324FE0CAB008F910F /* HobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewModel.swift; sourceTree = "<group>"; };
 		040E790624FE1E67008F910F /* HobbyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCellViewModel.swift; sourceTree = "<group>"; };
+		04294F882508704400AEB196 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
+		04294F8A2508705F00AEB196 /* CustomNabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNabbar.swift; sourceTree = "<group>"; };
 		042C0A1025075A44001AB6CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0470133024FC83B500D5BA94 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0470133224FC83D800D5BA94 /* CLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLManager.swift; sourceTree = "<group>"; };
@@ -124,6 +131,9 @@
 		04C607462500BFC800479749 /* CLCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLCell.swift; sourceTree = "<group>"; };
 		04C6074A2500C00B00479749 /* ClViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClViewController.swift; sourceTree = "<group>"; };
 		04C6074C2500C02700479749 /* CLMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLMonth.swift; sourceTree = "<group>"; };
+		04FA720425085AA80094F336 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		04FA720625085AC10094F336 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		04FA720925085E5C0094F336 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		4871CF372592FB67F2EA5203 /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
 		9593D2B4CF10B65DB59130E2 /* Pods_HobbyRecord_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E9EAF7BB55403CAF5C7D19 /* Pods-HobbyRecord WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord WatchKit App/Pods-HobbyRecord WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,12 +183,23 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		04294F8C2508707700AEB196 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				04294F8A2508705F00AEB196 /* CustomNabbar.swift */,
+				04294F882508704400AEB196 /* CustomActionSheet.swift */,
+				04FA720825085CC70094F336 /* BottomViews */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		0470132F24FC83A500D5BA94 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
 				0470133024FC83B500D5BA94 /* Color.swift */,
 				04A713082501C9B500339779 /* Icon.swift */,
 				04BD314425046B9C00AA3745 /* D.swift */,
+				04FA720625085AC10094F336 /* BlurView.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -202,6 +223,7 @@
 				0498FE1124F88C7400489C12 /* CalendarView.swift */,
 				04A7130A25020B3A00339779 /* DetailView.swift */,
 				04C607422500AF7800479749 /* AddHobbyView.swift */,
+				04294F8C2508707700AEB196 /* CustomViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +324,15 @@
 			children = (
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		04FA720825085CC70094F336 /* BottomViews */ = {
+			isa = PBXGroup;
+			children = (
+				04FA720925085E5C0094F336 /* ReaderView.swift */,
+				04FA720425085AA80094F336 /* BottomSheet.swift */,
+			);
+			path = BottomViews;
 			sourceTree = "<group>";
 		};
 		B0E1B3F0E09204E49FBCC099 /* Pods */ = {
@@ -555,6 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */,
 				04BD31482504B6BB00AA3745 /* DetailViewModel.swift in Sources */,
 				0470133524FC843100D5BA94 /* CLDate.swift in Sources */,
 				042C0A1125075A44001AB6CD /* ContentView.swift in Sources */,
@@ -563,14 +595,18 @@
 				04A713092501C9B500339779 /* Icon.swift in Sources */,
 				04C6074B2500C00B00479749 /* ClViewController.swift in Sources */,
 				0470133124FC83B500D5BA94 /* Color.swift in Sources */,
+				04294F8B2508705F00AEB196 /* CustomNabbar.swift in Sources */,
 				0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */,
 				04C607432500AF7800479749 /* AddHobbyView.swift in Sources */,
+				04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */,
 				04C607472500BFC800479749 /* CLCell.swift in Sources */,
 				0498FE1224F88C7400489C12 /* CalendarView.swift in Sources */,
 				0470133324FC83D800D5BA94 /* CLManager.swift in Sources */,
+				04FA720525085AA80094F336 /* BottomSheet.swift in Sources */,
 				04BD314525046B9C00AA3745 /* D.swift in Sources */,
 				04C6074D2500C02700479749 /* CLMonth.swift in Sources */,
 				040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */,
+				04FA720725085AC10094F336 /* BlurView.swift in Sources */,
 				04A7130B25020B3A00339779 /* DetailView.swift in Sources */,
 				040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */,
 			);

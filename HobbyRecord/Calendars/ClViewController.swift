@@ -15,9 +15,13 @@ struct CLViewController: View {
     @Binding var isDetailView: Bool
 
     var body: some View {
+
         ScrollView(.vertical, showsIndicators: false) {
+
             VStack {
+
                 ForEach(0..<numberOfMonth()) { index in
+
                     CLMonth(clManager: self.clManager, hobbyVM: self.hobbyVM, isDetailView: self.$isDetailView, monthOffset: index)
                         .allowsHitTesting(self.isDetailView ? false : true)
                 }
