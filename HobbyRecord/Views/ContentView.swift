@@ -10,10 +10,39 @@ import SwiftUI
 
 struct ContentView: View {
 
+    @State var isActionSheet: Bool = false
+
     var body: some View {
 
         NavigationView {
-            CalendarView()
+
+            ZStack {
+                
+                CalendarView(isActionSheet: $isActionSheet)
+
+                GeometryReader{ reader in
+
+                    ReaderView(reader: reader)
+                        .edgesIgnoringSafeArea(.all)
+                }
+
+                VStack {
+
+                    Spacer()
+
+                    CustomActionSheet()
+                        .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
+                }
+                .background((self.isActionSheet ? Color.black.opacity(0.3) : Color.clear)
+                    .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+
+                        self.isActionSheet.toggle()
+                    }
+                )
+                .edgesIgnoringSafeArea(.bottom)
+            }
+            .animation(.default)
         }
     }
 }
@@ -23,3 +52,6 @@ struct ContentVIew_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+
