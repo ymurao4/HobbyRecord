@@ -10,29 +10,49 @@ import SwiftUI
 
 struct CustomActionSheet: View {
 
-    @State var show: Bool = false
+    private let buttons: [[String]] = [["star", "Add to Favorites"], ["gear", "Setting"]]
 
     var body: some View {
 
-        VStack(spacing: 15) {
+        VStack(alignment: .leading, spacing: 15) {
 
-            Toggle(isOn: self.$show) {
-                Text("Notification")
-            }
-            Toggle(isOn: self.$show) {
-                Text("Notification")
-            }
-            Toggle(isOn: self.$show) {
-                Text("Notification")
-            }
-            Toggle(isOn: self.$show) {
-                Text("Notification")
+            ForEach(buttons, id: \.self) { button in
+
+                ChoicesButton(imageName: button[0], text: button[1])
             }
         }
+        .frame(width: UIScreen.main.bounds.width)
         .padding(.top, 20)
         .padding(.horizontal)
         .padding(.bottom, (UIApplication.shared.windows.last?.safeAreaInsets.bottom)! + 10)
         .background(BlurView(style: .systemMaterial))
         .cornerRadius(25)
+    }
+}
+
+struct ChoicesButton: View {
+
+    var imageName: String
+    var text: String
+
+    var body: some View {
+
+        VStack {
+
+            Button(action: {
+
+            }) {
+
+                HStack {
+
+                    Image(systemName: imageName)
+                    Text(text)
+                    Spacer()
+                }
+                .padding(.vertical, 3)
+                .padding(.horizontal)
+            }
+            Divider()
+        }
     }
 }

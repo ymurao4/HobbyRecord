@@ -33,42 +33,38 @@ struct BottomSheet: View {
                     .cornerRadius(15)
                     .padding()
 
-                Text("Favorite Hobby")
+                Text("Favorites")
                     .font(.title)
                     .foregroundColor(Color.primary.opacity(0.9))
 
+                // お気に入りのHobbyを追加するやつ
                 ScrollView(.vertical, showsIndicators: false) {
 
-                    // お気に入りのHobbyを追加するやつ
-                    VStack {
+                    ForEach(favoriteHobbies, id: \.id) { hobby in
 
-                        ForEach(favoriteHobbies, id: \.id) { hobby in
+                        Button(action: {
+                            print(hobby.title)
+                        }) {
 
-                            Button(action: {
-                                print(hobby.title)
-                            }) {
+                            HStack {
 
-                                HStack {
-
-                                    Image(hobby.icon)
-                                        .resizable()
-                                        .resizable()
-                                        .frame(width: 20, height: 20)
-                                        .foregroundColor(Color.primary.opacity(0.9))
-                                    Text(hobby.title)
-                                        .foregroundColor(Color.primary.opacity(0.9))
-                                }
+                                Image(hobby.icon)
+                                    .resizable()
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                    .foregroundColor(Color.primary.opacity(0.9))
+                                Text(hobby.title)
+                                    .foregroundColor(Color.primary.opacity(0.9))
                             }
-                            .padding()
-                            .frame(width: UIScreen.main.bounds.width * 0.9)
-                            .background(Color.gray.opacity(0.3))
-                            .cornerRadius(20)
                         }
+                        .padding()
+                        .frame(width: UIScreen.main.bounds.width * 0.9)
+                        .background(Color.gray.opacity(0.3))
+                        .cornerRadius(20)
                     }
-                    .frame(width: UIScreen.main.bounds.width)
-                    .padding()
-                    .padding(.top)
                 }
+                .frame(width: UIScreen.main.bounds.width)
+                .padding()
             }
             .background(BlurView(style: .systemMaterial))
             .cornerRadius(15)
