@@ -10,40 +10,82 @@ import SwiftUI
 
 struct ContentView: View {
 
+    @ObservedObject var hobbyVM = HobbyViewModel()
     @State var isActionSheet: Bool = false
+    @State var isDetailView: Bool = false
+
+    var clManager = CLManager(
+        calendar: Calendar.current,
+        minmumDate: Date(),
+        maximumDate: Date().addingTimeInterval(60*60*24*365))
+
+    private var cellWidth: CGFloat {
+
+        calculateCellWidth()
+    }
 
     var body: some View {
 
-        NavigationView {
+        ZStack(alignment: .bottom) {
 
-            ZStack {
-                
-                CalendarView(isActionSheet: $isActionSheet)
+            VStack {
 
-                GeometryReader{ reader in
+                CustomNavbar(isActionSheet: $isActionSheet, clManager: clManager, cellWidth: cellWidth)
+                CalendarView(hobbyVM: hobbyVM, isDetailView: $isDetailView, clManager: clManager, cellWidth: cellWidth)
+            }
+            .edgesIgnoringSafeArea(.top)
 
-                    ReaderView(reader: reader)
-                        .edgesIgnoringSafeArea(.all)
+            GeometryReader{ reader in
+
+                ReaderView(reader: reader)
+                    .edgesIgnoringSafeArea(.all)
+            }
+
+            VStack {
+
+                Spacer()
+
+                CustomActionSheet()
+                    .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
+            }
+            .background((isActionSheet ? Color.black.opacity(0.3) : Color.clear)
+            .edgesIgnoringSafeArea(.all)
+            .onTapGesture {
+
+                self.isActionSheet.toggle()
                 }
+            )
+                .edgesIgnoringSafeArea(.bottom)
 
-                VStack {
+            VStack {
+
+                if isDetailView {
 
                     Spacer()
-
-                    CustomActionSheet()
-                        .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
+                    DetailView(clManager: self.clManager, hobbyVM: self.hobbyVM)
+                        .offset(y: isDetailView ? 0 : UIScreen.main.bounds.height)
+                    Spacer()
                 }
-                .background((self.isActionSheet ? Color.black.opacity(0.3) : Color.clear)
-                    .edgesIgnoringSafeArea(.all)
-                    .onTapGesture {
-
-                        self.isActionSheet.toggle()
-                    }
-                )
-                .edgesIgnoringSafeArea(.bottom)
             }
-            .animation(.default)
+            .padding(.top, 60)
+            .padding(.bottom, 20)
+            .padding(.horizontal, UIScreen.main.bounds.width * 0.05)
+            .background((isDetailView ? Color.black.opacity(0.3) : Color.clear)
+            .edgesIgnoringSafeArea(.all)
+            .onTapGesture {
+
+                self.clManager.selectedDate = nil
+                self.isDetailView.toggle()
+            })
+                .edgesIgnoringSafeArea(.all)
+
         }
+        .animation(.default)
+    }
+
+    private func calculateCellWidth() -> CGFloat {
+        let width = UIScreen.main.bounds.width
+        return width / 7
     }
 }
 

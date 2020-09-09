@@ -18,6 +18,7 @@ class DetailViewModel: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
 
     init(date: Date, hobbyVM: HobbyViewModel) {
+        
         self.date = date
         self.hobbyVM = hobbyVM
         self.filterHobby()
@@ -26,17 +27,20 @@ class DetailViewModel: ObservableObject {
     private func filterHobby() {
 
         self.hobbyVM.$hobbyCellViewModels.sink { hobbyCellViewModel in
+
             let _ = hobbyCellViewModel.filter { (hobbyCell) -> Bool in
+
                 if hobbyCell.hobby.date == D.formatter.string(from: self.date) {
+
                     self.hobbies.append(hobbyCell.hobby)
                     return true
                 } else {
+
                     return false
                 }
             }
         }
         .store(in: &cancellable)
-
     }
 
 }

@@ -188,6 +188,7 @@
 			children = (
 				04294F8A2508705F00AEB196 /* CustomNabbar.swift */,
 				04294F882508704400AEB196 /* CustomActionSheet.swift */,
+				04FA720825085CC70094F336 /* BottomViews */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -223,7 +224,6 @@
 				04A7130A25020B3A00339779 /* DetailView.swift */,
 				04C607422500AF7800479749 /* AddHobbyView.swift */,
 				04294F8C2508707700AEB196 /* CustomViews */,
-				04FA720825085CC70094F336 /* BottomViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -10,7 +10,6 @@ import SwiftUI
 
 struct CustomNavbar: View {
 
-    @Binding var isDetailView: Bool
     @Binding var isActionSheet: Bool
 
     var clManager: CLManager
@@ -50,12 +49,6 @@ struct CustomNavbar: View {
         }
         .frame(width: UIScreen.main.bounds.width, height: 110)
         .background(Color(UIColor.systemGray6).opacity(0.9))
-        .onTapGesture {
-            withAnimation {
-                self.clManager.selectedDate = nil
-                self.isDetailView = false
-            }
-        }
     }
 
     private func dayOfTheWeekColor(row: String) -> Color {

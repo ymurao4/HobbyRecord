@@ -40,12 +40,10 @@ struct DetailView: View {
                 }
             }
             Spacer()
-    }
-        .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height - 120)
-        .clipped()
-        .background(Color.defaultColor(colorScheme: colorScheme))
-        .cornerRadius(15)
-        .shadow(color: Color.init(red: 0.4, green: 0.4, blue: 0.4), radius: 100, x: 0, y: 0)
+        }
+        .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height - 150)
+        .background(BlurView(style: .systemMaterial))
+        .cornerRadius(25)
     }
 
 }
@@ -89,7 +87,7 @@ struct HobbyCell: View {
             }
             Divider()
         }
-        .padding()
+        .padding(.horizontal)
     }
 
 }
