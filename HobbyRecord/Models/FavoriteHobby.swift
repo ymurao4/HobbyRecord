@@ -19,6 +19,7 @@ let testDataFavHobbies: [FavoriteHobby] = [
     FavoriteHobby(title: "スマブラ", icon: "game"),
     FavoriteHobby(title: "ピアノ", icon: "piano"),
     FavoriteHobby(title: "ハイキング", icon: "hiking"),
-    FavoriteHobby(title: "個人開発", icon: "swift")
+    FavoriteHobby(title: "個人開発", icon: "swift"),
+    FavoriteHobby(title: "家で動画鑑賞をする日", icon: "youtube"),
 ]
 #endif

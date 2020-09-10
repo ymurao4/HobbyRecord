@@ -11,6 +11,7 @@ import SwiftUI
 struct RecordHobbyView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var hobbyVM = HobbyViewModel()
     var favoriteHobby: FavoriteHobby
 
     var body: some View {
@@ -21,14 +22,28 @@ struct RecordHobbyView: View {
 
                 VStack {
 
-                    Text(favoriteHobby.title)
-                    Text(favoriteHobby.icon)
+                    Text(self.favoriteHobby.title)
+                    Text(self.favoriteHobby.icon)
                 }
                 .frame(width: UIScreen.main.bounds.width)
                 .padding(.top, 20)
             }
         }
         .navigationBarTitle(Text(""),displayMode: .inline)
+        .navigationBarItems(trailing:
+
+            HStack(alignment: .center) {
+
+                Image(self.favoriteHobby.icon)
+                    .renderingMode(.template)
+                    .resizable()
+                    .frame(width: 20, height: 20)
+
+                Text(self.favoriteHobby.title)
+            }
+            .frame(width: UIScreen.main.bounds.width)
+            .padding(.trailing, 40)
+        )
     }
 }
 
