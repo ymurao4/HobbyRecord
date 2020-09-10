@@ -12,6 +12,7 @@ struct RecordHobbyView: View {
 
     @ObservedObject var hobbyVM = HobbyViewModel()
     var favoriteHobby: FavoriteHobby
+    @Binding var offset: CGFloat
 
     @State var detail: String = ""
     @State var date: Date = Date()
@@ -52,14 +53,14 @@ struct RecordHobbyView: View {
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-            CustomNavigationbarTitle(hobbyVM: self.hobbyVM, detail: $detail, date: $date, favoriteHobby: favoriteHobby)
+            CustomNavigationbarTitle(hobbyVM: hobbyVM, detail: $detail, date: $date, offset: $offset, favoriteHobby: favoriteHobby)
         )
     }
 }
 
 struct RecordHobbyVIew_Previews: PreviewProvider {
     static var previews: some View {
-        RecordHobbyView(favoriteHobby: FavoriteHobby(title: "", icon: ""))
+        RecordHobbyView(favoriteHobby: FavoriteHobby(title: "", icon: ""), offset: .constant(0))
     }
 }
 
@@ -70,12 +71,13 @@ struct CustomNavigationbarTitle: View {
     @ObservedObject var hobbyVM: HobbyViewModel
     @Binding var detail: String
     @Binding var date: Date
+    @Binding var offset: CGFloat
     var favoriteHobby: FavoriteHobby
-    var title: String {
+    private var title: String {
 
         favoriteHobby.title
     }
-    var icon: String {
+    private var icon: String {
 
         favoriteHobby.icon
     }
@@ -113,8 +115,7 @@ struct CustomNavigationbarTitle: View {
     private func addRecord() {
 
         hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: title, details: [detail], icon: icon))
+        offset = 0
         presentationMode.wrappedValue.dismiss()
-        // bottom sheet off
-        // 環境変数?
     }
 }
