@@ -85,9 +85,9 @@ struct ContentView: View {
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
-            .accentColor(Color.orange)
             .animation(.default)
         }
+        .accentColor(Color.orange)
     }
 
     private func calculateCellWidth() -> CGFloat {
@@ -96,7 +96,7 @@ struct ContentView: View {
     }
 }
 
-struct ContentVIew_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }

@@ -25,6 +25,7 @@ class HobbyViewModel :ObservableObject {
 
         let hobbyCellVM = HobbyCellViewModel(hobby: hobby)
         self.hobbyCellViewModels.append(hobbyCellVM)
+        print(hobby)
     }
 
 }

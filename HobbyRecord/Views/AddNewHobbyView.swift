@@ -19,7 +19,7 @@ struct AddNewHobbyView: View {
 
     var body: some View {
 
-        VStack {
+        VStack(alignment: .leading) {
 
             Form {
 
@@ -35,21 +35,18 @@ struct AddNewHobbyView: View {
                 }
             }
             .padding(.top, 10)
-
-            Button(action: {
-
-                self.addRecord()
-            }) {
-
-                HStack {
-
-                    Image(systemName: "checkmark")
-                    Text("Add")
-                }
-                .padding(.top, 5)
-            }
         }
         .navigationBarTitle(Text(""),displayMode: .inline)
+        .navigationBarItems(trailing:
+
+            Button(action: { self.addRecord() }) {
+
+                Image(systemName: "checkmark")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(Color.orange)
+            }
+        )
     }
 
     private func addRecord() {
