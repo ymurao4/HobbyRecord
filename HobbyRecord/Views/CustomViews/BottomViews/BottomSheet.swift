@@ -55,7 +55,7 @@ struct BottomSheet: View {
 
                         NavigationLink(destination: AddNewHobbyView()) {
 
-                            Text("Add new one.")
+                            Text("Add new one")
                                 .foregroundColor(Color.primary.opacity(0.9))
                                 .padding()
                                 .frame(width: UIScreen.main.bounds.width * 0.9)

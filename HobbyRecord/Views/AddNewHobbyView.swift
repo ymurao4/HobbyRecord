@@ -94,7 +94,7 @@ struct IconSetting: View {
                     .renderingMode(.template)
                     .resizable()
                     .frame(width: 30, height: 30)
-                    .foregroundColor(Color.primary.opacity(0.9))
+                    .foregroundColor(Color.primary.opacity(0.8))
             }
         }
         .gridStyle(columns: 6, spacing: 15)
