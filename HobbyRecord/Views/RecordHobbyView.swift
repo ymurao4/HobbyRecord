@@ -17,29 +17,6 @@ struct RecordHobbyView: View {
 
         VStack {
 
-            ZStack {
-
-                HStack {
-
-                    Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
-                        Image(systemName: "chevron.left")
-                            .resizable()
-                            .frame(width: 15, height: 15)
-                            .padding()
-                    }
-
-                    Spacer()
-                }
-
-                Capsule()
-                    .fill(Color.gray.opacity(0.5))
-                    .frame(width: 50, height: 5)
-                    .padding(.vertical, 5)
-                    .padding(.horizontal)
-                    .cornerRadius(15)
-                    .padding()
-            }
-
             ScrollView(.vertical, showsIndicators: false) {
 
                 VStack {
@@ -51,10 +28,8 @@ struct RecordHobbyView: View {
                 .padding(.top, 20)
             }
         }
-        .background(BlurView(style: .systemMaterial))
+        .navigationBarTitle(Text(""),displayMode: .inline)
         .padding(.horizontal)
-        .navigationBarTitle(Text(""))
-        .navigationBarHidden(true)
     }
 }
 

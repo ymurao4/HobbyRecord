@@ -15,8 +15,6 @@ struct BottomSheet: View {
 
     var body: some View {
 
-        NavigationView {
-
             VStack {
 
                 Capsule()
@@ -70,11 +68,7 @@ struct BottomSheet: View {
                 .padding(.top, 20)
                 .padding()
             }
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
             .background(BlurView(style: .systemMaterial))
             .cornerRadius(15)
-        }
-
     }
 }

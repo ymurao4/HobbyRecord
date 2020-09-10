@@ -21,29 +21,6 @@ struct AddNewHobbyView: View {
 
         VStack {
 
-            ZStack {
-
-                HStack {
-
-                    Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
-                        Image(systemName: "chevron.left")
-                            .resizable()
-                            .frame(width: 15, height: 15)
-                            .padding()
-                    }
-
-                    Spacer()
-                }
-
-                Capsule()
-                    .fill(Color.gray.opacity(0.5))
-                    .frame(width: 50, height: 5)
-                    .padding(.vertical, 5)
-                    .padding(.horizontal)
-                    .cornerRadius(15)
-                    .padding()
-            }
-
             Form {
 
                 Section(header: Text("What?")) {
@@ -60,7 +37,7 @@ struct AddNewHobbyView: View {
                     IconSetting(icon: $icon, kind: K.others)
                 }
             }
-            .padding(.top, 20)
+            .padding(.top, 10)
 
             Button(action: {
 
@@ -75,11 +52,8 @@ struct AddNewHobbyView: View {
                 .padding(.top, 5)
             }
         }
-        .background(BlurView(style: .systemMaterial))
-        .padding(.horizontal)
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
-    }
+        .navigationBarTitle(Text(""),displayMode: .inline)
+        .padding(.horizontal)    }
 
     private func addRecord() {
 
