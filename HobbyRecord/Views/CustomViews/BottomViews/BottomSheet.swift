@@ -11,7 +11,6 @@ import SwiftUI
 struct BottomSheet: View {
 
     @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
-    @State private var isAddHobbyView: Bool = false
     @State var date: Date = Date()
 
     var body: some View {
@@ -56,23 +55,14 @@ struct BottomSheet: View {
                             }
                         }
 
-                        HStack {
+                        NavigationLink(destination: AddNewHobbyView()) {
 
-                            Button(action: {
-
-                                self.isAddHobbyView.toggle()
-                            }) {
-
-                                Text("Add new one.")
-                                    .foregroundColor(Color.primary.opacity(0.9))
-                                    .padding()
-                                    .frame(width: UIScreen.main.bounds.width * 0.9)
-                                    .background(Color.orange.opacity(0.3))
-                                    .cornerRadius(20)
-                            }
-                        }
-                        .sheet(isPresented: $isAddHobbyView) {
-                            AddNewHobbyView() // desired full screen
+                            Text("Add new one.")
+                                .foregroundColor(Color.primary.opacity(0.9))
+                                .padding()
+                                .frame(width: UIScreen.main.bounds.width * 0.9)
+                                .background(Color.orange.opacity(0.3))
+                                .cornerRadius(20)
                         }
                     }
                 }

@@ -14,57 +14,71 @@ struct AddNewHobbyView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var hobbyVM = HobbyViewModel()
     @State var title: String = ""
-//    @State var details: [String] = []
-//    @State var detail: String = ""
     @State var icon: String = ""
-//    @State var date: Date = Date()
 
 
     var body: some View {
 
-        NavigationView {
+        VStack {
 
-            VStack {
+            ZStack {
 
-                Form {
+                HStack {
 
-                    Section(header: Text("What?")) {
-
-                        TextField("Title", text: $title)
-                            .padding(5)
+                    Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+                        Image(systemName: "chevron.left")
+                            .resizable()
+                            .frame(width: 15, height: 15)
+                            .padding()
                     }
 
-                    Section(header: Text("Icon")) {
-
-                        IconSetting(icon: $icon, kind: K.sports)
-                        IconSetting(icon: $icon, kind: K.developments)
-                        IconSetting(icon: $icon, kind: K.music)
-                        IconSetting(icon: $icon, kind: K.others)
-                    }
+                    Spacer()
                 }
 
-                Button(action: {
+                Capsule()
+                    .fill(Color.gray.opacity(0.5))
+                    .frame(width: 50, height: 5)
+                    .padding(.vertical, 5)
+                    .padding(.horizontal)
+                    .cornerRadius(15)
+                    .padding()
+            }
 
-                    self.addRecord()
-                }) {
+            Form {
 
-                    HStack {
+                Section(header: Text("What?")) {
 
-                        Image(systemName: "checkmark")
-                        Text("Add")
-                    }
-                    .padding(.top, 5)
+                    TextField("Title", text: $title)
+                        .padding(5)
+                }
+
+                Section(header: Text("Icon")) {
+
+                    IconSetting(icon: $icon, kind: K.sports)
+                    IconSetting(icon: $icon, kind: K.developments)
+                    IconSetting(icon: $icon, kind: K.music)
+                    IconSetting(icon: $icon, kind: K.others)
                 }
             }
-            .navigationBarTitle(Text("Record your hobby"), displayMode: .inline)
-            .navigationBarItems(
-                leading:
-                Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+            .padding(.top, 20)
 
-                    Text("Cancel")
+            Button(action: {
+
+                self.addRecord()
+            }) {
+
+                HStack {
+
+                    Image(systemName: "checkmark")
+                    Text("Add")
                 }
-            )
+                .padding(.top, 5)
+            }
         }
+        .background(BlurView(style: .systemMaterial))
+        .padding(.horizontal)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 
     private func addRecord() {
