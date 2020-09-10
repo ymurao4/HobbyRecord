@@ -12,6 +12,7 @@ struct BottomSheet: View {
 
     @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
     @State var date: Date = Date()
+    @Binding var offset: CGFloat
 
     var body: some View {
 
@@ -35,7 +36,7 @@ struct BottomSheet: View {
 
                         ForEach(self.favoriteHobbyVM.favoriteHobbyCellViewModels, id: \.id) { favoriteHobbyCell in
 
-                            NavigationLink(destination: RecordHobbyView(favoriteHobby: favoriteHobbyCell.favoriteHobby)) {
+                            NavigationLink(destination: RecordHobbyView(favoriteHobby: favoriteHobbyCell.favoriteHobby, offset: self.$offset)) {
                                 HStack {
 
                                     Image(favoriteHobbyCell.favoriteHobby.icon)

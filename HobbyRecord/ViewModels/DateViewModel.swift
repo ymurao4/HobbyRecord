@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class DetailViewModel: ObservableObject {
+class DateViewModel: ObservableObject {
 
     @Published var hobbies: [Hobby] = []
     var date: Date = Date()

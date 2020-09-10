@@ -16,6 +16,9 @@
 		0470133124FC83B500D5BA94 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133024FC83B500D5BA94 /* Color.swift */; };
 		0470133324FC83D800D5BA94 /* CLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133224FC83D800D5BA94 /* CLManager.swift */; };
 		0470133524FC843100D5BA94 /* CLDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470133424FC843100D5BA94 /* CLDate.swift */; };
+		047A5D9B250A322D000423BF /* DetailCellVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */; };
+		047A5D9D250A335D000423BF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9C250A335D000423BF /* Detail.swift */; };
+		047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9E250A3463000423BF /* DetailViewModel.swift */; };
 		048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BE2E324FDE6EA005159F5 /* Hobby.swift */; };
 		0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0D24F88C7400489C12 /* AppDelegate.swift */; };
 		0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0F24F88C7400489C12 /* SceneDelegate.swift */; };
@@ -37,7 +40,7 @@
 		04A713092501C9B500339779 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A713082501C9B500339779 /* Icon.swift */; };
 		04A7130B25020B3A00339779 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7130A25020B3A00339779 /* DetailView.swift */; };
 		04BD314525046B9C00AA3745 /* D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD314425046B9C00AA3745 /* D.swift */; };
-		04BD31482504B6BB00AA3745 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD31472504B6BB00AA3745 /* DetailViewModel.swift */; };
+		04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD31472504B6BB00AA3745 /* DateViewModel.swift */; };
 		04C607472500BFC800479749 /* CLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C607462500BFC800479749 /* CLCell.swift */; };
 		04C6074B2500C00B00479749 /* ClViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074A2500C00B00479749 /* ClViewController.swift */; };
 		04C6074D2500C02700479749 /* CLMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074C2500C02700479749 /* CLMonth.swift */; };
@@ -106,6 +109,9 @@
 		0470133024FC83B500D5BA94 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0470133224FC83D800D5BA94 /* CLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLManager.swift; sourceTree = "<group>"; };
 		0470133424FC843100D5BA94 /* CLDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLDate.swift; sourceTree = "<group>"; };
+		047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellVIewModel.swift; sourceTree = "<group>"; };
+		047A5D9C250A335D000423BF /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		047A5D9E250A3463000423BF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		048BE2E324FDE6EA005159F5 /* Hobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
 		0498FE0A24F88C7400489C12 /* HobbyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HobbyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0498FE0D24F88C7400489C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,7 +138,7 @@
 		04A713082501C9B500339779 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		04A7130A25020B3A00339779 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		04BD314425046B9C00AA3745 /* D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D.swift; sourceTree = "<group>"; };
-		04BD31472504B6BB00AA3745 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		04BD31472504B6BB00AA3745 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		04C607462500BFC800479749 /* CLCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLCell.swift; sourceTree = "<group>"; };
 		04C6074A2500C00B00479749 /* ClViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClViewController.swift; sourceTree = "<group>"; };
 		04C6074C2500C02700479749 /* CLMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLMonth.swift; sourceTree = "<group>"; };
@@ -187,8 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				04EB65EE2509B0BF002EE231 /* Hobby */,
-				04BD31472504B6BB00AA3745 /* DetailViewModel.swift */,
+				04BD31472504B6BB00AA3745 /* DateViewModel.swift */,
 				04EB65ED2509B0B8002EE231 /* NewHobby */,
+				047A5DA0250A3468000423BF /* Details */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -213,6 +220,15 @@
 				04FA720625085AC10094F336 /* BlurView.swift */,
 			);
 			name = Extentions;
+			sourceTree = "<group>";
+		};
+		047A5DA0250A3468000423BF /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				047A5D9E250A3463000423BF /* DetailViewModel.swift */,
+				047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		048BE2E224FDE6DA005159F5 /* Calendars */ = {
@@ -245,6 +261,7 @@
 			children = (
 				048BE2E324FDE6EA005159F5 /* Hobby.swift */,
 				04EB65E92509AFD6002EE231 /* FavoriteHobby.swift */,
+				047A5D9C250A335D000423BF /* Detail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -617,8 +634,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047A5D9B250A322D000423BF /* DetailCellVIewModel.swift in Sources */,
 				04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */,
-				04BD31482504B6BB00AA3745 /* DetailViewModel.swift in Sources */,
+				04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */,
 				04EB65E82509AE92002EE231 /* FavoriteHobbyViewModel.swift in Sources */,
 				0470133524FC843100D5BA94 /* CLDate.swift in Sources */,
 				042C0A1125075A44001AB6CD /* ContentView.swift in Sources */,
@@ -629,6 +647,7 @@
 				04C6074B2500C00B00479749 /* ClViewController.swift in Sources */,
 				0470133124FC83B500D5BA94 /* Color.swift in Sources */,
 				04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */,
+				047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */,
 				04294F8B2508705F00AEB196 /* CustomNabbar.swift in Sources */,
 				0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */,
 				04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */,
@@ -642,6 +661,7 @@
 				04EB65F0250A03FB002EE231 /* EdgeBorder.swift in Sources */,
 				040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */,
 				04FA720725085AC10094F336 /* BlurView.swift in Sources */,
+				047A5D9D250A335D000423BF /* Detail.swift in Sources */,
 				04A7130B25020B3A00339779 /* DetailView.swift in Sources */,
 				04EB65EA2509AFD6002EE231 /* FavoriteHobby.swift in Sources */,
 				040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */,
@@ -916,7 +936,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshinobu.HobbyRecord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -937,7 +957,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshinobu.HobbyRecord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

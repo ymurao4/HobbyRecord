@@ -11,9 +11,10 @@ import SwiftUI
 struct RecordHobbyView: View {
 
     @ObservedObject var hobbyVM = HobbyViewModel()
+    @ObservedObject var detailVM = DetailViewModel()
     var favoriteHobby: FavoriteHobby
+    @Binding var offset: CGFloat
 
-    @State var detail: String = ""
     @State var date: Date = Date()
 
     var body: some View {
@@ -32,11 +33,17 @@ struct RecordHobbyView: View {
 
                 Section(header: Text("Detail")) {
 
-                    TextField("Detail", text: $detail)
+                    ForEach(detailVM.detailCellViewModels) { detailCell in
+
+                        DetailCell(detailCellVM: DetailCellViewModel(detail: Detail(detail: "")))
+                    }
                 }
             }
 
-            Button(action: {  }) {
+            Button(action: {
+
+                self.detailVM.detailCellViewModels.append(DetailCellViewModel(detail: Detail(detail: "")))
+            }) {
 
                 HStack {
 
@@ -52,14 +59,14 @@ struct RecordHobbyView: View {
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-            CustomNavigationbarTitle(hobbyVM: self.hobbyVM, detail: $detail, date: $date, favoriteHobby: favoriteHobby)
+            CustomNavigationbarTitle(hobbyVM: hobbyVM, details: $details, date: $date, offset: $offset, favoriteHobby: favoriteHobby)
         )
     }
 }
 
 struct RecordHobbyVIew_Previews: PreviewProvider {
     static var previews: some View {
-        RecordHobbyView(favoriteHobby: FavoriteHobby(title: "", icon: ""))
+        RecordHobbyView(favoriteHobby: FavoriteHobby(title: "", icon: ""), offset: .constant(0))
     }
 }
 
@@ -68,14 +75,15 @@ struct CustomNavigationbarTitle: View {
 
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var hobbyVM: HobbyViewModel
-    @Binding var detail: String
+    @Binding var details: [String]
     @Binding var date: Date
+    @Binding var offset: CGFloat
     var favoriteHobby: FavoriteHobby
-    var title: String {
+    private var title: String {
 
         favoriteHobby.title
     }
-    var icon: String {
+    private var icon: String {
 
         favoriteHobby.icon
     }
@@ -112,9 +120,19 @@ struct CustomNavigationbarTitle: View {
 
     private func addRecord() {
 
-        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: title, details: [detail], icon: icon))
+        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: title, details: details, icon: icon))
+        offset = 0
         presentationMode.wrappedValue.dismiss()
-        // bottom sheet off
-        // 環境変数?
+    }
+}
+
+
+struct DetailCell: View {
+
+    @ObservedObject var detailCellVM: DetailCellViewModel
+
+    var body: some View {
+
+        TextField("", text: $detailCellVM.detail.detail)
     }
 }
