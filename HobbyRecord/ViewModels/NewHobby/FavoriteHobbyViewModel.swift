@@ -21,4 +21,9 @@ class FavoriteHobbyViewModel: ObservableObject {
         }
     }
 
+    func addFavoriteHoby(favoriteHobby: FavoriteHobby) {
+
+        let favoriteHobbyCellVM = FavoriteHobbyCellViewModel(favHobby: favoriteHobby)
+        self.favoriteHobbyCellViewModels.append(favoriteHobbyCellVM)
+    }
 }

@@ -12,7 +12,7 @@ import WaterfallGrid
 struct AddNewHobbyView: View {
 
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var hobbyVM = HobbyViewModel()
+    @ObservedObject var favoriteHobbyVM = FavoriteHobbyViewModel()
     @State var title: String = ""
     @State var icon: String = ""
 
@@ -55,7 +55,7 @@ struct AddNewHobbyView: View {
     private func addRecord() {
 
         self.presentationMode.wrappedValue.dismiss()
-//        self.hobbyVM.addRecord(hobby: Hobby(date: D.formatter().string(from: self.date), title: self.title, detail: self.detail, icon: self.icon))
+        self.favoriteHobbyVM.addFavoriteHoby(favoriteHobby: FavoriteHobby(title: title, icon: icon))
     }
 
 }

@@ -15,6 +15,7 @@ class FavoriteHobbyCellViewModel: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
 
     init(favHobby: FavoriteHobby) {
+
         self.favoriteHobby = favHobby
 
         $favoriteHobby.map { favHobby in
@@ -23,4 +24,5 @@ class FavoriteHobbyCellViewModel: ObservableObject {
         .assign(to: \.id, on: self)
         .store(in: &cancellable)
     }
+
 }

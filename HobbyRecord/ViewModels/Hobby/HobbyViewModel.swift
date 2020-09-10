@@ -15,15 +15,16 @@ class HobbyViewModel :ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
+
         self.hobbyCellViewModels = testDataHobbies.map { hobby in
             HobbyCellViewModel(hobby: hobby)
         }
     }
 
     func addRecord(hobby: Hobby) {
+
         let hobbyCellVM = HobbyCellViewModel(hobby: hobby)
         self.hobbyCellViewModels.append(hobbyCellVM)
-        print(hobby)
     }
 
 }
