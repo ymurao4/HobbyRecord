@@ -29,7 +29,6 @@ struct RecordHobbyView: View {
             }
         }
         .navigationBarTitle(Text(""),displayMode: .inline)
-        .padding(.horizontal)
     }
 }
 

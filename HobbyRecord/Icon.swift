@@ -12,7 +12,7 @@ struct K {
     ]
 
     static var developments: [String] = [
-        "c#", "c++", "html", "css", "js", "java", "php", "python", "swift", "webprogramming"
+        "c#", "c++", "html", "css", "js", "java", "php", "python", "swift", "webprogramming", "computermonitor"
     ]
 
     static var music: [String] = [

@@ -53,7 +53,7 @@ struct AddNewHobbyView: View {
             }
         }
         .navigationBarTitle(Text(""),displayMode: .inline)
-        .padding(.horizontal)    }
+    }
 
     private func addRecord() {
 
