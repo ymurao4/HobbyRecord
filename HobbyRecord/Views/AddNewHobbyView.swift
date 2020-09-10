@@ -23,7 +23,7 @@ struct AddNewHobbyView: View {
 
             Form {
 
-                Section(header: Text("What?")) {
+                Section(header: Text("Your Hobby Title")) {
 
                     TextField("Title", text: $title)
                         .padding(5)
@@ -31,12 +31,7 @@ struct AddNewHobbyView: View {
 
                 Section(header: Text("Icon")) {
 
-                    IconSetting(icon: $icon, kind: K.sports)
-                    IconSetting(icon: $icon, kind: K.eating)
-                    IconSetting(icon: $icon, kind: K.amusument)
-                    IconSetting(icon: $icon, kind: K.music)
-                    IconSetting(icon: $icon, kind: K.developments)
-                    IconSetting(icon: $icon, kind: K.others)
+                    IconSetting(icon: $icon, kind: K.icons)
                 }
             }
             .padding(.top, 10)
@@ -95,6 +90,7 @@ struct IconSetting: View {
                     .resizable()
                     .frame(width: 30, height: 30)
                     .foregroundColor(Color.primary.opacity(0.8))
+                    
             }
         }
         .gridStyle(columns: 6, spacing: 15)
