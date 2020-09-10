@@ -32,8 +32,10 @@ struct AddNewHobbyView: View {
                 Section(header: Text("Icon")) {
 
                     IconSetting(icon: $icon, kind: K.sports)
-                    IconSetting(icon: $icon, kind: K.developments)
+                    IconSetting(icon: $icon, kind: K.eating)
+                    IconSetting(icon: $icon, kind: K.amusument)
                     IconSetting(icon: $icon, kind: K.music)
+                    IconSetting(icon: $icon, kind: K.developments)
                     IconSetting(icon: $icon, kind: K.others)
                 }
             }
