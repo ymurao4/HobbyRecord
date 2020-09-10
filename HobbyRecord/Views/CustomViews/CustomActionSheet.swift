@@ -11,8 +11,7 @@ import SwiftUI
 struct CustomActionSheet: View {
 
     @Binding var isActionSheet: Bool
-    @State var isSheet: Bool = false
-    private let buttons: [[String]] = [["star", "Record your hobby"], ["gear", "Setting"]]
+    private let buttons: [[String]] = [["gear", "Setting"]]
 
     var body: some View {
 
@@ -20,7 +19,7 @@ struct CustomActionSheet: View {
 
             ForEach(buttons, id: \.self) { button in
 
-                ChoicesButton(isActionSheet: self.$isActionSheet, isSheet: self.$isSheet, button: button)
+                ChoicesButton(isActionSheet: self.$isActionSheet, button: button)
             }
         }
         .frame(width: UIScreen.main.bounds.width)
@@ -29,16 +28,12 @@ struct CustomActionSheet: View {
         .padding(.bottom, (UIApplication.shared.windows.last?.safeAreaInsets.bottom)! + 10)
         .background(BlurView(style: .systemMaterial))
         .cornerRadius(25)
-        .sheet(isPresented: $isSheet) {
-            AddHobbyView() // desired full screen
-        }
     }
 }
 
 struct ChoicesButton: View {
 
     @Binding var isActionSheet: Bool
-    @Binding var isSheet: Bool
     var button: [String]
 
     var body: some View {
@@ -56,6 +51,7 @@ struct ChoicesButton: View {
                     Text(button[1])
                     Spacer()
                 }
+                .foregroundColor(.orange)
                 .padding(.vertical, 3)
                 .padding(.horizontal)
             }
@@ -66,9 +62,6 @@ struct ChoicesButton: View {
     private func switchFunction(button: [String]) {
 
         switch button[0] {
-        case "star":
-            self.isSheet.toggle()
-            self.isActionSheet.toggle()
         case "gear":
             self.isActionSheet.toggle()
         default:

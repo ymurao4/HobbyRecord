@@ -2,7 +2,7 @@
 //  BottomSheet.swift
 //  HobbyRecord
 //
-//  Created by 村尾慶伸 on 2020/09/09.
+//  Created by 村尾慶伸 on 2020/09/10.
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
@@ -10,11 +10,13 @@ import SwiftUI
 
 struct BottomSheet: View {
 
+    @State private var isAddHobbyView: Bool = false
+    @State private var isRecordHobbyView: Bool = false
     @State var date: Date = Date()
 
     private var favoriteHobbies: [Hobby] = [
-        Hobby(date: "", title: "ピアノ", details: [""], icon: "piano"),
         Hobby(date: "", title: "ハイキング", details: [""], icon: "hiking"),
+        Hobby(date: "", title: "ピアノ", details: [""], icon: "piano"),
         Hobby(date: "", title: "トランプ", details: [""], icon: "tramp"),
         Hobby(date: "", title: "スマブラ", details: [""], icon: "game")
     ]
@@ -44,7 +46,9 @@ struct BottomSheet: View {
                     ForEach(favoriteHobbies, id: \.id) { hobby in
 
                         Button(action: {
-                            print(hobby.title)
+
+                            print(hobby)
+                            self.isRecordHobbyView.toggle()
                         }) {
 
                             HStack {
@@ -57,11 +61,33 @@ struct BottomSheet: View {
                                 Text(hobby.title)
                                     .foregroundColor(Color.primary.opacity(0.9))
                             }
+                            .padding()
+                            .frame(width: UIScreen.main.bounds.width * 0.9)
+                            .background(Color.gray.opacity(0.3))
+                            .cornerRadius(20)
+                            .sheet(isPresented: self.$isRecordHobbyView) {
+                                RecordHobbyView(hobby: hobby)
+                            }
                         }
-                        .padding()
-                        .frame(width: UIScreen.main.bounds.width * 0.9)
-                        .background(Color.gray.opacity(0.3))
-                        .cornerRadius(20)
+                    }
+
+                    HStack {
+
+                        Button(action: {
+
+                            self.isAddHobbyView.toggle()
+                        }) {
+
+                            Text("Add new one.")
+                                .foregroundColor(Color.primary.opacity(0.9))
+                                .padding()
+                                .frame(width: UIScreen.main.bounds.width * 0.9)
+                                .background(Color.orange.opacity(0.3))
+                                .cornerRadius(20)
+                        }
+                    }
+                    .sheet(isPresented: $isAddHobbyView) {
+                        AddNewHobbyView() // desired full screen
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width)

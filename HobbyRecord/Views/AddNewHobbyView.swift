@@ -1,23 +1,23 @@
 //
-//  AddHobbyView.swift
+//  AddNewHobbyView.swift
 //  HobbyRecord
 //
-//  Created by 村尾慶伸 on 2020/09/03.
+//  Created by 村尾慶伸 on 2020/09/10.
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
 import SwiftUI
 import WaterfallGrid
 
-struct AddHobbyView: View {
+struct AddNewHobbyView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var hobbyVM = HobbyViewModel()
     @State var title: String = ""
-    @State var details: [String] = []
-    @State var detail: String = ""
+//    @State var details: [String] = []
+//    @State var detail: String = ""
     @State var icon: String = ""
-    @State var date: Date = Date()
+//    @State var date: Date = Date()
 
 
     var body: some View {
@@ -32,18 +32,10 @@ struct AddHobbyView: View {
 
                         TextField("Title", text: $title)
                             .padding(5)
-                        TextField("Detail", text: $detail)
-                            .padding(5)
-                    }
-
-                    Section(header: Text("When?")) {
-                        // ios14のDatepickerに変更予定
-                        DatePicker(selection: $date, displayedComponents: .date) {
-                            Text("Select Date")
-                        }
                     }
 
                     Section(header: Text("Icon")) {
+
                         IconSetting(icon: $icon, kind: K.sports)
                         IconSetting(icon: $icon, kind: K.developments)
                         IconSetting(icon: $icon, kind: K.music)
@@ -52,9 +44,12 @@ struct AddHobbyView: View {
                 }
 
                 Button(action: {
+
                     self.addRecord()
                 }) {
+
                     HStack {
+
                         Image(systemName: "checkmark")
                         Text("Add")
                     }
@@ -65,6 +60,7 @@ struct AddHobbyView: View {
             .navigationBarItems(
                 leading:
                 Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+
                     Text("Cancel")
                 }
             )
@@ -81,7 +77,7 @@ struct AddHobbyView: View {
 
 struct AddHobbyView_Previews: PreviewProvider {
     static var previews: some View {
-        AddHobbyView()
+        AddNewHobbyView()
     }
 }
 
@@ -98,10 +94,12 @@ struct IconSetting: View {
     var body: some View {
 
         WaterfallGrid(0..<kind.count, id: \.self) { index in
-            
+
             Button(action: {
+
                 self.icon = self.kind[index]
             }) {
+                
                 Image(self.kind[index])
                     .renderingMode(.template)
                     .resizable()
@@ -122,3 +120,4 @@ struct IconSetting: View {
     }
 
 }
+
