@@ -84,13 +84,23 @@ struct IconSetting: View {
 
                 self.icon = self.kind[index]
             }) {
-                
-                Image(self.kind[index])
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(Color.primary.opacity(0.8))
-                    
+
+                ZStack(alignment: .bottom) {
+
+                    Image(self.kind[index])
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.primary.opacity(0.8))
+                        .padding(10)
+
+                    if self.icon == self.kind[index] {
+
+                        Rectangle()
+                            .frame(width: 25, height: 2.0, alignment: .bottom)
+                            .foregroundColor(Color.orange)
+                    }
+                }
             }
         }
         .gridStyle(columns: 6, spacing: 15)
