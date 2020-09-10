@@ -8,7 +8,7 @@
 
 import Combine
 
-class HobbyViewModel :ObservableObject {
+class HobbyViewModel: ObservableObject {
     
     @Published var hobbyCellViewModels = [HobbyCellViewModel]()
 

@@ -11,14 +11,14 @@ import SwiftUI
 struct DetailView: View {
 
     @Environment(\.colorScheme) var colorScheme
-    @ObservedObject var detailVM: DetailViewModel
+    @ObservedObject var detailVM: DateViewModel
     @ObservedObject var hobbyVM: HobbyViewModel
     var clManager: CLManager
 
     init(clManager: CLManager, hobbyVM: HobbyViewModel) {
         self.clManager = clManager
         self.hobbyVM = hobbyVM
-        self.detailVM = DetailViewModel(date: clManager.selectedDate, hobbyVM: hobbyVM)
+        self.detailVM = DateViewModel(date: clManager.selectedDate, hobbyVM: hobbyVM)
     }
 
     var body: some View {
@@ -109,7 +109,7 @@ struct HobbyCell_Previews: PreviewProvider {
 
 struct ChangeDateButton: View {
 
-    @ObservedObject var detailVM: DetailViewModel
+    @ObservedObject var detailVM: DateViewModel
     var clManager: CLManager
     var text: String
     private var timeInterval: TimeInterval {
