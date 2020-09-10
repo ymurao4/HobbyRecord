@@ -43,6 +43,9 @@
 		04C6074D2500C02700479749 /* CLMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074C2500C02700479749 /* CLMonth.swift */; };
 		04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E32509A692002EE231 /* BottomSheet.swift */; };
 		04EB65E62509A6D4002EE231 /* AddNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */; };
+		04EB65E82509AE92002EE231 /* FavoriteHobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E72509AE92002EE231 /* FavoriteHobbyViewModel.swift */; };
+		04EB65EA2509AFD6002EE231 /* FavoriteHobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E92509AFD6002EE231 /* FavoriteHobby.swift */; };
+		04EB65EC2509B0B3002EE231 /* FaroviteobbyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65EB2509B0B3002EE231 /* FaroviteobbyCellViewModel.swift */; };
 		04FA720725085AC10094F336 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720625085AC10094F336 /* BlurView.swift */; };
 		04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720925085E5C0094F336 /* ReaderView.swift */; };
 		28F53B79F1DC60FADD8275D9 /* Pods_HobbyRecord_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9593D2B4CF10B65DB59130E2 /* Pods_HobbyRecord_WatchKit_Extension.framework */; };
@@ -134,6 +137,9 @@
 		04C6074C2500C02700479749 /* CLMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLMonth.swift; sourceTree = "<group>"; };
 		04EB65E32509A692002EE231 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHobbyView.swift; sourceTree = "<group>"; };
+		04EB65E72509AE92002EE231 /* FavoriteHobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHobbyViewModel.swift; sourceTree = "<group>"; };
+		04EB65E92509AFD6002EE231 /* FavoriteHobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHobby.swift; sourceTree = "<group>"; };
+		04EB65EB2509B0B3002EE231 /* FaroviteobbyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaroviteobbyCellViewModel.swift; sourceTree = "<group>"; };
 		04FA720625085AC10094F336 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		04FA720925085E5C0094F336 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		4871CF372592FB67F2EA5203 /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,9 +184,9 @@
 		040E790524FE0CAE008F910F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				040E790324FE0CAB008F910F /* HobbyViewModel.swift */,
-				040E790624FE1E67008F910F /* HobbyCellViewModel.swift */,
+				04EB65EE2509B0BF002EE231 /* Hobby */,
 				04BD31472504B6BB00AA3745 /* DetailViewModel.swift */,
+				04EB65ED2509B0B8002EE231 /* NewHobby */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				048BE2E324FDE6EA005159F5 /* Hobby.swift */,
+				04EB65E92509AFD6002EE231 /* FavoriteHobby.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -327,6 +334,24 @@
 			children = (
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		04EB65ED2509B0B8002EE231 /* NewHobby */ = {
+			isa = PBXGroup;
+			children = (
+				04EB65E72509AE92002EE231 /* FavoriteHobbyViewModel.swift */,
+				04EB65EB2509B0B3002EE231 /* FaroviteobbyCellViewModel.swift */,
+			);
+			path = NewHobby;
+			sourceTree = "<group>";
+		};
+		04EB65EE2509B0BF002EE231 /* Hobby */ = {
+			isa = PBXGroup;
+			children = (
+				040E790324FE0CAB008F910F /* HobbyViewModel.swift */,
+				040E790624FE1E67008F910F /* HobbyCellViewModel.swift */,
+			);
+			path = Hobby;
 			sourceTree = "<group>";
 		};
 		04FA720825085CC70094F336 /* BottomViews */ = {
@@ -591,6 +616,7 @@
 			files = (
 				04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */,
 				04BD31482504B6BB00AA3745 /* DetailViewModel.swift in Sources */,
+				04EB65E82509AE92002EE231 /* FavoriteHobbyViewModel.swift in Sources */,
 				0470133524FC843100D5BA94 /* CLDate.swift in Sources */,
 				042C0A1125075A44001AB6CD /* ContentView.swift in Sources */,
 				0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */,
@@ -606,12 +632,14 @@
 				04C607472500BFC800479749 /* CLCell.swift in Sources */,
 				0498FE1224F88C7400489C12 /* CalendarView.swift in Sources */,
 				0470133324FC83D800D5BA94 /* CLManager.swift in Sources */,
+				04EB65EC2509B0B3002EE231 /* FaroviteobbyCellViewModel.swift in Sources */,
 				04BD314525046B9C00AA3745 /* D.swift in Sources */,
 				04EB65E62509A6D4002EE231 /* AddNewHobbyView.swift in Sources */,
 				04C6074D2500C02700479749 /* CLMonth.swift in Sources */,
 				040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */,
 				04FA720725085AC10094F336 /* BlurView.swift in Sources */,
 				04A7130B25020B3A00339779 /* DetailView.swift in Sources */,
+				04EB65EA2509AFD6002EE231 /* FavoriteHobby.swift in Sources */,
 				040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

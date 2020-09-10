@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ReaderView: View {
 
+    @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
     @State var offset: CGFloat = 0
     var reader: GeometryProxy
 
@@ -17,7 +18,7 @@ struct ReaderView: View {
 
         VStack {
 
-            BottomSheet()
+            BottomSheet(favoriteHobbyVM: favoriteHobbyVM)
                 .offset(y: reader.frame(in: .global).height)
                 .offset(y: self.offset)
                 .gesture(DragGesture()

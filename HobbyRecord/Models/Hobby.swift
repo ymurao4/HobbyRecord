@@ -17,7 +17,7 @@ struct Hobby: Identifiable, Hashable {
 }
 
 #if DEBUG
-let testDatas: [Hobby] = [
+let testDataHobbies: [Hobby] = [
     Hobby(date: "9/22/2020", title: "ハイキング", details: ["ハノン一番"], icon: ""),
     Hobby(date: "9/23/2020", title: "ゲーム", details: ["ハノン一番"], icon: "game"),
     Hobby(date: "9/24/2020", title: "piano", details: ["ハノン1番"], icon: "piano"),

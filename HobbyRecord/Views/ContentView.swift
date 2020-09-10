@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
 
     @ObservedObject var hobbyVM = HobbyViewModel()
+    @ObservedObject var favoriteHobbyVM = FavoriteHobbyViewModel()
     @State var isActionSheet: Bool = false
     @State var isDetailView: Bool = false
 
@@ -38,7 +39,7 @@ struct ContentView: View {
 
             GeometryReader{ reader in
 
-                ReaderView(reader: reader)
+                ReaderView(favoriteHobbyVM: self.favoriteHobbyVM, reader: reader)
                     .edgesIgnoringSafeArea(.all)
             }
 
@@ -81,6 +82,7 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
 
         }
+        .accentColor(Color.orange)
         .animation(.default)
     }
 
