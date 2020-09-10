@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
 
     @ObservedObject var hobbyVM = HobbyViewModel()
+    @ObservedObject var favoriteHobbyVM = FavoriteHobbyViewModel()
     @State var isActionSheet: Bool = false
     @State var isDetailView: Bool = false
 
@@ -26,62 +27,67 @@ struct ContentView: View {
 
     var body: some View {
 
+        NavigationView {
 
-        ZStack(alignment: .bottom) {
+            ZStack(alignment: .bottom) {
 
-            VStack {
+                VStack {
 
-                CustomNavbar(isActionSheet: $isActionSheet, clManager: clManager, cellWidth: cellWidth)
-                CalendarView(hobbyVM: hobbyVM, isDetailView: $isDetailView, clManager: clManager, cellWidth: cellWidth)
-            }
-            .edgesIgnoringSafeArea(.top)
-
-            GeometryReader{ reader in
-
-                ReaderView(reader: reader)
-                    .edgesIgnoringSafeArea(.all)
-            }
-
-            VStack {
-
-                Spacer()
-
-                CustomActionSheet(isActionSheet: $isActionSheet)
-                    .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
-            }
-            .background((isActionSheet ? Color.black.opacity(0.3) : Color.clear)
-            .edgesIgnoringSafeArea(.all)
-            .onTapGesture {
-
-                self.isActionSheet.toggle()
+                    CustomNavbar(isActionSheet: $isActionSheet, clManager: clManager, cellWidth: cellWidth)
+                    CalendarView(hobbyVM: hobbyVM, isDetailView: $isDetailView, clManager: clManager, cellWidth: cellWidth)
                 }
-            )
-                .edgesIgnoringSafeArea(.bottom)
+                .edgesIgnoringSafeArea(.top)
 
-            VStack {
+                GeometryReader{ reader in
 
-                if isDetailView {
+                    ReaderView(favoriteHobbyVM: self.favoriteHobbyVM, reader: reader)
+                        .edgesIgnoringSafeArea(.all)
+                }
+
+                VStack {
 
                     Spacer()
-                    DetailView(clManager: self.clManager, hobbyVM: self.hobbyVM)
-                        .offset(y: isDetailView ? 0 : UIScreen.main.bounds.height)
-                    Spacer()
-                }
-            }
-            .padding(.top, 60)
-            .padding(.bottom, 20)
-            .padding(.horizontal, UIScreen.main.bounds.width * 0.05)
-            .background((isDetailView ? Color.black.opacity(0.3) : Color.clear)
-            .edgesIgnoringSafeArea(.all)
-            .onTapGesture {
 
-                self.clManager.selectedDate = nil
-                self.isDetailView.toggle()
-            })
+                    CustomActionSheet(isActionSheet: $isActionSheet)
+                        .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
+                }
+                .background((isActionSheet ? Color.black.opacity(0.3) : Color.clear)
                 .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
 
+                    self.isActionSheet.toggle()
+                    }
+                )
+                    .edgesIgnoringSafeArea(.bottom)
+
+                VStack {
+
+                    if isDetailView {
+
+                        Spacer()
+                        DetailView(clManager: self.clManager, hobbyVM: self.hobbyVM)
+                            .offset(y: isDetailView ? 0 : UIScreen.main.bounds.height)
+                        Spacer()
+                    }
+                }
+                .padding(.top, 60)
+                .padding(.bottom, 20)
+                .padding(.horizontal, UIScreen.main.bounds.width * 0.05)
+                .background((isDetailView ? Color.black.opacity(0.3) : Color.clear)
+                .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+
+                    self.clManager.selectedDate = nil
+                    self.isDetailView.toggle()
+                })
+                    .edgesIgnoringSafeArea(.all)
+
+            }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .animation(.default)
         }
-        .animation(.default)
+        .accentColor(Color.orange)
     }
 
     private func calculateCellWidth() -> CGFloat {
@@ -90,7 +96,7 @@ struct ContentView: View {
     }
 }
 
-struct ContentVIew_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }

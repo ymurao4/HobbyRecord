@@ -22,6 +22,4 @@ struct D {
     static func getTextFromDate(date: Date!) -> String {
         return date == nil ? "" : formatter.string(from: date)
     }
-
-
 }

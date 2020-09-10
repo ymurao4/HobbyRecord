@@ -102,7 +102,7 @@ struct HobbyCell: View {
 
 struct HobbyCell_Previews: PreviewProvider {
     static var previews: some View {
-        HobbyCell(hobby: testDatas[0])
+        HobbyCell(hobby: testDataHobbies[0])
     }
 }
 

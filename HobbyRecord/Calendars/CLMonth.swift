@@ -26,29 +26,44 @@ struct CLMonth: View {
     }
 
     var body: some View {
+
         VStack(alignment: .center, spacing: 10) {
+
             Text(getMonthHeader())
                 .padding(.top, 5)
                 .foregroundColor(Color.primary.opacity(0.9))
+
             VStack(spacing: 0) {
+
                 ForEach(monthsArray, id: \.self) { row in
+
                     HStack(spacing: 0) {
+                        
                         ForEach(row, id: \.self) { column in
-                            VStack(alignment: .center, spacing: 7 ) {
+
+                            HStack(alignment: .center, spacing: 0) {
+
                                 if self.isThisMonth(date: column) {
-                                    CLCell(clDate: CLDate(
-                                        hobbyVM: self.hobbyVM,
-                                        date: column,
-                                        clManager: self.clManager,
-                                        isToday: self.isToday(date: column),
-                                        isSelected: self.isSelectedDate(date: column)
-                                    ), color: self.getColor(row, column))
+
+                                    ZStack(alignment: .top) {
+
+                                        CLCell(clDate: CLDate(
+                                            hobbyVM: self.hobbyVM,
+                                            date: column,
+                                            clManager: self.clManager,
+                                            isToday: self.isToday(date: column),
+                                            isSelected: self.isSelectedDate(date: column)
+                                        ), color: self.getColor(row, column))
+
+                                        EdgeBorder(width: 0.5, edge: .top)
+                                            .foregroundColor(Color.gray.opacity(0.4))
+                                    }
                                 } else {
+
                                     Text("")
                                 }
                             }
                             .frame(width: self.cellWidth, height: self.cellWidth * 1.5)
-                            .cornerRadius(10)
                             .background(self.isSelectedDate(date: column) && self.isThisMonth(date: column) ? Color(UIColor.systemGray5) : Color.defaultColor(colorScheme: self.colorScheme))
                             .onTapGesture { self.dateTapped(date: column) }
                         }

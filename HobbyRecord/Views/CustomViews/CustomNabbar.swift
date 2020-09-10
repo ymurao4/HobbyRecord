@@ -32,6 +32,7 @@ struct CustomNavbar: View {
                     .resizable()
                     .frame(width: 24, height: 24)
                     .padding(.trailing, 18)
+                    .foregroundColor(.orange)
             }
 
             HStack(spacing: 0) {
