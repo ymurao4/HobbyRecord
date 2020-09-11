@@ -47,7 +47,7 @@ struct ChoicesButton: View {
 
                 HStack {
 
-                    Image(systemName: button[0])
+//                    Image(systemName: button[0])
                     Text(button[1])
                     Spacer()
                 }

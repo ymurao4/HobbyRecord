@@ -27,10 +27,10 @@ struct CustomNavbar: View {
                 self.isActionSheet.toggle()
             }) {
 
-                Image("open-menu")
+                Image(systemName: "gear")
                     .renderingMode(.template)
                     .resizable()
-                    .frame(width: 24, height: 24)
+                    .frame(width: 20, height: 20)
                     .padding(.trailing, 18)
                     .foregroundColor(.orange)
             }
