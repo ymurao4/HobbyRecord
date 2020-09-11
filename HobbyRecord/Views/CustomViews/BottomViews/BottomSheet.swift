@@ -60,9 +60,10 @@ struct BottomSheet: View {
                                 .foregroundColor(Color.primary.opacity(0.9))
                                 .padding()
                                 .frame(width: UIScreen.main.bounds.width * 0.9)
-                                .background(Color.orange.opacity(0.3))
+                                .background(Color.orange.opacity(0.5))
                                 .cornerRadius(20)
                         }
+                        .padding(.top, 5)
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width)
