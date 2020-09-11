@@ -11,7 +11,14 @@ import SwiftUI
 struct ContentView: View {
 
     var body: some View {
-        Text("Hello, World!")
+
+        List {
+
+            ForEach(0..<5, id: \.self) { i in
+
+                Text("\(i + 1)番目だお")
+            }
+        }
     }
 }
 
