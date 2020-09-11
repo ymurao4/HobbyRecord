@@ -18,4 +18,8 @@ extension Color {
         }
     }
 
+    static var bl: Color = Color.black.opacity(0.9)
+    static var wh: Color = Color.white.opacity(0.9)
+    static var pr: Color = Color.primary.opacity(0.9)
+
 }
