@@ -6,6 +6,7 @@
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
+import Foundation
 import Combine
 
 class DetailViewModel: ObservableObject {
@@ -21,14 +22,20 @@ class DetailViewModel: ObservableObject {
 
     func addAllDetailsToArray() {
 
-        $detailCellViewModels.map { detailCellVM in
+        $detailCellViewModels.compactMap { detailCellVM in
 
-            detailCellVM.map { detailCell in
+            detailCellVM.compactMap { detailCell in
 
                 detailCell.detail.detail
             }
+            .filter { $0 != "" }
         }
         .assign(to: \.details, on: self)
         .store(in: &cancellables)
+    }
+
+    func removeRow(offsets: IndexSet) {
+
+        self.detailCellViewModels.remove(atOffsets: offsets)
     }
 }

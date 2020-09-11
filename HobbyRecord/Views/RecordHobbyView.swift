@@ -14,7 +14,6 @@ struct RecordHobbyView: View {
     @ObservedObject var detailVM = DetailViewModel()
     var favoriteHobby: FavoriteHobby
     @Binding var offset: CGFloat
-
     @State var date: Date = Date()
 
     var body: some View {
@@ -37,30 +36,34 @@ struct RecordHobbyView: View {
 
                         DetailCell(detailCellVM: detailCell)
                     }
+                    .onDelete(perform: rowRemove)
+
+                    Button(action: { self.detailVM.addDetail(detail: Detail(detail: "")) }) {
+
+                        HStack {
+
+                            Image(systemName: "plus.circle.fill")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                            Text("Add New Detail")
+                        }
+                        .foregroundColor(Color.orange)
+                    }
                 }
             }
 
-            Button(action: {
-
-                self.detailVM.addDetail(detail: Detail(detail: ""))
-            }) {
-
-                HStack {
-
-                    Image(systemName: "plus.circle.fill")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    Text("Add New Detail")
-                }
-                .foregroundColor(Color.orange)
-            }
-            .padding()
         }
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
             CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, favoriteHobby: favoriteHobby)
         )
+    }
+
+
+    private func rowRemove(offsets: IndexSet) {
+
+        self.detailVM.removeRow(offsets: offsets)
     }
 }
 
@@ -122,6 +125,7 @@ struct CustomNavigationbarTitle: View {
 
         detailVM.addAllDetailsToArray()
         hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: title, details: detailVM.details, icon: icon))
+        // bottomSheetを下げる
         offset = 0
         presentationMode.wrappedValue.dismiss()
     }
