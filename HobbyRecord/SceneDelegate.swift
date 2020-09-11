@@ -26,9 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
 
             //MARK: Disable selection.
-            UITableView.appearance().allowsSelection = false
-            UITableViewCell.appearance().selectionStyle = .none
-            UITableView.appearance().separatorStyle = .none
+            UITableView.appearance().backgroundColor = .clear
+            UITableViewCell.appearance().backgroundColor = .clear
 
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView)

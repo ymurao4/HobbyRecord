@@ -16,6 +16,8 @@ struct BottomSheet: View {
 
     var body: some View {
 
+        ZStack(alignment: .bottomTrailing) {
+
             VStack {
 
                 Capsule()
@@ -38,24 +40,12 @@ struct BottomSheet: View {
 
                             HStack {
 
-                                FavoriteCell(favoriteHobbyCell: favoriteHobbyCell)
+                                NavigationLink(destination: RecordHobbyView(favoriteHobby: favoriteHobbyCell.favoriteHobby, offset: self.$offset)) {
 
-                                NavigationLink(destination: RecordHobbyView(favoriteHobby: favoriteHobbyCell.favoriteHobby, offset: self.$offset)) { EmptyView() }
+                                    FavoriteCell(favoriteHobbyCell: favoriteHobbyCell)
+                                }
                             }
                         }
-
-                        HStack {
-
-                            Text("Add new one")
-                                .foregroundColor(Color.primary.opacity(0.9))
-                                .padding()
-                                .frame(width: UIScreen.main.bounds.width * 0.9)
-                                .background(Color.orange.opacity(0.5))
-                                .cornerRadius(20)
-
-                            NavigationLink(destination: AddNewHobbyView()) { EmptyView() }
-                        }
-                        .padding(.top, 5)
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width)
@@ -64,8 +54,24 @@ struct BottomSheet: View {
             }
             .background(BlurView(style: .systemMaterial))
             .cornerRadius(15)
+
+            NavigationLink(destination: AddNewHobbyView()) {
+
+                Image(systemName: "plus")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(Color.black.opacity(0.9))
+                    .padding()
+            }
+            .frame(width: 50, height: 50)
+            .background(Color.orange)
+            .cornerRadius(25)
+            .padding(.bottom, 140)
+            .padding(.trailing, 40)
+        }
     }
 }
+
 
 struct FavoriteCell: View {
 
@@ -76,16 +82,13 @@ struct FavoriteCell: View {
         HStack {
 
             Image(favoriteHobbyCell.favoriteHobby.icon)
-                .resizable()
+                .renderingMode(.template)
                 .resizable()
                 .frame(width: 20, height: 20)
                 .foregroundColor(Color.primary.opacity(0.9))
             Text(favoriteHobbyCell.favoriteHobby.title)
                 .foregroundColor(Color.primary.opacity(0.9))
         }
-        .padding()
-        .frame(width: UIScreen.main.bounds.width * 0.9)
-        .background(Color.gray.opacity(0.3))
-        .cornerRadius(20)
+        .padding(.horizontal)
     }
 }

@@ -21,12 +21,12 @@ struct CustomNavbar: View {
         VStack(alignment: .trailing) {
 
             Spacer()
-
+            
             Button(action: {
-
+                
                 self.isActionSheet.toggle()
             }) {
-
+                
                 Image("open-menu")
                     .renderingMode(.template)
                     .resizable()

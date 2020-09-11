@@ -35,6 +35,7 @@ struct AddNewHobbyView: View {
             .padding(.top, 10)
         }
         .navigationBarTitle(Text(""),displayMode: .inline)
+        .navigationBarHidden(false)
         .navigationBarItems(trailing:
 
             Button(action: { self.addRecord() }) {

@@ -27,6 +27,7 @@ struct RecordHobbyView: View {
                     DatePicker(selection: $date, displayedComponents: .date) {
 
                         Text("Select Date")
+                            .foregroundColor(Color.primary.opacity(0.9))
                     }
                 }
 
