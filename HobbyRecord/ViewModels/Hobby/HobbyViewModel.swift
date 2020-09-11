@@ -10,7 +10,7 @@ import Combine
 
 class HobbyViewModel: ObservableObject {
     
-    @Published var hobbyCellViewModels = [HobbyCellViewModel]()
+    @Published var hobbyCellViewModels: [HobbyCellViewModel] = []
 
     private var cancellables = Set<AnyCancellable>()
 

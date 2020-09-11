@@ -35,14 +35,14 @@ struct RecordHobbyView: View {
 
                     ForEach(detailVM.detailCellViewModels) { detailCell in
 
-                        DetailCell(detailCellVM: DetailCellViewModel(detail: Detail(detail: "")))
+                        DetailCell(detailCellVM: detailCell)
                     }
                 }
             }
 
             Button(action: {
 
-                self.detailVM.detailCellViewModels.append(DetailCellViewModel(detail: Detail(detail: "")))
+                self.detailVM.addDetail(detail: Detail(detail: ""))
             }) {
 
                 HStack {
@@ -59,7 +59,7 @@ struct RecordHobbyView: View {
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-            CustomNavigationbarTitle(hobbyVM: hobbyVM, details: $details, date: $date, offset: $offset, favoriteHobby: favoriteHobby)
+            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, favoriteHobby: favoriteHobby)
         )
     }
 }
@@ -75,7 +75,7 @@ struct CustomNavigationbarTitle: View {
 
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var hobbyVM: HobbyViewModel
-    @Binding var details: [String]
+    @ObservedObject var detailVM: DetailViewModel
     @Binding var date: Date
     @Binding var offset: CGFloat
     var favoriteHobby: FavoriteHobby
@@ -120,7 +120,8 @@ struct CustomNavigationbarTitle: View {
 
     private func addRecord() {
 
-        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: title, details: details, icon: icon))
+        detailVM.addAllDetailsToArray()
+        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: title, details: detailVM.details, icon: icon))
         offset = 0
         presentationMode.wrappedValue.dismiss()
     }

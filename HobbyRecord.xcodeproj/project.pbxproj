@@ -38,7 +38,7 @@
 		0498FE3D24F88C7500489C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE3C24F88C7500489C12 /* Assets.xcassets */; };
 		0498FE4024F88C7500489C12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE3F24F88C7500489C12 /* Preview Assets.xcassets */; };
 		04A713092501C9B500339779 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A713082501C9B500339779 /* Icon.swift */; };
-		04A7130B25020B3A00339779 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7130A25020B3A00339779 /* DetailView.swift */; };
+		04A7130B25020B3A00339779 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7130A25020B3A00339779 /* DateView.swift */; };
 		04BD314525046B9C00AA3745 /* D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD314425046B9C00AA3745 /* D.swift */; };
 		04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD31472504B6BB00AA3745 /* DateViewModel.swift */; };
 		04C607472500BFC800479749 /* CLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C607462500BFC800479749 /* CLCell.swift */; };
@@ -136,7 +136,7 @@
 		0498FE4124F88C7500489C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0498FE4224F88C7500489C12 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		04A713082501C9B500339779 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
-		04A7130A25020B3A00339779 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		04A7130A25020B3A00339779 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		04BD314425046B9C00AA3745 /* D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D.swift; sourceTree = "<group>"; };
 		04BD31472504B6BB00AA3745 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		04C607462500BFC800479749 /* CLCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLCell.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 			children = (
 				042C0A1025075A44001AB6CD /* ContentView.swift */,
 				0498FE1124F88C7400489C12 /* CalendarView.swift */,
-				04A7130A25020B3A00339779 /* DetailView.swift */,
+				04A7130A25020B3A00339779 /* DateView.swift */,
 				04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */,
 				0436E83D2509A15100A25460 /* RecordHobbyView.swift */,
 				04294F8C2508707700AEB196 /* CustomViews */,
@@ -662,7 +662,7 @@
 				040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */,
 				04FA720725085AC10094F336 /* BlurView.swift in Sources */,
 				047A5D9D250A335D000423BF /* Detail.swift in Sources */,
-				04A7130B25020B3A00339779 /* DetailView.swift in Sources */,
+				04A7130B25020B3A00339779 /* DateView.swift in Sources */,
 				04EB65EA2509AFD6002EE231 /* FavoriteHobby.swift in Sources */,
 				040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */,
 			);

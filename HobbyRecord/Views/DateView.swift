@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct DateView: View {
 
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var detailVM: DateViewModel

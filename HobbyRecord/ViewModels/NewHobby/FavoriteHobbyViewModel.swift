@@ -11,7 +11,7 @@ import Combine
 
 class FavoriteHobbyViewModel: ObservableObject {
 
-    @Published var favoriteHobbyCellViewModels = [FavoriteHobbyCellViewModel]()
+    @Published var favoriteHobbyCellViewModels: [FavoriteHobbyCellViewModel] = []
 
     private var cancellables = Set<AnyCancellable>()
 

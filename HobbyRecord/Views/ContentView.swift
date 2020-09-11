@@ -65,7 +65,7 @@ struct ContentView: View {
                     if isDetailView {
 
                         Spacer()
-                        DetailView(clManager: self.clManager, hobbyVM: self.hobbyVM)
+                        DateView(clManager: self.clManager, hobbyVM: self.hobbyVM)
                             .offset(y: isDetailView ? 0 : UIScreen.main.bounds.height)
                         Spacer()
                     }
