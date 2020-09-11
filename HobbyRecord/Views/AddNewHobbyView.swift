@@ -88,7 +88,7 @@ struct IconSetting: View {
                         .renderingMode(.template)
                         .resizable()
                         .frame(width: 30, height: 30)
-                        .foregroundColor(Color.primary.opacity(0.8))
+                        .foregroundColor(Color.pr(9))
                         .padding(10)
 
                     if self.icon == self.kind[index] {

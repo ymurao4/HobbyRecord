@@ -30,10 +30,12 @@ struct CLViewController: View {
     }
 
     private func numberOfMonth() -> Int {
+        
         return clManager.calendar.dateComponents([.month], from: clManager.minimumDate, to: CLMaximumDateMonthLastDay()).month! + 1
     }
 
     private func CLMaximumDateMonthLastDay() -> Date {
+
         var components = clManager.calendar.dateComponents([.year, .month, .day], from: clManager.maximunDate)
         components.month! += 1
         components.day = 0

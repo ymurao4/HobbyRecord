@@ -32,7 +32,7 @@ struct BottomSheet: View {
 
                     Text("Favorites")
                         .font(.title)
-                        .foregroundColor(Color.primary.opacity(0.9))
+                        .foregroundColor(Color.pr(9))
 
                     List {
 
@@ -85,9 +85,9 @@ struct FavoriteCell: View {
                 .renderingMode(.template)
                 .resizable()
                 .frame(width: 20, height: 20)
-                .foregroundColor(Color.primary.opacity(0.9))
+                .foregroundColor(Color.pr(9))
             Text(favoriteHobbyCell.favoriteHobby.title)
-                .foregroundColor(Color.primary.opacity(0.9))
+                .foregroundColor(Color.pr(9))
         }
         .padding(.horizontal)
     }

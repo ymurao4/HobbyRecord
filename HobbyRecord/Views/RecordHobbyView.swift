@@ -27,7 +27,7 @@ struct RecordHobbyView: View {
                     DatePicker(selection: $date, displayedComponents: .date) {
 
                         Text("Select Date")
-                            .foregroundColor(Color.primary.opacity(0.9))
+                            .foregroundColor(Color.primary)
                     }
                 }
 
@@ -102,6 +102,7 @@ struct CustomNavigationbarTitle: View {
                     .renderingMode(.template)
                     .resizable()
                     .frame(width: 20, height: 20)
+                    .foregroundColor(Color.pr(9))
 
                 Text(self.favoriteHobby.title)
             }

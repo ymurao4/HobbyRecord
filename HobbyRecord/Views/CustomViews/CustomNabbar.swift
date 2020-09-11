@@ -21,12 +21,12 @@ struct CustomNavbar: View {
         VStack(alignment: .trailing) {
 
             Spacer()
-            
+
             Button(action: {
-                
+
                 self.isActionSheet.toggle()
             }) {
-                
+
                 Image("open-menu")
                     .renderingMode(.template)
                     .resizable()
@@ -59,7 +59,7 @@ struct CustomNavbar: View {
         case "sat":
             return Color.blue
         default:
-            return Color.primary.opacity(0.9)
+            return Color.pr(9)
         }
     }
 }

@@ -63,7 +63,7 @@ struct CLMonth: View {
                                     Text("")
                                 }
                             }
-                            .frame(width: self.cellWidth, height: self.cellWidth * 1.5)
+                            .frame(width: self.cellWidth, height: self.cellWidth * 1.6)
                             .background(self.isSelectedDate(date: column) && self.isThisMonth(date: column) ? Color(UIColor.systemGray5) : Color.defaultColor(colorScheme: self.colorScheme))
                             .onTapGesture { self.dateTapped(date: column) }
                         }
@@ -75,12 +75,14 @@ struct CLMonth: View {
 
 
     private func calculateCellWidth() -> CGFloat {
+
         let width = UIScreen.main.bounds.width
         return width / 7
     }
 
     // sunday -> red, saturday -> blue, the others -> .primary
     private func getColor(_ row: [Date], _ column: Date) -> Color {
+
         switch column {
         case row.first:
             return Color.red
@@ -92,28 +94,35 @@ struct CLMonth: View {
     }
 
     private func isThisMonth(date: Date) -> Bool {
+
         return self.clManager.calendar.isDate(date, equalTo: firstOfMonthForOffset(), toGranularity: .month)
     }
 
     private func dateTapped(date: Date) {
+
         self.clManager.selectedDate = date
         self.isDetailView.toggle()
     }
 
     private func monthArray() -> [[Date]] {
+
         var rowArray: [[Date]] = [[]]
         for row in 0 ..< (numberOfDays(offset: monthOffset) / 7) {
+
             var columnArray: [Date] = []
             for column in 0...6 {
+
                 let abc = self.getDateAtIndex(index: (row * 7) + column)
                 columnArray.append(abc)
             }
+
             rowArray.append(columnArray)
         }
         return rowArray
     }
 
     private func getMonthHeader() -> String {
+
         let headerDateFormatter = DateFormatter()
         headerDateFormatter.calendar = clManager.calendar
         headerDateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy LLLL", options: 0, locale: clManager.calendar.locale)
@@ -122,6 +131,7 @@ struct CLMonth: View {
     }
 
     private func getDateAtIndex(index: Int) -> Date {
+
         let firstOfMonth = firstOfMonthForOffset()
         let weekDay = clManager.calendar.component(.weekday, from: firstOfMonth)
         var startOffset = weekDay - clManager.calendar.firstWeekday
@@ -133,6 +143,7 @@ struct CLMonth: View {
     }
 
     private func numberOfDays(offset: Int) -> Int {
+
         let firstOfMonth = firstOfMonthForOffset()
         let rangeOfWeeks = clManager.calendar.range(of: .weekOfMonth, in: .month, for: firstOfMonth)
 
@@ -140,6 +151,7 @@ struct CLMonth: View {
     }
 
     private func firstOfMonthForOffset() -> Date {
+
         var offset = DateComponents()
         offset.month = monthOffset
 
@@ -147,12 +159,14 @@ struct CLMonth: View {
     }
 
     private func CLFormatDate(date: Date) -> Date {
+
         let components = clManager.calendar.dateComponents(calendarUnitYMD, from: date)
 
         return clManager.calendar.date(from: components)!
     }
 
     private func CLFormatAndCompareDate(date: Date, referenceDate: Date) -> Bool {
+
         let refDate = CLFormatDate(date: referenceDate)
         let clampedDate = CLFormatDate(date: date)
 
@@ -160,6 +174,7 @@ struct CLMonth: View {
     }
 
     private func CLFirstDateMonth() -> Date {
+
         var components = clManager.calendar.dateComponents(calendarUnitYMD, from: clManager.minimumDate)
         components.day = 1
 
@@ -167,14 +182,17 @@ struct CLMonth: View {
     }
 
     private func isToday(date: Date) -> Bool {
+
         return CLFormatAndCompareDate(date: date, referenceDate: Date())
     }
 
     private func isSpecialDate(date: Date) -> Bool {
+
         return isSelectedDate(date: date)
     }
 
     private func isSelectedDate(date: Date) -> Bool {
+        
         if clManager.selectedDate == nil {
             return false
         }

@@ -18,8 +18,18 @@ extension Color {
         }
     }
 
-    static var bl: Color = Color.black.opacity(0.9)
-    static var wh: Color = Color.white.opacity(0.9)
-    static var pr: Color = Color.primary.opacity(0.9)
+    static func bl(_ n: Double) -> Color {
 
+        return Color.black.opacity(n)
+    }
+
+    static func wh(_ n: Double) -> Color {
+
+        return Color.white.opacity(n)
+    }
+
+    static func pr(_ n: Double) -> Color {
+
+        return Color.primary.opacity(n)
+    }
 }

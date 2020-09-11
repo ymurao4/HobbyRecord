@@ -51,7 +51,7 @@ struct ContentView: View {
                     CustomActionSheet(isActionSheet: $isActionSheet)
                         .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
                 }
-                .background((isActionSheet ? Color.black.opacity(0.3) : Color.clear)
+                .background((isActionSheet ? Color.bl(3) : Color.clear)
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
 
@@ -73,7 +73,7 @@ struct ContentView: View {
                 .padding(.top, 60)
                 .padding(.bottom, 20)
                 .padding(.horizontal, UIScreen.main.bounds.width * 0.05)
-                .background((isDetailView ? Color.black.opacity(0.3) : Color.clear)
+                .background((isDetailView ? Color.bl(3) : Color.clear)
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
 
@@ -85,7 +85,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
-            .animation(.default)
+            .animation(.spring())
         }
         .accentColor(Color.orange)
     }
