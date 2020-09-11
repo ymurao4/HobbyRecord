@@ -6,6 +6,7 @@
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
+import Foundation
 import Combine
 
 class DetailCellViewModel: ObservableObject, Identifiable {

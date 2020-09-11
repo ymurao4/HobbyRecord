@@ -13,8 +13,6 @@ struct AddNewHobbyView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var favoriteHobbyVM = FavoriteHobbyViewModel()
-    @State var title: String = ""
-    @State var icon: String = ""
 
 
     var body: some View {
@@ -25,18 +23,19 @@ struct AddNewHobbyView: View {
 
                 Section(header: Text("Your Hobby Title")) {
 
-                    TextField("Title", text: $title)
+                    TextField("Title", text: $favoriteHobbyVM.title)
                         .padding(5)
                 }
 
                 Section(header: Text("Icon")) {
 
-                    IconSetting(icon: $icon, kind: K.icons)
+                    IconSetting(icon: $favoriteHobbyVM.icon, kind: K.icons)
                 }
             }
             .padding(.top, 10)
         }
         .navigationBarTitle(Text(""),displayMode: .inline)
+        .navigationBarHidden(false)
         .navigationBarItems(trailing:
 
             Button(action: { self.addRecord() }) {
@@ -44,15 +43,16 @@ struct AddNewHobbyView: View {
                 Image(systemName: "checkmark")
                     .resizable()
                     .frame(width: 20, height: 20)
-                    .foregroundColor(Color.orange)
+                    .foregroundColor(self.favoriteHobbyVM.isValidate ? Color.orange : Color.gray)
             }
+            .disabled(!self.favoriteHobbyVM.isValidate)
         )
     }
 
     private func addRecord() {
 
         self.presentationMode.wrappedValue.dismiss()
-        self.favoriteHobbyVM.addFavoriteHoby(favoriteHobby: FavoriteHobby(title: title, icon: icon))
+        self.favoriteHobbyVM.addFavoriteHoby()
     }
 
 }
@@ -88,7 +88,7 @@ struct IconSetting: View {
                         .renderingMode(.template)
                         .resizable()
                         .frame(width: 30, height: 30)
-                        .foregroundColor(Color.primary.opacity(0.8))
+                        .foregroundColor(Color.pr(9))
                         .padding(10)
 
                     if self.icon == self.kind[index] {

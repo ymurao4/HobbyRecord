@@ -14,7 +14,6 @@ struct RecordHobbyView: View {
     @ObservedObject var detailVM = DetailViewModel()
     var favoriteHobby: FavoriteHobby
     @Binding var offset: CGFloat
-
     @State var date: Date = Date()
 
     var body: some View {
@@ -28,6 +27,7 @@ struct RecordHobbyView: View {
                     DatePicker(selection: $date, displayedComponents: .date) {
 
                         Text("Select Date")
+                            .foregroundColor(Color.primary)
                     }
                 }
 
@@ -35,32 +35,36 @@ struct RecordHobbyView: View {
 
                     ForEach(detailVM.detailCellViewModels) { detailCell in
 
-                        DetailCell(detailCellVM: DetailCellViewModel(detail: Detail(detail: "")))
+                        DetailCell(detailCellVM: detailCell)
+                    }
+                    .onDelete(perform: rowRemove)
+
+                    Button(action: { self.detailVM.addDetail(detail: Detail(detail: "")) }) {
+
+                        HStack {
+
+                            Image(systemName: "plus.circle.fill")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                            Text("Add New Detail")
+                        }
+                        .foregroundColor(Color.orange)
                     }
                 }
             }
 
-            Button(action: {
-
-                self.detailVM.detailCellViewModels.append(DetailCellViewModel(detail: Detail(detail: "")))
-            }) {
-
-                HStack {
-
-                    Image(systemName: "plus.circle.fill")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    Text("Add New Detail")
-                }
-                .foregroundColor(Color.orange)
-            }
-            .padding()
         }
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-            CustomNavigationbarTitle(hobbyVM: hobbyVM, details: $details, date: $date, offset: $offset, favoriteHobby: favoriteHobby)
+            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, favoriteHobby: favoriteHobby)
         )
+    }
+
+
+    private func rowRemove(offsets: IndexSet) {
+
+        self.detailVM.removeRow(offsets: offsets)
     }
 }
 
@@ -75,7 +79,7 @@ struct CustomNavigationbarTitle: View {
 
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var hobbyVM: HobbyViewModel
-    @Binding var details: [String]
+    @ObservedObject var detailVM: DetailViewModel
     @Binding var date: Date
     @Binding var offset: CGFloat
     var favoriteHobby: FavoriteHobby
@@ -98,6 +102,7 @@ struct CustomNavigationbarTitle: View {
                     .renderingMode(.template)
                     .resizable()
                     .frame(width: 20, height: 20)
+                    .foregroundColor(Color.pr(9))
 
                 Text(self.favoriteHobby.title)
             }
@@ -120,7 +125,9 @@ struct CustomNavigationbarTitle: View {
 
     private func addRecord() {
 
-        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: title, details: details, icon: icon))
+        detailVM.addAllDetailsToArray()
+        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: title, details: detailVM.details, icon: icon))
+        // bottomSheetを下げる
         offset = 0
         presentationMode.wrappedValue.dismiss()
     }

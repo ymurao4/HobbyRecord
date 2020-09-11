@@ -14,6 +14,7 @@ struct CLDate {
     @ObservedObject var hobbyVM: HobbyViewModel
 
     var hobbyies: [Hobby] {
+
         getHobbies()
     }
 
@@ -31,16 +32,19 @@ struct CLDate {
     }
 
     func getText() -> String {
+
         let day = formatDate(date: date, calendar: self.clManager.calendar)
         return day
     }
 
     private func formatDate(date: Date, calendar: Calendar) -> String {
+
         let formatter = dateFormatter()
         return stringFrom(date: date, formatter: formatter, calendar: calendar)
     }
 
     private func dateFormatter() -> DateFormatter {
+
         let formatter = DateFormatter()
         formatter.locale = .current
         formatter.dateFormat = "d"
@@ -48,7 +52,9 @@ struct CLDate {
     }
 
     private func stringFrom(date: Date, formatter: DateFormatter, calendar: Calendar) -> String {
+
         if formatter.calendar != calendar {
+
             formatter.calendar = calendar
         }
         return formatter.string(from: date)
@@ -56,10 +62,13 @@ struct CLDate {
 
     
     private func getHobbies() -> [Hobby] {
+
         var hobbies: [Hobby] = []
+
         for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
             let stringDate = hobbyCellVM.hobby.date
             if  stringDate == D.formatter.string(from: date) {
+
                 hobbies.append(hobbyCellVM.hobby)
             }
         }

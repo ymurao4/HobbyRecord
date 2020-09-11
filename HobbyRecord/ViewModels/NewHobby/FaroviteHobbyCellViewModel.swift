@@ -24,5 +24,4 @@ class FavoriteHobbyCellViewModel: ObservableObject {
         .assign(to: \.id, on: self)
         .store(in: &cancellable)
     }
-
 }

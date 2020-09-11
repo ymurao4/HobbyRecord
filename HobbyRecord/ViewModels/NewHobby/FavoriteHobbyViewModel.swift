@@ -11,7 +11,10 @@ import Combine
 
 class FavoriteHobbyViewModel: ObservableObject {
 
-    @Published var favoriteHobbyCellViewModels = [FavoriteHobbyCellViewModel]()
+    @Published var favoriteHobbyCellViewModels: [FavoriteHobbyCellViewModel] = []
+    @Published var isValidate: Bool = false
+    @Published var title: String = ""
+    @Published var icon: String = ""
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -19,11 +22,26 @@ class FavoriteHobbyViewModel: ObservableObject {
         self.favoriteHobbyCellViewModels = testDataFavHobbies.map { favHobby in
             FavoriteHobbyCellViewModel(favHobby: favHobby)
         }
+
+        Publishers.CombineLatest($title, $icon).map { (title, icon) -> Bool in
+
+            let trimmedTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
+
+            if trimmedTitle != "" && icon != "" {
+                return true
+            } else {
+                return false
+            }
+        }
+        .eraseToAnyPublisher()
+        .assign(to: \.isValidate, on: self)
+        .store(in: &cancellables)
+
     }
 
-    func addFavoriteHoby(favoriteHobby: FavoriteHobby) {
+    func addFavoriteHoby() {
 
-        let favoriteHobbyCellVM = FavoriteHobbyCellViewModel(favHobby: favoriteHobby)
+        let favoriteHobbyCellVM = FavoriteHobbyCellViewModel(favHobby: FavoriteHobby(title: title, icon: icon))
         self.favoriteHobbyCellViewModels.append(favoriteHobbyCellVM)
     }
 }

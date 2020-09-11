@@ -26,19 +26,8 @@
 		0498FE1424F88C7400489C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE1324F88C7400489C12 /* Assets.xcassets */; };
 		0498FE1724F88C7400489C12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE1624F88C7400489C12 /* Preview Assets.xcassets */; };
 		0498FE1A24F88C7400489C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE1824F88C7400489C12 /* LaunchScreen.storyboard */; };
-		0498FE1F24F88C7400489C12 /* HobbyRecord WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0498FE1E24F88C7400489C12 /* HobbyRecord WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0498FE2524F88C7400489C12 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE2324F88C7400489C12 /* Interface.storyboard */; };
-		0498FE2724F88C7500489C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE2624F88C7500489C12 /* Assets.xcassets */; };
-		0498FE2E24F88C7500489C12 /* HobbyRecord WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0498FE2D24F88C7500489C12 /* HobbyRecord WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0498FE3324F88C7500489C12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE3224F88C7500489C12 /* ContentView.swift */; };
-		0498FE3524F88C7500489C12 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE3424F88C7500489C12 /* HostingController.swift */; };
-		0498FE3724F88C7500489C12 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE3624F88C7500489C12 /* ExtensionDelegate.swift */; };
-		0498FE3924F88C7500489C12 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE3824F88C7500489C12 /* NotificationController.swift */; };
-		0498FE3B24F88C7500489C12 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE3A24F88C7500489C12 /* NotificationView.swift */; };
-		0498FE3D24F88C7500489C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE3C24F88C7500489C12 /* Assets.xcassets */; };
-		0498FE4024F88C7500489C12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE3F24F88C7500489C12 /* Preview Assets.xcassets */; };
 		04A713092501C9B500339779 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A713082501C9B500339779 /* Icon.swift */; };
-		04A7130B25020B3A00339779 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7130A25020B3A00339779 /* DetailView.swift */; };
+		04A7130B25020B3A00339779 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7130A25020B3A00339779 /* DateView.swift */; };
 		04BD314525046B9C00AA3745 /* D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD314425046B9C00AA3745 /* D.swift */; };
 		04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD31472504B6BB00AA3745 /* DateViewModel.swift */; };
 		04C607472500BFC800479749 /* CLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C607462500BFC800479749 /* CLCell.swift */; };
@@ -52,47 +41,16 @@
 		04EB65F0250A03FB002EE231 /* EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65EF250A03FB002EE231 /* EdgeBorder.swift */; };
 		04FA720725085AC10094F336 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720625085AC10094F336 /* BlurView.swift */; };
 		04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720925085E5C0094F336 /* ReaderView.swift */; };
-		28F53B79F1DC60FADD8275D9 /* Pods_HobbyRecord_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9593D2B4CF10B65DB59130E2 /* Pods_HobbyRecord_WatchKit_Extension.framework */; };
 		C4AB58F9670779A94B762988 /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D1F08BE333D70F519D5B63 /* Pods_HobbyRecord.framework */; };
-		EBB2F234A40DBF165D0A0737 /* Pods_HobbyRecord_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD5A0B1F0CD55FD9B37FF65 /* Pods_HobbyRecord_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0498FE2024F88C7400489C12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0498FE0224F88C7300489C12 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0498FE1D24F88C7400489C12;
-			remoteInfo = "HobbyRecord WatchKit App";
-		};
-		0498FE2F24F88C7500489C12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0498FE0224F88C7300489C12 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0498FE2C24F88C7500489C12;
-			remoteInfo = "HobbyRecord WatchKit Extension";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		0498FE4824F88C7500489C12 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				0498FE2E24F88C7500489C12 /* HobbyRecord WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0498FE4C24F88C7500489C12 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				0498FE1F24F88C7400489C12 /* HobbyRecord WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,22 +79,9 @@
 		0498FE1624F88C7400489C12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0498FE1924F88C7400489C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0498FE1B24F88C7400489C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0498FE1E24F88C7400489C12 /* HobbyRecord WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HobbyRecord WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0498FE2424F88C7400489C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		0498FE2624F88C7500489C12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0498FE2824F88C7500489C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0498FE2D24F88C7500489C12 /* HobbyRecord WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HobbyRecord WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0498FE3224F88C7500489C12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0498FE3424F88C7500489C12 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
-		0498FE3624F88C7500489C12 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		0498FE3824F88C7500489C12 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		0498FE3A24F88C7500489C12 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		0498FE3C24F88C7500489C12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0498FE3F24F88C7500489C12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0498FE4124F88C7500489C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0498FE4224F88C7500489C12 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		0498FE1E24F88C7400489C12 /* HobbyRecord WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "HobbyRecord WatchKit App.app"; path = "/Users/muraoyoshinobu/Documents/personal development/HobbyRecord/build/Debug-watchos/HobbyRecord WatchKit App.app"; sourceTree = "<absolute>"; };
 		04A713082501C9B500339779 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
-		04A7130A25020B3A00339779 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		04A7130A25020B3A00339779 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		04BD314425046B9C00AA3745 /* D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D.swift; sourceTree = "<group>"; };
 		04BD31472504B6BB00AA3745 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		04C607462500BFC800479749 /* CLCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLCell.swift; sourceTree = "<group>"; };
@@ -167,22 +112,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4AB58F9670779A94B762988 /* Pods_HobbyRecord.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0498FE2A24F88C7500489C12 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				28F53B79F1DC60FADD8275D9 /* Pods_HobbyRecord_WatchKit_Extension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		44BCE9981DE72F0D5F38BA59 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EBB2F234A40DBF165D0A0737 /* Pods_HobbyRecord_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +177,7 @@
 			children = (
 				042C0A1025075A44001AB6CD /* ContentView.swift */,
 				0498FE1124F88C7400489C12 /* CalendarView.swift */,
-				04A7130A25020B3A00339779 /* DetailView.swift */,
+				04A7130A25020B3A00339779 /* DateView.swift */,
 				04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */,
 				0436E83D2509A15100A25460 /* RecordHobbyView.swift */,
 				04294F8C2508707700AEB196 /* CustomViews */,
@@ -270,11 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				0498FE0C24F88C7400489C12 /* HobbyRecord */,
-				0498FE2224F88C7400489C12 /* HobbyRecord WatchKit App */,
-				0498FE3124F88C7500489C12 /* HobbyRecord WatchKit Extension */,
 				0498FE0B24F88C7400489C12 /* Products */,
 				B0E1B3F0E09204E49FBCC099 /* Pods */,
 				BBBAEDBBAB124C79BC97C213 /* Frameworks */,
+				04C23D42250B18B200787F99 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,8 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				0498FE0A24F88C7400489C12 /* HobbyRecord.app */,
-				0498FE1E24F88C7400489C12 /* HobbyRecord WatchKit App.app */,
-				0498FE2D24F88C7500489C12 /* HobbyRecord WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,45 +241,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0498FE2224F88C7400489C12 /* HobbyRecord WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				0498FE2324F88C7400489C12 /* Interface.storyboard */,
-				0498FE2624F88C7500489C12 /* Assets.xcassets */,
-				0498FE2824F88C7500489C12 /* Info.plist */,
-			);
-			path = "HobbyRecord WatchKit App";
-			sourceTree = "<group>";
-		};
-		0498FE3124F88C7500489C12 /* HobbyRecord WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				0498FE3224F88C7500489C12 /* ContentView.swift */,
-				0498FE3424F88C7500489C12 /* HostingController.swift */,
-				0498FE3624F88C7500489C12 /* ExtensionDelegate.swift */,
-				0498FE3824F88C7500489C12 /* NotificationController.swift */,
-				0498FE3A24F88C7500489C12 /* NotificationView.swift */,
-				0498FE3C24F88C7500489C12 /* Assets.xcassets */,
-				0498FE4124F88C7500489C12 /* Info.plist */,
-				0498FE4224F88C7500489C12 /* PushNotificationPayload.apns */,
-				0498FE3E24F88C7500489C12 /* Preview Content */,
-			);
-			path = "HobbyRecord WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		0498FE3E24F88C7500489C12 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				0498FE3F24F88C7500489C12 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		04BD314625047EAB00AA3745 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		04C23D42250B18B200787F99 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				0498FE1E24F88C7400489C12 /* HobbyRecord WatchKit App.app */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		04EB65ED2509B0B8002EE231 /* NewHobby */ = {
@@ -423,7 +323,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0498FE2124F88C7400489C12 /* PBXTargetDependency */,
 			);
 			name = HobbyRecord;
 			packageProductDependencies = (
@@ -431,43 +330,6 @@
 			productName = HobbyRecord;
 			productReference = 0498FE0A24F88C7400489C12 /* HobbyRecord.app */;
 			productType = "com.apple.product-type.application";
-		};
-		0498FE1D24F88C7400489C12 /* HobbyRecord WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0498FE4924F88C7500489C12 /* Build configuration list for PBXNativeTarget "HobbyRecord WatchKit App" */;
-			buildPhases = (
-				6C3C302402B40FE0B30E5007 /* [CP] Check Pods Manifest.lock */,
-				0498FE1C24F88C7400489C12 /* Resources */,
-				0498FE4824F88C7500489C12 /* Embed App Extensions */,
-				44BCE9981DE72F0D5F38BA59 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0498FE3024F88C7500489C12 /* PBXTargetDependency */,
-			);
-			name = "HobbyRecord WatchKit App";
-			productName = "HobbyRecord WatchKit App";
-			productReference = 0498FE1E24F88C7400489C12 /* HobbyRecord WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		0498FE2C24F88C7500489C12 /* HobbyRecord WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0498FE4524F88C7500489C12 /* Build configuration list for PBXNativeTarget "HobbyRecord WatchKit Extension" */;
-			buildPhases = (
-				CA858DF118617B6BDCC928B3 /* [CP] Check Pods Manifest.lock */,
-				0498FE2924F88C7500489C12 /* Sources */,
-				0498FE2A24F88C7500489C12 /* Frameworks */,
-				0498FE2B24F88C7500489C12 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "HobbyRecord WatchKit Extension";
-			productName = "HobbyRecord WatchKit Extension";
-			productReference = 0498FE2D24F88C7500489C12 /* HobbyRecord WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -480,12 +342,6 @@
 				ORGANIZATIONNAME = "村尾慶伸";
 				TargetAttributes = {
 					0498FE0924F88C7400489C12 = {
-						CreatedOnToolsVersion = 11.6;
-					};
-					0498FE1D24F88C7400489C12 = {
-						CreatedOnToolsVersion = 11.6;
-					};
-					0498FE2C24F88C7500489C12 = {
 						CreatedOnToolsVersion = 11.6;
 					};
 				};
@@ -506,8 +362,6 @@
 			projectRoot = "";
 			targets = (
 				0498FE0924F88C7400489C12 /* HobbyRecord */,
-				0498FE1D24F88C7400489C12 /* HobbyRecord WatchKit App */,
-				0498FE2C24F88C7500489C12 /* HobbyRecord WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -520,24 +374,6 @@
 				0498FE1A24F88C7400489C12 /* LaunchScreen.storyboard in Resources */,
 				0498FE1724F88C7400489C12 /* Preview Assets.xcassets in Resources */,
 				0498FE1424F88C7400489C12 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0498FE1C24F88C7400489C12 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0498FE2724F88C7500489C12 /* Assets.xcassets in Resources */,
-				0498FE2524F88C7400489C12 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0498FE2B24F88C7500489C12 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0498FE4024F88C7500489C12 /* Preview Assets.xcassets in Resources */,
-				0498FE3D24F88C7500489C12 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,28 +402,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6C3C302402B40FE0B30E5007 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HobbyRecord WatchKit App-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B67141154845A003547FC10C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,28 +417,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CA858DF118617B6BDCC928B3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HobbyRecord WatchKit Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -662,38 +454,13 @@
 				040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */,
 				04FA720725085AC10094F336 /* BlurView.swift in Sources */,
 				047A5D9D250A335D000423BF /* Detail.swift in Sources */,
-				04A7130B25020B3A00339779 /* DetailView.swift in Sources */,
+				04A7130B25020B3A00339779 /* DateView.swift in Sources */,
 				04EB65EA2509AFD6002EE231 /* FavoriteHobby.swift in Sources */,
 				040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0498FE2924F88C7500489C12 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0498FE3524F88C7500489C12 /* HostingController.swift in Sources */,
-				0498FE3324F88C7500489C12 /* ContentView.swift in Sources */,
-				0498FE3924F88C7500489C12 /* NotificationController.swift in Sources */,
-				0498FE3724F88C7500489C12 /* ExtensionDelegate.swift in Sources */,
-				0498FE3B24F88C7500489C12 /* NotificationView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0498FE2124F88C7400489C12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0498FE1D24F88C7400489C12 /* HobbyRecord WatchKit App */;
-			targetProxy = 0498FE2024F88C7400489C12 /* PBXContainerItemProxy */;
-		};
-		0498FE3024F88C7500489C12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0498FE2C24F88C7500489C12 /* HobbyRecord WatchKit Extension */;
-			targetProxy = 0498FE2F24F88C7500489C12 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0498FE1824F88C7400489C12 /* LaunchScreen.storyboard */ = {
@@ -702,14 +469,6 @@
 				0498FE1924F88C7400489C12 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		0498FE2324F88C7400489C12 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0498FE2424F88C7400489C12 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -829,96 +588,6 @@
 			};
 			name = Release;
 		};
-		0498FE4624F88C7500489C12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4590BE69D86128A658DCAF1 /* Pods-HobbyRecord WatchKit Extension.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"HobbyRecord WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 479D88RPDD;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "HobbyRecord WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoshinobu.HobbyRecord.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
-			};
-			name = Debug;
-		};
-		0498FE4724F88C7500489C12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBF068820EDB2B2F277D64C0 /* Pods-HobbyRecord WatchKit Extension.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"HobbyRecord WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 479D88RPDD;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "HobbyRecord WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoshinobu.HobbyRecord.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
-			};
-			name = Release;
-		};
-		0498FE4A24F88C7500489C12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95E9EAF7BB55403CAF5C7D19 /* Pods-HobbyRecord WatchKit App.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 479D88RPDD;
-				IBSC_MODULE = HobbyRecord_WatchKit_Extension;
-				INFOPLIST_FILE = "HobbyRecord WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoshinobu.HobbyRecord.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
-			};
-			name = Debug;
-		};
-		0498FE4B24F88C7500489C12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E951AF6B36D92BA0DC1A75A0 /* Pods-HobbyRecord WatchKit App.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 479D88RPDD;
-				IBSC_MODULE = HobbyRecord_WatchKit_Extension;
-				INFOPLIST_FILE = "HobbyRecord WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoshinobu.HobbyRecord.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
-			};
-			name = Release;
-		};
 		0498FE4E24F88C7500489C12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4871CF372592FB67F2EA5203 /* Pods-HobbyRecord.debug.xcconfig */;
@@ -969,24 +638,6 @@
 			buildConfigurations = (
 				0498FE4324F88C7500489C12 /* Debug */,
 				0498FE4424F88C7500489C12 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0498FE4524F88C7500489C12 /* Build configuration list for PBXNativeTarget "HobbyRecord WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0498FE4624F88C7500489C12 /* Debug */,
-				0498FE4724F88C7500489C12 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0498FE4924F88C7500489C12 /* Build configuration list for PBXNativeTarget "HobbyRecord WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0498FE4A24F88C7500489C12 /* Debug */,
-				0498FE4B24F88C7500489C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

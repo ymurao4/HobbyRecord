@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct DateView: View {
 
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var detailVM: DateViewModel
@@ -31,7 +31,7 @@ struct DetailView: View {
 
                 Text(D.getTextFromDate(date: self.clManager.selectedDate))
                     .font(.system(size: 30))
-                    .foregroundColor(Color.primary.opacity(0.9))
+                    .foregroundColor(Color.pr(9))
 
                 ChangeDateButton(detailVM: detailVM, clManager: clManager, text: "chevron.compact.right")
 
@@ -72,18 +72,18 @@ struct HobbyCell: View {
                         .renderingMode(.template)
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .foregroundColor(Color.primary.opacity(0.9))
+                        .foregroundColor(Color.pr(9))
                 } else {
 
                     Image(systemName: "questionmark.circle")
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .foregroundColor(Color.primary.opacity(0.9))
+                        .foregroundColor(Color.pr(9))
                 }
 
                 Text(hobby.title)
                     .font(.headline)
-                    .foregroundColor(Color.primary.opacity(0.9))
+                    .foregroundColor(Color.pr(9))
             }
             .padding(.bottom, 10)
 
@@ -91,7 +91,7 @@ struct HobbyCell: View {
                 
                 Text("・" + detail)
                     .font(.subheadline)
-                    .foregroundColor(Color.primary.opacity(0.9))
+                    .foregroundColor(Color.pr(9))
             }
             Divider()
         }
