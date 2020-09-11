@@ -20,16 +20,16 @@ extension Color {
 
     static func bl(_ n: Double) -> Color {
 
-        return Color.black.opacity(n)
+        return Color.black.opacity(n / 10)
     }
 
     static func wh(_ n: Double) -> Color {
 
-        return Color.white.opacity(n)
+        return Color.white.opacity(n / 10)
     }
 
     static func pr(_ n: Double) -> Color {
 
-        return Color.primary.opacity(n)
+        return Color.primary.opacity(n / 10)
     }
 }
