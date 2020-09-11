@@ -18,7 +18,7 @@ struct ContentView: View {
     var clManager = CLManager(
         calendar: Calendar.current,
         minmumDate: Date(),
-        maximumDate: Date().addingTimeInterval(60*60*24*365))
+        maximumDate: Date().addingTimeInterval(60*60*24*365*2))
 
     private var cellWidth: CGFloat {
 
