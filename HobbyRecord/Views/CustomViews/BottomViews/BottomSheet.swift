@@ -32,29 +32,19 @@ struct BottomSheet: View {
                         .font(.title)
                         .foregroundColor(Color.primary.opacity(0.9))
 
-                    ScrollView(.vertical, showsIndicators: false) {
+                    List {
 
                         ForEach(self.favoriteHobbyVM.favoriteHobbyCellViewModels, id: \.id) { favoriteHobbyCell in
 
-                            NavigationLink(destination: RecordHobbyView(favoriteHobby: favoriteHobbyCell.favoriteHobby, offset: self.$offset)) {
-                                HStack {
+                            HStack {
 
-                                    Image(favoriteHobbyCell.favoriteHobby.icon)
-                                        .resizable()
-                                        .resizable()
-                                        .frame(width: 20, height: 20)
-                                        .foregroundColor(Color.primary.opacity(0.9))
-                                    Text(favoriteHobbyCell.favoriteHobby.title)
-                                        .foregroundColor(Color.primary.opacity(0.9))
-                                }
-                                .padding()
-                                .frame(width: UIScreen.main.bounds.width * 0.9)
-                                .background(Color.gray.opacity(0.3))
-                                .cornerRadius(20)
+                                FavoriteCell(favoriteHobbyCell: favoriteHobbyCell)
+
+                                NavigationLink(destination: RecordHobbyView(favoriteHobby: favoriteHobbyCell.favoriteHobby, offset: self.$offset)) { EmptyView() }
                             }
                         }
 
-                        NavigationLink(destination: AddNewHobbyView()) {
+                        HStack {
 
                             Text("Add new one")
                                 .foregroundColor(Color.primary.opacity(0.9))
@@ -62,6 +52,8 @@ struct BottomSheet: View {
                                 .frame(width: UIScreen.main.bounds.width * 0.9)
                                 .background(Color.orange.opacity(0.5))
                                 .cornerRadius(20)
+
+                            NavigationLink(destination: AddNewHobbyView()) { EmptyView() }
                         }
                         .padding(.top, 5)
                     }
@@ -72,5 +64,28 @@ struct BottomSheet: View {
             }
             .background(BlurView(style: .systemMaterial))
             .cornerRadius(15)
+    }
+}
+
+struct FavoriteCell: View {
+
+    var favoriteHobbyCell: FavoriteHobbyCellViewModel
+
+    var body: some View {
+
+        HStack {
+
+            Image(favoriteHobbyCell.favoriteHobby.icon)
+                .resizable()
+                .resizable()
+                .frame(width: 20, height: 20)
+                .foregroundColor(Color.primary.opacity(0.9))
+            Text(favoriteHobbyCell.favoriteHobby.title)
+                .foregroundColor(Color.primary.opacity(0.9))
+        }
+        .padding()
+        .frame(width: UIScreen.main.bounds.width * 0.9)
+        .background(Color.gray.opacity(0.3))
+        .cornerRadius(20)
     }
 }
