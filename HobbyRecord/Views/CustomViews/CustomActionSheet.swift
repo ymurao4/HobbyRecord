@@ -47,7 +47,7 @@ struct ChoicesButton: View {
 
                 HStack {
 
-                    Text(button)
+                    Text(button.localized)
                     Spacer()
                 }
                 .foregroundColor(.orange)
