@@ -21,7 +21,7 @@ struct AddNewHobbyView: View {
 
             Form {
 
-                Section(header: Text("Your Hobby Title")) {
+                Section(header: Text("")) {
 
                     TextField("Title", text: $favoriteHobbyVM.title)
                         .padding(5)
@@ -43,7 +43,7 @@ struct AddNewHobbyView: View {
                 Image(systemName: "checkmark")
                     .resizable()
                     .frame(width: 20, height: 20)
-                    .foregroundColor(self.favoriteHobbyVM.isValidate ? Color.orange : Color.gray)
+                    .foregroundColor(self.favoriteHobbyVM.isValidate ? Color.orange : Color.gray.opacity(0.3))
             }
             .disabled(!self.favoriteHobbyVM.isValidate)
         )

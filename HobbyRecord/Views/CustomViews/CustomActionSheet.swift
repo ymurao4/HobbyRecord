@@ -11,7 +11,7 @@ import SwiftUI
 struct CustomActionSheet: View {
 
     @Binding var isActionSheet: Bool
-    private let buttons: [[String]] = [["gear", "Setting"]]
+    private let buttons: [String] = ["Setting", "Review In App Store", "App Version"]
 
     var body: some View {
 
@@ -34,7 +34,7 @@ struct CustomActionSheet: View {
 struct ChoicesButton: View {
 
     @Binding var isActionSheet: Bool
-    var button: [String]
+    var button: String
 
     var body: some View {
 
@@ -47,8 +47,7 @@ struct ChoicesButton: View {
 
                 HStack {
 
-                    Image(systemName: button[0])
-                    Text(button[1])
+                    Text(button)
                     Spacer()
                 }
                 .foregroundColor(.orange)
@@ -59,10 +58,10 @@ struct ChoicesButton: View {
         }
     }
 
-    private func switchFunction(button: [String]) {
+    private func switchFunction(button: String) {
 
-        switch button[0] {
-        case "gear":
+        switch button {
+        case "Setting":
             self.isActionSheet.toggle()
         default:
             return
