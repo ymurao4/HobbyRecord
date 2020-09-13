@@ -18,12 +18,13 @@ struct RecordHobbyView: View {
     @Binding var offset: CGFloat
     @State var date: Date = Date()
     @State private var isAlert: Bool = false
+    @State var isActionSheet: Bool = false
 
     var body: some View {
 
-        VStack(alignment: .leading) {
+        ZStack(alignment: .bottom) {
 
-            ZStack(alignment: .bottom) {
+            VStack(alignment: .leading) {
 
                 Form {
 
@@ -42,7 +43,6 @@ struct RecordHobbyView: View {
 
                             DetailCell(detailCellVM: detailCell)
                         }
-                        .onDelete(perform: rowRemove)
 
                         Button(action: { self.detailVM.addDetail(detail: Detail(detail: "")) }) {
 
@@ -57,28 +57,25 @@ struct RecordHobbyView: View {
                         }
                     }
                 }
-
-                Button(action: {
-
-                    self.isAlert.toggle()
-                }) {
-
-                    HStack {
-
-                        Image(systemName: "trash")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-
-                        Text("Delete".localized)
-                            .foregroundColor(.white)
-                    }
-                    .padding(EdgeInsets(top: 15, leading: 30, bottom: 15, trailing: 30))
-                    .background(Color.red.opacity(0.8))
-                    .cornerRadius(30)
-                }
             }
+            .padding(.horizontal)
+            VStack {
 
+                Spacer()
+
+                ActionSheetView(isActionSheet: $isActionSheet, isAlert: $isAlert)
+                    .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
+            }
+            .background((isActionSheet ? Color.bl(3) : Color.clear)
+            .edgesIgnoringSafeArea(.bottom)
+            .onTapGesture {
+
+                self.isActionSheet.toggle()
+                }
+            )
         }
+        .edgesIgnoringSafeArea(.bottom)
+        .animation(.spring())
         .alert(isPresented: $isAlert) {
 
             alertView()
@@ -86,7 +83,7 @@ struct RecordHobbyView: View {
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, favoriteHobby: favoriteHobby)
+            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobby: favoriteHobby)
         )
     }
 
@@ -104,11 +101,6 @@ struct RecordHobbyView: View {
             })
         )
     }
-
-    private func rowRemove(offsets: IndexSet) {
-
-        self.detailVM.removeRow(offsets: offsets)
-    }
 }
 
 
@@ -119,6 +111,7 @@ struct CustomNavigationbarTitle: View {
     @ObservedObject var detailVM: DetailViewModel
     @Binding var date: Date
     @Binding var offset: CGFloat
+    @Binding var isActionSheet: Bool
     var favoriteHobby: FavoriteHobby
     private var title: String {
 
@@ -146,15 +139,31 @@ struct CustomNavigationbarTitle: View {
             .frame(width: UIScreen.main.bounds.width)
             .padding(.trailing, 40)
 
-            Button(action: {
+            HStack {
 
-                self.addRecord()
-            }) {
+                Button(action: {
 
-                Image(systemName: "checkmark")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(Color.orange)
+                    self.isActionSheet.toggle()
+                }) {
+
+                    Image("open-menu")
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color.orange)
+                }
+                .padding(.trailing, 15)
+
+                Button(action: {
+
+                    self.addRecord()
+                }) {
+
+                    Image(systemName: "checkmark")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color.orange)
+                }
             }
             .padding(.trailing, 60)
         }
@@ -180,5 +189,58 @@ struct DetailCell: View {
         // SwiftUIのTextFieldは日本語入力に不具合があるので、UIViewRepresentableから利用
         // TextField("", text: $detailCellVM.detail.detail)
         _TextField(title: "", text: $detailCellVM.detail.detail)
+    }
+}
+
+
+struct ActionSheetView: View {
+
+    @Binding var isActionSheet: Bool
+    @Binding var isAlert: Bool
+
+    private let buttons: [String] = ["Edit", "Delete", "Cancel"]
+
+    var body: some View {
+
+        VStack(alignment: .leading, spacing: 15) {
+
+            ForEach(buttons, id: \.self) { button in
+
+                Button(action: {
+
+                    self.switchAction(text: button)
+                }) {
+
+                    HStack {
+
+                        Text(button.localized)
+                        Spacer()
+                    }
+                    .foregroundColor(.orange)
+                    .padding(.vertical, 3)
+                    .padding(.horizontal)
+                }
+            }
+        }
+        .frame(width: UIScreen.main.bounds.width)
+        .padding(.top, 20)
+        .padding(.horizontal)
+        .padding(.bottom, (UIApplication.shared.windows.last?.safeAreaInsets.bottom)! + 10)
+        .background(BlurView(style: .systemMaterial))
+        .cornerRadius(25)
+    }
+
+    private func switchAction(text: String) {
+
+        switch text {
+        case "Edit":
+            print("Edit")
+        case "Delete":
+            self.isAlert = true
+        case "Cancel":
+            self.isActionSheet = false
+        default:
+            return
+        }
     }
 }
