@@ -47,7 +47,7 @@ struct CLCell: View {
 
                 if self.clDate.hobbyies.count >= 5 {
 
-                    Text("and more")
+                    Text("and more".localized)
                         .font(.system(size: 9))
                         .foregroundColor(Color.pr(9))
                         .padding(.bottom, -10)

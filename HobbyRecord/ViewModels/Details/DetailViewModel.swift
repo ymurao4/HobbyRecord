@@ -11,7 +11,7 @@ import Combine
 
 class DetailViewModel: ObservableObject {
 
-    @Published var detailCellViewModels: [DetailCellViewModel] = []
+    @Published var detailCellViewModels: [DetailCellViewModel] = [DetailCellViewModel(detail: Detail(detail: ""))]
     @Published var details: [String] = []
     private var cancellables = Set<AnyCancellable>()
 

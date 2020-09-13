@@ -30,9 +30,11 @@ struct BottomSheet: View {
 
                 VStack {
 
-                    Text("Favorites")
-                        .font(.title)
-                        .foregroundColor(Color.pr(9))
+                    if  offset != 0 {
+                        Text("Favorites")
+                            .font(.title)
+                            .foregroundColor(Color.pr(9))
+                    }
 
                     List {
 
@@ -40,22 +42,22 @@ struct BottomSheet: View {
 
                             HStack {
 
-                                NavigationLink(destination: RecordHobbyView(favoriteHobby: favoriteHobbyCell.favoriteHobby, offset: self.$offset)) {
+                                NavigationLink(destination: RecordHobbyView(favoriteHobbyVM: self.favoriteHobbyVM, favoriteHobby: favoriteHobbyCell.favoriteHobby, offset: self.$offset)) {
 
                                     FavoriteCell(favoriteHobbyCell: favoriteHobbyCell)
                                 }
                             }
                         }
                     }
+                    .frame(width: UIScreen.main.bounds.width)
+                    .padding(.top, 20)
+                    .padding()
                 }
-                .frame(width: UIScreen.main.bounds.width)
-                .padding(.top, 20)
-                .padding()
             }
             .background(BlurView(style: .systemMaterial))
             .cornerRadius(15)
 
-            NavigationLink(destination: AddNewHobbyView()) {
+            NavigationLink(destination: AddNewHobbyView(favoriteHobbyVM: favoriteHobbyVM)) {
 
                 Image(systemName: "plus")
                     .resizable()

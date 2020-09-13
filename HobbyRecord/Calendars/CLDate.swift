@@ -12,6 +12,7 @@ import SwiftUI
 struct CLDate {
 
     @ObservedObject var hobbyVM: HobbyViewModel
+    @ObservedObject var CLDateVM: CLDateHobbyViewModel
 
     var hobbyies: [Hobby] {
 
@@ -29,6 +30,7 @@ struct CLDate {
         self.clManager = clManager
         self.isToday = isToday
         self.isSelected = isSelected
+        self.CLDateVM = CLDateHobbyViewModel(hobbyVM: hobbyVM)
     }
 
     func getText() -> String {

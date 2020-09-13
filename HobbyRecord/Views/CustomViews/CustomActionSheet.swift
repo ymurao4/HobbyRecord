@@ -7,11 +7,13 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct CustomActionSheet: View {
 
     @Binding var isActionSheet: Bool
-    private let buttons: [String] = ["Setting", "Review In App Store", "App Version"]
+    private let buttons: [String] = ["Review This App"]
+    private let version: String! = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
 
     var body: some View {
 
@@ -21,6 +23,16 @@ struct CustomActionSheet: View {
 
                 ChoicesButton(isActionSheet: self.$isActionSheet, button: button)
             }
+
+            HStack {
+
+                Text("App Version".localized)
+                Spacer()
+                Text(version)
+            }
+            .foregroundColor(.orange)
+            .padding(.vertical, 3)
+            .padding(.horizontal)
         }
         .frame(width: UIScreen.main.bounds.width)
         .padding(.top, 20)
@@ -47,7 +59,7 @@ struct ChoicesButton: View {
 
                 HStack {
 
-                    Text(button)
+                    Text(button.localized)
                     Spacer()
                 }
                 .foregroundColor(.orange)
@@ -63,6 +75,8 @@ struct ChoicesButton: View {
         switch button {
         case "Setting":
             self.isActionSheet.toggle()
+        case "Review This App":
+            SKStoreReviewController.requestReview()
         default:
             return
         }

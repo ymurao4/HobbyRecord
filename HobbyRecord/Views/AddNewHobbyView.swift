@@ -12,8 +12,7 @@ import WaterfallGrid
 struct AddNewHobbyView: View {
 
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var favoriteHobbyVM = FavoriteHobbyViewModel()
-
+    @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
 
     var body: some View {
 
@@ -21,13 +20,15 @@ struct AddNewHobbyView: View {
 
             Form {
 
-                Section(header: Text("")) {
+                Section(header: Text("title".localized)) {
 
-                    TextField("Title", text: $favoriteHobbyVM.title)
-                        .padding(5)
+                    // SwiftUIのTextFieldは日本語入力に不具合があるので、UIViewRepresentableから利用
+//                     TextField("Title".localized, text: $favoriteHobbyVM.title)
+//                        .padding(5)
+                    _TextField(title: "Title".localized, text: $favoriteHobbyVM.title)
                 }
 
-                Section(header: Text("Icon")) {
+                Section(header: Text("Icon".localized)) {
 
                     IconSetting(icon: $favoriteHobbyVM.icon, kind: K.icons)
                 }
@@ -52,15 +53,9 @@ struct AddNewHobbyView: View {
     private func addRecord() {
 
         self.presentationMode.wrappedValue.dismiss()
-        self.favoriteHobbyVM.addFavoriteHoby()
+        self.favoriteHobbyVM.addFavoriteHobby()
     }
 
-}
-
-struct AddHobbyView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddNewHobbyView()
-    }
 }
 
 struct IconSetting: View {

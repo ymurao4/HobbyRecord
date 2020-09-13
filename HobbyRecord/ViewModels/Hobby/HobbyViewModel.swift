@@ -7,25 +7,60 @@
 //
 
 import Combine
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class HobbyViewModel: ObservableObject {
     
     @Published var hobbyCellViewModels: [HobbyCellViewModel] = []
+    @Published var hobbyRepository = HobbyRepository()
+
+    let db = Firestore.firestore()
 
     private var cancellables = Set<AnyCancellable>()
 
     init() {
 
-        self.hobbyCellViewModels = testDataHobbies.map { hobby in
-            HobbyCellViewModel(hobby: hobby)
+        hobbyRepository.$hobbies
+            .map { hobbies in
+
+                hobbies.map { hobby in
+                    HobbyCellViewModel(hobby: hobby)
+                }
         }
+        .assign(to: \.hobbyCellViewModels, on: self)
+        .store(in: &cancellables)
     }
 
     func addRecord(hobby: Hobby) {
 
-        let hobbyCellVM = HobbyCellViewModel(hobby: hobby)
-        self.hobbyCellViewModels.append(hobbyCellVM)
-        print(hobby)
+        do {
+
+            var addedHobby = hobby
+            addedHobby.uesrId = Auth.auth().currentUser?.uid
+            let _ = try db.collection("hobbies").addDocument(from: addedHobby)
+        } catch {
+
+            fatalError("Unable to encode hobby: \(error.localizedDescription)")
+        }
+    }
+
+    func removeRecord(hobby: Hobby) {
+
+        if let docID = hobby.id {
+
+            db.collection("hobbies").document(docID).delete() { err in
+
+                if let err = err {
+
+                    print("Error removing document: \(err.localizedDescription)")
+                } else {
+
+                    print("Document successfully removied")
+                }
+            }
+        }
     }
 
 }

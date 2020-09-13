@@ -18,7 +18,7 @@ class FavoriteHobbyCellViewModel: ObservableObject {
 
         self.favoriteHobby = favHobby
 
-        $favoriteHobby.map { favHobby in
+        $favoriteHobby.compactMap { favHobby in
             favHobby.id
         }
         .assign(to: \.id, on: self)

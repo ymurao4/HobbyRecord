@@ -38,13 +38,18 @@ struct DateView: View {
             }
             .padding(.top, 10)
 
-            ScrollView(.vertical, showsIndicators: false) {
+            List {
+
                 if self.detailVM.hobbies.count != 0 {
+
                     ForEach(self.detailVM.hobbies, id: \.self) { hobby in
+
                         HobbyCell(hobby: hobby)
                     }
+                .onDelete(perform: rowRemove)
                 } else {
-                    Text("No Event")
+
+                    Text("No Hobby Records".localized)
                 }
             }
             Spacer()
@@ -54,6 +59,12 @@ struct DateView: View {
         .cornerRadius(25)
     }
 
+    private func rowRemove(offsets: IndexSet) {
+
+        let hobby = self.detailVM.hobbies[offsets.first!]
+
+        self.hobbyVM.removeRecord(hobby: hobby)
+    }
 }
 
 struct HobbyCell: View {
@@ -93,7 +104,6 @@ struct HobbyCell: View {
                     .font(.subheadline)
                     .foregroundColor(Color.pr(9))
             }
-            Divider()
         }
         .padding(.horizontal)
     }

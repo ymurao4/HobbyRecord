@@ -17,7 +17,7 @@ class HobbyCellViewModel: ObservableObject, Identifiable {
     init(hobby: Hobby) {
         self.hobby = hobby
 
-        $hobby.map { hobby in
+        $hobby.compactMap { hobby in
             hobby.id
         }
         .assign(to: \.id, on: self)
