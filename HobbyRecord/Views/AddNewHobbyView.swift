@@ -14,7 +14,6 @@ struct AddNewHobbyView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var favoriteHobbyVM = FavoriteHobbyViewModel()
 
-
     var body: some View {
 
         VStack(alignment: .leading) {
@@ -24,10 +23,9 @@ struct AddNewHobbyView: View {
                 Section(header: Text("title".localized)) {
 
                     // SwiftUIのTextFieldは日本語入力に不具合があるので、UIViewRepresentableから利用
-                    // TextField("Title".localized, text: $favoriteHobbyVM.
-                    // .padding(5)
+//                     TextField("Title".localized, text: $favoriteHobbyVM.title)
+//                        .padding(5)
                     _TextField(title: "Title".localized, text: $favoriteHobbyVM.title)
-                        .padding(5)
                 }
 
                 Section(header: Text("Icon".localized)) {

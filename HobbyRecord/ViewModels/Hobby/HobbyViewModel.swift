@@ -26,7 +26,6 @@ class HobbyViewModel: ObservableObject {
             .map { hobbies in
 
                 hobbies.map { hobby in
-
                     HobbyCellViewModel(hobby: hobby)
                 }
         }

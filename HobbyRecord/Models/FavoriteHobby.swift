@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct FavoriteHobby: Identifiable {
-    var id: String = UUID().uuidString
+struct FavoriteHobby: Identifiable, Codable {
+    @DocumentID var id: String?
     var title: String
     var icon: String
+    var uesrId: String?
 }
 
 #if DEBUG

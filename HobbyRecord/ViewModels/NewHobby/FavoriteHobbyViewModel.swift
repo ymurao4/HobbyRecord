@@ -6,42 +6,65 @@
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
-import Foundation
 import Combine
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class FavoriteHobbyViewModel: ObservableObject {
 
+    @Published var favoriteHobbyRepository = FavoriteHobbyRespository()
     @Published var favoriteHobbyCellViewModels: [FavoriteHobbyCellViewModel] = []
     @Published var isValidate: Bool = false
     @Published var title: String = ""
     @Published var icon: String = ""
 
+    let db = Firestore.firestore()
+
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        self.favoriteHobbyCellViewModels = testDataFavHobbies.map { favHobby in
-            FavoriteHobbyCellViewModel(favHobby: favHobby)
+
+        favoriteHobbyRepository.$favoriteHobbies
+            .map { favoriteHobbies in
+
+                favoriteHobbies.map { favoriteHobby in
+
+                    FavoriteHobbyCellViewModel(favHobby: favoriteHobby)
+                }
         }
+        .assign(to: \.favoriteHobbyCellViewModels, on: self)
+        .store(in: &cancellables)
+
 
         Publishers.CombineLatest($title, $icon).map { (title, icon) -> Bool in
 
             let trimmedTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
 
-            if trimmedTitle != "" && icon != "" {
+            if !trimmedTitle.isEmpty && !icon.isEmpty {
+
                 return true
             } else {
+
                 return false
             }
         }
         .eraseToAnyPublisher()
         .assign(to: \.isValidate, on: self)
         .store(in: &cancellables)
-
     }
 
     func addFavoriteHoby() {
 
-        let favoriteHobbyCellVM = FavoriteHobbyCellViewModel(favHobby: FavoriteHobby(title: title, icon: icon))
-        self.favoriteHobbyCellViewModels.append(favoriteHobbyCellVM)
+        do {
+
+            let userId = Auth.auth().currentUser?.uid
+
+            let addedFavoriteHobby = FavoriteHobby(title: title, icon: icon, uesrId: userId)
+            let _ = try db.collection("favorites").addDocument(from: addedFavoriteHobby)
+        } catch {
+
+            fatalError("Unable to enchode favoriteHobby: \(error.localizedDescription)")
+        }
     }
 }
