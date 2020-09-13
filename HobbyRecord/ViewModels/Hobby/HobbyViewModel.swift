@@ -46,4 +46,21 @@ class HobbyViewModel: ObservableObject {
         }
     }
 
+    func removeRecord(hobby: Hobby) {
+
+        if let docID = hobby.id {
+
+            db.collection("hobbies").document(docID).delete() { err in
+
+                if let err = err {
+
+                    print("Error removing document: \(err.localizedDescription)")
+                } else {
+
+                    print("Document successfully removied")
+                }
+            }
+        }
+    }
+
 }
