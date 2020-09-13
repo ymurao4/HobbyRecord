@@ -8,20 +8,9 @@ target 'HobbyRecord' do
   # Pods for HobbyRecord
   pod 'IQKeyboardManagerSwift'
   pod 'WaterfallGrid'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
 end
 
-target 'HobbyRecord WatchKit App' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for HobbyRecord WatchKit App
-
-end
-
-target 'HobbyRecord WatchKit Extension' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for HobbyRecord WatchKit Extension
-
-end

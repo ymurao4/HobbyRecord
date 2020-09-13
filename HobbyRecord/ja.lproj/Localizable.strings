@@ -35,7 +35,7 @@
 
 // MARK: - CustomActionSheet
 "Setting" = "設定";
-"Review In App Store" = "レビューを書く";
+"Review This App" = "アプリを評価する";
 "App Version" = "アップバージョン";
 
 

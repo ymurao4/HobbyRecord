@@ -13,6 +13,7 @@
 		041279EA250D94C600283614 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041279E9250D94C600283614 /* String.swift */; };
 		041279ED250D9A3000283614 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 041279EF250D9A3000283614 /* InfoPlist.strings */; };
 		041279F2250D9BFC00283614 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041279F1250D9BFC00283614 /* TextField.swift */; };
+		041279F4250DA44C00283614 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041279F3250DA44C00283614 /* GoogleService-Info.plist */; };
 		04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F882508704400AEB196 /* CustomActionSheet.swift */; };
 		04294F8B2508705F00AEB196 /* CustomNabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F8A2508705F00AEB196 /* CustomNabbar.swift */; };
 		042C0A1125075A44001AB6CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C0A1025075A44001AB6CD /* ContentView.swift */; };
@@ -70,6 +71,7 @@
 		041279EE250D9A3000283614 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		041279F0250D9A3800283614 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		041279F1250D9BFC00283614 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		041279F3250DA44C00283614 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04294F882508704400AEB196 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
 		04294F8A2508705F00AEB196 /* CustomNabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNabbar.swift; sourceTree = "<group>"; };
 		042C0A1025075A44001AB6CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				0498FE1324F88C7400489C12 /* Assets.xcassets */,
 				0498FE1824F88C7400489C12 /* LaunchScreen.storyboard */,
 				0498FE1B24F88C7400489C12 /* Info.plist */,
+				041279F3250DA44C00283614 /* GoogleService-Info.plist */,
 				041279EF250D9A3000283614 /* InfoPlist.strings */,
 				0498FE1524F88C7400489C12 /* Preview Content */,
 				041279E7250D91A400283614 /* Localizable.strings */,
@@ -391,6 +394,7 @@
 				0498FE1724F88C7400489C12 /* Preview Assets.xcassets in Resources */,
 				0498FE1424F88C7400489C12 /* Assets.xcassets in Resources */,
 				041279ED250D9A3000283614 /* InfoPlist.strings in Resources */,
+				041279F4250DA44C00283614 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
