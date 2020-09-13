@@ -11,6 +11,7 @@
 		040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E790624FE1E67008F910F /* HobbyCellViewModel.swift */; };
 		041279E5250D91A400283614 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 041279E7250D91A400283614 /* Localizable.strings */; };
 		041279EA250D94C600283614 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041279E9250D94C600283614 /* String.swift */; };
+		041279ED250D9A3000283614 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 041279EF250D9A3000283614 /* InfoPlist.strings */; };
 		04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F882508704400AEB196 /* CustomActionSheet.swift */; };
 		04294F8B2508705F00AEB196 /* CustomNabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F8A2508705F00AEB196 /* CustomNabbar.swift */; };
 		042C0A1125075A44001AB6CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C0A1025075A44001AB6CD /* ContentView.swift */; };
@@ -65,6 +66,8 @@
 		041279E6250D91A400283614 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		041279E8250D91C300283614 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		041279E9250D94C600283614 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		041279EE250D9A3000283614 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		041279F0250D9A3800283614 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		04294F882508704400AEB196 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
 		04294F8A2508705F00AEB196 /* CustomNabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNabbar.swift; sourceTree = "<group>"; };
 		042C0A1025075A44001AB6CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 				0498FE1324F88C7400489C12 /* Assets.xcassets */,
 				0498FE1824F88C7400489C12 /* LaunchScreen.storyboard */,
 				0498FE1B24F88C7400489C12 /* Info.plist */,
+				041279EF250D9A3000283614 /* InfoPlist.strings */,
 				0498FE1524F88C7400489C12 /* Preview Content */,
 				041279E7250D91A400283614 /* Localizable.strings */,
 			);
@@ -383,6 +387,7 @@
 				041279E5250D91A400283614 /* Localizable.strings in Resources */,
 				0498FE1724F88C7400489C12 /* Preview Assets.xcassets in Resources */,
 				0498FE1424F88C7400489C12 /* Assets.xcassets in Resources */,
+				041279ED250D9A3000283614 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +485,15 @@
 				041279E8250D91C300283614 /* ja */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		041279EF250D9A3000283614 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				041279EE250D9A3000283614 /* ja */,
+				041279F0250D9A3800283614 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		0498FE1824F88C7400489C12 /* LaunchScreen.storyboard */ = {
