@@ -46,7 +46,7 @@ class FavoriteHobbyViewModel: ObservableObject {
                 return true
             } else {
 
-                return true
+                return false
             }
         }
         .eraseToAnyPublisher()
