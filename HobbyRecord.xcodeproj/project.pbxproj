@@ -46,7 +46,7 @@
 		04EB65F0250A03FB002EE231 /* EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65EF250A03FB002EE231 /* EdgeBorder.swift */; };
 		04FA720725085AC10094F336 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720625085AC10094F336 /* BlurView.swift */; };
 		04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720925085E5C0094F336 /* ReaderView.swift */; };
-		C4AB58F9670779A94B762988 /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D1F08BE333D70F519D5B63 /* Pods_HobbyRecord.framework */; };
+		2F868986DD997C6C5C1A841A /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308C3D1DFBDB4395FBE5C6ED /* Pods_HobbyRecord.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -107,15 +107,9 @@
 		04EB65EF250A03FB002EE231 /* EdgeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EdgeBorder.swift; path = Extentions/EdgeBorder.swift; sourceTree = "<group>"; };
 		04FA720625085AC10094F336 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		04FA720925085E5C0094F336 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
-		4871CF372592FB67F2EA5203 /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
-		9593D2B4CF10B65DB59130E2 /* Pods_HobbyRecord_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95E9EAF7BB55403CAF5C7D19 /* Pods-HobbyRecord WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord WatchKit App/Pods-HobbyRecord WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		ACD5A0B1F0CD55FD9B37FF65 /* Pods_HobbyRecord_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBF068820EDB2B2F277D64C0 /* Pods-HobbyRecord WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord WatchKit Extension/Pods-HobbyRecord WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		DE0A8A1A68111F117C434597 /* Pods-HobbyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.release.xcconfig"; sourceTree = "<group>"; };
-		E4590BE69D86128A658DCAF1 /* Pods-HobbyRecord WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord WatchKit Extension/Pods-HobbyRecord WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		E7D1F08BE333D70F519D5B63 /* Pods_HobbyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E951AF6B36D92BA0DC1A75A0 /* Pods-HobbyRecord WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord WatchKit App/Pods-HobbyRecord WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		308C3D1DFBDB4395FBE5C6ED /* Pods_HobbyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D8D2EBABC4B0C4C44311302 /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
+		AA287421D288A46BD8D1D4E4 /* Pods-HobbyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4AB58F9670779A94B762988 /* Pods_HobbyRecord.framework in Frameworks */,
+				2F868986DD997C6C5C1A841A /* Pods_HobbyRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,8 +209,8 @@
 				0498FE0C24F88C7400489C12 /* HobbyRecord */,
 				0498FE0B24F88C7400489C12 /* Products */,
 				B0E1B3F0E09204E49FBCC099 /* Pods */,
-				BBBAEDBBAB124C79BC97C213 /* Frameworks */,
 				04C23D42250B18B200787F99 /* Recovered References */,
+				14E8839EFA9A815BE9B886DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,27 +294,21 @@
 			path = BottomViews;
 			sourceTree = "<group>";
 		};
+		14E8839EFA9A815BE9B886DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				308C3D1DFBDB4395FBE5C6ED /* Pods_HobbyRecord.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0E1B3F0E09204E49FBCC099 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4871CF372592FB67F2EA5203 /* Pods-HobbyRecord.debug.xcconfig */,
-				DE0A8A1A68111F117C434597 /* Pods-HobbyRecord.release.xcconfig */,
-				95E9EAF7BB55403CAF5C7D19 /* Pods-HobbyRecord WatchKit App.debug.xcconfig */,
-				E951AF6B36D92BA0DC1A75A0 /* Pods-HobbyRecord WatchKit App.release.xcconfig */,
-				E4590BE69D86128A658DCAF1 /* Pods-HobbyRecord WatchKit Extension.debug.xcconfig */,
-				BBF068820EDB2B2F277D64C0 /* Pods-HobbyRecord WatchKit Extension.release.xcconfig */,
+				9D8D2EBABC4B0C4C44311302 /* Pods-HobbyRecord.debug.xcconfig */,
+				AA287421D288A46BD8D1D4E4 /* Pods-HobbyRecord.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		BBBAEDBBAB124C79BC97C213 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E7D1F08BE333D70F519D5B63 /* Pods_HobbyRecord.framework */,
-				ACD5A0B1F0CD55FD9B37FF65 /* Pods_HobbyRecord_WatchKit_App.framework */,
-				9593D2B4CF10B65DB59130E2 /* Pods_HobbyRecord_WatchKit_Extension.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,20 +318,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0498FE4D24F88C7500489C12 /* Build configuration list for PBXNativeTarget "HobbyRecord" */;
 			buildPhases = (
-				52F439179192A45BD6F23B43 /* [CP] Check Pods Manifest.lock */,
+				B28FDEF1AA5893DC3E243661 /* [CP] Check Pods Manifest.lock */,
 				0498FE0624F88C7400489C12 /* Sources */,
 				0498FE0724F88C7400489C12 /* Frameworks */,
 				0498FE0824F88C7400489C12 /* Resources */,
 				0498FE4C24F88C7500489C12 /* Embed Watch Content */,
-				B67141154845A003547FC10C /* [CP] Embed Pods Frameworks */,
+				6403AAC212D7065151C9E4B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = HobbyRecord;
-			packageProductDependencies = (
-			);
 			productName = HobbyRecord;
 			productReference = 0498FE0A24F88C7400489C12 /* HobbyRecord.app */;
 			productType = "com.apple.product-type.application";
@@ -373,8 +359,6 @@
 				ja,
 			);
 			mainGroup = 0498FE0124F88C7300489C12;
-			packageReferences = (
-			);
 			productRefGroup = 0498FE0B24F88C7400489C12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -401,7 +385,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		52F439179192A45BD6F23B43 /* [CP] Check Pods Manifest.lock */ = {
+		6403AAC212D7065151C9E4B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B28FDEF1AA5893DC3E243661 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -421,23 +422,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B67141154845A003547FC10C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -633,7 +617,7 @@
 		};
 		0498FE4E24F88C7500489C12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4871CF372592FB67F2EA5203 /* Pods-HobbyRecord.debug.xcconfig */;
+			baseConfigurationReference = 9D8D2EBABC4B0C4C44311302 /* Pods-HobbyRecord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -654,7 +638,7 @@
 		};
 		0498FE4F24F88C7500489C12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE0A8A1A68111F117C434597 /* Pods-HobbyRecord.release.xcconfig */;
+			baseConfigurationReference = AA287421D288A46BD8D1D4E4 /* Pods-HobbyRecord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
