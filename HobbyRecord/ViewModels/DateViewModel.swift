@@ -44,4 +44,9 @@ class DateViewModel: ObservableObject {
         .store(in: &cancellable)
     }
 
+    func updateHobby(hobby: Hobby) {
+
+        print(hobby)
+    }
+
 }
