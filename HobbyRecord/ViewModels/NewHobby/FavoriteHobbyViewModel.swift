@@ -46,7 +46,7 @@ class FavoriteHobbyViewModel: ObservableObject {
                 return true
             } else {
 
-                return false
+                return true
             }
         }
         .eraseToAnyPublisher()
@@ -54,7 +54,7 @@ class FavoriteHobbyViewModel: ObservableObject {
         .store(in: &cancellables)
     }
 
-    func addFavoriteHoby() {
+    func addFavoriteHobby() {
 
         do {
 
@@ -65,6 +65,23 @@ class FavoriteHobbyViewModel: ObservableObject {
         } catch {
 
             fatalError("Unable to enchode favoriteHobby: \(error.localizedDescription)")
+        }
+    }
+
+    func removeFavoriteHobby(fav: FavoriteHobby) {
+
+        if let docID = fav.id {
+
+            db.collection("favorites").document(docID).delete() { err in
+
+                if let err = err {
+
+                    print("Error removing document: \(err.localizedDescription)")
+                } else {
+
+                    print("Document successfully removied")
+                }
+            }
         }
     }
 }

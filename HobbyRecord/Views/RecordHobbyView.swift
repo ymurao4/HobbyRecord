@@ -10,49 +10,78 @@ import SwiftUI
 
 struct RecordHobbyView: View {
 
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var hobbyVM = HobbyViewModel()
     @ObservedObject var detailVM = DetailViewModel()
+    @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
     var favoriteHobby: FavoriteHobby
     @Binding var offset: CGFloat
     @State var date: Date = Date()
+    @State private var isAlert: Bool = false
 
     var body: some View {
 
         VStack(alignment: .leading) {
 
-            Form {
+            ZStack(alignment: .bottom) {
 
-                Section(header: Text("Date".localized)) {
+                Form {
 
-                    DatePicker(selection: $date, displayedComponents: .date) {
+                    Section(header: Text("Date".localized)) {
 
-                        Text("Select Date".localized)
-                            .foregroundColor(Color.primary)
+                        DatePicker(selection: $date, displayedComponents: .date) {
+
+                            Text("Select Date".localized)
+                                .foregroundColor(Color.primary)
+                        }
+                    }
+
+                    Section(header: Text("Detail".localized)) {
+
+                        ForEach(detailVM.detailCellViewModels) { detailCell in
+
+                            DetailCell(detailCellVM: detailCell)
+                        }
+                        .onDelete(perform: rowRemove)
+
+                        Button(action: { self.detailVM.addDetail(detail: Detail(detail: "")) }) {
+
+                            HStack {
+
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                Text("Add New Detail".localized)
+                            }
+                            .foregroundColor(Color.orange)
+                        }
                     }
                 }
 
-                Section(header: Text("Detail".localized)) {
+                Button(action: {
 
-                    ForEach(detailVM.detailCellViewModels) { detailCell in
+                    self.isAlert.toggle()
+                }) {
 
-                        DetailCell(detailCellVM: detailCell)
+                    HStack {
+
+                        Image(systemName: "trash")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+
+                        Text("Delete".localized)
+                            .foregroundColor(.white)
                     }
-                    .onDelete(perform: rowRemove)
-
-                    Button(action: { self.detailVM.addDetail(detail: Detail(detail: "")) }) {
-
-                        HStack {
-
-                            Image(systemName: "plus.circle.fill")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                            Text("Add New Detail".localized)
-                        }
-                        .foregroundColor(Color.orange)
-                    }
+                    .padding(EdgeInsets(top: 15, leading: 30, bottom: 15, trailing: 30))
+                    .background(Color.red.opacity(0.8))
+                    .cornerRadius(30)
                 }
             }
 
+        }
+        .alert(isPresented: $isAlert) {
+
+            alertView()
         }
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
@@ -61,16 +90,24 @@ struct RecordHobbyView: View {
         )
     }
 
+    private func alertView() -> Alert {
+
+        Alert(
+
+            title: Text("Are you sure?".localized),
+            message: Text("Do you want to delete this hobby from favorites?".localized),
+            primaryButton: .cancel(),
+            secondaryButton: .destructive(Text("Delete"), action: {
+
+                self.favoriteHobbyVM.removeFavoriteHobby(fav: self.favoriteHobby)
+                self.presentationMode.wrappedValue.dismiss()
+            })
+        )
+    }
 
     private func rowRemove(offsets: IndexSet) {
 
         self.detailVM.removeRow(offsets: offsets)
-    }
-}
-
-struct RecordHobbyVIew_Previews: PreviewProvider {
-    static var previews: some View {
-        RecordHobbyView(favoriteHobby: FavoriteHobby(title: "", icon: ""), offset: .constant(0))
     }
 }
 

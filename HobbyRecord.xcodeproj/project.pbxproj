@@ -133,11 +133,11 @@
 		040E790524FE0CAE008F910F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				0436BFF4250DDC78004499BF /* CLDateViewModel.swift */,
 				04EB65EE2509B0BF002EE231 /* Hobby */,
 				04BD31472504B6BB00AA3745 /* DateViewModel.swift */,
 				04EB65ED2509B0B8002EE231 /* NewHobby */,
 				047A5DA0250A3468000423BF /* Details */,
+				0436BFF4250DDC78004499BF /* CLDateViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
