@@ -38,6 +38,7 @@
 		04A7130B25020B3A00339779 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7130A25020B3A00339779 /* DateView.swift */; };
 		04BD314525046B9C00AA3745 /* D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD314425046B9C00AA3745 /* D.swift */; };
 		04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD31472504B6BB00AA3745 /* DateViewModel.swift */; };
+		04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4407250E12FC004F44B9 /* DateDetailView.swift */; };
 		04C607472500BFC800479749 /* CLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C607462500BFC800479749 /* CLCell.swift */; };
 		04C6074B2500C00B00479749 /* ClViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074A2500C00B00479749 /* ClViewController.swift */; };
 		04C6074D2500C02700479749 /* CLMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074C2500C02700479749 /* CLMonth.swift */; };
@@ -102,6 +103,7 @@
 		04A7130A25020B3A00339779 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		04BD314425046B9C00AA3745 /* D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D.swift; sourceTree = "<group>"; };
 		04BD31472504B6BB00AA3745 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
+		04BD4407250E12FC004F44B9 /* DateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetailView.swift; sourceTree = "<group>"; };
 		04C607462500BFC800479749 /* CLCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLCell.swift; sourceTree = "<group>"; };
 		04C6074A2500C00B00479749 /* ClViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClViewController.swift; sourceTree = "<group>"; };
 		04C6074C2500C02700479749 /* CLMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLMonth.swift; sourceTree = "<group>"; };
@@ -192,9 +194,8 @@
 			children = (
 				042C0A1025075A44001AB6CD /* ContentView.swift */,
 				0498FE1124F88C7400489C12 /* CalendarView.swift */,
-				04A7130A25020B3A00339779 /* DateView.swift */,
-				04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */,
-				0436E83D2509A15100A25460 /* RecordHobbyView.swift */,
+				04BD4409250E1308004F44B9 /* DateViews */,
+				04BD440A250E130F004F44B9 /* BottomSheetView */,
 				04294F8C2508707700AEB196 /* CustomViews */,
 			);
 			path = Views;
@@ -266,6 +267,24 @@
 				0436BFF2250DB6F9004499BF /* FavoriteHobbyRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		04BD4409250E1308004F44B9 /* DateViews */ = {
+			isa = PBXGroup;
+			children = (
+				04A7130A25020B3A00339779 /* DateView.swift */,
+				04BD4407250E12FC004F44B9 /* DateDetailView.swift */,
+			);
+			path = DateViews;
+			sourceTree = "<group>";
+		};
+		04BD440A250E130F004F44B9 /* BottomSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */,
+				0436E83D2509A15100A25460 /* RecordHobbyView.swift */,
+			);
+			path = BottomSheetView;
 			sourceTree = "<group>";
 		};
 		04C23D42250B18B200787F99 /* Recovered References */ = {
@@ -456,6 +475,7 @@
 				041279F2250D9BFC00283614 /* TextField.swift in Sources */,
 				0436BFF3250DB6F9004499BF /* FavoriteHobbyRepository.swift in Sources */,
 				04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */,
+				04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */,
 				047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */,
 				04294F8B2508705F00AEB196 /* CustomNabbar.swift in Sources */,
 				0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */,

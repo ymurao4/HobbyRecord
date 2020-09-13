@@ -135,6 +135,7 @@ struct CustomNavigationbarTitle: View {
                     .foregroundColor(Color.pr(9))
 
                 Text(self.favoriteHobby.title)
+                    .foregroundColor(Color.pr(9))
             }
             .frame(width: UIScreen.main.bounds.width)
             .padding(.trailing, 40)
@@ -206,19 +207,27 @@ struct ActionSheetView: View {
 
             ForEach(buttons, id: \.self) { button in
 
-                Button(action: {
+                VStack {
 
-                    self.switchAction(text: button)
-                }) {
+                    Button(action: {
 
-                    HStack {
+                        self.switchAction(text: button)
+                    }) {
 
-                        Text(button.localized)
-                        Spacer()
+                        HStack {
+
+                            Text(button.localized)
+                                .bold()
+                            Spacer()
+                        }
+                        .foregroundColor(.orange)
+                        .padding(.vertical, 3)
+                        .padding(.horizontal)
                     }
-                    .foregroundColor(.orange)
-                    .padding(.vertical, 3)
-                    .padding(.horizontal)
+
+                    if button != "Cancel" {
+                        Divider()
+                    }
                 }
             }
         }

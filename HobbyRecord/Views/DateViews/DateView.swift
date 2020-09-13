@@ -11,14 +11,14 @@ import SwiftUI
 struct DateView: View {
 
     @Environment(\.colorScheme) var colorScheme
-    @ObservedObject var detailVM: DateViewModel
+    @ObservedObject var dateVM: DateViewModel
     @ObservedObject var hobbyVM: HobbyViewModel
     var clManager: CLManager
 
     init(clManager: CLManager, hobbyVM: HobbyViewModel) {
         self.clManager = clManager
         self.hobbyVM = hobbyVM
-        self.detailVM = DateViewModel(date: clManager.selectedDate, hobbyVM: hobbyVM)
+        self.dateVM = DateViewModel(date: clManager.selectedDate, hobbyVM: hobbyVM)
     }
 
     var body: some View {
@@ -27,24 +27,32 @@ struct DateView: View {
 
             HStack(alignment: .center, spacing: 40) {
 
-                ChangeDateButton(detailVM: detailVM, clManager: clManager, text: "chevron.compact.left")
+                ChangeDateButton(detailVM: dateVM, clManager: clManager, text: "chevron.compact.left")
 
                 Text(D.getTextFromDate(date: self.clManager.selectedDate))
                     .font(.system(size: 30))
                     .foregroundColor(Color.pr(9))
 
-                ChangeDateButton(detailVM: detailVM, clManager: clManager, text: "chevron.compact.right")
+                ChangeDateButton(detailVM: dateVM, clManager: clManager, text: "chevron.compact.right")
 
             }
             .padding(.top, 10)
 
             List {
 
-                if self.detailVM.hobbies.count != 0 {
+                if self.dateVM.hobbies.count != 0 {
 
-                    ForEach(self.detailVM.hobbies, id: \.self) { hobby in
+                    ForEach(self.dateVM.hobbies, id: \.self) { hobby in
 
-                        HobbyCell(hobby: hobby)
+                        HStack {
+
+                            HobbyCell(hobby: hobby)
+
+                            NavigationLink(destination: DateDetailView(dateVM: self.dateVM, hobby: hobby)) {
+
+                                EmptyView()
+                            }
+                        }
                     }
                 .onDelete(perform: rowRemove)
                 } else {
@@ -61,7 +69,7 @@ struct DateView: View {
 
     private func rowRemove(offsets: IndexSet) {
 
-        let hobby = self.detailVM.hobbies[offsets.first!]
+        let hobby = self.dateVM.hobbies[offsets.first!]
 
         self.hobbyVM.removeRecord(hobby: hobby)
     }
