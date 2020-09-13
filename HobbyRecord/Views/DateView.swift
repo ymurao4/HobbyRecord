@@ -44,7 +44,7 @@ struct DateView: View {
                         HobbyCell(hobby: hobby)
                     }
                 } else {
-                    Text("No Event")
+                    Text("No Hobby Records".localized)
                 }
             }
             Spacer()

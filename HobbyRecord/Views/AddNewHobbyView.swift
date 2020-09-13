@@ -21,13 +21,13 @@ struct AddNewHobbyView: View {
 
             Form {
 
-                Section(header: Text("")) {
+                Section(header: Text("タイトル".localized)) {
 
-                    TextField("Title", text: $favoriteHobbyVM.title)
+                    TextField("Title".localized, text: $favoriteHobbyVM.title)
                         .padding(5)
                 }
 
-                Section(header: Text("Icon")) {
+                Section(header: Text("Icon".localized)) {
 
                     IconSetting(icon: $favoriteHobbyVM.icon, kind: K.icons)
                 }

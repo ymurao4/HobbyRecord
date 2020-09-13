@@ -6,4 +6,41 @@
   Copyright © 2020 村尾慶伸. All rights reserved.
 */
 
+// MARK: - DateView
+"No Hobby Records" = "趣味記録がありません。";
+
+
+// MARK: - AddNewHobbyView
+"Title" = "タイトル";
+"Icon" = "アイコン";
+
+
+// MARK: - RecordHobbyView
+"Date" = "日付";
+"Select Date" = "日付を選択";
+"Detail" = "メモ";
+"Add New Detail" = "新しいメモ";
+
+
+// MARK: - CustomNavbar
+"SUN" = "日";
+"MON" = "月";
+"TUE" = "火";
+"WED" = "水";
+"THU" = "木";
+"FRI" = "金";
+"SAT" = "土";
+
+
+// MARK: - CustomActionSheet
 "Setting" = "設定";
+"Review In App Store" = "レビューを書く";
+"App Version" = "アップバージョン";
+
+
+// MARK: - BottomSheet
+"Favorites" = "お気に入り";
+
+
+// MARK: - CLCell
+"and more" = "...";

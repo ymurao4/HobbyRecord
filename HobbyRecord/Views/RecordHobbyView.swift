@@ -22,16 +22,16 @@ struct RecordHobbyView: View {
 
             Form {
 
-                Section(header: Text("Select Date")) {
+                Section(header: Text("Date".localized)) {
 
                     DatePicker(selection: $date, displayedComponents: .date) {
 
-                        Text("Select Date")
+                        Text("Select Date".localized)
                             .foregroundColor(Color.primary)
                     }
                 }
 
-                Section(header: Text("Detail")) {
+                Section(header: Text("Detail".localized)) {
 
                     ForEach(detailVM.detailCellViewModels) { detailCell in
 
@@ -46,7 +46,7 @@ struct RecordHobbyView: View {
                             Image(systemName: "plus.circle.fill")
                                 .resizable()
                                 .frame(width: 20, height: 20)
-                            Text("Add New Detail")
+                            Text("Add New Detail".localized)
                         }
                         .foregroundColor(Color.orange)
                     }

@@ -39,7 +39,7 @@ struct CustomNavbar: View {
 
                 ForEach(dayOfTheWeek, id: \.self) { row in
 
-                    Text(row.uppercased())
+                    Text(row.uppercased().localized)
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundColor(self.dayOfTheWeekColor(row: row))
