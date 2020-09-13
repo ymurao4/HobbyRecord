@@ -21,9 +21,12 @@ struct AddNewHobbyView: View {
 
             Form {
 
-                Section(header: Text("タイトル".localized)) {
+                Section(header: Text("title".localized)) {
 
-                    TextField("Title".localized, text: $favoriteHobbyVM.title)
+                    // SwiftUIのTextFieldは日本語入力に不具合があるので、UIViewRepresentableから利用
+                    // TextField("Title".localized, text: $favoriteHobbyVM.
+                    // .padding(5)
+                    _TextField(title: "Title".localized, text: $favoriteHobbyVM.title)
                         .padding(5)
                 }
 

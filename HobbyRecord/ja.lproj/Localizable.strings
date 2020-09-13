@@ -12,6 +12,7 @@
 
 // MARK: - AddNewHobbyView
 "Title" = "タイトル";
+"title" = "タイトル";
 "Icon" = "アイコン";
 
 

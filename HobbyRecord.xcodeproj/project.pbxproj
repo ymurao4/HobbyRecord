@@ -12,6 +12,7 @@
 		041279E5250D91A400283614 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 041279E7250D91A400283614 /* Localizable.strings */; };
 		041279EA250D94C600283614 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041279E9250D94C600283614 /* String.swift */; };
 		041279ED250D9A3000283614 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 041279EF250D9A3000283614 /* InfoPlist.strings */; };
+		041279F2250D9BFC00283614 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041279F1250D9BFC00283614 /* TextField.swift */; };
 		04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F882508704400AEB196 /* CustomActionSheet.swift */; };
 		04294F8B2508705F00AEB196 /* CustomNabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F8A2508705F00AEB196 /* CustomNabbar.swift */; };
 		042C0A1125075A44001AB6CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C0A1025075A44001AB6CD /* ContentView.swift */; };
@@ -68,6 +69,7 @@
 		041279E9250D94C600283614 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		041279EE250D9A3000283614 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		041279F0250D9A3800283614 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		041279F1250D9BFC00283614 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		04294F882508704400AEB196 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
 		04294F8A2508705F00AEB196 /* CustomNabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNabbar.swift; sourceTree = "<group>"; };
 		042C0A1025075A44001AB6CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				04BD314425046B9C00AA3745 /* D.swift */,
 				04FA720625085AC10094F336 /* BlurView.swift */,
 				041279E9250D94C600283614 /* String.swift */,
+				041279F1250D9BFC00283614 /* TextField.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				04A713092501C9B500339779 /* Icon.swift in Sources */,
 				04C6074B2500C00B00479749 /* ClViewController.swift in Sources */,
 				0470133124FC83B500D5BA94 /* Color.swift in Sources */,
+				041279F2250D9BFC00283614 /* TextField.swift in Sources */,
 				04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */,
 				047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */,
 				04294F8B2508705F00AEB196 /* CustomNabbar.swift in Sources */,
