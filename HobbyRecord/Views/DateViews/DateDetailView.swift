@@ -53,6 +53,10 @@ struct DateDetailView: View {
                 }
             }
         }
+        .onAppear {
+
+            self.addDetailCellVMToDetailVM()
+        }
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
@@ -62,7 +66,7 @@ struct DateDetailView: View {
 
     private func addDetailCellVMToDetailVM() {
 
-        self.detailVM.detailCellViewModels.removeFirst()
+        self.detailVM.detailCellViewModels.removeAll()
 
         for detail in self.hobby.details {
 
@@ -96,8 +100,7 @@ struct DateDetailView: View {
 
             Button(action: {
 
-                let newHobby = self.detailVM.updateRecord(hobby: self.hobby)
-                self.hobbyVM.updateRecord(hobby: newHobby)
+                self.updateRecord()
             }) {
 
                 Text("Update".localized)
@@ -105,6 +108,12 @@ struct DateDetailView: View {
                     .padding(.trailing, 60)
             }
         }
+    }
+
+    private func updateRecord() {
+
+        let newHobby = self.detailVM.updateRecord(hobby: self.hobby)
+        self.hobbyVM.updateRecord(hobby: newHobby)
     }
 }
 
