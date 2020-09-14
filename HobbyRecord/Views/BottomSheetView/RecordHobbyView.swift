@@ -43,6 +43,7 @@ struct RecordHobbyView: View {
 
                             DetailCell(detailCellVM: detailCell)
                         }
+                        .onDelete(perform: rowRemove)
 
                         Button(action: { self.detailVM.addDetail(detail: Detail(detail: "")) }) {
 
@@ -85,6 +86,11 @@ struct RecordHobbyView: View {
 
             CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobby: favoriteHobby)
         )
+    }
+
+    private func rowRemove(offsets: IndexSet) {
+
+        self.detailVM.removeRow(offsets: offsets)
     }
 
     private func alertView() -> Alert {
