@@ -35,32 +35,17 @@ class HobbyViewModel: ObservableObject {
 
     func addRecord(hobby: Hobby) {
 
-        do {
-
-            var addedHobby = hobby
-            addedHobby.uesrId = Auth.auth().currentUser?.uid
-            let _ = try db.collection("hobbies").addDocument(from: addedHobby)
-        } catch {
-
-            fatalError("Unable to encode hobby: \(error.localizedDescription)")
-        }
+        self.hobbyRepository.addRecord(hobby: hobby)
     }
 
     func removeRecord(hobby: Hobby) {
 
-        if let docID = hobby.id {
+        self.hobbyRepository.removeRecord(hobby: hobby)
+    }
 
-            db.collection("hobbies").document(docID).delete() { err in
+    func updateRecord(hobby: Hobby) {
 
-                if let err = err {
-
-                    print("Error removing document: \(err.localizedDescription)")
-                } else {
-
-                    print("Document successfully removied")
-                }
-            }
-        }
+        self.hobbyRepository.updateRecord(hobby: hobby)
     }
 
 }

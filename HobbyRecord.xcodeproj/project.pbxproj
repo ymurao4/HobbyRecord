@@ -42,6 +42,7 @@
 		04C607472500BFC800479749 /* CLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C607462500BFC800479749 /* CLCell.swift */; };
 		04C6074B2500C00B00479749 /* ClViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074A2500C00B00479749 /* ClViewController.swift */; };
 		04C6074D2500C02700479749 /* CLMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6074C2500C02700479749 /* CLMonth.swift */; };
+		04D0EBF0250EE44800484F4F /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0EBEF250EE44800484F4F /* DateCell.swift */; };
 		04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E32509A692002EE231 /* BottomSheet.swift */; };
 		04EB65E62509A6D4002EE231 /* AddNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */; };
 		04EB65E82509AE92002EE231 /* FavoriteHobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E72509AE92002EE231 /* FavoriteHobbyViewModel.swift */; };
@@ -107,6 +108,7 @@
 		04C607462500BFC800479749 /* CLCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLCell.swift; sourceTree = "<group>"; };
 		04C6074A2500C00B00479749 /* ClViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClViewController.swift; sourceTree = "<group>"; };
 		04C6074C2500C02700479749 /* CLMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLMonth.swift; sourceTree = "<group>"; };
+		04D0EBEF250EE44800484F4F /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		04EB65E32509A692002EE231 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHobbyView.swift; sourceTree = "<group>"; };
 		04EB65E72509AE92002EE231 /* FavoriteHobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHobbyViewModel.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				042C0A1025075A44001AB6CD /* ContentView.swift */,
 				0498FE1124F88C7400489C12 /* CalendarView.swift */,
+				04D0EBEF250EE44800484F4F /* DateCell.swift */,
 				04BD4409250E1308004F44B9 /* DateViews */,
 				04BD440A250E130F004F44B9 /* BottomSheetView */,
 				04294F8C2508707700AEB196 /* CustomViews */,
@@ -460,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				047A5D9B250A322D000423BF /* DetailCellVIewModel.swift in Sources */,
+				04D0EBF0250EE44800484F4F /* DateCell.swift in Sources */,
 				04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */,
 				04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */,
 				04EB65E82509AE92002EE231 /* FavoriteHobbyViewModel.swift in Sources */,

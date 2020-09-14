@@ -48,7 +48,7 @@ struct DateView: View {
 
                             HobbyCell(hobby: hobby)
 
-                            NavigationLink(destination: DateDetailView(dateVM: self.dateVM, hobby: hobby)) {
+                            NavigationLink(destination: DateDetailView(dateVM: self.dateVM, hobby: hobby, hobbyVM: self.hobbyVM)) {
 
                                 EmptyView()
                             }

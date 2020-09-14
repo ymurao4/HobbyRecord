@@ -181,19 +181,6 @@ struct CustomNavigationbarTitle: View {
 }
 
 
-struct DetailCell: View {
-
-    @ObservedObject var detailCellVM: DetailCellViewModel
-
-    var body: some View {
-
-        // SwiftUIのTextFieldは日本語入力に不具合があるので、UIViewRepresentableから利用
-        // TextField("", text: $detailCellVM.detail.detail)
-        _TextField(title: "", text: $detailCellVM.detail.detail)
-    }
-}
-
-
 struct ActionSheetView: View {
 
     @Binding var isActionSheet: Bool
