@@ -62,7 +62,7 @@ struct DateView: View {
             }
             Spacer()
         }
-        .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height - 150)
+        .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height - 170)
         .background(BlurView(style: .systemMaterial))
         .cornerRadius(25)
     }

@@ -23,7 +23,6 @@ struct CLViewController: View {
                 ForEach(0..<numberOfMonth()) { index in
 
                     CLMonth(clManager: self.clManager, hobbyVM: self.hobbyVM, isDetailView: self.$isDetailView, monthOffset: index)
-                        .allowsHitTesting(self.isDetailView ? false : true)
                 }
             }
         }
