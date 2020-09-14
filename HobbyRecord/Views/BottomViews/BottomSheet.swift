@@ -42,7 +42,7 @@ struct BottomSheet: View {
 
                             HStack {
 
-                                NavigationLink(destination: RecordHobbyView(favoriteHobbyVM: self.favoriteHobbyVM, favoriteHobby: favoriteHobbyCell.favoriteHobby, offset: self.$offset)) {
+                                NavigationLink(destination: RecordHobbyView(favoriteHobbyVM: self.favoriteHobbyVM, favoriteHobbyCellVM: favoriteHobbyCell, offset: self.$offset)) {
 
                                     FavoriteCell(favoriteHobbyCell: favoriteHobbyCell)
                                 }

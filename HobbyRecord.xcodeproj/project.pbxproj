@@ -15,7 +15,6 @@
 		041279F2250D9BFC00283614 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041279F1250D9BFC00283614 /* TextField.swift */; };
 		041279F4250DA44C00283614 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041279F3250DA44C00283614 /* GoogleService-Info.plist */; };
 		04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F882508704400AEB196 /* CustomActionSheet.swift */; };
-		04294F8B2508705F00AEB196 /* CustomNabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F8A2508705F00AEB196 /* CustomNabbar.swift */; };
 		042C0A1125075A44001AB6CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C0A1025075A44001AB6CD /* ContentView.swift */; };
 		0436BFF1250DB0AB004499BF /* HobbyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436BFF0250DB0AB004499BF /* HobbyRepository.swift */; };
 		0436BFF3250DB6F9004499BF /* FavoriteHobbyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436BFF2250DB6F9004499BF /* FavoriteHobbyRepository.swift */; };
@@ -78,7 +77,6 @@
 		041279F1250D9BFC00283614 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		041279F3250DA44C00283614 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04294F882508704400AEB196 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
-		04294F8A2508705F00AEB196 /* CustomNabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNabbar.swift; sourceTree = "<group>"; };
 		042C0A1025075A44001AB6CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0436BFF0250DB0AB004499BF /* HobbyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyRepository.swift; sourceTree = "<group>"; };
 		0436BFF2250DB6F9004499BF /* FavoriteHobbyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHobbyRepository.swift; sourceTree = "<group>"; };
@@ -149,9 +147,7 @@
 		04294F8C2508707700AEB196 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				04294F8A2508705F00AEB196 /* CustomNabbar.swift */,
 				04294F882508704400AEB196 /* CustomActionSheet.swift */,
-				04FA720825085CC70094F336 /* BottomViews */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -200,6 +196,7 @@
 				04BD4409250E1308004F44B9 /* DateViews */,
 				04BD440A250E130F004F44B9 /* BottomSheetView */,
 				04294F8C2508707700AEB196 /* CustomViews */,
+				04FA720825085CC70094F336 /* BottomViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -481,7 +478,6 @@
 				04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */,
 				04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */,
 				047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */,
-				04294F8B2508705F00AEB196 /* CustomNabbar.swift in Sources */,
 				0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */,
 				04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */,
 				04C607472500BFC800479749 /* CLCell.swift in Sources */,

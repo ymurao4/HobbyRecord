@@ -18,6 +18,7 @@ class FavoriteHobbyViewModel: ObservableObject {
     @Published var isValidate: Bool = false
     @Published var title: String = ""
     @Published var icon: String = ""
+    @Published var favoriteHobby: FavoriteHobby?
 
     let db = Firestore.firestore()
 
@@ -56,32 +57,23 @@ class FavoriteHobbyViewModel: ObservableObject {
 
     func addFavoriteHobby() {
 
-        do {
+        if favoriteHobby == nil {
 
-            let userId = Auth.auth().currentUser?.uid
+            self.favoriteHobbyRepository.addFavoriteHobby(favoriteHobby: FavoriteHobby(title: title, icon: icon))
+        } else {
 
-            let addedFavoriteHobby = FavoriteHobby(title: title, icon: icon, uesrId: userId)
-            let _ = try db.collection("favorites").addDocument(from: addedFavoriteHobby)
-        } catch {
-
-            fatalError("Unable to enchode favoriteHobby: \(error.localizedDescription)")
+            updateFavoriteHobby(fav: favoriteHobby!)
         }
     }
 
     func removeFavoriteHobby(fav: FavoriteHobby) {
 
-        if let docID = fav.id {
-
-            db.collection("favorites").document(docID).delete() { err in
-
-                if let err = err {
-
-                    print("Error removing document: \(err.localizedDescription)")
-                } else {
-
-                    print("Document successfully removied")
-                }
-            }
-        }
+        self.favoriteHobbyRepository.removeFavoriteHobby(fav: fav)
     }
+
+    func updateFavoriteHobby(fav: FavoriteHobby) {
+
+        self.favoriteHobbyRepository.updateFavoriteHobby(fav: FavoriteHobby(id: fav.id, title: title, icon: icon, uesrId: fav.uesrId))
+    }
+
 }

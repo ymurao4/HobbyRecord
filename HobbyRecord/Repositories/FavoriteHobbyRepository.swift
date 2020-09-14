@@ -46,4 +46,47 @@ class FavoriteHobbyRespository: ObservableObject {
         }
     }
 
+    func addFavoriteHobby(favoriteHobby: FavoriteHobby) {
+
+        do {
+
+            var addedFavoriteHobby = favoriteHobby
+            addedFavoriteHobby.uesrId = Auth.auth().currentUser?.uid
+            let _ = try db.collection("favorites").addDocument(from: addedFavoriteHobby)
+        } catch {
+
+            fatalError("Unable to enchode favoriteHobby: \(error.localizedDescription)")
+        }
+    }
+
+    func removeFavoriteHobby(fav: FavoriteHobby) {
+
+        if let docID = fav.id {
+
+            db.collection("favorites").document(docID).delete() { err in
+
+                if let err = err {
+
+                    print("Error removing document: \(err.localizedDescription)")
+                } else {
+
+                    print("Document successfully removied")
+                }
+            }
+        }
+    }
+
+    func updateFavoriteHobby(fav: FavoriteHobby) {
+
+        if let favId = fav.id {
+
+            do {
+                try db.collection("favorites").document(favId).setData(from: fav)
+            } catch {
+
+                fatalError("Unable to encode hobby: \(error.localizedDescription)")
+            }
+        }
+    }
+
 }

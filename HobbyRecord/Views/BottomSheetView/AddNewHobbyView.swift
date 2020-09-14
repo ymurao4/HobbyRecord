@@ -22,10 +22,8 @@ struct AddNewHobbyView: View {
 
                 Section(header: Text("title".localized)) {
 
-                    // SwiftUIのTextFieldは日本語入力に不具合があるので、UIViewRepresentableから利用
-//                     TextField("Title".localized, text: $favoriteHobbyVM.title)
-//                        .padding(5)
-                    _TextField(title: "Title".localized, text: $favoriteHobbyVM.title)
+                     TextField("Title".localized, text: $favoriteHobbyVM.title)
+                        .padding(5)
                 }
 
                 Section(header: Text("Icon".localized)) {
@@ -55,7 +53,6 @@ struct AddNewHobbyView: View {
         self.presentationMode.wrappedValue.dismiss()
         self.favoriteHobbyVM.addFavoriteHobby()
     }
-
 }
 
 struct IconSetting: View {

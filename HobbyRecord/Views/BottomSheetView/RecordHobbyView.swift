@@ -14,10 +14,10 @@ struct RecordHobbyView: View {
     @ObservedObject var hobbyVM = HobbyViewModel()
     @ObservedObject var detailVM = DetailViewModel()
     @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
-    var favoriteHobby: FavoriteHobby
+    @ObservedObject var favoriteHobbyCellVM: FavoriteHobbyCellViewModel
     @Binding var offset: CGFloat
     @State var date: Date = Date()
-    @State private var isAlert: Bool = false
+    @State var isAlert: Bool = false
     @State var isActionSheet: Bool = false
 
     var body: some View {
@@ -64,7 +64,7 @@ struct RecordHobbyView: View {
 
                 Spacer()
 
-                ActionSheetView(isActionSheet: $isActionSheet, isAlert: $isAlert)
+                ActionSheetView(isActionSheet: $isActionSheet, isAlert: $isAlert, favoriteHobbyVM: favoriteHobbyVM, favoriteHobby: favoriteHobbyCellVM.favoriteHobby)
                     .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
             }
             .background((isActionSheet ? Color.bl(3) : Color.clear)
@@ -84,7 +84,7 @@ struct RecordHobbyView: View {
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobby: favoriteHobby)
+            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobbyCellVM: favoriteHobbyCellVM, favoriteHobbyVM: favoriteHobbyVM)
         )
     }
 
@@ -102,7 +102,7 @@ struct RecordHobbyView: View {
             primaryButton: .cancel(),
             secondaryButton: .destructive(Text("Delete"), action: {
 
-                self.favoriteHobbyVM.removeFavoriteHobby(fav: self.favoriteHobby)
+                self.favoriteHobbyVM.removeFavoriteHobby(fav: self.favoriteHobbyCellVM.favoriteHobby)
                 self.presentationMode.wrappedValue.dismiss()
             })
         )
@@ -118,14 +118,15 @@ struct CustomNavigationbarTitle: View {
     @Binding var date: Date
     @Binding var offset: CGFloat
     @Binding var isActionSheet: Bool
-    var favoriteHobby: FavoriteHobby
+    @ObservedObject var favoriteHobbyCellVM: FavoriteHobbyCellViewModel
+    @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
     private var title: String {
 
-        favoriteHobby.title
+        favoriteHobbyCellVM.favoriteHobby.title
     }
     private var icon: String {
 
-        favoriteHobby.icon
+        favoriteHobbyCellVM.favoriteHobby.icon
     }
 
     var body: some View {
@@ -134,14 +135,27 @@ struct CustomNavigationbarTitle: View {
 
             HStack(alignment: .center) {
 
-                Image(self.favoriteHobby.icon)
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(Color.pr(9))
+                if favoriteHobbyVM.favoriteHobby == nil {
 
-                Text(self.favoriteHobby.title)
-                    .foregroundColor(Color.pr(9))
+                    Image(favoriteHobbyCellVM.favoriteHobby.icon)
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color.pr(9))
+
+                    Text(favoriteHobbyCellVM.favoriteHobby.title)
+                        .foregroundColor(Color.pr(9))
+                } else {
+
+                    Image(favoriteHobbyVM.icon)
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color.pr(9))
+
+                    Text(favoriteHobbyVM.title)
+                        .foregroundColor(Color.pr(9))
+                }
             }
             .frame(width: UIScreen.main.bounds.width)
             .padding(.trailing, 40)
@@ -191,38 +205,57 @@ struct ActionSheetView: View {
 
     @Binding var isActionSheet: Bool
     @Binding var isAlert: Bool
+    @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
+    var favoriteHobby: FavoriteHobby
 
-    private let buttons: [String] = ["Edit", "Delete", "Cancel"]
+    private let buttons: [String] = ["Edit", "Delete"]
 
     var body: some View {
 
         VStack(alignment: .leading, spacing: 15) {
 
-            ForEach(buttons, id: \.self) { button in
+            VStack(spacing: 10) {
 
                 VStack {
 
-                    Button(action: {
-
-                        self.switchAction(text: button)
-                    }) {
+                    NavigationLink(destination: AddNewHobbyView(favoriteHobbyVM: favoriteHobbyVM)) {
 
                         HStack {
 
-                            Text(button.localized)
+                            Text("Edit".localized)
                                 .bold()
+                                .padding(.vertical, 7)
                             Spacer()
                         }
-                        .foregroundColor(.orange)
-                        .padding(.vertical, 3)
-                        .padding(.horizontal)
                     }
+                    .simultaneousGesture(TapGesture().onEnded {
 
-                    if button != "Cancel" {
-                        Divider()
+                        self.favoriteHobbyVM.title = self.favoriteHobby.title
+                        self.favoriteHobbyVM.icon = self.favoriteHobby.icon
+                        self.favoriteHobbyVM.favoriteHobby = self.favoriteHobby
+                        self.isActionSheet = false
+                    })
+                }
+
+                Divider()
+
+                Button(action: {
+
+                    self.isAlert = true
+                    self.isActionSheet = false
+                }) {
+
+                    HStack {
+
+                        Text("Delete".localized)
+                            .bold()
+                            .padding(.vertical, 7)
+                        Spacer()
                     }
                 }
             }
+            .foregroundColor(.orange)
+            .padding(.horizontal)
         }
         .frame(width: UIScreen.main.bounds.width)
         .padding(.top, 20)
@@ -230,19 +263,5 @@ struct ActionSheetView: View {
         .padding(.bottom, (UIApplication.shared.windows.last?.safeAreaInsets.bottom)! + 10)
         .background(BlurView(style: .systemMaterial))
         .cornerRadius(25)
-    }
-
-    private func switchAction(text: String) {
-
-        switch text {
-        case "Edit":
-            print("Edit")
-        case "Delete":
-            self.isAlert = true
-        case "Cancel":
-            self.isActionSheet = false
-        default:
-            return
-        }
     }
 }
