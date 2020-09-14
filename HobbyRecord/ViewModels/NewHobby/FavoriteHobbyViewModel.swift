@@ -18,7 +18,6 @@ class FavoriteHobbyViewModel: ObservableObject {
     @Published var isValidate: Bool = false
     @Published var title: String = ""
     @Published var icon: String = ""
-    @Published var favoriteHobby: FavoriteHobby?
 
     let db = Firestore.firestore()
 
@@ -57,13 +56,7 @@ class FavoriteHobbyViewModel: ObservableObject {
 
     func addFavoriteHobby() {
 
-        if favoriteHobby == nil {
-
-            self.favoriteHobbyRepository.addFavoriteHobby(favoriteHobby: FavoriteHobby(title: title, icon: icon))
-        } else {
-
-            updateFavoriteHobby(fav: favoriteHobby!)
-        }
+        self.favoriteHobbyRepository.addFavoriteHobby(favoriteHobby: FavoriteHobby(title: title, icon: icon))
     }
 
     func removeFavoriteHobby(fav: FavoriteHobby) {

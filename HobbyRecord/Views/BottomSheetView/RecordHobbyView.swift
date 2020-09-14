@@ -84,7 +84,7 @@ struct RecordHobbyView: View {
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobbyCellVM: favoriteHobbyCellVM, favoriteHobbyVM: favoriteHobbyVM)
+            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobbyVM: favoriteHobbyVM)
         )
     }
 
@@ -118,16 +118,7 @@ struct CustomNavigationbarTitle: View {
     @Binding var date: Date
     @Binding var offset: CGFloat
     @Binding var isActionSheet: Bool
-    @ObservedObject var favoriteHobbyCellVM: FavoriteHobbyCellViewModel
     @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
-    private var title: String {
-
-        favoriteHobbyCellVM.favoriteHobby.title
-    }
-    private var icon: String {
-
-        favoriteHobbyCellVM.favoriteHobby.icon
-    }
 
     var body: some View {
 
@@ -135,27 +126,14 @@ struct CustomNavigationbarTitle: View {
 
             HStack(alignment: .center) {
 
-                if favoriteHobbyVM.favoriteHobby == nil {
+                Image(favoriteHobbyVM.icon)
+                    .renderingMode(.template)
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(Color.pr(9))
 
-                    Image(favoriteHobbyCellVM.favoriteHobby.icon)
-                        .renderingMode(.template)
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(Color.pr(9))
-
-                    Text(favoriteHobbyCellVM.favoriteHobby.title)
-                        .foregroundColor(Color.pr(9))
-                } else {
-
-                    Image(favoriteHobbyVM.icon)
-                        .renderingMode(.template)
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(Color.pr(9))
-
-                    Text(favoriteHobbyVM.title)
-                        .foregroundColor(Color.pr(9))
-                }
+                Text(favoriteHobbyVM.title)
+                    .foregroundColor(Color.pr(9))
             }
             .frame(width: UIScreen.main.bounds.width)
             .padding(.trailing, 40)
@@ -193,7 +171,7 @@ struct CustomNavigationbarTitle: View {
     private func addRecord() {
 
         detailVM.addAllDetailsToArray()
-        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: title, details: detailVM.details, icon: icon))
+        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: favoriteHobbyVM.title, details: detailVM.details, icon: favoriteHobbyVM.icon))
         // bottomSheetを下げる
         offset = 0
         presentationMode.wrappedValue.dismiss()
@@ -218,7 +196,7 @@ struct ActionSheetView: View {
 
                 VStack {
 
-                    NavigationLink(destination: AddNewHobbyView(favoriteHobbyVM: favoriteHobbyVM)) {
+                    NavigationLink(destination: UpdateNewHobbyView(favoriteHobbyVM: favoriteHobbyVM, favoriteHobby: favoriteHobby)) {
 
                         HStack {
 
@@ -232,7 +210,6 @@ struct ActionSheetView: View {
 
                         self.favoriteHobbyVM.title = self.favoriteHobby.title
                         self.favoriteHobbyVM.icon = self.favoriteHobby.icon
-                        self.favoriteHobbyVM.favoriteHobby = self.favoriteHobby
                         self.isActionSheet = false
                     })
                 }

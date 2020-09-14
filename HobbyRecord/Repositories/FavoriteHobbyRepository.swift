@@ -13,8 +13,10 @@ import FirebaseFirestoreSwift
 
 class FavoriteHobbyRespository: ObservableObject {
 
+    @Published var hobbyRepository = HobbyRepository()
     @Published var favoriteHobbies: [FavoriteHobby] = []
     let db = Firestore.firestore()
+    let userId = Auth.auth().currentUser?.uid
 
     init() {
         loadDate()
@@ -22,7 +24,6 @@ class FavoriteHobbyRespository: ObservableObject {
 
     func loadDate() {
 
-        let userId = Auth.auth().currentUser?.uid
 
         db.collection("favorites")
             .whereField("uesrId", isEqualTo: userId as Any)
@@ -81,11 +82,47 @@ class FavoriteHobbyRespository: ObservableObject {
         if let favId = fav.id {
 
             do {
+
                 try db.collection("favorites").document(favId).setData(from: fav)
+
+//                updateAllHobbyRecord(fav: fav)
             } catch {
 
                 fatalError("Unable to encode hobby: \(error.localizedDescription)")
             }
+        }
+
+    }
+
+    private func updateAllHobbyRecord(fav: FavoriteHobby) {
+
+        var hobbies: [Hobby] = []
+
+        db.collection("hobbies")
+            .whereField("userId", isEqualTo: userId as Any)
+            .whereField("title", isEqualTo: fav.title)
+            .addSnapshotListener { (querySnapshot, error) in
+
+                if let querySnapshot = querySnapshot {
+
+                    hobbies = querySnapshot.documents.compactMap { document in
+
+                        do {
+
+                            let x = try document.data(as: Hobby.self)
+                            return x
+                        } catch {
+
+                            print(error.localizedDescription)
+                        }
+                        return nil
+                    }
+                }
+        }
+
+        for hobby in hobbies {
+
+            hobbyRepository.updateRecord(hobby: hobby)
         }
     }
 

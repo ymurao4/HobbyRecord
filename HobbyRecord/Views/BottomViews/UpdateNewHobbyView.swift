@@ -1,17 +1,18 @@
 //
-//  AddNewHobbyView.swift
+//  UpdateNewHobbyView.swift
 //  HobbyRecord
 //
-//  Created by 村尾慶伸 on 2020/09/10.
+//  Created by 村尾慶伸 on 2020/09/14.
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
 import SwiftUI
 
-struct AddNewHobbyView: View {
+struct UpdateNewHobbyView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
+    var favoriteHobby: FavoriteHobby
 
     var body: some View {
 
@@ -50,7 +51,6 @@ struct AddNewHobbyView: View {
     private func addRecord() {
 
         self.presentationMode.wrappedValue.dismiss()
-        self.favoriteHobbyVM.addFavoriteHobby()
+        self.favoriteHobbyVM.updateFavoriteHobby(fav: favoriteHobby)
     }
 }
-
