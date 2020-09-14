@@ -77,7 +77,7 @@ class FavoriteHobbyRespository: ObservableObject {
         }
     }
 
-    func updateFavoriteHobby(fav: FavoriteHobby) {
+    func updateFavoriteHobby(fav: FavoriteHobby, oldIcon: String, oldTitle: String) {
 
         if let favId = fav.id {
 
@@ -85,7 +85,7 @@ class FavoriteHobbyRespository: ObservableObject {
 
                 try db.collection("favorites").document(favId).setData(from: fav)
 
-//                updateAllHobbyRecord(fav: fav)
+                updateAllHobbyRecord(fav: fav, oldIcon: oldIcon, oldTitle: oldTitle)
             } catch {
 
                 fatalError("Unable to encode hobby: \(error.localizedDescription)")
@@ -94,36 +94,48 @@ class FavoriteHobbyRespository: ObservableObject {
 
     }
 
-    private func updateAllHobbyRecord(fav: FavoriteHobby) {
-
-        var hobbies: [Hobby] = []
+    private func updateAllHobbyRecord(fav: FavoriteHobby, oldIcon: String, oldTitle: String) {
 
         db.collection("hobbies")
-            .whereField("userId", isEqualTo: userId as Any)
-            .whereField("title", isEqualTo: fav.title)
-            .addSnapshotListener { (querySnapshot, error) in
+            .whereField("uesrId", isEqualTo: userId as Any)
+            .whereField("title", isEqualTo: oldTitle)
+            .whereField("icon", isEqualTo: oldIcon)
+            .getDocuments() { (querySnapshot, error) in
 
-                if let querySnapshot = querySnapshot {
+                if let error = error {
 
-                    hobbies = querySnapshot.documents.compactMap { document in
+                    print("Error getting documents: \(error)")
+                } else {
+
+                    for document in querySnapshot!.documents {
+
+//                        try let hobby = document.data(as: Hobby.self)
+//                        self.updateRecord(documentID: document.documentID, hobby: hobby)
 
                         do {
 
-                            let x = try document.data(as: Hobby.self)
-                            return x
+                            var hobby = try document.data(as: Hobby.self)
+                            hobby!.title = fav.title
+                            hobby!.icon = fav.icon
+                            try self.db.collection("hobbies").document(document.documentID).setData(from: hobby)
                         } catch {
 
-                            print(error.localizedDescription)
+                            fatalError("Unable to encode hobby: \(error.localizedDescription)")
                         }
-                        return nil
                     }
                 }
         }
-
-        for hobby in hobbies {
-
-            hobbyRepository.updateRecord(hobby: hobby)
-        }
     }
+
+//    private func updateRecord(documentID: String, hobby: Hobby) {
+//
+//        do {
+//
+//            try db.collection("hobbies").document(documentID).setData(from: hobby)
+//        } catch {
+//
+//            fatalError("Unable to encode hobby: \(error.localizedDescription)")
+//        }
+//    }
 
 }

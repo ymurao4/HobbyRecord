@@ -64,9 +64,9 @@ class FavoriteHobbyViewModel: ObservableObject {
         self.favoriteHobbyRepository.removeFavoriteHobby(fav: fav)
     }
 
-    func updateFavoriteHobby(fav: FavoriteHobby) {
+    func updateFavoriteHobby(fav: FavoriteHobby, title: String, icon: String, oldTitle: String, oldIcon: String) {
 
-        self.favoriteHobbyRepository.updateFavoriteHobby(fav: FavoriteHobby(id: fav.id, title: title, icon: icon, uesrId: fav.uesrId))
+        self.favoriteHobbyRepository.updateFavoriteHobby(fav: FavoriteHobby(id: fav.id, title: title, icon: icon, uesrId: fav.uesrId), oldIcon: oldIcon, oldTitle: oldTitle)
     }
 
 }

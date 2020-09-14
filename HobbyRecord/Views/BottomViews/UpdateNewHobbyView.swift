@@ -14,6 +14,9 @@ struct UpdateNewHobbyView: View {
     @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
     var favoriteHobby: FavoriteHobby
 
+    @State private(set) var oldTitle: String
+    @State private(set) var oldIcon: String
+
     var body: some View {
 
         VStack(alignment: .leading) {
@@ -51,6 +54,6 @@ struct UpdateNewHobbyView: View {
     private func addRecord() {
 
         self.presentationMode.wrappedValue.dismiss()
-        self.favoriteHobbyVM.updateFavoriteHobby(fav: favoriteHobby)
+        self.favoriteHobbyVM.updateFavoriteHobby(fav: favoriteHobby, title: favoriteHobbyVM.title, icon: favoriteHobbyVM.icon, oldTitle: oldTitle, oldIcon: oldIcon)
     }
 }

@@ -196,7 +196,7 @@ struct ActionSheetView: View {
 
                 VStack {
 
-                    NavigationLink(destination: UpdateNewHobbyView(favoriteHobbyVM: favoriteHobbyVM, favoriteHobby: favoriteHobby)) {
+                    NavigationLink(destination: UpdateNewHobbyView(favoriteHobbyVM: favoriteHobbyVM, favoriteHobby: favoriteHobby, oldTitle: favoriteHobbyVM.title, oldIcon: favoriteHobbyVM.icon)) {
 
                         HStack {
 
