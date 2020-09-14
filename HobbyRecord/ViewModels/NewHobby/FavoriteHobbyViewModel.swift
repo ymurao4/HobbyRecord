@@ -56,32 +56,17 @@ class FavoriteHobbyViewModel: ObservableObject {
 
     func addFavoriteHobby() {
 
-        do {
-
-            let userId = Auth.auth().currentUser?.uid
-
-            let addedFavoriteHobby = FavoriteHobby(title: title, icon: icon, uesrId: userId)
-            let _ = try db.collection("favorites").addDocument(from: addedFavoriteHobby)
-        } catch {
-
-            fatalError("Unable to enchode favoriteHobby: \(error.localizedDescription)")
-        }
+        self.favoriteHobbyRepository.addFavoriteHobby(favoriteHobby: FavoriteHobby(title: title, icon: icon))
     }
 
     func removeFavoriteHobby(fav: FavoriteHobby) {
 
-        if let docID = fav.id {
-
-            db.collection("favorites").document(docID).delete() { err in
-
-                if let err = err {
-
-                    print("Error removing document: \(err.localizedDescription)")
-                } else {
-
-                    print("Document successfully removied")
-                }
-            }
-        }
+        self.favoriteHobbyRepository.removeFavoriteHobby(fav: fav)
     }
+
+    func updateFavoriteHobby(fav: FavoriteHobby, title: String, icon: String, oldTitle: String, oldIcon: String) {
+
+        self.favoriteHobbyRepository.updateFavoriteHobby(fav: FavoriteHobby(id: fav.id, title: title, icon: icon, uesrId: fav.uesrId), oldIcon: oldIcon, oldTitle: oldTitle)
+    }
+
 }

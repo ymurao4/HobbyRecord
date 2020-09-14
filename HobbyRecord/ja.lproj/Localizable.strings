@@ -10,6 +10,10 @@
 "No Hobby Records" = "趣味記録がありません。";
 
 
+// MARK: - DateDetailView
+"Update" = "アップデート";
+
+
 // MARK: - AddNewHobbyView
 "Title" = "タイトル";
 "title" = "タイトル";

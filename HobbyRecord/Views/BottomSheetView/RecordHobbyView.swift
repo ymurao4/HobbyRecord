@@ -14,10 +14,10 @@ struct RecordHobbyView: View {
     @ObservedObject var hobbyVM = HobbyViewModel()
     @ObservedObject var detailVM = DetailViewModel()
     @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
-    var favoriteHobby: FavoriteHobby
+    @ObservedObject var favoriteHobbyCellVM: FavoriteHobbyCellViewModel
     @Binding var offset: CGFloat
     @State var date: Date = Date()
-    @State private var isAlert: Bool = false
+    @State var isAlert: Bool = false
     @State var isActionSheet: Bool = false
 
     var body: some View {
@@ -43,6 +43,7 @@ struct RecordHobbyView: View {
 
                             DetailCell(detailCellVM: detailCell)
                         }
+                        .onDelete(perform: rowRemove)
 
                         Button(action: { self.detailVM.addDetail(detail: Detail(detail: "")) }) {
 
@@ -63,7 +64,7 @@ struct RecordHobbyView: View {
 
                 Spacer()
 
-                ActionSheetView(isActionSheet: $isActionSheet, isAlert: $isAlert)
+                ActionSheetView(isActionSheet: $isActionSheet, isAlert: $isAlert, favoriteHobbyVM: favoriteHobbyVM, favoriteHobby: favoriteHobbyCellVM.favoriteHobby)
                     .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
             }
             .background((isActionSheet ? Color.bl(3) : Color.clear)
@@ -83,8 +84,13 @@ struct RecordHobbyView: View {
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobby: favoriteHobby)
+            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobbyVM: favoriteHobbyVM)
         )
+    }
+
+    private func rowRemove(offsets: IndexSet) {
+
+        self.detailVM.removeRow(offsets: offsets)
     }
 
     private func alertView() -> Alert {
@@ -96,7 +102,7 @@ struct RecordHobbyView: View {
             primaryButton: .cancel(),
             secondaryButton: .destructive(Text("Delete"), action: {
 
-                self.favoriteHobbyVM.removeFavoriteHobby(fav: self.favoriteHobby)
+                self.favoriteHobbyVM.removeFavoriteHobby(fav: self.favoriteHobbyCellVM.favoriteHobby)
                 self.presentationMode.wrappedValue.dismiss()
             })
         )
@@ -112,15 +118,7 @@ struct CustomNavigationbarTitle: View {
     @Binding var date: Date
     @Binding var offset: CGFloat
     @Binding var isActionSheet: Bool
-    var favoriteHobby: FavoriteHobby
-    private var title: String {
-
-        favoriteHobby.title
-    }
-    private var icon: String {
-
-        favoriteHobby.icon
-    }
+    @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
 
     var body: some View {
 
@@ -128,13 +126,13 @@ struct CustomNavigationbarTitle: View {
 
             HStack(alignment: .center) {
 
-                Image(self.favoriteHobby.icon)
+                Image(favoriteHobbyVM.icon)
                     .renderingMode(.template)
                     .resizable()
                     .frame(width: 20, height: 20)
                     .foregroundColor(Color.pr(9))
 
-                Text(self.favoriteHobby.title)
+                Text(favoriteHobbyVM.title)
                     .foregroundColor(Color.pr(9))
             }
             .frame(width: UIScreen.main.bounds.width)
@@ -173,23 +171,10 @@ struct CustomNavigationbarTitle: View {
     private func addRecord() {
 
         detailVM.addAllDetailsToArray()
-        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: title, details: detailVM.details, icon: icon))
+        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: favoriteHobbyVM.title, details: detailVM.details, icon: favoriteHobbyVM.icon))
         // bottomSheetを下げる
         offset = 0
         presentationMode.wrappedValue.dismiss()
-    }
-}
-
-
-struct DetailCell: View {
-
-    @ObservedObject var detailCellVM: DetailCellViewModel
-
-    var body: some View {
-
-        // SwiftUIのTextFieldは日本語入力に不具合があるので、UIViewRepresentableから利用
-        // TextField("", text: $detailCellVM.detail.detail)
-        _TextField(title: "", text: $detailCellVM.detail.detail)
     }
 }
 
@@ -198,38 +183,56 @@ struct ActionSheetView: View {
 
     @Binding var isActionSheet: Bool
     @Binding var isAlert: Bool
+    @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
+    var favoriteHobby: FavoriteHobby
 
-    private let buttons: [String] = ["Edit", "Delete", "Cancel"]
+    private let buttons: [String] = ["Edit", "Delete"]
 
     var body: some View {
 
         VStack(alignment: .leading, spacing: 15) {
 
-            ForEach(buttons, id: \.self) { button in
+            VStack(spacing: 10) {
 
                 VStack {
 
-                    Button(action: {
-
-                        self.switchAction(text: button)
-                    }) {
+                    NavigationLink(destination: UpdateNewHobbyView(favoriteHobbyVM: favoriteHobbyVM, favoriteHobby: favoriteHobby, oldTitle: favoriteHobbyVM.title, oldIcon: favoriteHobbyVM.icon)) {
 
                         HStack {
 
-                            Text(button.localized)
+                            Text("Edit".localized)
                                 .bold()
+                                .padding(.vertical, 7)
                             Spacer()
                         }
-                        .foregroundColor(.orange)
-                        .padding(.vertical, 3)
-                        .padding(.horizontal)
                     }
+                    .simultaneousGesture(TapGesture().onEnded {
 
-                    if button != "Cancel" {
-                        Divider()
+                        self.favoriteHobbyVM.title = self.favoriteHobby.title
+                        self.favoriteHobbyVM.icon = self.favoriteHobby.icon
+                        self.isActionSheet = false
+                    })
+                }
+
+                Divider()
+
+                Button(action: {
+
+                    self.isAlert = true
+                    self.isActionSheet = false
+                }) {
+
+                    HStack {
+
+                        Text("Delete".localized)
+                            .bold()
+                            .padding(.vertical, 7)
+                        Spacer()
                     }
                 }
             }
+            .foregroundColor(.orange)
+            .padding(.horizontal)
         }
         .frame(width: UIScreen.main.bounds.width)
         .padding(.top, 20)
@@ -237,19 +240,5 @@ struct ActionSheetView: View {
         .padding(.bottom, (UIApplication.shared.windows.last?.safeAreaInsets.bottom)! + 10)
         .background(BlurView(style: .systemMaterial))
         .cornerRadius(25)
-    }
-
-    private func switchAction(text: String) {
-
-        switch text {
-        case "Edit":
-            print("Edit")
-        case "Delete":
-            self.isAlert = true
-        case "Cancel":
-            self.isActionSheet = false
-        default:
-            return
-        }
     }
 }

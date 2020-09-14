@@ -40,9 +40,15 @@ struct BottomSheet: View {
 
                         ForEach(self.favoriteHobbyVM.favoriteHobbyCellViewModels, id: \.id) { favoriteHobbyCell in
 
-                            HStack {
+                            VStack {
 
-                                NavigationLink(destination: RecordHobbyView(favoriteHobbyVM: self.favoriteHobbyVM, favoriteHobby: favoriteHobbyCell.favoriteHobby, offset: self.$offset)) {
+                                NavigationLink(destination: RecordHobbyView(favoriteHobbyVM: self.favoriteHobbyVM, favoriteHobbyCellVM: favoriteHobbyCell, offset: self.$offset)) { EmptyView() }
+
+                                Button(action: {
+
+                                    self.favoriteHobbyVM.title = favoriteHobbyCell.favoriteHobby.title
+                                    self.favoriteHobbyVM.icon = favoriteHobbyCell.favoriteHobby.icon
+                                }) {
 
                                     FavoriteCell(favoriteHobbyCell: favoriteHobbyCell)
                                 }
@@ -70,6 +76,11 @@ struct BottomSheet: View {
             .cornerRadius(25)
             .padding(.bottom, 140)
             .padding(.trailing, 40)
+            .simultaneousGesture(TapGesture().onEnded {
+
+                self.favoriteHobbyVM.title = ""
+                self.favoriteHobbyVM.icon = ""
+            })
         }
     }
 }
@@ -90,6 +101,8 @@ struct FavoriteCell: View {
                 .foregroundColor(Color.pr(9))
             Text(favoriteHobbyCell.favoriteHobby.title)
                 .foregroundColor(Color.pr(9))
+
+            Spacer()
         }
         .padding(.horizontal)
     }

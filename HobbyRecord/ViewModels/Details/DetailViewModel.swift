@@ -13,6 +13,7 @@ class DetailViewModel: ObservableObject {
 
     @Published var detailCellViewModels: [DetailCellViewModel] = [DetailCellViewModel(detail: Detail(detail: ""))]
     @Published var details: [String] = []
+
     private var cancellables = Set<AnyCancellable>()
 
     func addDetail(detail: Detail) {
@@ -37,5 +38,12 @@ class DetailViewModel: ObservableObject {
     func removeRow(offsets: IndexSet) {
 
         self.detailCellViewModels.remove(atOffsets: offsets)
+    }
+
+    func updateRecord(hobby: Hobby) -> Hobby {
+
+        addAllDetailsToArray()
+
+        return Hobby(id: hobby.id, date: hobby.date, title: hobby.title, details: details, icon: hobby.icon, uesrId: hobby.uesrId)
     }
 }

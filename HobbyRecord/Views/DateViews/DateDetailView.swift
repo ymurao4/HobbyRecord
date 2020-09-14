@@ -12,7 +12,17 @@ struct DateDetailView: View {
 
     @ObservedObject var dateVM: DateViewModel
     @ObservedObject var detailVM = DetailViewModel()
+    @ObservedObject var hobbyVM: HobbyViewModel
     var hobby: Hobby
+
+    init(dateVM: DateViewModel, hobby: Hobby, hobbyVM: HobbyViewModel) {
+
+        self.dateVM = dateVM
+        self.hobby = hobby
+        self.hobbyVM = hobbyVM
+
+        self.addDetailCellVMToDetailVM()
+    }
 
     var body: some View {
 
@@ -24,14 +34,19 @@ struct DateDetailView: View {
 
                     DetailCell(detailCellVM: detailCell)
                 }
+                .onDelete(perform: rowRemove)
 
-                Button(action: {  }) {
+                Button(action: {
+
+                    self.detailVM.addDetail(detail: Detail(detail: ""))
+                }) {
 
                     HStack {
 
                         Image(systemName: "plus.circle.fill")
                             .resizable()
                             .frame(width: 20, height: 20)
+
                         Text("Add New Detail".localized)
                     }
                     .foregroundColor(Color.orange)
@@ -45,25 +60,26 @@ struct DateDetailView: View {
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-            Navbar(hobby: hobby)
+            navbar
         )
     }
 
     private func addDetailCellVMToDetailVM() {
+
+        self.detailVM.detailCellViewModels.removeAll()
 
         for detail in self.hobby.details {
 
             self.detailVM.addDetail(detail: Detail(detail: detail))
         }
     }
-}
 
+    private func rowRemove(offsets: IndexSet) {
 
-struct Navbar: View {
+        self.detailVM.removeRow(offsets: offsets)
+    }
 
-    var hobby: Hobby
-
-    var body: some View {
+    private var navbar: some View {
 
         ZStack(alignment: .trailing) {
 
@@ -84,13 +100,20 @@ struct Navbar: View {
 
             Button(action: {
 
-                print("udpate")
+                self.updateRecord()
             }) {
 
-                Text("Update")
+                Text("Update".localized)
                     .foregroundColor(Color.orange)
                     .padding(.trailing, 60)
             }
         }
     }
+
+    private func updateRecord() {
+
+        let newHobby = self.detailVM.updateRecord(hobby: self.hobby)
+        self.hobbyVM.updateRecord(hobby: newHobby)
+    }
 }
+
