@@ -77,6 +77,36 @@ class FavoriteHobbyRespository: ObservableObject {
         }
     }
 
+    private func removeAllHobbyRecord(fav: FavoriteHobby) {
+
+        db.collection("hobbies")
+            .whereField("uesrId", isEqualTo: userId as Any)
+            .whereField("title", isEqualTo: fav.title)
+            .whereField("icon", isEqualTo: fav.icon)
+            .getDocuments() { (querySnapshot, error) in
+
+                if let error = error {
+
+                    print("Error getting documents: \(error)")
+                } else {
+
+                    for document in querySnapshot!.documents {
+
+                        self.db.collection("hobbies").document(document.documentID).delete() { err in
+
+                            if let err = err {
+
+                                print("Error removing document: \(err.localizedDescription)")
+                            } else {
+
+                                print("Record susccessfully deleted")
+                            }
+                        }
+                    }
+                }
+        }
+    }
+
     func updateFavoriteHobby(fav: FavoriteHobby, oldIcon: String, oldTitle: String) {
 
         if let favId = fav.id {
@@ -118,36 +148,6 @@ class FavoriteHobbyRespository: ObservableObject {
                         } catch {
 
                             fatalError("Unable to encode hobby: \(error.localizedDescription)")
-                        }
-                    }
-                }
-        }
-    }
-
-    private func removeAllHobbyRecord(fav: FavoriteHobby) {
-
-        db.collection("hobbies")
-            .whereField("uesrId", isEqualTo: userId as Any)
-            .whereField("title", isEqualTo: fav.title)
-            .whereField("icon", isEqualTo: fav.icon)
-            .getDocuments() { (querySnapshot, error) in
-
-                if let error = error {
-
-                    print("Error getting documents: \(error)")
-                } else {
-
-                    for document in querySnapshot!.documents {
-                        
-                        self.db.collection("hobbies").document(document.documentID).delete() { err in
-
-                            if let err = err {
-
-                                print("Error removing document: \(err.localizedDescription)")
-                            } else {
-
-                                print("Record susccessfully deleted")
-                            }
                         }
                     }
                 }
