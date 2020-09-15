@@ -71,7 +71,7 @@ class FavoriteHobbyRespository: ObservableObject {
                     print("Error removing document: \(err.localizedDescription)")
                 } else {
 
-                    print("Document successfully removied")
+                    self.removeAllHobbyRecord(fav: fav)
                 }
             }
         }
@@ -109,9 +109,6 @@ class FavoriteHobbyRespository: ObservableObject {
 
                     for document in querySnapshot!.documents {
 
-//                        try let hobby = document.data(as: Hobby.self)
-//                        self.updateRecord(documentID: document.documentID, hobby: hobby)
-
                         do {
 
                             var hobby = try document.data(as: Hobby.self)
@@ -127,15 +124,34 @@ class FavoriteHobbyRespository: ObservableObject {
         }
     }
 
-//    private func updateRecord(documentID: String, hobby: Hobby) {
-//
-//        do {
-//
-//            try db.collection("hobbies").document(documentID).setData(from: hobby)
-//        } catch {
-//
-//            fatalError("Unable to encode hobby: \(error.localizedDescription)")
-//        }
-//    }
+    private func removeAllHobbyRecord(fav: FavoriteHobby) {
+
+        db.collection("hobbies")
+            .whereField("uesrId", isEqualTo: userId as Any)
+            .whereField("title", isEqualTo: fav.title)
+            .whereField("icon", isEqualTo: fav.icon)
+            .getDocuments() { (querySnapshot, error) in
+
+                if let error = error {
+
+                    print("Error getting documents: \(error)")
+                } else {
+
+                    for document in querySnapshot!.documents {
+                        
+                        self.db.collection("hobbies").document(document.documentID).delete() { err in
+
+                            if let err = err {
+
+                                print("Error removing document: \(err.localizedDescription)")
+                            } else {
+
+                                print("Record susccessfully deleted")
+                            }
+                        }
+                    }
+                }
+        }
+    }
 
 }
