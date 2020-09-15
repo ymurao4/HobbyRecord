@@ -32,11 +32,13 @@
 - パッケージ管理 : Cocoapods  
 - バージョン管理 : Git  
 
-# オープンソースライブラリ
+# mBaaS
 - Firebase/Analytics
 - Firebase/Firestore
 - Firebase/Auth
 - FirebaseFirestoreSwift
+
+# ライブラリ
 - IQKeyboardManagerSwift
 - WaterfallGrid
 
