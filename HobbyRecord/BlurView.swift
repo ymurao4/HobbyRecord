@@ -2,7 +2,7 @@
 //  BlurView.swift
 //  HobbyRecord
 //
-//  Created by 村尾慶伸 on 2020/09/09.
+//  Created by 村尾慶伸 on 2020/09/15.
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 

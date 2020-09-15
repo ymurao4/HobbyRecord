@@ -1,10 +1,11 @@
 //
-//  KindOfIcon.swift
+//  Icon.swift
 //  HobbyRecord
 //
-//  Created by 村尾慶伸 on 2020/09/04.
+//  Created by 村尾慶伸 on 2020/09/15.
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
+
 
 struct K {
     static var sports: [String] = [

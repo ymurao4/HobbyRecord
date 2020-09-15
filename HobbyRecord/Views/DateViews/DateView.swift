@@ -103,7 +103,10 @@ struct HobbyCell: View {
                 Text(hobby.title)
                     .font(.headline)
                     .foregroundColor(Color.pr(9))
+                
+                Spacer()
             }
+            .frame(width: UIScreen.main.bounds.width)
             .padding(.bottom, 10)
 
             ForEach(hobby.details, id: \.self) { detail in
