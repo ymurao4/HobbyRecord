@@ -10,21 +10,26 @@
 
 # 機能
 - 趣味の記録をメモと共にカレンダーに登録、削除、編集、表示
+- ダークモード 対応
+
 
 # 苦労したところ、頑張ったところ
 - カレンダーの作成
 - カレンダーに記録を関連付け
 - 画面レイアウト
 
+
 # 妥協点
 - Appleのカレンダーのような無限カレンダーの作成
 - SwiftUIのバグによる日本語入力の不具合に対処できなかったこと
 - Navigationbarが消えたりするバグに対処できなかったこと
 
+
 # 機能
 - 趣味を登録、編集、削除
 - カレンダー形式でどの日に何をやったかを見られる
 - 日本語、英語の2カ国語に対応
+
 
 # 開発環境
 - 開発言語 : Swift  
@@ -35,11 +40,13 @@
 - パッケージ管理 : Cocoapods  
 - バージョン管理 : Git  
 
+
 # mBaaS
 - Firebase/Analytics
 - Firebase/Firestore
 - Firebase/Auth
 - FirebaseFirestoreSwift
+
 
 # ライブラリ
 - IQKeyboardManagerSwift
