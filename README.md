@@ -39,3 +39,13 @@
 - FirebaseFirestoreSwift
 - IQKeyboardManagerSwift
 - WaterfallGrid
+
+
+
+<img src="gif/add.gif" width=320px>
+<img src="gif/update.gif" width=320px>
+<img src="gif/Browse.gif" width=320px>
+<img src="gif/addRec.gif" width=320px>
+<img src="gif/UpdateRec.gif" width=320px>
+<img src="gif/Setting.gif" width=320px>
+
