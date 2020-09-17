@@ -104,6 +104,5 @@ struct FavoriteCell: View {
 
             Spacer()
         }
-        .padding(.horizontal)
     }
 }

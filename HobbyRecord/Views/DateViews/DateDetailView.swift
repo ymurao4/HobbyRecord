@@ -10,6 +10,7 @@ import SwiftUI
 
 struct DateDetailView: View {
 
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var dateVM: DateViewModel
     @ObservedObject var detailVM = DetailViewModel()
     @ObservedObject var hobbyVM: HobbyViewModel
@@ -114,6 +115,7 @@ struct DateDetailView: View {
 
         let newHobby = self.detailVM.updateRecord(hobby: self.hobby)
         self.hobbyVM.updateRecord(hobby: newHobby)
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 

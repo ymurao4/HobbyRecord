@@ -7,7 +7,6 @@ target 'HobbyRecord' do
 
   # Pods for HobbyRecord
   pod 'IQKeyboardManagerSwift'
-  pod 'WaterfallGrid'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
