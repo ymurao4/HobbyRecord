@@ -15,10 +15,15 @@ struct IconSetting: View {
 
     let column = GridItem(.adaptive(minimum: 30, maximum: 50))
 
+    var cellHeight: CGFloat {
+
+        calCellHeight()
+    }
+
 
     var body: some View {
 
-        ScrollView {
+        ScrollView(showsIndicators: false) {
 
             LazyVGrid(columns: Array(repeating: column, count: 6), spacing: 20) {
 
@@ -47,6 +52,13 @@ struct IconSetting: View {
             }
             .padding(.top, 10)
         }
+        .frame(maxHeight: cellHeight)
+    }
+
+    private func calCellHeight() -> CGFloat {
+        let count = self.kind.count
+        let row = count / 6 + 1
+        return CGFloat(row * 50)
     }
 }
 
