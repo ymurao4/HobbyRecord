@@ -18,32 +18,35 @@ struct IconSetting: View {
 
     var body: some View {
 
+        ScrollView {
 
-        LazyVGrid(columns: Array(repeating: column, count: 6), spacing: 30) {
+            LazyVGrid(columns: Array(repeating: column, count: 6), spacing: 20) {
 
-            ForEach(kind, id: \.self) { item in
+                ForEach(kind, id: \.self) { item in
 
-                Button(action: { self.icon = item }) {
+                    Button(action: { self.icon = item }) {
 
-                    ZStack(alignment: .bottom) {
+                        ZStack(alignment: .bottom) {
 
-                        Image(item)
-                            .renderingMode(.template)
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(Color.pr(9))
+                            Image(item)
+                                .renderingMode(.template)
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(Color.pr(9))
+                                .padding(.bottom, 13)
 
-                        if self.icon == item {
+                            if self.icon == item {
 
-                            Rectangle()
-                                .frame(width: 25, height: 2.0, alignment: .bottom)
-                                .foregroundColor(Color.orange)
+                                Rectangle()
+                                    .frame(width: 25, height: 2.0, alignment: .bottom)
+                                    .foregroundColor(Color.orange)
+                            }
                         }
                     }
                 }
             }
+            .padding(.top, 10)
         }
-        .padding(.top, 10)
     }
 }
 
