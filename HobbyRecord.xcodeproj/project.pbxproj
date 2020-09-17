@@ -51,7 +51,7 @@
 		04ECAA512510438100A73FBB /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA502510438100A73FBB /* Icon.swift */; };
 		04ECAA532510439B00A73FBB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA522510439B00A73FBB /* String.swift */; };
 		04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720925085E5C0094F336 /* ReaderView.swift */; };
-		2F868986DD997C6C5C1A841A /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308C3D1DFBDB4395FBE5C6ED /* Pods_HobbyRecord.framework */; };
+		81AFF18E583F8624B1B62633 /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE22F12224C7D96906644B2A /* Pods_HobbyRecord.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -117,9 +117,9 @@
 		04ECAA502510438100A73FBB /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		04ECAA522510439B00A73FBB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		04FA720925085E5C0094F336 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
-		308C3D1DFBDB4395FBE5C6ED /* Pods_HobbyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D8D2EBABC4B0C4C44311302 /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
-		AA287421D288A46BD8D1D4E4 /* Pods-HobbyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.release.xcconfig"; sourceTree = "<group>"; };
+		637174D1677D5DB7F5C26DDD /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
+		B78AEAC0D37A57BFA0AEA0B8 /* Pods-HobbyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.release.xcconfig"; sourceTree = "<group>"; };
+		CE22F12224C7D96906644B2A /* Pods_HobbyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F868986DD997C6C5C1A841A /* Pods_HobbyRecord.framework in Frameworks */,
+				81AFF18E583F8624B1B62633 /* Pods_HobbyRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +220,7 @@
 				0498FE0B24F88C7400489C12 /* Products */,
 				B0E1B3F0E09204E49FBCC099 /* Pods */,
 				04C23D42250B18B200787F99 /* Recovered References */,
-				14E8839EFA9A815BE9B886DF /* Frameworks */,
+				55C7D34C2278B6B9DDB49080 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -325,10 +325,10 @@
 			path = BottomViews;
 			sourceTree = "<group>";
 		};
-		14E8839EFA9A815BE9B886DF /* Frameworks */ = {
+		55C7D34C2278B6B9DDB49080 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				308C3D1DFBDB4395FBE5C6ED /* Pods_HobbyRecord.framework */,
+				CE22F12224C7D96906644B2A /* Pods_HobbyRecord.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -336,8 +336,8 @@
 		B0E1B3F0E09204E49FBCC099 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9D8D2EBABC4B0C4C44311302 /* Pods-HobbyRecord.debug.xcconfig */,
-				AA287421D288A46BD8D1D4E4 /* Pods-HobbyRecord.release.xcconfig */,
+				637174D1677D5DB7F5C26DDD /* Pods-HobbyRecord.debug.xcconfig */,
+				B78AEAC0D37A57BFA0AEA0B8 /* Pods-HobbyRecord.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -349,12 +349,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0498FE4D24F88C7500489C12 /* Build configuration list for PBXNativeTarget "HobbyRecord" */;
 			buildPhases = (
-				B28FDEF1AA5893DC3E243661 /* [CP] Check Pods Manifest.lock */,
+				DD7E0961A13C1D6B22281547 /* [CP] Check Pods Manifest.lock */,
 				0498FE0624F88C7400489C12 /* Sources */,
 				0498FE0724F88C7400489C12 /* Frameworks */,
 				0498FE0824F88C7400489C12 /* Resources */,
 				0498FE4C24F88C7500489C12 /* Embed Watch Content */,
-				6403AAC212D7065151C9E4B6 /* [CP] Embed Pods Frameworks */,
+				F59532F08A550FB2CCF70B48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -372,7 +372,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "村尾慶伸";
 				TargetAttributes = {
 					0498FE0924F88C7400489C12 = {
@@ -416,24 +416,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6403AAC212D7065151C9E4B6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B28FDEF1AA5893DC3E243661 /* [CP] Check Pods Manifest.lock */ = {
+		DD7E0961A13C1D6B22281547 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -453,6 +436,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F59532F08A550FB2CCF70B48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -562,6 +562,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -623,6 +624,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -653,7 +655,7 @@
 		};
 		0498FE4E24F88C7500489C12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D8D2EBABC4B0C4C44311302 /* Pods-HobbyRecord.debug.xcconfig */;
+			baseConfigurationReference = 637174D1677D5DB7F5C26DDD /* Pods-HobbyRecord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -674,7 +676,7 @@
 		};
 		0498FE4F24F88C7500489C12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA287421D288A46BD8D1D4E4 /* Pods-HobbyRecord.release.xcconfig */;
+			baseConfigurationReference = B78AEAC0D37A57BFA0AEA0B8 /* Pods-HobbyRecord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
