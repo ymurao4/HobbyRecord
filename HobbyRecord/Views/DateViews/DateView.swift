@@ -116,7 +116,6 @@ struct HobbyCell: View {
                     .foregroundColor(Color.pr(9))
             }
         }
-        .padding(.horizontal)
     }
 
 }

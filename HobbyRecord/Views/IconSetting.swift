@@ -7,56 +7,58 @@
 //
 
 import SwiftUI
-import WaterfallGrid
 
 struct IconSetting: View {
 
     @Binding var icon: String
     var kind: [String]
 
+    let column = GridItem(.adaptive(minimum: 30, maximum: 50))
+
     var cellHeight: CGFloat {
+
         calCellHeight()
     }
 
 
     var body: some View {
 
-        WaterfallGrid(0..<kind.count, id: \.self) { index in
+        ScrollView(showsIndicators: false) {
 
-            Button(action: {
+            LazyVGrid(columns: Array(repeating: column, count: 6), spacing: 20) {
 
-                self.icon = self.kind[index]
-            }) {
+                ForEach(kind, id: \.self) { item in
 
-                ZStack(alignment: .bottom) {
+                    Button(action: { self.icon = item }) {
 
-                    Image(self.kind[index])
-                        .renderingMode(.template)
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(Color.pr(9))
-                        .padding(10)
+                        ZStack(alignment: .bottom) {
 
-                    if self.icon == self.kind[index] {
+                            Image(item)
+                                .renderingMode(.template)
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(Color.pr(9))
+                                .padding(.bottom, 13)
 
-                        Rectangle()
-                            .frame(width: 25, height: 2.0, alignment: .bottom)
-                            .foregroundColor(Color.orange)
+                            if self.icon == item {
+
+                                Rectangle()
+                                    .frame(width: 25, height: 2.0, alignment: .bottom)
+                                    .foregroundColor(Color.orange)
+                            }
+                        }
                     }
                 }
             }
+            .padding(.top, 10)
         }
-        .gridStyle(columns: 6, spacing: 15)
-        .scrollOptions(direction: .vertical, showsIndicators: false)
-        .frame(width: UIScreen.main.bounds.width, height: cellHeight)
-        .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+        .frame(maxHeight: cellHeight)
     }
 
     private func calCellHeight() -> CGFloat {
         let count = self.kind.count
         let row = count / 6 + 1
-        return CGFloat(row * 45)
+        return CGFloat(row * 50)
     }
-
 }
 

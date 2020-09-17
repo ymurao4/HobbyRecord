@@ -17,7 +17,6 @@ struct CalendarView: View {
 
     var cellWidth: CGFloat
 
-    //今日を初期画面に表示するのは、scrollViewReader待ち
     var body: some View {
 
         CLViewController(clManager: clManager, hobbyVM: hobbyVM, isDetailView: $isDetailView)

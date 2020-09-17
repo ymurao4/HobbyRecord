@@ -52,6 +52,7 @@ struct RecordHobbyView: View {
                                 Image(systemName: "plus.circle.fill")
                                     .resizable()
                                     .frame(width: 20, height: 20)
+
                                 Text("Add New Detail".localized)
                             }
                             .foregroundColor(Color.orange)
