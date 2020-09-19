@@ -66,14 +66,16 @@ class MyCalendarController: UIViewController, FSCalendarDelegateAppearance {
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        self.calendar.register(FSCalendarCell.self, forCellReuseIdentifier: "Cell")
         self.calendar.scope = .month
         self.calendar.select(Date.init())
         self.calendar.accessibilityIdentifier = "calendar"
     }
+
 }
 
 
-extension MyCalendarController: FSCalendarDataSource {
+extension MyCalendarController: FSCalendarDataSource, FSCalendarDelegate {
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         debugPrint("did select date \(self.formatter.string(from: date))")
@@ -83,15 +85,24 @@ extension MyCalendarController: FSCalendarDataSource {
             calendar.setCurrentPage(date, animated: true)
         }
     }
-}
-
-extension MyCalendarController: FSCalendarDelegate {
 
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         self.calendar.frame.size.height = bounds.height
         self.view.layoutIfNeeded()
     }
+
+    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        return UIImage(named: "barbell ")
+    }
+
+    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+
+        let cell = calendar.dequeueReusableCell(withIdentifier: "Cell", for: date, at: position)
+        cell.imageView.contentMode = .scaleAspectFit
+        return cell
+    }
 }
+
 
 extension MyCalendarController: UIGestureRecognizerDelegate {
 
