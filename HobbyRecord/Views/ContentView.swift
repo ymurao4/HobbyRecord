@@ -33,10 +33,10 @@ struct ContentView: View {
 
                 VStack {
 
-                    CustomNavbar(isActionSheet: $isActionSheet, clManager: clManager, cellWidth: cellWidth)
+//                    CustomNavbar(isActionSheet: $isActionSheet, clManager: clManager, cellWidth: cellWidth)
                     CalendarView(hobbyVM: hobbyVM, isDetailView: $isDetailView, clManager: clManager, cellWidth: cellWidth)
                 }
-                .edgesIgnoringSafeArea(.top)
+//                .edgesIgnoringSafeArea(.top)
 
                 GeometryReader{ reader in
 
