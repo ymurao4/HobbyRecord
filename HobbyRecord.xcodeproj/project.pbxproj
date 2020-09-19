@@ -23,6 +23,8 @@
 		047A5D9B250A322D000423BF /* DetailCellVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */; };
 		047A5D9D250A335D000423BF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9C250A335D000423BF /* Detail.swift */; };
 		047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9E250A3463000423BF /* DetailViewModel.swift */; };
+		047A6DAB251583F5008CCD72 /* MyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A6DAA251583F5008CCD72 /* MyCalendar.swift */; };
+		047A6DAE2515841E008CCD72 /* MyCalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A6DAD2515841E008CCD72 /* MyCalendarController.swift */; };
 		0486F19D250F28FB002B7A26 /* IconSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486F19C250F28FB002B7A26 /* IconSetting.swift */; };
 		0486F19F250F2946002B7A26 /* UpdateNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486F19E250F2946002B7A26 /* UpdateNewHobbyView.swift */; };
 		048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BE2E324FDE6EA005159F5 /* Hobby.swift */; };
@@ -51,7 +53,7 @@
 		04ECAA512510438100A73FBB /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA502510438100A73FBB /* Icon.swift */; };
 		04ECAA532510439B00A73FBB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA522510439B00A73FBB /* String.swift */; };
 		04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720925085E5C0094F336 /* ReaderView.swift */; };
-		CDB15969F65839B27C4E6767 /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D4EE5A8D796DD609E9D964 /* Pods_HobbyRecord.framework */; };
+		8D76C5D8969BC58546FBDF75 /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3B43D38C0EC167F1A99252 /* Pods_HobbyRecord.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +88,8 @@
 		047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellVIewModel.swift; sourceTree = "<group>"; };
 		047A5D9C250A335D000423BF /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		047A5D9E250A3463000423BF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		047A6DAA251583F5008CCD72 /* MyCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalendar.swift; sourceTree = "<group>"; };
+		047A6DAD2515841E008CCD72 /* MyCalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalendarController.swift; sourceTree = "<group>"; };
 		0486F19C250F28FB002B7A26 /* IconSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSetting.swift; sourceTree = "<group>"; };
 		0486F19E250F2946002B7A26 /* UpdateNewHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UpdateNewHobbyView.swift; path = HobbyRecord/Views/BottomViews/UpdateNewHobbyView.swift; sourceTree = SOURCE_ROOT; };
 		048BE2E324FDE6EA005159F5 /* Hobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
@@ -117,9 +121,9 @@
 		04ECAA502510438100A73FBB /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		04ECAA522510439B00A73FBB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		04FA720925085E5C0094F336 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
-		449AC5472D28DECDE12E061C /* Pods-HobbyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.release.xcconfig"; sourceTree = "<group>"; };
-		98A5A196BABF641489D9D728 /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
-		F3D4EE5A8D796DD609E9D964 /* Pods_HobbyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EB035C83E82FDD3031CD747 /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
+		478ED4A2FD5BC45FFDD49711 /* Pods-HobbyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.release.xcconfig"; sourceTree = "<group>"; };
+		7E3B43D38C0EC167F1A99252 /* Pods_HobbyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDB15969F65839B27C4E6767 /* Pods_HobbyRecord.framework in Frameworks */,
+				8D76C5D8969BC58546FBDF75 /* Pods_HobbyRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +180,15 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		047A6DA8251583E0008CCD72 /* CalendarViews */ = {
+			isa = PBXGroup;
+			children = (
+				047A6DAA251583F5008CCD72 /* MyCalendar.swift */,
+				047A6DAD2515841E008CCD72 /* MyCalendarController.swift */,
+			);
+			path = CalendarViews;
+			sourceTree = "<group>";
+		};
 		048BE2E224FDE6DA005159F5 /* Calendars */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +212,7 @@
 				04BD440A250E130F004F44B9 /* BottomSheetView */,
 				04294F8C2508707700AEB196 /* CustomViews */,
 				04FA720825085CC70094F336 /* BottomViews */,
+				047A6DA8251583E0008CCD72 /* CalendarViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,7 +234,7 @@
 				0498FE0B24F88C7400489C12 /* Products */,
 				B0E1B3F0E09204E49FBCC099 /* Pods */,
 				04C23D42250B18B200787F99 /* Recovered References */,
-				14C5533D37FC72A5D4E76134 /* Frameworks */,
+				17A4819E5541CB51AA8DCE1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -325,10 +339,10 @@
 			path = BottomViews;
 			sourceTree = "<group>";
 		};
-		14C5533D37FC72A5D4E76134 /* Frameworks */ = {
+		17A4819E5541CB51AA8DCE1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F3D4EE5A8D796DD609E9D964 /* Pods_HobbyRecord.framework */,
+				7E3B43D38C0EC167F1A99252 /* Pods_HobbyRecord.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -336,8 +350,8 @@
 		B0E1B3F0E09204E49FBCC099 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				98A5A196BABF641489D9D728 /* Pods-HobbyRecord.debug.xcconfig */,
-				449AC5472D28DECDE12E061C /* Pods-HobbyRecord.release.xcconfig */,
+				2EB035C83E82FDD3031CD747 /* Pods-HobbyRecord.debug.xcconfig */,
+				478ED4A2FD5BC45FFDD49711 /* Pods-HobbyRecord.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -349,12 +363,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0498FE4D24F88C7500489C12 /* Build configuration list for PBXNativeTarget "HobbyRecord" */;
 			buildPhases = (
-				E1DF4D4FB01F3B5E7BD65DEE /* [CP] Check Pods Manifest.lock */,
+				6EDD92EB9F63B6FD8ADCB04E /* [CP] Check Pods Manifest.lock */,
 				0498FE0624F88C7400489C12 /* Sources */,
 				0498FE0724F88C7400489C12 /* Frameworks */,
 				0498FE0824F88C7400489C12 /* Resources */,
 				0498FE4C24F88C7500489C12 /* Embed Watch Content */,
-				4851A76F53A80B4536CFE1FA /* [CP] Embed Pods Frameworks */,
+				7306ED816B3937680E269F05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -416,24 +430,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4851A76F53A80B4536CFE1FA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E1DF4D4FB01F3B5E7BD65DEE /* [CP] Check Pods Manifest.lock */ = {
+		6EDD92EB9F63B6FD8ADCB04E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -455,6 +452,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7306ED816B3937680E269F05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -472,6 +486,7 @@
 				042C0A1125075A44001AB6CD /* ContentView.swift in Sources */,
 				04ECAA4F2510436E00A73FBB /* Date.swift in Sources */,
 				0436BFF1250DB0AB004499BF /* HobbyRepository.swift in Sources */,
+				047A6DAB251583F5008CCD72 /* MyCalendar.swift in Sources */,
 				0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */,
 				048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */,
 				0436E83E2509A15100A25460 /* RecordHobbyView.swift in Sources */,
@@ -496,6 +511,7 @@
 				040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */,
 				0486F19F250F2946002B7A26 /* UpdateNewHobbyView.swift in Sources */,
 				047A5D9D250A335D000423BF /* Detail.swift in Sources */,
+				047A6DAE2515841E008CCD72 /* MyCalendarController.swift in Sources */,
 				04A7130B25020B3A00339779 /* DateView.swift in Sources */,
 				04EB65EA2509AFD6002EE231 /* FavoriteHobby.swift in Sources */,
 				0436BFF5250DDC78004499BF /* CLDateViewModel.swift in Sources */,
@@ -655,7 +671,7 @@
 		};
 		0498FE4E24F88C7500489C12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98A5A196BABF641489D9D728 /* Pods-HobbyRecord.debug.xcconfig */;
+			baseConfigurationReference = 2EB035C83E82FDD3031CD747 /* Pods-HobbyRecord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -676,7 +692,7 @@
 		};
 		0498FE4F24F88C7500489C12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 449AC5472D28DECDE12E061C /* Pods-HobbyRecord.release.xcconfig */;
+			baseConfigurationReference = 478ED4A2FD5BC45FFDD49711 /* Pods-HobbyRecord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

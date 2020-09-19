@@ -19,7 +19,8 @@ struct CalendarView: View {
 
     var body: some View {
 
-        CLViewController(clManager: clManager, hobbyVM: hobbyVM, isDetailView: $isDetailView)
+//        CLViewController(clManager: clManager, hobbyVM: hobbyVM, isDetailView: $isDetailView)
+        MyCalendar()
     }
 
     private func addButton() -> some View {
