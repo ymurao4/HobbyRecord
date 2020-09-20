@@ -32,6 +32,7 @@ struct RootView: View {
 
             Spacer()
         }
+        .padding(.top, 10)
     }
 }
 

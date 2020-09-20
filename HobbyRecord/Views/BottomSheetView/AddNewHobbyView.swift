@@ -22,7 +22,6 @@ struct AddNewHobbyView: View {
                 Section(header: Text("title".localized)) {
 
                      TextField("Title".localized, text: $favoriteHobbyVM.title)
-                        .padding(5)
                 }
 
                 Section(header: Text("Icon".localized)) {
