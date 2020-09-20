@@ -21,8 +21,8 @@
 
 # 妥協点
 - Appleのカレンダーのような無限カレンダーの作成
-- SwiftUIのバグによる日本語入力の不具合に対処できなかったこと
-- Navigationbarが消えたりするバグに対処できなかったこと
+- SwiftUIのバグによる日本語入力の不具合に対処できなかったこと -> 対処しました。
+- Navigationbarが消えたりするバグに対処できなかったこと -> 対処しました。
 
 
 # 機能
@@ -52,6 +52,9 @@
 - IQKeyboardManagerSwift
 - WaterfallGrid
 
+# 追記(2020/9/20)
+ios14に対応しました。
+バグを修正しました。
 
 
 <img src="gif/add.gif" width=320px>
