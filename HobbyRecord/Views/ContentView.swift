@@ -31,12 +31,16 @@ struct ContentView: View {
 
             ZStack(alignment: .bottom) {
 
-                VStack {
+                VStack(spacing: 0) {
 
-//                    CustomNavbar(isActionSheet: $isActionSheet, clManager: clManager, cellWidth: cellWidth)
-                    CalendarView(hobbyVM: hobbyVM, isDetailView: $isDetailView, clManager: clManager, cellWidth: cellWidth)
+                    CustomNavbar(isActionSheet: $isActionSheet, clManager: clManager, cellWidth: cellWidth)
+
+                    RootView()
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200)
+
+                    Spacer()
                 }
-//                .edgesIgnoringSafeArea(.top)
+                .ignoresSafeArea()
 
                 GeometryReader{ reader in
 
