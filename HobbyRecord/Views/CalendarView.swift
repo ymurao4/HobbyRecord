@@ -20,8 +20,7 @@ struct CalendarView: View {
     var body: some View {
 
 //        CLViewController(clManager: clManager, hobbyVM: hobbyVM, isDetailView: $isDetailView)
-        MyCalendar()
-            .frame(width: UIScreen.main.bounds.width)
+        RootView()
     }
 
     private func addButton() -> some View {

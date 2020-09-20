@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		009BFB2A8FBFD84978FE7D9D /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89709E39DED46BDB9B82C229 /* Pods_HobbyRecord.framework */; };
 		040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E790324FE0CAB008F910F /* HobbyViewModel.swift */; };
 		040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E790624FE1E67008F910F /* HobbyCellViewModel.swift */; };
 		041279E5250D91A400283614 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 041279E7250D91A400283614 /* Localizable.strings */; };
@@ -23,8 +24,6 @@
 		047A5D9B250A322D000423BF /* DetailCellVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */; };
 		047A5D9D250A335D000423BF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9C250A335D000423BF /* Detail.swift */; };
 		047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9E250A3463000423BF /* DetailViewModel.swift */; };
-		047A6DAB251583F5008CCD72 /* MyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A6DAA251583F5008CCD72 /* MyCalendar.swift */; };
-		047A6DAE2515841E008CCD72 /* MyCalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A6DAD2515841E008CCD72 /* MyCalendarController.swift */; };
 		0486F19D250F28FB002B7A26 /* IconSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486F19C250F28FB002B7A26 /* IconSetting.swift */; };
 		0486F19F250F2946002B7A26 /* UpdateNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486F19E250F2946002B7A26 /* UpdateNewHobbyView.swift */; };
 		048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BE2E324FDE6EA005159F5 /* Hobby.swift */; };
@@ -35,6 +34,8 @@
 		0498FE1724F88C7400489C12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE1624F88C7400489C12 /* Preview Assets.xcassets */; };
 		0498FE1A24F88C7400489C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE1824F88C7400489C12 /* LaunchScreen.storyboard */; };
 		04A7130B25020B3A00339779 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7130A25020B3A00339779 /* DateView.swift */; };
+		04AD0CA12516F4BF00585104 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0CA02516F4BF00585104 /* RootView.swift */; };
+		04AD0CA42516F50A00585104 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0CA32516F50A00585104 /* CalendarViewModel.swift */; };
 		04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD31472504B6BB00AA3745 /* DateViewModel.swift */; };
 		04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4407250E12FC004F44B9 /* DateDetailView.swift */; };
 		04C607472500BFC800479749 /* CLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C607462500BFC800479749 /* CLCell.swift */; };
@@ -53,7 +54,6 @@
 		04ECAA512510438100A73FBB /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA502510438100A73FBB /* Icon.swift */; };
 		04ECAA532510439B00A73FBB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA522510439B00A73FBB /* String.swift */; };
 		04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720925085E5C0094F336 /* ReaderView.swift */; };
-		8D76C5D8969BC58546FBDF75 /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3B43D38C0EC167F1A99252 /* Pods_HobbyRecord.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,8 +88,6 @@
 		047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellVIewModel.swift; sourceTree = "<group>"; };
 		047A5D9C250A335D000423BF /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		047A5D9E250A3463000423BF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		047A6DAA251583F5008CCD72 /* MyCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalendar.swift; sourceTree = "<group>"; };
-		047A6DAD2515841E008CCD72 /* MyCalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalendarController.swift; sourceTree = "<group>"; };
 		0486F19C250F28FB002B7A26 /* IconSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSetting.swift; sourceTree = "<group>"; };
 		0486F19E250F2946002B7A26 /* UpdateNewHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UpdateNewHobbyView.swift; path = HobbyRecord/Views/BottomViews/UpdateNewHobbyView.swift; sourceTree = SOURCE_ROOT; };
 		048BE2E324FDE6EA005159F5 /* Hobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
@@ -103,6 +101,8 @@
 		0498FE1B24F88C7400489C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0498FE1E24F88C7400489C12 /* HobbyRecord WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "HobbyRecord WatchKit App.app"; path = "/Users/muraoyoshinobu/Documents/personal development/HobbyRecord/build/Debug-watchos/HobbyRecord WatchKit App.app"; sourceTree = "<absolute>"; };
 		04A7130A25020B3A00339779 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		04AD0CA02516F4BF00585104 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		04AD0CA32516F50A00585104 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		04BD31472504B6BB00AA3745 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		04BD4407250E12FC004F44B9 /* DateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetailView.swift; sourceTree = "<group>"; };
 		04C607462500BFC800479749 /* CLCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLCell.swift; sourceTree = "<group>"; };
@@ -121,9 +121,9 @@
 		04ECAA502510438100A73FBB /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		04ECAA522510439B00A73FBB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		04FA720925085E5C0094F336 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
-		2EB035C83E82FDD3031CD747 /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
-		478ED4A2FD5BC45FFDD49711 /* Pods-HobbyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.release.xcconfig"; sourceTree = "<group>"; };
-		7E3B43D38C0EC167F1A99252 /* Pods_HobbyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F8FAC65DE7234DBA8F0B9FF /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
+		70BBA937D821CC21A7AAF63C /* Pods-HobbyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.release.xcconfig"; sourceTree = "<group>"; };
+		89709E39DED46BDB9B82C229 /* Pods_HobbyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D76C5D8969BC58546FBDF75 /* Pods_HobbyRecord.framework in Frameworks */,
+				009BFB2A8FBFD84978FE7D9D /* Pods_HobbyRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +146,7 @@
 				04EB65ED2509B0B8002EE231 /* NewHobby */,
 				047A5DA0250A3468000423BF /* Details */,
 				0436BFF4250DDC78004499BF /* CLDateViewModel.swift */,
+				04AD0CA32516F50A00585104 /* CalendarViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -183,8 +184,7 @@
 		047A6DA8251583E0008CCD72 /* CalendarViews */ = {
 			isa = PBXGroup;
 			children = (
-				047A6DAA251583F5008CCD72 /* MyCalendar.swift */,
-				047A6DAD2515841E008CCD72 /* MyCalendarController.swift */,
+				04AD0CA02516F4BF00585104 /* RootView.swift */,
 			);
 			path = CalendarViews;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 				0498FE0B24F88C7400489C12 /* Products */,
 				B0E1B3F0E09204E49FBCC099 /* Pods */,
 				04C23D42250B18B200787F99 /* Recovered References */,
-				17A4819E5541CB51AA8DCE1A /* Frameworks */,
+				8CB62D4882DF4F43BB179B6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -339,10 +339,10 @@
 			path = BottomViews;
 			sourceTree = "<group>";
 		};
-		17A4819E5541CB51AA8DCE1A /* Frameworks */ = {
+		8CB62D4882DF4F43BB179B6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7E3B43D38C0EC167F1A99252 /* Pods_HobbyRecord.framework */,
+				89709E39DED46BDB9B82C229 /* Pods_HobbyRecord.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,8 +350,8 @@
 		B0E1B3F0E09204E49FBCC099 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2EB035C83E82FDD3031CD747 /* Pods-HobbyRecord.debug.xcconfig */,
-				478ED4A2FD5BC45FFDD49711 /* Pods-HobbyRecord.release.xcconfig */,
+				0F8FAC65DE7234DBA8F0B9FF /* Pods-HobbyRecord.debug.xcconfig */,
+				70BBA937D821CC21A7AAF63C /* Pods-HobbyRecord.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -363,12 +363,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0498FE4D24F88C7500489C12 /* Build configuration list for PBXNativeTarget "HobbyRecord" */;
 			buildPhases = (
-				6EDD92EB9F63B6FD8ADCB04E /* [CP] Check Pods Manifest.lock */,
+				5182E297854EDADE3B8D560D /* [CP] Check Pods Manifest.lock */,
 				0498FE0624F88C7400489C12 /* Sources */,
 				0498FE0724F88C7400489C12 /* Frameworks */,
 				0498FE0824F88C7400489C12 /* Resources */,
 				0498FE4C24F88C7500489C12 /* Embed Watch Content */,
-				7306ED816B3937680E269F05 /* [CP] Embed Pods Frameworks */,
+				CDD694917E76583ED90EC33A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -430,7 +430,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6EDD92EB9F63B6FD8ADCB04E /* [CP] Check Pods Manifest.lock */ = {
+		5182E297854EDADE3B8D560D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -452,7 +452,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7306ED816B3937680E269F05 /* [CP] Embed Pods Frameworks */ = {
+		CDD694917E76583ED90EC33A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -486,7 +486,6 @@
 				042C0A1125075A44001AB6CD /* ContentView.swift in Sources */,
 				04ECAA4F2510436E00A73FBB /* Date.swift in Sources */,
 				0436BFF1250DB0AB004499BF /* HobbyRepository.swift in Sources */,
-				047A6DAB251583F5008CCD72 /* MyCalendar.swift in Sources */,
 				0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */,
 				048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */,
 				0436E83E2509A15100A25460 /* RecordHobbyView.swift in Sources */,
@@ -501,6 +500,7 @@
 				04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */,
 				04C607472500BFC800479749 /* CLCell.swift in Sources */,
 				0498FE1224F88C7400489C12 /* CalendarView.swift in Sources */,
+				04AD0CA42516F50A00585104 /* CalendarViewModel.swift in Sources */,
 				0486F19D250F28FB002B7A26 /* IconSetting.swift in Sources */,
 				0470133324FC83D800D5BA94 /* CLManager.swift in Sources */,
 				04ECAA4D2510435000A73FBB /* Color.swift in Sources */,
@@ -511,8 +511,8 @@
 				040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */,
 				0486F19F250F2946002B7A26 /* UpdateNewHobbyView.swift in Sources */,
 				047A5D9D250A335D000423BF /* Detail.swift in Sources */,
-				047A6DAE2515841E008CCD72 /* MyCalendarController.swift in Sources */,
 				04A7130B25020B3A00339779 /* DateView.swift in Sources */,
+				04AD0CA12516F4BF00585104 /* RootView.swift in Sources */,
 				04EB65EA2509AFD6002EE231 /* FavoriteHobby.swift in Sources */,
 				0436BFF5250DDC78004499BF /* CLDateViewModel.swift in Sources */,
 				040E790424FE0CAB008F910F /* HobbyViewModel.swift in Sources */,
@@ -671,7 +671,7 @@
 		};
 		0498FE4E24F88C7500489C12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EB035C83E82FDD3031CD747 /* Pods-HobbyRecord.debug.xcconfig */;
+			baseConfigurationReference = 0F8FAC65DE7234DBA8F0B9FF /* Pods-HobbyRecord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -692,7 +692,7 @@
 		};
 		0498FE4F24F88C7500489C12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 478ED4A2FD5BC45FFDD49711 /* Pods-HobbyRecord.release.xcconfig */;
+			baseConfigurationReference = 70BBA937D821CC21A7AAF63C /* Pods-HobbyRecord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
