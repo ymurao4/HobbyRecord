@@ -12,6 +12,10 @@ struct RootView: View {
 
     @Environment(\.calendar) var calendar
     @ObservedObject var calendarVM = CalendarViewModel()
+    @ObservedObject var hobbyVM: HobbyViewModel
+    @Binding var selectedDate: Date
+    
+    @Binding var isDetailView: Bool
 
     private var month: DateInterval {
         return calendar.dateInterval(of: .month, for: calendarVM.date)!
@@ -23,12 +27,61 @@ struct RootView: View {
 
             NewCalendarView(interval: month, calendarVM: calendarVM) { date in
 
-                Text(DateFormatter.stringDate.string(from: date))
-                    .cornerRadius(8)
-                    .frame(width: self.cellWidth(), height: self.cellWidth() * 1.8)
+                NewDateCell(hobbyVM: hobbyVM, isDetailView: $isDetailView, selectedDate: $selectedDate, date: date)
             }
 
             Spacer()
+        }
+    }
+}
+
+struct NewDateCell: View {
+
+    @ObservedObject var hobbyVM: HobbyViewModel
+    @Binding var isDetailView: Bool
+    @Binding var selectedDate: Date
+
+    var date: Date
+    var hobbies: [Hobby] {
+
+        getHobbies()
+    }
+
+    var body: some View {
+
+        ZStack {
+
+            VStack(spacing: 5) {
+
+                Text(DateFormatter.stringDate.string(from: date))
+
+                if hobbies.count != 0 {
+
+                    LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 10) {
+
+                        ForEach(hobbies) { hobby in
+
+                            Image(hobby.icon)
+                                .renderingMode(.template)
+                                .resizable()
+                                .frame(width: 15, height: 15)
+                        }
+                    }
+                    .padding(.horizontal, 5)
+                }
+
+                Spacer()
+            }
+            .padding(.top, 5)
+            .frame(width: self.cellWidth(), height: self.cellWidth() * 1.8)
+
+            EdgeBorder(width: 0.5, edge: .top)
+                .foregroundColor(Color.gray.opacity(0.4))
+        }
+        .onTapGesture {
+
+            self.selectedDate = date
+            self.isDetailView = true
         }
     }
 
@@ -36,6 +89,20 @@ struct RootView: View {
 
         let width = UIScreen.main.bounds.width
         return width / 7
+    }
+
+    private func getHobbies() -> [Hobby] {
+
+        var hobbies: [Hobby] = []
+
+        for hobbyCellVM in self.hobbyVM.hobbyCellViewModels {
+            let stringDate = hobbyCellVM.hobby.date
+            if  stringDate == D.formatter.string(from: date) {
+
+                hobbies.append(hobbyCellVM.hobby)
+            }
+        }
+        return hobbies
     }
 }
 

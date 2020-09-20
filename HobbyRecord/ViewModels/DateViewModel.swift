@@ -12,13 +12,13 @@ import Combine
 class DateViewModel: ObservableObject {
 
     @Published var hobbies: [Hobby] = []
-    var date: Date = Date()
+    var date: Date
     var hobbyVM: HobbyViewModel
 
     private var cancellable = Set<AnyCancellable>()
 
     init(date: Date, hobbyVM: HobbyViewModel) {
-        
+
         self.date = date
         self.hobbyVM = hobbyVM
         self.filterHobby()
@@ -43,10 +43,4 @@ class DateViewModel: ObservableObject {
         }
         .store(in: &cancellable)
     }
-
-    func updateHobby(hobby: Hobby) {
-
-        print(hobby)
-    }
-
 }
