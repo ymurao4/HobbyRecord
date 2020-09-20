@@ -52,13 +52,13 @@ struct IconSetting: View {
             }
             .padding(.top, 10)
         }
-        .frame(maxHeight: cellHeight)
+        .frame(maxHeight: UIScreen.main.bounds.height * 0.65)
     }
 
     private func calCellHeight() -> CGFloat {
         let count = self.kind.count
         let row = count / 6 + 1
-        return CGFloat(row * 50)
+        return CGFloat(row * 40)
     }
 }
 

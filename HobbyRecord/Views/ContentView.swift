@@ -14,11 +14,7 @@ struct ContentView: View {
     @ObservedObject var favoriteHobbyVM = FavoriteHobbyViewModel()
     @State var isActionSheet: Bool = false
     @State var isDetailView: Bool = false
-
-    var clManager = CLManager(
-        calendar: Calendar.current,
-        minmumDate: Date(),
-        maximumDate: Date().addingTimeInterval(60*60*24*365))
+    @State var date: Date = Date()
 
     private var cellWidth: CGFloat {
 
@@ -31,12 +27,16 @@ struct ContentView: View {
 
             ZStack(alignment: .bottom) {
 
-                VStack {
+                VStack(spacing: 0) {
 
-//                    CustomNavbar(isActionSheet: $isActionSheet, clManager: clManager, cellWidth: cellWidth)
-                    CalendarView(hobbyVM: hobbyVM, isDetailView: $isDetailView, clManager: clManager, cellWidth: cellWidth)
+                    CustomNavbar(isActionSheet: $isActionSheet, cellWidth: cellWidth)
+
+                    RootView(hobbyVM: hobbyVM, selectedDate: $date, isDetailView: $isDetailView)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200)
+
+                    Spacer()
                 }
-//                .edgesIgnoringSafeArea(.top)
+                .ignoresSafeArea()
 
                 GeometryReader{ reader in
 
@@ -65,8 +65,10 @@ struct ContentView: View {
                     if isDetailView {
 
                         Spacer()
-                        DateView(clManager: self.clManager, hobbyVM: self.hobbyVM)
+
+                        DateView(date: date, hobbyVM: self.hobbyVM)
                             .offset(y: isDetailView ? 0 : UIScreen.main.bounds.height)
+
                         Spacer()
                     }
                 }
@@ -77,7 +79,6 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
 
-                    self.clManager.selectedDate = nil
                     self.isDetailView.toggle()
                 })
                     .edgesIgnoringSafeArea(.all)
@@ -107,7 +108,6 @@ struct CustomNavbar: View {
 
     @Binding var isActionSheet: Bool
 
-    var clManager: CLManager
     private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
     var cellWidth: CGFloat
 

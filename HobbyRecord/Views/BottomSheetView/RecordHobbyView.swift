@@ -37,7 +37,7 @@ struct RecordHobbyView: View {
                         }
                     }
 
-                    Section(header: Text("Detail".localized)) {
+                    Section(header: Text("Details".localized)) {
 
                         ForEach(detailVM.detailCellViewModels) { detailCell in
 
@@ -45,7 +45,10 @@ struct RecordHobbyView: View {
                         }
                         .onDelete(perform: rowRemove)
 
-                        Button(action: { self.detailVM.addDetail(detail: Detail(detail: "")) }) {
+                        Button(action: {
+
+                            self.detailVM.addDetail(detail: Detail(detail: ""))
+                        }) {
 
                             HStack {
 
@@ -61,6 +64,7 @@ struct RecordHobbyView: View {
                 }
             }
             .padding(.horizontal)
+            
             VStack {
 
                 Spacer()

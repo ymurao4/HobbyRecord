@@ -13,15 +13,13 @@ struct CalendarView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var hobbyVM: HobbyViewModel
     @Binding var isDetailView: Bool
-    var clManager: CLManager
 
     var cellWidth: CGFloat
 
     var body: some View {
 
-//        CLViewController(clManager: clManager, hobbyVM: hobbyVM, isDetailView: $isDetailView)
-        MyCalendar()
-            .frame(width: UIScreen.main.bounds.width)
+        CLViewController(clManager: clManager, hobbyVM: hobbyVM, isDetailView: $isDetailView)
+            
     }
 
     private func addButton() -> some View {

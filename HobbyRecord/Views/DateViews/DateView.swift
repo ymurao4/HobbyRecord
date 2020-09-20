@@ -13,12 +13,12 @@ struct DateView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var dateVM: DateViewModel
     @ObservedObject var hobbyVM: HobbyViewModel
-    var clManager: CLManager
+    var date: Date
 
-    init(clManager: CLManager, hobbyVM: HobbyViewModel) {
-        self.clManager = clManager
+    init(date: Date, hobbyVM: HobbyViewModel) {
+        self.date = date
         self.hobbyVM = hobbyVM
-        self.dateVM = DateViewModel(date: clManager.selectedDate, hobbyVM: hobbyVM)
+        self.dateVM = DateViewModel(date: date, hobbyVM: hobbyVM)
     }
 
     var body: some View {
@@ -27,13 +27,13 @@ struct DateView: View {
 
             HStack(alignment: .center, spacing: 40) {
 
-                ChangeDateButton(detailVM: dateVM, clManager: clManager, text: "chevron.compact.left")
+                ChangeDateButton(dateVM: dateVM, text: "chevron.compact.left")
 
-                Text(D.getTextFromDate(date: self.clManager.selectedDate))
+                Text(D.getTextFromDate(date: self.date))
                     .font(.system(size: 30))
                     .foregroundColor(Color.pr(9))
 
-                ChangeDateButton(detailVM: dateVM, clManager: clManager, text: "chevron.compact.right")
+                ChangeDateButton(dateVM: dateVM, text: "chevron.compact.right")
 
             }
             .padding(.top, 10)
@@ -129,8 +129,7 @@ struct HobbyCell_Previews: PreviewProvider {
 
 struct ChangeDateButton: View {
 
-    @ObservedObject var detailVM: DateViewModel
-    var clManager: CLManager
+    @ObservedObject var dateVM: DateViewModel
     var text: String
     private var timeInterval: TimeInterval {
 
@@ -153,9 +152,8 @@ struct ChangeDateButton: View {
 
     private func switchFunction() {
 
-        self.clManager.selectedDate = self.clManager.selectedDate.addingTimeInterval(timeInterval)
-        self.detailVM.date = self.detailVM.date.addingTimeInterval(timeInterval)
-        self.detailVM.filterHobby()
+        self.dateVM.date = self.dateVM.date.addingTimeInterval(timeInterval)
+        self.dateVM.filterHobby()
     }
 
     private func judgeTomorrowOrYesterday(text: String) -> TimeInterval {
