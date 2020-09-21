@@ -19,6 +19,7 @@ struct RecordHobbyView: View {
     @State var date: Date = Date()
     @State var isAlert: Bool = false
     @State var isActionSheet: Bool = false
+    @State var text: String = ""
 
     var body: some View {
 
@@ -33,11 +34,10 @@ struct RecordHobbyView: View {
                         DatePicker(selection: $date, displayedComponents: .date) {
 
                             Text("Select Date".localized)
-                                .foregroundColor(Color.primary)
                         }
                     }
 
-                    Section(header: Text("Details".localized)) {
+                    Section(header: Text("Detail".localized)) {
 
                         ForEach(detailVM.detailCellViewModels) { detailCell in
 
@@ -73,11 +73,11 @@ struct RecordHobbyView: View {
                     .offset(y: self.isActionSheet ? 0 : UIScreen.main.bounds.height)
             }
             .background((isActionSheet ? Color.bl(3) : Color.clear)
-            .edgesIgnoringSafeArea(.bottom)
-            .onTapGesture {
+                            .edgesIgnoringSafeArea(.bottom)
+                            .onTapGesture {
 
-                self.isActionSheet.toggle()
-                }
+                                self.isActionSheet.toggle()
+                            }
             )
         }
         .edgesIgnoringSafeArea(.bottom)
@@ -89,7 +89,7 @@ struct RecordHobbyView: View {
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-            CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobbyVM: favoriteHobbyVM)
+                                CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobbyVM: favoriteHobbyVM)
         )
     }
 
@@ -247,3 +247,5 @@ struct ActionSheetView: View {
         .cornerRadius(25)
     }
 }
+
+

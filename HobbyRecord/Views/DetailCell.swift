@@ -14,6 +14,9 @@ struct DetailCell: View {
 
     var body: some View {
 
-         TextField("", text: $detailCellVM.detail.detail)
+        VStack {
+
+            TextField("", text: $detailCellVM.detail.detail)
+        }
     }
 }

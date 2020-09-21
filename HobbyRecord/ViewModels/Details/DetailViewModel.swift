@@ -17,7 +17,7 @@ class DetailViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     func addDetail(detail: Detail) {
-
+        
         detailCellViewModels.append(DetailCellViewModel(detail: detail))
     }
 
