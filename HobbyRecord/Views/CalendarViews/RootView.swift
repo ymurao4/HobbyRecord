@@ -25,9 +25,9 @@ struct RootView: View {
 
         VStack {
 
-            NewCalendarView(interval: month, calendarVM: calendarVM) { date in
+            CalendarView(interval: month, calendarVM: calendarVM) { date in
 
-                NewDateCell(hobbyVM: hobbyVM, isDetailView: $isDetailView, selectedDate: $selectedDate, date: date)
+                DateCellView(hobbyVM: hobbyVM, isDetailView: $isDetailView, selectedDate: $selectedDate, date: date)
             }
 
             Spacer()
@@ -36,7 +36,7 @@ struct RootView: View {
     }
 }
 
-struct NewDateCell: View {
+struct DateCellView: View {
 
     @ObservedObject var hobbyVM: HobbyViewModel
     @Binding var isDetailView: Bool
@@ -55,6 +55,7 @@ struct NewDateCell: View {
             VStack(spacing: 5) {
 
                 Text(DateFormatter.stringDate.string(from: date))
+                    .foregroundColor(Color.pr(9))
 
                 if hobbies.count != 0 {
 
@@ -74,7 +75,7 @@ struct NewDateCell: View {
                 Spacer()
             }
             .padding(.top, 5)
-            .frame(width: self.cellWidth(), height: self.cellWidth() * 1.8)
+            .frame(minWidth: self.cellWidth(), maxWidth: self.cellWidth(), minHeight: self.cellWidth() * 1.6, maxHeight: self.cellWidth() * 1.8)
 
             EdgeBorder(width: 0.5, edge: .top)
                 .foregroundColor(Color.gray.opacity(0.4))
@@ -111,7 +112,7 @@ struct NewDateCell: View {
     }
 }
 
-struct NewCalendarView<DateView>: View where DateView: View {
+struct CalendarView<DateView>: View where DateView: View {
 
     @Environment(\.calendar) var calendar
     @ObservedObject var calendarVM: CalendarViewModel

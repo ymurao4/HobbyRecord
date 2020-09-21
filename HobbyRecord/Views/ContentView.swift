@@ -33,7 +33,7 @@ struct ContentView: View {
 
                     RootView(hobbyVM: hobbyVM, selectedDate: $date, isDetailView: $isDetailView)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200)
-
+                    
                     Spacer()
                 }
                 .ignoresSafeArea()

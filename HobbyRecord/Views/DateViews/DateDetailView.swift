@@ -12,8 +12,8 @@ struct DateDetailView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var dateVM: DateViewModel
-    @ObservedObject var detailVM = DetailViewModel()
     @ObservedObject var hobbyVM: HobbyViewModel
+    @ObservedObject var detailVM = DetailViewModel()
     var hobby: Hobby
 
     init(dateVM: DateViewModel, hobby: Hobby, hobbyVM: HobbyViewModel) {
