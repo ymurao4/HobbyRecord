@@ -59,8 +59,9 @@ ios14に対応しました。
 
 <img src="gif/add.gif" width=320px>
 <img src="gif/update.gif" width=320px>
-<img src="gif/Browse.gif" width=320px>
-<img src="gif/addRec.gif" width=320px>
-<img src="gif/UpdateRec.gif" width=320px>
-<img src="gif/Setting.gif" width=320px>
+<img src="gif/record.gif" width=320px>
+<img src="gif/delete.gif" width=320px>
+<img src="gif/other.gif" width=320px>
+<img src="gif/darkMode.gif" width=320px>
+<img src="gif/localize.gif" width=320px>
 
