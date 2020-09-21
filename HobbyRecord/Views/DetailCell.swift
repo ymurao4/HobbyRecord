@@ -17,6 +17,7 @@ struct DetailCell: View {
         VStack {
 
             TextField("", text: $detailCellVM.detail.detail)
+                .autocapitalization(.none)
         }
     }
 }

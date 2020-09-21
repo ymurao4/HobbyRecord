@@ -29,7 +29,7 @@ struct DateView: View {
 
                 ChangeDateButton(dateVM: dateVM, text: "chevron.compact.left")
 
-                Text(D.getTextFromDate(date: self.date))
+                Text(D.getTextFromDate(date: self.dateVM.date))
                     .font(.system(size: 30))
                     .foregroundColor(Color.pr(9))
 
@@ -151,6 +151,7 @@ struct ChangeDateButton: View {
     }
 
     private func switchFunction() {
+
 
         self.dateVM.date = self.dateVM.date.addingTimeInterval(timeInterval)
         self.dateVM.filterHobby()
