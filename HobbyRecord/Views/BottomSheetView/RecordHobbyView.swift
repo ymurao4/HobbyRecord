@@ -39,11 +39,14 @@ struct RecordHobbyView: View {
 
                     Section(header: Text("Details".localized)) {
 
-                        ForEach(detailVM.detailCellViewModels) { detailCell in
+                        List {
 
-                            DetailCell(detailCellVM: detailCell)
+                            ForEach(detailVM.detailCellViewModels) { detailCell in
+
+                                DetailCell(detailCellVM: detailCell)
+                            }
+                            .onDelete(perform: rowRemove)
                         }
-                        .onDelete(perform: rowRemove)
 
                         Button(action: {
 

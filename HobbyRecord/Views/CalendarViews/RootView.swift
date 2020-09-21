@@ -100,9 +100,13 @@ struct NewDateCell: View {
             let stringDate = hobbyCellVM.hobby.date
             if  stringDate == D.formatter.string(from: date) {
 
-                hobbies.append(hobbyCellVM.hobby)
+                if hobbies.count <= 5 {
+
+                    hobbies.append(hobbyCellVM.hobby)
+                }
             }
         }
+
         return hobbies
     }
 }
