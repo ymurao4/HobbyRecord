@@ -21,8 +21,8 @@
 		047A5D9B250A322D000423BF /* DetailCellVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */; };
 		047A5D9D250A335D000423BF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9C250A335D000423BF /* Detail.swift */; };
 		047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9E250A3463000423BF /* DetailViewModel.swift */; };
+		047C172B2519EAAC005ADFEC /* UpdateNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C172A2519EAAC005ADFEC /* UpdateNewHobbyView.swift */; };
 		0486F19D250F28FB002B7A26 /* IconSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486F19C250F28FB002B7A26 /* IconSetting.swift */; };
-		0486F19F250F2946002B7A26 /* UpdateNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486F19E250F2946002B7A26 /* UpdateNewHobbyView.swift */; };
 		048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BE2E324FDE6EA005159F5 /* Hobby.swift */; };
 		0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0D24F88C7400489C12 /* AppDelegate.swift */; };
 		0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0F24F88C7400489C12 /* SceneDelegate.swift */; };
@@ -78,8 +78,8 @@
 		047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellVIewModel.swift; sourceTree = "<group>"; };
 		047A5D9C250A335D000423BF /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		047A5D9E250A3463000423BF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		047C172A2519EAAC005ADFEC /* UpdateNewHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNewHobbyView.swift; sourceTree = "<group>"; };
 		0486F19C250F28FB002B7A26 /* IconSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSetting.swift; sourceTree = "<group>"; };
-		0486F19E250F2946002B7A26 /* UpdateNewHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UpdateNewHobbyView.swift; path = HobbyRecord/Views/BottomViews/UpdateNewHobbyView.swift; sourceTree = SOURCE_ROOT; };
 		048BE2E324FDE6EA005159F5 /* Hobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
 		0498FE0A24F88C7400489C12 /* HobbyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HobbyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0498FE0D24F88C7400489C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -268,9 +268,9 @@
 		04BD440A250E130F004F44B9 /* BottomSheetView */ = {
 			isa = PBXGroup;
 			children = (
-				0486F19E250F2946002B7A26 /* UpdateNewHobbyView.swift */,
 				04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */,
 				0436E83D2509A15100A25460 /* RecordHobbyView.swift */,
+				047C172A2519EAAC005ADFEC /* UpdateNewHobbyView.swift */,
 			);
 			path = BottomSheetView;
 			sourceTree = "<group>";
@@ -458,6 +458,7 @@
 				0436BFF1250DB0AB004499BF /* HobbyRepository.swift in Sources */,
 				0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */,
 				048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */,
+				047C172B2519EAAC005ADFEC /* UpdateNewHobbyView.swift in Sources */,
 				0436E83E2509A15100A25460 /* RecordHobbyView.swift in Sources */,
 				04ECAA512510438100A73FBB /* Icon.swift in Sources */,
 				0436BFF3250DB6F9004499BF /* FavoriteHobbyRepository.swift in Sources */,
@@ -474,7 +475,6 @@
 				04EB65E62509A6D4002EE231 /* AddNewHobbyView.swift in Sources */,
 				04EB65F0250A03FB002EE231 /* EdgeBorder.swift in Sources */,
 				040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */,
-				0486F19F250F2946002B7A26 /* UpdateNewHobbyView.swift in Sources */,
 				047A5D9D250A335D000423BF /* Detail.swift in Sources */,
 				04A7130B25020B3A00339779 /* DateView.swift in Sources */,
 				04AD0CA12516F4BF00585104 /* RootView.swift in Sources */,
