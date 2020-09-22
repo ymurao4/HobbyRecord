@@ -2,7 +2,7 @@
 //  UpdateNewHobbyView.swift
 //  HobbyRecord
 //
-//  Created by 村尾慶伸 on 2020/09/14.
+//  Created by 村尾慶伸 on 2020/09/22.
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
@@ -57,3 +57,4 @@ struct UpdateNewHobbyView: View {
         self.favoriteHobbyVM.updateFavoriteHobby(fav: favoriteHobby, title: favoriteHobbyVM.title, icon: favoriteHobbyVM.icon, oldTitle: oldTitle, oldIcon: oldIcon)
     }
 }
+
