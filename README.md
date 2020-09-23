@@ -36,7 +36,7 @@
 - フレームワーク : SwiftUI, Combine  
 - 設計 : MVVM
 - データベース : Firebase(Cloud FireStore)
-- ユーザー認証 : 匿名認証
+- ユーザー認証 : 匿名認証, Sign In With Apple
 - パッケージ管理 : Cocoapods  
 - バージョン管理 : Git  
 
@@ -55,6 +55,9 @@
 # 追記(2020/9/20)
 ios14に対応しました。
 バグを修正しました。
+
+(2020/9/23)
+Sign In With Appleに対応しました。
 
 
 <img src="gif/add.gif" width=320px>
