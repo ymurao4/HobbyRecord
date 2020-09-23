@@ -23,7 +23,7 @@ struct DateView: View {
 
     var body: some View {
 
-        VStack {
+        VStack(alignment: .center) {
 
             HStack(alignment: .center, spacing: 40) {
 
@@ -54,13 +54,12 @@ struct DateView: View {
                             }
                         }
                     }
-                .onDelete(perform: rowRemove)
+                    .onDelete(perform: rowRemove)
                 } else {
 
                     Text("No Hobby Records".localized)
                 }
             }
-            Spacer()
         }
         .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height - 170)
         .background(BlurView(style: .systemMaterial))
@@ -106,18 +105,17 @@ struct HobbyCell: View {
                 
                 Spacer()
             }
-            .frame(width: UIScreen.main.bounds.width)
             .padding(.bottom, 10)
 
             ForEach(hobby.details, id: \.self) { detail in
-                
+
                 Text("・" + detail)
                     .font(.subheadline)
                     .foregroundColor(Color.pr(9))
             }
         }
+        .frame(width: UIScreen.main.bounds.width * 0.75)
     }
-
 }
 
 struct HobbyCell_Previews: PreviewProvider {
