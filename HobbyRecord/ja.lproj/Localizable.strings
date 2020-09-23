@@ -58,5 +58,9 @@
 
 
 //MARK: - SignInView
+"You are currently an anonymous user." = "匿名ユーザーでログイン中です。";
+"If you want to link this account to other devices," = "他の端末と連携させたい場合は、";
+"you should sign in with apple." = "Appleでサインインしてください。";
+"You are currently logged in with Apple." = "Sign In With Appleでログイン中です。";
 "Log Out" = "ログアウト";
 "Are you sure you want to log out?" = "ログアウトしますか？";
