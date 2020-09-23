@@ -19,7 +19,7 @@ struct ReaderView: View {
         VStack {
 
             BottomSheet(favoriteHobbyVM: favoriteHobbyVM, offset: $offset)
-                .offset(y: reader.frame(in: .global).height)
+                .offset(y: reader.frame(in: .global).height - 20)
                 .offset(y: self.offset)
                 .gesture(DragGesture()
                     .onChanged({ (value) in
