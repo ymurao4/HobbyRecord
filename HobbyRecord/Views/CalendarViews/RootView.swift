@@ -59,7 +59,7 @@ struct DateCellView: View {
 
                 if hobbies.count != 0 {
 
-                    LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 10) {
+                    LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 5) {
 
                         ForEach(hobbies) { hobby in
 
@@ -69,7 +69,7 @@ struct DateCellView: View {
                                 .frame(width: 15, height: 15)
                         }
                     }
-                    .padding(.horizontal, 5)
+                    .padding(.horizontal, 7)
                 }
 
                 Spacer()

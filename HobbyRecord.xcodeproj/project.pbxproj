@@ -18,6 +18,9 @@
 		0436BFF1250DB0AB004499BF /* HobbyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436BFF0250DB0AB004499BF /* HobbyRepository.swift */; };
 		0436BFF3250DB6F9004499BF /* FavoriteHobbyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436BFF2250DB6F9004499BF /* FavoriteHobbyRepository.swift */; };
 		0436E83E2509A15100A25460 /* RecordHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436E83D2509A15100A25460 /* RecordHobbyView.swift */; };
+		04445CC2251B06E700D55B67 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04445CC1251B06E700D55B67 /* SignInView.swift */; };
+		04445CC8251B074000D55B67 /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04445CC7251B074000D55B67 /* SignInWithAppleButton.swift */; };
+		04445CCB251B076600D55B67 /* SignInWIthAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04445CCA251B076600D55B67 /* SignInWIthAppleCoordinator.swift */; };
 		047A5D9B250A322D000423BF /* DetailCellVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */; };
 		047A5D9D250A335D000423BF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9C250A335D000423BF /* Detail.swift */; };
 		047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9E250A3463000423BF /* DetailViewModel.swift */; };
@@ -75,6 +78,10 @@
 		0436BFF0250DB0AB004499BF /* HobbyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyRepository.swift; sourceTree = "<group>"; };
 		0436BFF2250DB6F9004499BF /* FavoriteHobbyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHobbyRepository.swift; sourceTree = "<group>"; };
 		0436E83D2509A15100A25460 /* RecordHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHobbyView.swift; sourceTree = "<group>"; };
+		04445CBF251B068000D55B67 /* HobbyRecord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HobbyRecord.entitlements; sourceTree = "<group>"; };
+		04445CC1251B06E700D55B67 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		04445CC7251B074000D55B67 /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
+		04445CCA251B076600D55B67 /* SignInWIthAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWIthAppleCoordinator.swift; sourceTree = "<group>"; };
 		047A5D9A250A322D000423BF /* DetailCellVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellVIewModel.swift; sourceTree = "<group>"; };
 		047A5D9C250A335D000423BF /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		047A5D9E250A3463000423BF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +151,32 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		04445CC4251B06EA00D55B67 /* AccountViews */ = {
+			isa = PBXGroup;
+			children = (
+				04445CC1251B06E700D55B67 /* SignInView.swift */,
+				04445CC7251B074000D55B67 /* SignInWithAppleButton.swift */,
+			);
+			path = AccountViews;
+			sourceTree = "<group>";
+		};
+		04445CCD251B076C00D55B67 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04445CCA251B076600D55B67 /* SignInWIthAppleCoordinator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		04445CD0251B099C00D55B67 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0498FE0D24F88C7400489C12 /* AppDelegate.swift */,
+				0498FE0F24F88C7400489C12 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		0470132F24FC83A500D5BA94 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +218,7 @@
 				04294F8C2508707700AEB196 /* CustomViews */,
 				04FA720825085CC70094F336 /* BottomViews */,
 				047A6DA8251583E0008CCD72 /* CalendarViews */,
+				04445CC4251B06EA00D55B67 /* AccountViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,9 +255,10 @@
 		0498FE0C24F88C7400489C12 /* HobbyRecord */ = {
 			isa = PBXGroup;
 			children = (
-				0498FE0D24F88C7400489C12 /* AppDelegate.swift */,
-				0498FE0F24F88C7400489C12 /* SceneDelegate.swift */,
+				04445CBF251B068000D55B67 /* HobbyRecord.entitlements */,
+				04445CD0251B099C00D55B67 /* App */,
 				04BD314625047EAB00AA3745 /* Repositories */,
+				04445CCD251B076C00D55B67 /* Services */,
 				048BE2E624FDE6FE005159F5 /* Models */,
 				048BE2E524FDE6F7005159F5 /* Views */,
 				040E790524FE0CAE008F910F /* ViewModels */,
@@ -453,9 +488,11 @@
 				04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */,
 				04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */,
 				04EB65E82509AE92002EE231 /* FavoriteHobbyViewModel.swift in Sources */,
+				04445CC2251B06E700D55B67 /* SignInView.swift in Sources */,
 				042C0A1125075A44001AB6CD /* ContentView.swift in Sources */,
 				04ECAA4F2510436E00A73FBB /* Date.swift in Sources */,
 				0436BFF1250DB0AB004499BF /* HobbyRepository.swift in Sources */,
+				04445CCB251B076600D55B67 /* SignInWIthAppleCoordinator.swift in Sources */,
 				0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */,
 				048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */,
 				047C172B2519EAAC005ADFEC /* UpdateNewHobbyView.swift in Sources */,
@@ -466,6 +503,7 @@
 				04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */,
 				04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */,
 				047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */,
+				04445CC8251B074000D55B67 /* SignInWithAppleButton.swift in Sources */,
 				0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */,
 				04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */,
 				04AD0CA42516F50A00585104 /* CalendarViewModel.swift in Sources */,
@@ -638,6 +676,7 @@
 			baseConfigurationReference = 0F8FAC65DE7234DBA8F0B9FF /* Pods-HobbyRecord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HobbyRecord/HobbyRecord.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HobbyRecord/Preview Content\"";
 				DEVELOPMENT_TEAM = 479D88RPDD;
@@ -659,6 +698,7 @@
 			baseConfigurationReference = 70BBA937D821CC21A7AAF63C /* Pods-HobbyRecord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HobbyRecord/HobbyRecord.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HobbyRecord/Preview Content\"";
 				DEVELOPMENT_TEAM = 479D88RPDD;
