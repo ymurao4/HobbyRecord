@@ -11,8 +11,9 @@ import StoreKit
 
 struct CustomActionSheet: View {
 
+    @State private var isSignInView: Bool = false
     @Binding var isActionSheet: Bool
-    private let buttons: [String] = ["Review This App"]
+    private let buttons: [String] = ["Account", "Review This App"]
     private let version: String! = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
 
     var body: some View {
@@ -21,7 +22,7 @@ struct CustomActionSheet: View {
 
             ForEach(buttons, id: \.self) { button in
 
-                ChoicesButton(isActionSheet: self.$isActionSheet, button: button)
+                ChoicesButton(isActionSheet: self.$isActionSheet, isSignInView: $isSignInView, button: button)
             }
 
             HStack {
@@ -33,6 +34,10 @@ struct CustomActionSheet: View {
             .foregroundColor(.orange)
             .padding(.vertical, 3)
             .padding(.horizontal)
+        }
+        .sheet(isPresented: $isSignInView) {
+
+            SignInView()
         }
         .frame(width: UIScreen.main.bounds.width)
         .padding(.top, 20)
@@ -46,6 +51,7 @@ struct CustomActionSheet: View {
 struct ChoicesButton: View {
 
     @Binding var isActionSheet: Bool
+    @Binding var isSignInView: Bool
     var button: String
 
     var body: some View {
@@ -73,12 +79,24 @@ struct ChoicesButton: View {
     private func switchFunction(button: String) {
 
         switch button {
-        case "Setting":
+        case "Account":
             self.isActionSheet.toggle()
+            self.isSignInView.toggle()
         case "Review This App":
-            SKStoreReviewController.requestReview()
+
+            if let scene = UIApplication.shared.currentScene {
+
+                SKStoreReviewController.requestReview(in: scene)
+            }
         default:
             return
         }
+    }
+}
+
+extension UIApplication {
+    var currentScene: UIWindowScene? {
+        connectedScenes
+            .first { $0.activationState == .foregroundActive } as? UIWindowScene
     }
 }

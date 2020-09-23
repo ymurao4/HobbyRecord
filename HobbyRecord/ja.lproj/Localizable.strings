@@ -44,6 +44,7 @@
 
 // MARK: - CustomActionSheet
 "Setting" = "設定";
+"Account" = "アカウント";
 "Review This App" = "アプリを評価する";
 "App Version" = "アップバージョン";
 
@@ -54,3 +55,8 @@
 
 // MARK: - CLCell
 "and more" = "...";
+
+
+//MARK: - SignInView
+"Log Out" = "ログアウト";
+"Are you sure you want to log out?" = "ログアウトしますか？";
