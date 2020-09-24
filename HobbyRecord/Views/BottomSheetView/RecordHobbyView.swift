@@ -19,6 +19,7 @@ struct RecordHobbyView: View {
     @State var date: Date = Date()
     @State var isAlert: Bool = false
     @State var isActionSheet: Bool = false
+    // 下記バグの対応策
     @State var text: String = ""
 
     var body: some View {
@@ -37,29 +38,35 @@ struct RecordHobbyView: View {
                         }
                     }
 
+                    //ios14からcellが消える
+//                    Section(header: Text("Detail".localized)) {
+//
+//                        ForEach(detailVM.detailCellViewModels) { detailCell in
+//
+//                            DetailCell(detailCellVM: detailCell)
+//                        }
+//                        .onDelete(perform: rowRemove)
+//
+//                        Button(action: {
+//
+//                            self.detailVM.addDetail(detail: Detail(detail: ""))
+//                        }) {
+//
+//                            HStack {
+//
+//                                Image(systemName: "plus.circle.fill")
+//                                    .resizable()
+//                                    .frame(width: 20, height: 20)
+//
+//                                Text("Add New Detail".localized)
+//                            }
+//                            .foregroundColor(Color.orange)
+//                        }
+//                    }
                     Section(header: Text("Detail".localized)) {
 
-                        ForEach(detailVM.detailCellViewModels) { detailCell in
-
-                            DetailCell(detailCellVM: detailCell)
-                        }
-                        .onDelete(perform: rowRemove)
-
-                        Button(action: {
-
-                            self.detailVM.addDetail(detail: Detail(detail: ""))
-                        }) {
-
-                            HStack {
-
-                                Image(systemName: "plus.circle.fill")
-                                    .resizable()
-                                    .frame(width: 20, height: 20)
-
-                                Text("Add New Detail".localized)
-                            }
-                            .foregroundColor(Color.orange)
-                        }
+                        TextEditor(text: $text)
+                            .frame(height: 40)
                     }
                 }
             }
@@ -89,7 +96,7 @@ struct RecordHobbyView: View {
         .navigationBarTitle(Text(""),displayMode: .inline)
         .navigationBarItems(trailing:
 
-                                CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, favoriteHobbyVM: favoriteHobbyVM)
+                                CustomNavigationbarTitle(hobbyVM: hobbyVM, detailVM: detailVM, date: $date, offset: $offset, isActionSheet: $isActionSheet, text: $text, favoriteHobbyVM: favoriteHobbyVM)
         )
     }
 
@@ -123,6 +130,7 @@ struct CustomNavigationbarTitle: View {
     @Binding var date: Date
     @Binding var offset: CGFloat
     @Binding var isActionSheet: Bool
+    @Binding var text: String
     @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
 
     var body: some View {
@@ -176,7 +184,8 @@ struct CustomNavigationbarTitle: View {
     private func addRecord() {
 
         detailVM.addAllDetailsToArray()
-        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: favoriteHobbyVM.title, details: detailVM.details, icon: favoriteHobbyVM.icon))
+//        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: favoriteHobbyVM.title, details: detailVM.details, icon: favoriteHobbyVM.icon))
+        hobbyVM.addRecord(hobby: Hobby(date: D.formatter.string(from: date), title: favoriteHobbyVM.title, details: [text], icon: favoriteHobbyVM.icon))
         // bottomSheetを下げる
         offset = 0
         presentationMode.wrappedValue.dismiss()
