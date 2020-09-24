@@ -121,12 +121,6 @@ struct HobbyCell: View {
     }
 }
 
-struct HobbyCell_Previews: PreviewProvider {
-    static var previews: some View {
-        HobbyCell(hobby: testDataHobbies[0])
-    }
-}
-
 
 struct ChangeDateButton: View {
 
