@@ -65,8 +65,7 @@ struct RecordHobbyView: View {
 //                    }
                     Section(header: Text("Detail".localized)) {
 
-                        TextEditor(text: $text)
-                            .frame(height: 40)
+                        TextField("", text: $text)
                     }
                 }
             }
