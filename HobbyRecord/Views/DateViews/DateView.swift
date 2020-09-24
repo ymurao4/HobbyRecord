@@ -109,9 +109,12 @@ struct HobbyCell: View {
 
             ForEach(hobby.details, id: \.self) { detail in
 
-                Text("・" + detail)
-                    .font(.subheadline)
-                    .foregroundColor(Color.pr(9))
+                if detail.count != 0 {
+
+                    Text("・" + detail)
+                        .font(.subheadline)
+                        .foregroundColor(Color.pr(9))
+                }
             }
         }
         .frame(width: UIScreen.main.bounds.width * 0.75)
