@@ -24,33 +24,52 @@ struct SignInView: View {
 
             if user?.isAnonymous ?? true {
 
-                SignInWithAppleButton()
-                    .frame(width: 288, height: 45)
-                    .onTapGesture {
+                VStack {
 
-                        self.coordinator = SignInWithAppleCoordinator()
+                    VStack(alignment: .center, spacing: 10) {
 
-                        if let coordinator = self.coordinator {
+                        Text("You are currently an anonymous user.".localized)
 
-                            coordinator.startSignInWithAppleFlow() {
+                        Text("If you want to link this account to other devices,".localized)
 
-                                presentationMode.wrappedValue.dismiss()
+                        Text("you should sign in with apple.".localized)
+                    }
+                    .padding()
+
+                    SignInWithAppleButton()
+                        .frame(width: 288, height: 45)
+                        .onTapGesture {
+
+                            self.coordinator = SignInWithAppleCoordinator()
+
+                            if let coordinator = self.coordinator {
+
+                                coordinator.startSignInWithAppleFlow() {
+
+                                    presentationMode.wrappedValue.dismiss()
+                                }
                             }
                         }
-                    }
+                }
             } else {
 
-                Button(action: { self.isLogoutAlert.toggle() }) {
+                VStack {
 
-                    HStack {
+                    Text("You are currently logged in with Apple.".localized)
+                        .padding()
 
-                        Text("Log Out".localized)
-                            .foregroundColor(Color.defaultColor(colorScheme: colorScheem))
-                            .padding()
+                    Button(action: { self.isLogoutAlert.toggle() }) {
+
+                        HStack {
+
+                            Text("Log Out".localized)
+                                .foregroundColor(Color.defaultColor(colorScheme: colorScheem))
+                                .padding()
+                        }
+                        .frame(width: 288, height: 45)
+                        .background(Color.primary)
+                        .cornerRadius(40)
                     }
-                    .frame(width: 288, height: 45)
-                    .background(Color.primary)
-                    .cornerRadius(40)
                 }
             }
         }
