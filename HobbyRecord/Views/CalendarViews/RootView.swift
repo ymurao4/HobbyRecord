@@ -75,7 +75,7 @@ struct DateCellView: View {
                 Spacer()
             }
             .padding(.top, 5)
-            .frame(minWidth: self.cellWidth(), maxWidth: self.cellWidth(), minHeight: self.cellWidth() * 1.6, maxHeight: self.cellWidth() * 1.8)
+            .frame(minWidth: self.cellWidth(), maxWidth: self.cellWidth(), minHeight: self.cellWidth() * 1.3, maxHeight: self.cellWidth() * 1.8)
 
             EdgeBorder(width: 0.5, edge: .top)
                 .foregroundColor(Color.gray.opacity(0.4))
