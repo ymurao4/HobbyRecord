@@ -107,6 +107,25 @@ struct ContentView_Previews: PreviewProvider {
 struct CustomNavbar: View {
 
     @Binding var isActionSheet: Bool
+    var height: CGFloat = { () -> CGFloat in
+
+        var height: CGFloat = 0
+
+        if UIDevice().userInterfaceIdiom == .phone {
+            // Simulator iPhone 8
+            switch UIScreen.main.nativeBounds.height {
+            case 1334, 1920, 2208, 1024, 2048, 2224, 2160, 2388, 2732:
+
+                height = 80
+            case 2436, 1792, 2688:
+
+                height = 110
+            default:
+                height = 110
+            }
+        }
+        return height
+    }()
 
     private let dayOfTheWeek: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
     var cellWidth: CGFloat
@@ -143,7 +162,7 @@ struct CustomNavbar: View {
             }
             .padding(.bottom, 10)
         }
-        .frame(width: UIScreen.main.bounds.width, height: 110)
+        .frame(width: UIScreen.main.bounds.width, height: height)
         .background(Color(UIColor.systemGray6).opacity(0.9))
     }
 
