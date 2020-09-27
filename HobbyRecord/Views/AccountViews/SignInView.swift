@@ -9,6 +9,10 @@
 import SwiftUI
 import Firebase
 
+enum ActiveAlert {
+    case first, second
+}
+
 struct SignInView: View {
 
     @Environment(\.colorScheme) var colorScheem
@@ -16,6 +20,8 @@ struct SignInView: View {
     @ObservedObject var signInVM = SignInViewModel()
     @State var coordinator: SignInWithAppleCoordinator?
     @State private var isLogoutAlert: Bool = false
+    @State private var isAlert: Bool = false
+    @State private var activeAlert: ActiveAlert = .first
 
     let user = Auth.auth().currentUser
 
@@ -47,8 +53,8 @@ struct SignInView: View {
 
                                 coordinator.startSignInWithAppleFlow() {
 
-                                    signInVM.reLoadRecord()
-                                    presentationMode.wrappedValue.dismiss()
+                                    activeAlert = .second
+                                    isAlert.toggle()
                                 }
                             }
                         }
@@ -60,7 +66,11 @@ struct SignInView: View {
                     Text("You are currently logged in with Apple.".localized)
                         .padding()
 
-                    Button(action: { self.isLogoutAlert.toggle() }) {
+                    Button(action: {
+
+                        self.activeAlert = .first
+                        self.isAlert = true
+                    }) {
 
                         HStack {
 
@@ -75,9 +85,16 @@ struct SignInView: View {
                 }
             }
         }
-        .alert(isPresented: self.$isLogoutAlert) {
+        .alert(isPresented: self.$isAlert) {
 
-            logOutAlert()
+            switch activeAlert {
+            case .first:
+
+                return logOutAlert()
+            case .second:
+
+                return restartAlert()
+            }
         }
     }
 
@@ -95,6 +112,17 @@ struct SignInView: View {
             )
     }
 
+    private func restartAlert() -> Alert {
+
+        Alert(
+            title: Text("Please restart this app.".localized),
+            message: Text(""),
+            dismissButton: .default(Text("OK".localized), action: {
+
+                presentationMode.wrappedValue.dismiss()
+            }))
+    }
+
     private func logout() {
 
         let auth = Auth.auth()
@@ -103,12 +131,14 @@ struct SignInView: View {
 
             try auth.signOut()
             newUser()
-            presentationMode.wrappedValue.dismiss()
             print("successfully logout")
         } catch let signOutError as NSError {
 
             print("Error signing out: %@", signOutError)
         }
+
+        self.activeAlert = .second
+        self.isAlert = true
     }
 
     private func newUser() {
@@ -118,6 +148,4 @@ struct SignInView: View {
             Auth.auth().signInAnonymously()
         }
     }
-
-    
 }
