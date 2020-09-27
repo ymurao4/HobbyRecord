@@ -35,7 +35,7 @@
 		04AD0CA42516F50A00585104 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0CA32516F50A00585104 /* CalendarViewModel.swift */; };
 		04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD31472504B6BB00AA3745 /* DateViewModel.swift */; };
 		04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4407250E12FC004F44B9 /* DateDetailView.swift */; };
-		04CCCB6C25200B6A00926464 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04CCCB6B25200B6A00926464 /* GoogleService-Info.plist */; };
+		04CCCB71252011C600926464 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04CCCB70252011C600926464 /* GoogleService-Info.plist */; };
 		04D0EBF0250EE44800484F4F /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0EBEF250EE44800484F4F /* DetailCell.swift */; };
 		04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E32509A692002EE231 /* BottomSheet.swift */; };
 		04EB65E62509A6D4002EE231 /* AddNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */; };
@@ -100,7 +100,7 @@
 		04AD0CA32516F50A00585104 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		04BD31472504B6BB00AA3745 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		04BD4407250E12FC004F44B9 /* DateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetailView.swift; sourceTree = "<group>"; };
-		04CCCB6B25200B6A00926464 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04CCCB70252011C600926464 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04D0EBEF250EE44800484F4F /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		04EB65E32509A692002EE231 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHobbyView.swift; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 				0498FE1324F88C7400489C12 /* Assets.xcassets */,
 				0498FE1824F88C7400489C12 /* LaunchScreen.storyboard */,
 				0498FE1B24F88C7400489C12 /* Info.plist */,
-				04CCCB6B25200B6A00926464 /* GoogleService-Info.plist */,
+				04CCCB70252011C600926464 /* GoogleService-Info.plist */,
 				041279EF250D9A3000283614 /* InfoPlist.strings */,
 				0498FE1524F88C7400489C12 /* Preview Content */,
 				041279E7250D91A400283614 /* Localizable.strings */,
@@ -429,7 +429,7 @@
 				0498FE1724F88C7400489C12 /* Preview Assets.xcassets in Resources */,
 				0498FE1424F88C7400489C12 /* Assets.xcassets in Resources */,
 				041279ED250D9A3000283614 /* InfoPlist.strings in Resources */,
-				04CCCB6C25200B6A00926464 /* GoogleService-Info.plist in Resources */,
+				04CCCB71252011C600926464 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,7 +686,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoshinobu.Hobby;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoshinobu.Hobbies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -708,7 +708,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoshinobu.Hobby;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoshinobu.Hobbies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
