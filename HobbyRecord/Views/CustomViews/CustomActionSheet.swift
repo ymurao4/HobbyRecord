@@ -13,8 +13,8 @@ struct CustomActionSheet: View {
 
     @State private var isSignInView: Bool = false
     @Binding var isActionSheet: Bool
-    private let buttons: [String] = ["Review This App"]
-//    private let buttons: [String] = ["Account", "Review This App"]
+//    private let buttons: [String] = ["Review This App"]
+    private let buttons: [String] = ["Account", "Review This App"]
     private let version: String! = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
 
     var body: some View {
@@ -36,10 +36,10 @@ struct CustomActionSheet: View {
             .padding(.vertical, 3)
             .padding(.horizontal)
         }
-//        .sheet(isPresented: $isSignInView) {
-//
-//            SignInView()
-//        }
+        .sheet(isPresented: $isSignInView) {
+
+            SignInView()
+        }
         .frame(width: UIScreen.main.bounds.width)
         .padding(.top, 20)
         .padding(.horizontal)
@@ -96,6 +96,7 @@ struct ChoicesButton: View {
 }
 
 extension UIApplication {
+    
     var currentScene: UIWindowScene? {
         connectedScenes
             .first { $0.activationState == .foregroundActive } as? UIWindowScene
