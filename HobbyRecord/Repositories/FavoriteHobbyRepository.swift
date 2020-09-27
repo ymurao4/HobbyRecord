@@ -19,6 +19,7 @@ class FavoriteHobbyRespository: ObservableObject {
     let userId = Auth.auth().currentUser?.uid
 
     init() {
+        
         loadDate()
     }
 

@@ -36,6 +36,7 @@
 		04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD31472504B6BB00AA3745 /* DateViewModel.swift */; };
 		04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4407250E12FC004F44B9 /* DateDetailView.swift */; };
 		04CCCB71252011C600926464 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04CCCB70252011C600926464 /* GoogleService-Info.plist */; };
+		04CCCB74252014F100926464 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCCB73252014F100926464 /* SignInViewModel.swift */; };
 		04D0EBF0250EE44800484F4F /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0EBEF250EE44800484F4F /* DetailCell.swift */; };
 		04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E32509A692002EE231 /* BottomSheet.swift */; };
 		04EB65E62509A6D4002EE231 /* AddNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */; };
@@ -101,6 +102,7 @@
 		04BD31472504B6BB00AA3745 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		04BD4407250E12FC004F44B9 /* DateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetailView.swift; sourceTree = "<group>"; };
 		04CCCB70252011C600926464 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04CCCB73252014F100926464 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		04D0EBEF250EE44800484F4F /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		04EB65E32509A692002EE231 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHobbyView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				04EB65ED2509B0B8002EE231 /* NewHobby */,
 				047A5DA0250A3468000423BF /* Details */,
 				04AD0CA32516F50A00585104 /* CalendarViewModel.swift */,
+				04CCCB73252014F100926464 /* SignInViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				042C0A1125075A44001AB6CD /* ContentView.swift in Sources */,
 				04ECAA4F2510436E00A73FBB /* Date.swift in Sources */,
 				0436BFF1250DB0AB004499BF /* HobbyRepository.swift in Sources */,
+				04CCCB74252014F100926464 /* SignInViewModel.swift in Sources */,
 				04445CCB251B076600D55B67 /* SignInWIthAppleCoordinator.swift in Sources */,
 				0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */,
 				048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */,

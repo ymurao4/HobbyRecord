@@ -13,6 +13,7 @@ struct SignInView: View {
 
     @Environment(\.colorScheme) var colorScheem
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var signInVM = SignInViewModel()
     @State var coordinator: SignInWithAppleCoordinator?
     @State private var isLogoutAlert: Bool = false
 
@@ -46,6 +47,7 @@ struct SignInView: View {
 
                                 coordinator.startSignInWithAppleFlow() {
 
+                                    signInVM.reLoadRecord()
                                     presentationMode.wrappedValue.dismiss()
                                 }
                             }
@@ -116,4 +118,6 @@ struct SignInView: View {
             Auth.auth().signInAnonymously()
         }
     }
+
+    
 }
