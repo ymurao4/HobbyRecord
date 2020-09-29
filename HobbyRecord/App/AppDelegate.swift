@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Auth.auth().signInAnonymously()
         }
 
+        print(Auth.auth().currentUser?.uid)
+
         IQKeyboardManager.shared.enable = true
 
         return true
