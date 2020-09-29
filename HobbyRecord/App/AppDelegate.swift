@@ -18,19 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseApp.configure()
 
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("Error")
-        }
+//        do {
+//            try Auth.auth().signOut()
+//        } catch {
+//            print("Error")
+//        }
 
         if Auth.auth().currentUser == nil {
 
 
             Auth.auth().signInAnonymously()
         }
-
-        print(Auth.auth().currentUser?.uid)
 
         IQKeyboardManager.shared.enable = true
 
