@@ -11,6 +11,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+
 class FavoriteHobbyViewModel: ObservableObject {
 
     @Published var favoriteHobbyRepository = FavoriteHobbyRespository()

@@ -384,6 +384,8 @@
 			dependencies = (
 			);
 			name = HobbyRecord;
+			packageProductDependencies = (
+			);
 			productName = HobbyRecord;
 			productReference = 0498FE0A24F88C7400489C12 /* HobbyRecord.app */;
 			productType = "com.apple.product-type.application";
@@ -413,6 +415,8 @@
 				ja,
 			);
 			mainGroup = 0498FE0124F88C7300489C12;
+			packageReferences = (
+			);
 			productRefGroup = 0498FE0B24F88C7400489C12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
