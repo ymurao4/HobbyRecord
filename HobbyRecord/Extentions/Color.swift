@@ -2,7 +2,7 @@
 //  Color.swift
 //  HobbyRecord
 //
-//  Created by 村尾慶伸 on 2020/08/31.
+//  Created by 村尾慶伸 on 2020/09/29.
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
@@ -16,6 +16,21 @@ extension Color {
         } else {
             return Color.white
         }
+    }
+
+    static func bl(_ n: Double) -> Color {
+
+        return Color.black.opacity(n / 10)
+    }
+
+    static func wh(_ n: Double) -> Color {
+
+        return Color.white.opacity(n / 10)
+    }
+
+    static func pr(_ n: Double) -> Color {
+
+        return Color.primary.opacity(n / 10)
     }
 
 }

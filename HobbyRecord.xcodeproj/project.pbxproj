@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,16 @@
 		047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9E250A3463000423BF /* DetailViewModel.swift */; };
 		047C172B2519EAAC005ADFEC /* UpdateNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C172A2519EAAC005ADFEC /* UpdateNewHobbyView.swift */; };
 		0486F19D250F28FB002B7A26 /* IconSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486F19C250F28FB002B7A26 /* IconSetting.swift */; };
+		0488137B2523313E00189C05 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137A2523313E00189C05 /* FirebaseAnalytics */; };
+		0488137D2523313E00189C05 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137C2523313E00189C05 /* FirebaseFirestoreSwift */; };
+		0488137F2523313E00189C05 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137E2523313E00189C05 /* FirebaseAuth */; };
+		048813812523313E00189C05 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 048813802523313E00189C05 /* FirebaseFirestore */; };
+		0488138C252332A400189C05 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488138B252332A400189C05 /* String.swift */; };
+		04881390252332C400189C05 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488138F252332C400189C05 /* BlurView.swift */; };
+		04881394252332D700189C05 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04881393252332D700189C05 /* Color.swift */; };
+		04881397252332EB00189C05 /* D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04881396252332EB00189C05 /* D.swift */; };
+		0488139A2523331900189C05 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048813992523331900189C05 /* Icon.swift */; };
+		0488139E2523337A00189C05 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0488139D2523337A00189C05 /* IQKeyboardManagerSwift */; };
 		048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BE2E324FDE6EA005159F5 /* Hobby.swift */; };
 		0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0D24F88C7400489C12 /* AppDelegate.swift */; };
 		0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0F24F88C7400489C12 /* SceneDelegate.swift */; };
@@ -44,13 +54,7 @@
 		04EB65EA2509AFD6002EE231 /* FavoriteHobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E92509AFD6002EE231 /* FavoriteHobby.swift */; };
 		04EB65EC2509B0B3002EE231 /* FaroviteHobbyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65EB2509B0B3002EE231 /* FaroviteHobbyCellViewModel.swift */; };
 		04EB65F0250A03FB002EE231 /* EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65EF250A03FB002EE231 /* EdgeBorder.swift */; };
-		04ECAA4B2510433800A73FBB /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA4A2510433800A73FBB /* BlurView.swift */; };
-		04ECAA4D2510435000A73FBB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA4C2510435000A73FBB /* Color.swift */; };
-		04ECAA4F2510436E00A73FBB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA4E2510436E00A73FBB /* Date.swift */; };
-		04ECAA512510438100A73FBB /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA502510438100A73FBB /* Icon.swift */; };
-		04ECAA532510439B00A73FBB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAA522510439B00A73FBB /* String.swift */; };
 		04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720925085E5C0094F336 /* ReaderView.swift */; };
-		EF61353485E5FCF10B1BEDDA /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE407F14894032A282FDAFC5 /* Pods_HobbyRecord.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +91,11 @@
 		047A5D9E250A3463000423BF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		047C172A2519EAAC005ADFEC /* UpdateNewHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNewHobbyView.swift; sourceTree = "<group>"; };
 		0486F19C250F28FB002B7A26 /* IconSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSetting.swift; sourceTree = "<group>"; };
+		0488138B252332A400189C05 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String.swift; path = Extentions/String.swift; sourceTree = "<group>"; };
+		0488138F252332C400189C05 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Extentions/BlurView.swift; sourceTree = "<group>"; };
+		04881393252332D700189C05 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Extentions/Color.swift; sourceTree = "<group>"; };
+		04881396252332EB00189C05 /* D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = D.swift; path = Extentions/D.swift; sourceTree = "<group>"; };
+		048813992523331900189C05 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Icon.swift; path = Extentions/Icon.swift; sourceTree = "<group>"; };
 		048BE2E324FDE6EA005159F5 /* Hobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
 		0498FE0A24F88C7400489C12 /* HobbyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HobbyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0498FE0D24F88C7400489C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,15 +119,7 @@
 		04EB65E92509AFD6002EE231 /* FavoriteHobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHobby.swift; sourceTree = "<group>"; };
 		04EB65EB2509B0B3002EE231 /* FaroviteHobbyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaroviteHobbyCellViewModel.swift; sourceTree = "<group>"; };
 		04EB65EF250A03FB002EE231 /* EdgeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EdgeBorder.swift; path = Extentions/EdgeBorder.swift; sourceTree = "<group>"; };
-		04ECAA4A2510433800A73FBB /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		04ECAA4C2510435000A73FBB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		04ECAA4E2510436E00A73FBB /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		04ECAA502510438100A73FBB /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
-		04ECAA522510439B00A73FBB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		04FA720925085E5C0094F336 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
-		20D66E03970378F37DA8AA84 /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
-		9FB353638BAC64F4CC8F4F41 /* Pods-HobbyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.release.xcconfig"; sourceTree = "<group>"; };
-		DE407F14894032A282FDAFC5 /* Pods_HobbyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +127,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF61353485E5FCF10B1BEDDA /* Pods_HobbyRecord.framework in Frameworks */,
+				0488139E2523337A00189C05 /* IQKeyboardManagerSwift in Frameworks */,
+				0488137B2523313E00189C05 /* FirebaseAnalytics in Frameworks */,
+				048813812523313E00189C05 /* FirebaseFirestore in Frameworks */,
+				0488137F2523313E00189C05 /* FirebaseAuth in Frameworks */,
+				0488137D2523313E00189C05 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,11 +189,11 @@
 			isa = PBXGroup;
 			children = (
 				04EB65EF250A03FB002EE231 /* EdgeBorder.swift */,
-				04ECAA4A2510433800A73FBB /* BlurView.swift */,
-				04ECAA4C2510435000A73FBB /* Color.swift */,
-				04ECAA4E2510436E00A73FBB /* Date.swift */,
-				04ECAA502510438100A73FBB /* Icon.swift */,
-				04ECAA522510439B00A73FBB /* String.swift */,
+				0488138B252332A400189C05 /* String.swift */,
+				0488138F252332C400189C05 /* BlurView.swift */,
+				04881393252332D700189C05 /* Color.swift */,
+				04881396252332EB00189C05 /* D.swift */,
+				048813992523331900189C05 /* Icon.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -241,9 +246,7 @@
 			children = (
 				0498FE0C24F88C7400489C12 /* HobbyRecord */,
 				0498FE0B24F88C7400489C12 /* Products */,
-				B0E1B3F0E09204E49FBCC099 /* Pods */,
 				04C23D42250B18B200787F99 /* Recovered References */,
-				DDBE64D0FDBE8B1F1C7FFFB3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -348,23 +351,6 @@
 			path = BottomViews;
 			sourceTree = "<group>";
 		};
-		B0E1B3F0E09204E49FBCC099 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				20D66E03970378F37DA8AA84 /* Pods-HobbyRecord.debug.xcconfig */,
-				9FB353638BAC64F4CC8F4F41 /* Pods-HobbyRecord.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		DDBE64D0FDBE8B1F1C7FFFB3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DE407F14894032A282FDAFC5 /* Pods_HobbyRecord.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -372,12 +358,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0498FE4D24F88C7500489C12 /* Build configuration list for PBXNativeTarget "HobbyRecord" */;
 			buildPhases = (
-				76E9EB3AE4D8B0CA95A24F18 /* [CP] Check Pods Manifest.lock */,
 				0498FE0624F88C7400489C12 /* Sources */,
 				0498FE0724F88C7400489C12 /* Frameworks */,
 				0498FE0824F88C7400489C12 /* Resources */,
 				0498FE4C24F88C7500489C12 /* Embed Watch Content */,
-				1B807B724E4B5A1571234977 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -385,6 +369,11 @@
 			);
 			name = HobbyRecord;
 			packageProductDependencies = (
+				0488137A2523313E00189C05 /* FirebaseAnalytics */,
+				0488137C2523313E00189C05 /* FirebaseFirestoreSwift */,
+				0488137E2523313E00189C05 /* FirebaseAuth */,
+				048813802523313E00189C05 /* FirebaseFirestore */,
+				0488139D2523337A00189C05 /* IQKeyboardManagerSwift */,
 			);
 			productName = HobbyRecord;
 			productReference = 0498FE0A24F88C7400489C12 /* HobbyRecord.app */;
@@ -416,6 +405,8 @@
 			);
 			mainGroup = 0498FE0124F88C7300489C12;
 			packageReferences = (
+				048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				0488139C2523337A00189C05 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 0498FE0B24F88C7400489C12 /* Products */;
 			projectDirPath = "";
@@ -442,81 +433,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1B807B724E4B5A1571234977 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		76E9EB3AE4D8B0CA95A24F18 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HobbyRecord-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		0498FE0624F88C7400489C12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04ECAA532510439B00A73FBB /* String.swift in Sources */,
 				047A5D9B250A322D000423BF /* DetailCellVIewModel.swift in Sources */,
 				04D0EBF0250EE44800484F4F /* DetailCell.swift in Sources */,
 				04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */,
 				04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */,
 				04EB65E82509AE92002EE231 /* FavoriteHobbyViewModel.swift in Sources */,
 				04445CC2251B06E700D55B67 /* SignInView.swift in Sources */,
+				04881397252332EB00189C05 /* D.swift in Sources */,
 				042C0A1125075A44001AB6CD /* ContentView.swift in Sources */,
-				04ECAA4F2510436E00A73FBB /* Date.swift in Sources */,
 				0436BFF1250DB0AB004499BF /* HobbyRepository.swift in Sources */,
 				04CCCB74252014F100926464 /* SignInViewModel.swift in Sources */,
 				04445CCB251B076600D55B67 /* SignInWIthAppleCoordinator.swift in Sources */,
 				0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */,
 				048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */,
+				0488139A2523331900189C05 /* Icon.swift in Sources */,
 				047C172B2519EAAC005ADFEC /* UpdateNewHobbyView.swift in Sources */,
+				04881390252332C400189C05 /* BlurView.swift in Sources */,
 				0436E83E2509A15100A25460 /* RecordHobbyView.swift in Sources */,
-				04ECAA512510438100A73FBB /* Icon.swift in Sources */,
+				0488138C252332A400189C05 /* String.swift in Sources */,
 				0436BFF3250DB6F9004499BF /* FavoriteHobbyRepository.swift in Sources */,
-				04ECAA4B2510433800A73FBB /* BlurView.swift in Sources */,
 				04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */,
 				04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */,
 				047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */,
 				04445CC8251B074000D55B67 /* SignInWithAppleButton.swift in Sources */,
 				0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */,
 				04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */,
+				04881394252332D700189C05 /* Color.swift in Sources */,
 				04AD0CA42516F50A00585104 /* CalendarViewModel.swift in Sources */,
 				0486F19D250F28FB002B7A26 /* IconSetting.swift in Sources */,
-				04ECAA4D2510435000A73FBB /* Color.swift in Sources */,
 				04EB65EC2509B0B3002EE231 /* FaroviteHobbyCellViewModel.swift in Sources */,
 				04EB65E62509A6D4002EE231 /* AddNewHobbyView.swift in Sources */,
 				04EB65F0250A03FB002EE231 /* EdgeBorder.swift in Sources */,
@@ -681,7 +630,6 @@
 		};
 		0498FE4E24F88C7500489C12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20D66E03970378F37DA8AA84 /* Pods-HobbyRecord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HobbyRecord/HobbyRecord.entitlements;
@@ -703,7 +651,6 @@
 		};
 		0498FE4F24F88C7500489C12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FB353638BAC64F4CC8F4F41 /* Pods-HobbyRecord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HobbyRecord/HobbyRecord.entitlements;
@@ -745,6 +692,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = "6.32-spm-beta";
+				kind = branch;
+			};
+		};
+		0488139C2523337A00189C05 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0488137A2523313E00189C05 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		0488137C2523313E00189C05 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		0488137E2523313E00189C05 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		048813802523313E00189C05 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		0488139D2523337A00189C05 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0488139C2523337A00189C05 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0498FE0224F88C7300489C12 /* Project object */;
 }
