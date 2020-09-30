@@ -24,16 +24,16 @@
 		047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9E250A3463000423BF /* DetailViewModel.swift */; };
 		047C172B2519EAAC005ADFEC /* UpdateNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C172A2519EAAC005ADFEC /* UpdateNewHobbyView.swift */; };
 		0486F19D250F28FB002B7A26 /* IconSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486F19C250F28FB002B7A26 /* IconSetting.swift */; };
-		0488137B2523313E00189C05 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137A2523313E00189C05 /* FirebaseAnalytics */; };
-		0488137D2523313E00189C05 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137C2523313E00189C05 /* FirebaseFirestoreSwift */; };
-		0488137F2523313E00189C05 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137E2523313E00189C05 /* FirebaseAuth */; };
-		048813812523313E00189C05 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 048813802523313E00189C05 /* FirebaseFirestore */; };
+		0488137B2523313E00189C05 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137A2523313E00189C05 /* SwiftPackageProductDependency */; };
+		0488137D2523313E00189C05 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137C2523313E00189C05 /* SwiftPackageProductDependency */; };
+		0488137F2523313E00189C05 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137E2523313E00189C05 /* SwiftPackageProductDependency */; };
+		048813812523313E00189C05 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 048813802523313E00189C05 /* SwiftPackageProductDependency */; };
 		0488138C252332A400189C05 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488138B252332A400189C05 /* String.swift */; };
 		04881390252332C400189C05 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488138F252332C400189C05 /* BlurView.swift */; };
 		04881394252332D700189C05 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04881393252332D700189C05 /* Color.swift */; };
 		04881397252332EB00189C05 /* D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04881396252332EB00189C05 /* D.swift */; };
 		0488139A2523331900189C05 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048813992523331900189C05 /* Icon.swift */; };
-		0488139E2523337A00189C05 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0488139D2523337A00189C05 /* IQKeyboardManagerSwift */; };
+		0488139E2523337A00189C05 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0488139D2523337A00189C05 /* SwiftPackageProductDependency */; };
 		048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BE2E324FDE6EA005159F5 /* Hobby.swift */; };
 		0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0D24F88C7400489C12 /* AppDelegate.swift */; };
 		0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0F24F88C7400489C12 /* SceneDelegate.swift */; };
@@ -127,11 +127,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0488139E2523337A00189C05 /* IQKeyboardManagerSwift in Frameworks */,
-				0488137B2523313E00189C05 /* FirebaseAnalytics in Frameworks */,
-				048813812523313E00189C05 /* FirebaseFirestore in Frameworks */,
-				0488137F2523313E00189C05 /* FirebaseAuth in Frameworks */,
-				0488137D2523313E00189C05 /* FirebaseFirestoreSwift in Frameworks */,
+				0488139E2523337A00189C05 /* BuildFile in Frameworks */,
+				0488137B2523313E00189C05 /* BuildFile in Frameworks */,
+				048813812523313E00189C05 /* BuildFile in Frameworks */,
+				0488137F2523313E00189C05 /* BuildFile in Frameworks */,
+				0488137D2523313E00189C05 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,11 +369,11 @@
 			);
 			name = HobbyRecord;
 			packageProductDependencies = (
-				0488137A2523313E00189C05 /* FirebaseAnalytics */,
-				0488137C2523313E00189C05 /* FirebaseFirestoreSwift */,
-				0488137E2523313E00189C05 /* FirebaseAuth */,
-				048813802523313E00189C05 /* FirebaseFirestore */,
-				0488139D2523337A00189C05 /* IQKeyboardManagerSwift */,
+				0488137A2523313E00189C05 /* SwiftPackageProductDependency */,
+				0488137C2523313E00189C05 /* SwiftPackageProductDependency */,
+				0488137E2523313E00189C05 /* SwiftPackageProductDependency */,
+				048813802523313E00189C05 /* SwiftPackageProductDependency */,
+				0488139D2523337A00189C05 /* SwiftPackageProductDependency */,
 			);
 			productName = HobbyRecord;
 			productReference = 0498FE0A24F88C7400489C12 /* HobbyRecord.app */;
@@ -405,8 +405,8 @@
 			);
 			mainGroup = 0498FE0124F88C7300489C12;
 			packageReferences = (
-				048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				0488139C2523337A00189C05 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				048813792523313E00189C05 /* RemoteSwiftPackageReference */,
+				0488139C2523337A00189C05 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 0498FE0B24F88C7400489C12 /* Products */;
 			projectDirPath = "";
@@ -694,15 +694,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		048813792523313E00189C05 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
-				branch = "6.32-spm-beta";
+				branch = "6.33-spm-beta";
 				kind = branch;
 			};
 		};
-		0488139C2523337A00189C05 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		0488139C2523337A00189C05 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -713,29 +713,29 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0488137A2523313E00189C05 /* FirebaseAnalytics */ = {
+		0488137A2523313E00189C05 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 048813792523313E00189C05 /* RemoteSwiftPackageReference */;
 			productName = FirebaseAnalytics;
 		};
-		0488137C2523313E00189C05 /* FirebaseFirestoreSwift */ = {
+		0488137C2523313E00189C05 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 048813792523313E00189C05 /* RemoteSwiftPackageReference */;
 			productName = FirebaseFirestoreSwift;
 		};
-		0488137E2523313E00189C05 /* FirebaseAuth */ = {
+		0488137E2523313E00189C05 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 048813792523313E00189C05 /* RemoteSwiftPackageReference */;
 			productName = FirebaseAuth;
 		};
-		048813802523313E00189C05 /* FirebaseFirestore */ = {
+		048813802523313E00189C05 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 048813792523313E00189C05 /* RemoteSwiftPackageReference */;
 			productName = FirebaseFirestore;
 		};
-		0488139D2523337A00189C05 /* IQKeyboardManagerSwift */ = {
+		0488139D2523337A00189C05 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0488139C2523337A00189C05 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = 0488139C2523337A00189C05 /* RemoteSwiftPackageReference */;
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
