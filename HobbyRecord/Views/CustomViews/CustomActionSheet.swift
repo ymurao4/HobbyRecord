@@ -8,13 +8,14 @@
 
 import SwiftUI
 import StoreKit
+import Firebase
 
 struct CustomActionSheet: View {
 
     @State private var isSignInView: Bool = false
     @Binding var isActionSheet: Bool
-    private let buttons: [String] = ["Review This App"]
-//    private let buttons: [String] = ["Account", "Review This App"]
+//    private let buttons: [String] = ["Review This App"]
+    private let buttons: [String] = ["Account", "Review This App"]
     private let version: String! = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
 
     var body: some View {

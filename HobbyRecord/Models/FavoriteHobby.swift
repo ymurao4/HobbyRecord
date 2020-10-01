@@ -10,11 +10,12 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct FavoriteHobby: Identifiable, Codable {
+struct FavoriteHobby: Codable, Identifiable {
     @DocumentID var id: String?
     var title: String
     var icon: String
     var uesrId: String?
+    @ServerTimestamp var createdTime: Timestamp?
 }
 
 #if DEBUG

@@ -16,7 +16,6 @@ class FavoriteHobbyRespository: ObservableObject {
     @Published var hobbyRepository = HobbyRepository()
     @Published var favoriteHobbies: [FavoriteHobby] = []
     let db = Firestore.firestore()
-    let userId = Auth.auth().currentUser?.uid
 
     init() {
         
@@ -25,8 +24,10 @@ class FavoriteHobbyRespository: ObservableObject {
 
     func loadDate() {
 
+        let userId = Auth.auth().currentUser?.uid
 
         db.collection("favorites")
+            .order(by: "createdTime", descending: true)
             .whereField("uesrId", isEqualTo: userId as Any)
             .addSnapshotListener { (querySnapshot, error) in
 
@@ -80,6 +81,8 @@ class FavoriteHobbyRespository: ObservableObject {
 
     private func removeAllHobbyRecord(fav: FavoriteHobby) {
 
+        let userId = Auth.auth().currentUser?.uid
+
         db.collection("hobbies")
             .whereField("uesrId", isEqualTo: userId as Any)
             .whereField("title", isEqualTo: fav.title)
@@ -126,6 +129,8 @@ class FavoriteHobbyRespository: ObservableObject {
     }
 
     private func updateAllHobbyRecord(fav: FavoriteHobby, oldIcon: String, oldTitle: String) {
+
+        let userId = Auth.auth().currentUser?.uid
 
         db.collection("hobbies")
             .whereField("uesrId", isEqualTo: userId as Any)
