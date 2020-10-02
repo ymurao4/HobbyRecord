@@ -12,7 +12,6 @@ import CryptoKit
 import AuthenticationServices
 import Firebase
 
-// no use
 class SignInWithAppleCoordinator: NSObject, ASAuthorizationControllerPresentationContextProviding {
 
     private var onSignedIn: (() -> Void)?

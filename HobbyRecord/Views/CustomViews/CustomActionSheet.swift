@@ -37,10 +37,10 @@ struct CustomActionSheet: View {
             .padding(.vertical, 3)
             .padding(.horizontal)
         }
-//        .sheet(isPresented: $isSignInView) {
-//
-//            SignInView()
-//        }
+        .sheet(isPresented: $isSignInView) {
+
+            SignInView()
+        }
         .frame(width: UIScreen.main.bounds.width)
         .padding(.top, 20)
         .padding(.horizontal)
