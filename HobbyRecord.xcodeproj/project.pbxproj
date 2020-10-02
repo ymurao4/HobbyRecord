@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,16 +24,11 @@
 		047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5D9E250A3463000423BF /* DetailViewModel.swift */; };
 		047C172B2519EAAC005ADFEC /* UpdateNewHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C172A2519EAAC005ADFEC /* UpdateNewHobbyView.swift */; };
 		0486F19D250F28FB002B7A26 /* IconSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486F19C250F28FB002B7A26 /* IconSetting.swift */; };
-		0488137B2523313E00189C05 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137A2523313E00189C05 /* FirebaseAnalytics */; };
-		0488137D2523313E00189C05 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137C2523313E00189C05 /* FirebaseFirestoreSwift */; };
-		0488137F2523313E00189C05 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0488137E2523313E00189C05 /* FirebaseAuth */; };
-		048813812523313E00189C05 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 048813802523313E00189C05 /* FirebaseFirestore */; };
 		0488138C252332A400189C05 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488138B252332A400189C05 /* String.swift */; };
 		04881390252332C400189C05 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488138F252332C400189C05 /* BlurView.swift */; };
 		04881394252332D700189C05 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04881393252332D700189C05 /* Color.swift */; };
 		04881397252332EB00189C05 /* D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04881396252332EB00189C05 /* D.swift */; };
 		0488139A2523331900189C05 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048813992523331900189C05 /* Icon.swift */; };
-		0488139E2523337A00189C05 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0488139D2523337A00189C05 /* IQKeyboardManagerSwift */; };
 		048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BE2E324FDE6EA005159F5 /* Hobby.swift */; };
 		04934E21252598A300031DBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04934E20252598A300031DBD /* GoogleService-Info.plist */; };
 		0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498FE0D24F88C7400489C12 /* AppDelegate.swift */; };
@@ -46,6 +41,7 @@
 		04AD0CA42516F50A00585104 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0CA32516F50A00585104 /* CalendarViewModel.swift */; };
 		04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD31472504B6BB00AA3745 /* DateViewModel.swift */; };
 		04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4407250E12FC004F44B9 /* DateDetailView.swift */; };
+		04CAA1972526A2F0002D54CD /* HobbyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAA1962526A2F0002D54CD /* HobbyRecord.swift */; };
 		04CCCB74252014F100926464 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCCB73252014F100926464 /* SignInViewModel.swift */; };
 		04D0EBF0250EE44800484F4F /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0EBEF250EE44800484F4F /* DetailCell.swift */; };
 		04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65E32509A692002EE231 /* BottomSheet.swift */; };
@@ -55,6 +51,7 @@
 		04EB65EC2509B0B3002EE231 /* FaroviteHobbyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65EB2509B0B3002EE231 /* FaroviteHobbyCellViewModel.swift */; };
 		04EB65F0250A03FB002EE231 /* EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB65EF250A03FB002EE231 /* EdgeBorder.swift */; };
 		04FA720A25085E5C0094F336 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA720925085E5C0094F336 /* ReaderView.swift */; };
+		31A6FC13036C89F614DAA0F9 /* Pods_HobbyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CBA69803E2F7033D30E762 /* Pods_HobbyRecord.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -111,6 +108,7 @@
 		04AD0CA32516F50A00585104 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		04BD31472504B6BB00AA3745 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		04BD4407250E12FC004F44B9 /* DateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetailView.swift; sourceTree = "<group>"; };
+		04CAA1962526A2F0002D54CD /* HobbyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyRecord.swift; sourceTree = "<group>"; };
 		04CCCB73252014F100926464 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		04D0EBEF250EE44800484F4F /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		04EB65E32509A692002EE231 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
@@ -120,6 +118,9 @@
 		04EB65EB2509B0B3002EE231 /* FaroviteHobbyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaroviteHobbyCellViewModel.swift; sourceTree = "<group>"; };
 		04EB65EF250A03FB002EE231 /* EdgeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EdgeBorder.swift; path = Extentions/EdgeBorder.swift; sourceTree = "<group>"; };
 		04FA720925085E5C0094F336 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		29CBA69803E2F7033D30E762 /* Pods_HobbyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		492A88A4A0A7163CCF444781 /* Pods-HobbyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.debug.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.debug.xcconfig"; sourceTree = "<group>"; };
+		C4B264508850F12E8C5E9120 /* Pods-HobbyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HobbyRecord.release.xcconfig"; path = "Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0488139E2523337A00189C05 /* IQKeyboardManagerSwift in Frameworks */,
-				0488137B2523313E00189C05 /* FirebaseAnalytics in Frameworks */,
-				048813812523313E00189C05 /* FirebaseFirestore in Frameworks */,
-				0488137F2523313E00189C05 /* FirebaseAuth in Frameworks */,
-				0488137D2523313E00189C05 /* FirebaseFirestoreSwift in Frameworks */,
+				31A6FC13036C89F614DAA0F9 /* Pods_HobbyRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +178,7 @@
 			children = (
 				0498FE0D24F88C7400489C12 /* AppDelegate.swift */,
 				0498FE0F24F88C7400489C12 /* SceneDelegate.swift */,
+				04CAA1962526A2F0002D54CD /* HobbyRecord.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -247,6 +245,8 @@
 				0498FE0C24F88C7400489C12 /* HobbyRecord */,
 				0498FE0B24F88C7400489C12 /* Products */,
 				04C23D42250B18B200787F99 /* Recovered References */,
+				3A59C032E055DFE0A761DD46 /* Pods */,
+				82B06E15088CC74FC9BD7303 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -351,6 +351,23 @@
 			path = BottomViews;
 			sourceTree = "<group>";
 		};
+		3A59C032E055DFE0A761DD46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				492A88A4A0A7163CCF444781 /* Pods-HobbyRecord.debug.xcconfig */,
+				C4B264508850F12E8C5E9120 /* Pods-HobbyRecord.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		82B06E15088CC74FC9BD7303 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29CBA69803E2F7033D30E762 /* Pods_HobbyRecord.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -358,10 +375,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0498FE4D24F88C7500489C12 /* Build configuration list for PBXNativeTarget "HobbyRecord" */;
 			buildPhases = (
+				9712CE5B2184E2084FC4E004 /* [CP] Check Pods Manifest.lock */,
 				0498FE0624F88C7400489C12 /* Sources */,
 				0498FE0724F88C7400489C12 /* Frameworks */,
 				0498FE0824F88C7400489C12 /* Resources */,
 				0498FE4C24F88C7500489C12 /* Embed Watch Content */,
+				9A407A09BDFC8DE3BABAC3FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,11 +388,6 @@
 			);
 			name = HobbyRecord;
 			packageProductDependencies = (
-				0488137A2523313E00189C05 /* FirebaseAnalytics */,
-				0488137C2523313E00189C05 /* FirebaseFirestoreSwift */,
-				0488137E2523313E00189C05 /* FirebaseAuth */,
-				048813802523313E00189C05 /* FirebaseFirestore */,
-				0488139D2523337A00189C05 /* IQKeyboardManagerSwift */,
 			);
 			productName = HobbyRecord;
 			productReference = 0498FE0A24F88C7400489C12 /* HobbyRecord.app */;
@@ -405,8 +419,6 @@
 			);
 			mainGroup = 0498FE0124F88C7300489C12;
 			packageReferences = (
-				048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				0488139C2523337A00189C05 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 0498FE0B24F88C7400489C12 /* Products */;
 			projectDirPath = "";
@@ -432,6 +444,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9712CE5B2184E2084FC4E004 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HobbyRecord-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A407A09BDFC8DE3BABAC3FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HobbyRecord/Pods-HobbyRecord-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0498FE0624F88C7400489C12 /* Sources */ = {
@@ -459,6 +513,7 @@
 				0436BFF3250DB6F9004499BF /* FavoriteHobbyRepository.swift in Sources */,
 				04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */,
 				04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */,
+				04CAA1972526A2F0002D54CD /* HobbyRecord.swift in Sources */,
 				047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */,
 				04445CC8251B074000D55B67 /* SignInWithAppleButton.swift in Sources */,
 				0498FE1024F88C7400489C12 /* SceneDelegate.swift in Sources */,
@@ -630,6 +685,7 @@
 		};
 		0498FE4E24F88C7500489C12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 492A88A4A0A7163CCF444781 /* Pods-HobbyRecord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HobbyRecord/HobbyRecord.entitlements;
@@ -651,6 +707,7 @@
 		};
 		0498FE4F24F88C7500489C12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4B264508850F12E8C5E9120 /* Pods-HobbyRecord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HobbyRecord/HobbyRecord.entitlements;
@@ -692,53 +749,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				branch = "6.33-spm-beta";
-				kind = branch;
-			};
-		};
-		0488139C2523337A00189C05 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.5.6;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0488137A2523313E00189C05 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		0488137C2523313E00189C05 /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
-		0488137E2523313E00189C05 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		048813802523313E00189C05 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 048813792523313E00189C05 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		0488139D2523337A00189C05 /* IQKeyboardManagerSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0488139C2523337A00189C05 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0498FE0224F88C7300489C12 /* Project object */;
 }

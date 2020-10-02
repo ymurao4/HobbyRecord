@@ -6,6 +6,7 @@
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
+/*
 import UIKit
 import SwiftUI
 
@@ -65,4 +66,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-
+*/
