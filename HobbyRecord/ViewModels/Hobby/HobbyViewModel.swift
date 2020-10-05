@@ -47,5 +47,4 @@ class HobbyViewModel: ObservableObject {
 
         self.hobbyRepository.updateRecord(hobby: hobby)
     }
-
 }

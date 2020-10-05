@@ -217,6 +217,10 @@ struct ActionSheetView: View {
                             Spacer()
                         }
                     }
+                    .simultaneousGesture(TapGesture().onEnded {
+
+                        self.isActionSheet = false
+                    })
                 }
 
                 VStack {
