@@ -27,6 +27,7 @@ class DateViewModel: ObservableObject {
     func filterHobby() {
 
         hobbies.removeAll()
+        
         self.hobbyVM.$hobbyCellViewModels.sink { hobbyCellViewModel in
 
             let _ = hobbyCellViewModel.filter { (hobbyCell) -> Bool in
