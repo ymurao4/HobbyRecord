@@ -11,7 +11,6 @@
 		040E790724FE1E67008F910F /* HobbyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E790624FE1E67008F910F /* HobbyCellViewModel.swift */; };
 		041279E5250D91A400283614 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 041279E7250D91A400283614 /* Localizable.strings */; };
 		041279ED250D9A3000283614 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 041279EF250D9A3000283614 /* InfoPlist.strings */; };
-		04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04294F882508704400AEB196 /* CustomActionSheet.swift */; };
 		042C0A1125075A44001AB6CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C0A1025075A44001AB6CD /* ContentView.swift */; };
 		0436BFF1250DB0AB004499BF /* HobbyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436BFF0250DB0AB004499BF /* HobbyRepository.swift */; };
 		0436BFF3250DB6F9004499BF /* FavoriteHobbyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436BFF2250DB6F9004499BF /* FavoriteHobbyRepository.swift */; };
@@ -36,6 +35,9 @@
 		0498FE1424F88C7400489C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE1324F88C7400489C12 /* Assets.xcassets */; };
 		0498FE1724F88C7400489C12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE1624F88C7400489C12 /* Preview Assets.xcassets */; };
 		0498FE1A24F88C7400489C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0498FE1824F88C7400489C12 /* LaunchScreen.storyboard */; };
+		04A3BD39252A9F61002EF8C7 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3BD38252A9F61002EF8C7 /* CustomActionSheet.swift */; };
+		04A3BD3D252A9FD0002EF8C7 /* HistotryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3BD3C252A9FD0002EF8C7 /* HistotryView.swift */; };
+		04A3BD40252AA110002EF8C7 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3BD3F252AA110002EF8C7 /* HistoryViewModel.swift */; };
 		04A7130B25020B3A00339779 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7130A25020B3A00339779 /* DateView.swift */; };
 		04AD0CA12516F4BF00585104 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0CA02516F4BF00585104 /* RootView.swift */; };
 		04AD0CA42516F50A00585104 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0CA32516F50A00585104 /* CalendarViewModel.swift */; };
@@ -74,7 +76,6 @@
 		041279E8250D91C300283614 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		041279EE250D9A3000283614 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		041279F0250D9A3800283614 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		04294F882508704400AEB196 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
 		042C0A1025075A44001AB6CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0436BFF0250DB0AB004499BF /* HobbyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyRepository.swift; sourceTree = "<group>"; };
 		0436BFF2250DB6F9004499BF /* FavoriteHobbyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHobbyRepository.swift; sourceTree = "<group>"; };
@@ -103,6 +104,9 @@
 		0498FE1924F88C7400489C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0498FE1B24F88C7400489C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0498FE1E24F88C7400489C12 /* HobbyRecord WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "HobbyRecord WatchKit App.app"; path = "/Users/muraoyoshinobu/Documents/personal development/HobbyRecord/build/Debug-watchos/HobbyRecord WatchKit App.app"; sourceTree = "<absolute>"; };
+		04A3BD38252A9F61002EF8C7 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
+		04A3BD3C252A9FD0002EF8C7 /* HistotryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistotryView.swift; sourceTree = "<group>"; };
+		04A3BD3F252AA110002EF8C7 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		04A7130A25020B3A00339779 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		04AD0CA02516F4BF00585104 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		04AD0CA32516F50A00585104 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -144,16 +148,9 @@
 				047A5DA0250A3468000423BF /* Details */,
 				04AD0CA32516F50A00585104 /* CalendarViewModel.swift */,
 				04CCCB73252014F100926464 /* SignInViewModel.swift */,
+				04A3BD3F252AA110002EF8C7 /* HistoryViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		04294F8C2508707700AEB196 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				04294F882508704400AEB196 /* CustomActionSheet.swift */,
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		04445CC4251B06EA00D55B67 /* AccountViews */ = {
@@ -219,10 +216,10 @@
 				042C0A1025075A44001AB6CD /* ContentView.swift */,
 				04D0EBEF250EE44800484F4F /* DetailCell.swift */,
 				0486F19C250F28FB002B7A26 /* IconSetting.swift */,
+				04A3BD38252A9F61002EF8C7 /* CustomActionSheet.swift */,
 				04BD4409250E1308004F44B9 /* DateViews */,
-				04BD440A250E130F004F44B9 /* BottomSheetView */,
-				04294F8C2508707700AEB196 /* CustomViews */,
 				04FA720825085CC70094F336 /* BottomViews */,
+				04BD440A250E130F004F44B9 /* BottomSheetView */,
 				047A6DA8251583E0008CCD72 /* CalendarViews */,
 				04445CC4251B06EA00D55B67 /* AccountViews */,
 			);
@@ -311,6 +308,7 @@
 			children = (
 				04EB65E52509A6D4002EE231 /* AddNewHobbyView.swift */,
 				0436E83D2509A15100A25460 /* RecordHobbyView.swift */,
+				04A3BD3C252A9FD0002EF8C7 /* HistotryView.swift */,
 				047C172A2519EAAC005ADFEC /* UpdateNewHobbyView.swift */,
 			);
 			path = BottomSheetView;
@@ -494,25 +492,27 @@
 			files = (
 				047A5D9B250A322D000423BF /* DetailCellVIewModel.swift in Sources */,
 				04D0EBF0250EE44800484F4F /* DetailCell.swift in Sources */,
-				04294F892508704400AEB196 /* CustomActionSheet.swift in Sources */,
 				04BD31482504B6BB00AA3745 /* DateViewModel.swift in Sources */,
 				04EB65E82509AE92002EE231 /* FavoriteHobbyViewModel.swift in Sources */,
 				04445CC2251B06E700D55B67 /* SignInView.swift in Sources */,
 				04881397252332EB00189C05 /* D.swift in Sources */,
 				042C0A1125075A44001AB6CD /* ContentView.swift in Sources */,
 				0436BFF1250DB0AB004499BF /* HobbyRepository.swift in Sources */,
+				04A3BD3D252A9FD0002EF8C7 /* HistotryView.swift in Sources */,
 				04CCCB74252014F100926464 /* SignInViewModel.swift in Sources */,
 				04445CCB251B076600D55B67 /* SignInWIthAppleCoordinator.swift in Sources */,
 				0498FE0E24F88C7400489C12 /* AppDelegate.swift in Sources */,
 				048BE2E424FDE6EA005159F5 /* Hobby.swift in Sources */,
 				0488139A2523331900189C05 /* Icon.swift in Sources */,
 				047C172B2519EAAC005ADFEC /* UpdateNewHobbyView.swift in Sources */,
+				04A3BD40252AA110002EF8C7 /* HistoryViewModel.swift in Sources */,
 				04881390252332C400189C05 /* BlurView.swift in Sources */,
 				0436E83E2509A15100A25460 /* RecordHobbyView.swift in Sources */,
 				0488138C252332A400189C05 /* String.swift in Sources */,
 				0436BFF3250DB6F9004499BF /* FavoriteHobbyRepository.swift in Sources */,
 				04EB65E42509A692002EE231 /* BottomSheet.swift in Sources */,
 				04BD4408250E12FC004F44B9 /* DateDetailView.swift in Sources */,
+				04A3BD39252A9F61002EF8C7 /* CustomActionSheet.swift in Sources */,
 				04CAA1972526A2F0002D54CD /* HobbyRecord.swift in Sources */,
 				047A5D9F250A3463000423BF /* DetailViewModel.swift in Sources */,
 				04445CC8251B074000D55B67 /* SignInWithAppleButton.swift in Sources */,

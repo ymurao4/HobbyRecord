@@ -2,7 +2,7 @@
 //  CustomActionSheet.swift
 //  HobbyRecord
 //
-//  Created by 村尾慶伸 on 2020/09/09.
+//  Created by 村尾慶伸 on 2020/10/05.
 //  Copyright © 2020 村尾慶伸. All rights reserved.
 //
 
@@ -97,9 +97,10 @@ struct ChoicesButton: View {
 }
 
 extension UIApplication {
-    
+
     var currentScene: UIWindowScene? {
         connectedScenes
             .first { $0.activationState == .foregroundActive } as? UIWindowScene
     }
 }
+

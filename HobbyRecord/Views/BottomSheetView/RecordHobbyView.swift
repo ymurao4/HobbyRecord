@@ -199,13 +199,25 @@ struct ActionSheetView: View {
     @ObservedObject var favoriteHobbyVM: FavoriteHobbyViewModel
     var favoriteHobby: FavoriteHobby
 
-    private let buttons: [String] = ["Edit", "Delete"]
-
     var body: some View {
 
         VStack(alignment: .leading, spacing: 15) {
 
             VStack(spacing: 10) {
+
+                VStack {
+
+                    NavigationLink(destination: HistotryView(fav: favoriteHobby)) {
+
+                        HStack {
+
+                            Text("History".localized)
+                                .bold()
+                                .padding(.vertical, 7)
+                            Spacer()
+                        }
+                    }
+                }
 
                 VStack {
 
