@@ -38,6 +38,7 @@
 		04A3BD39252A9F61002EF8C7 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3BD38252A9F61002EF8C7 /* CustomActionSheet.swift */; };
 		04A3BD3D252A9FD0002EF8C7 /* HistotryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3BD3C252A9FD0002EF8C7 /* HistotryView.swift */; };
 		04A3BD40252AA110002EF8C7 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3BD3F252AA110002EF8C7 /* HistoryViewModel.swift */; };
+		04A3BD43252AD56A002EF8C7 /* HistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3BD42252AD56A002EF8C7 /* HistoryRepository.swift */; };
 		04A7130B25020B3A00339779 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7130A25020B3A00339779 /* DateView.swift */; };
 		04AD0CA12516F4BF00585104 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0CA02516F4BF00585104 /* RootView.swift */; };
 		04AD0CA42516F50A00585104 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0CA32516F50A00585104 /* CalendarViewModel.swift */; };
@@ -107,6 +108,7 @@
 		04A3BD38252A9F61002EF8C7 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
 		04A3BD3C252A9FD0002EF8C7 /* HistotryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistotryView.swift; sourceTree = "<group>"; };
 		04A3BD3F252AA110002EF8C7 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		04A3BD42252AD56A002EF8C7 /* HistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRepository.swift; sourceTree = "<group>"; };
 		04A7130A25020B3A00339779 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		04AD0CA02516F4BF00585104 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		04AD0CA32516F50A00585104 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			children = (
 				0436BFF0250DB0AB004499BF /* HobbyRepository.swift */,
 				0436BFF2250DB6F9004499BF /* FavoriteHobbyRepository.swift */,
+				04A3BD42252AD56A002EF8C7 /* HistoryRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				0488139A2523331900189C05 /* Icon.swift in Sources */,
 				047C172B2519EAAC005ADFEC /* UpdateNewHobbyView.swift in Sources */,
 				04A3BD40252AA110002EF8C7 /* HistoryViewModel.swift in Sources */,
+				04A3BD43252AD56A002EF8C7 /* HistoryRepository.swift in Sources */,
 				04881390252332C400189C05 /* BlurView.swift in Sources */,
 				0436E83E2509A15100A25460 /* RecordHobbyView.swift in Sources */,
 				0488138C252332A400189C05 /* String.swift in Sources */,

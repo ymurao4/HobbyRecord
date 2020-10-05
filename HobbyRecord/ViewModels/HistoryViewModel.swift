@@ -11,27 +11,18 @@ import Combine
 
 class HistoryViewModel: ObservableObject {
 
-    @Published var hobbyVM = HobbyViewModel()
+//    @Published var hobbyVM = HobbyViewModel()
+    @Published var historyRepository = HistoryHobbyRepository()
     @Published var hobbies: [Hobby] = []
 
     private var cancellables = Set<AnyCancellable>()
 
     func filterRecord(title: String) {
 
-        hobbyVM.$hobbyCellViewModels.sink { hobbyCellVMs in
+        historyRepository.loadDate(sortName: title)
 
-            let _ = hobbyCellVMs.filter { hobbyCellVM in
-
-                if hobbyCellVM.hobby.title == title {
-
-                    self.hobbies.append(hobbyCellVM.hobby)
-                    return true
-                } else {
-
-                    return false
-                }
-            }
-        }
-        .store(in: &cancellables)
+        historyRepository.$hobbies
+            .assign(to: \.hobbies, on: self)
+            .store(in: &cancellables)
     }
 }
